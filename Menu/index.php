@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="container">
 
     <div class="menu">
 
@@ -23,7 +23,7 @@
                 
                 <div id="image">
                 
-                    <img src="img/icone applications/courrier/bureaupdp.png" alt="">
+                    <img src="img/icone_applications/courrier/bureaupdp.png" alt="">
             
                 </div>
 
@@ -32,9 +32,20 @@
             <div class="col-xs-6 col-md-4">
                 
                 <div id="boutons">
-                    <img src="img/icone applications/courrier/telephonie.png" alt="">
-                    <img src="img/icone applications/courrier/courrier.png" alt="">
-                    <img src="img/icone applications/courrier/domiciliation.png" alt="">
+                    <img id="telephonie" src="img/icone_applications/courrier/telephonie.png" alt="Téléphonie">
+                    
+                    <img id="courrier" src="img/icone_applications/courrier/courrier.png" alt="Courrier">
+                    
+                    <img id="domiciliation" src="img/icone_applications/courrier/domiciliation.png" alt="Domiciliation">
+                    
+                    <img id="paie" src="img/icone_applications/courrier/paie.png" alt="Paie">
+                    
+                    <img id="gestion" src="img/icone_applications/courrier/gestion.png" alt="Gestion">
+                    
+                    <img id="recouvrement" src="img/icone_applications/courrier/recouvrement.png" alt="Recouvrement">
+                    
+                    <img id="audit" src="img/icone_applications/courrier/audit.png" alt="Audit">
+                
                 </div>
 
             </div>
