@@ -1,15 +1,20 @@
 <html lang="fr">
     <!-- InstanceBegin template="/Templates/pdp-gestion.dwt.php" codeOutsideHTMLIsLocked="false" -->
-        <head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- InstanceBeginEditable name="doctitle" -->
+        <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- InstanceBeginEditable name="doctitle" -->
             <title>Les types d'appels</title>
             <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
             <!-- InstanceEndEditable -->
             <!-- Menu tab -->
-            <script src="../../SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+            <script src="Spry-master/includes_packed/SpryTabbedPanels.js" type="text/javascript"></script>
             <!-- Bootstrap -->
             <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
             <link rel="stylesheet" type="text/css" href="">
-            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
             <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
             <script src="../../js/ie10-viewport-bug-workaround.min.js"></script>
@@ -27,37 +32,38 @@
                   if (restore) selObj.selectedIndex=0;
                 }
             </script>
-            <!--[if lt IE 9]>
+            
             <script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-            <![endif]-->
+            
         </head>
 
     <body>
         <nav>
         <div class="container-fluid-white">
-                <!-- <script src="../../SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
-        <link href="../../SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
-        <link href="../../css/bootstrap-portail.css" rel="stylesheet" type="text/css"> -->
+                <script src="Spry-master/widgets/tabbedpanels/SpryTabbedPanels.js" type="text/javascript"></script>
+        <link href="Spry-master/widgets/tabbedpanels/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
+        <link href="../../css/bootstrap-portail.css" rel="stylesheet" type="text/css">
 
         <div id="TabbedPanels1" class="TabbedPanels">
 
           <ul class="TabbedPanelsTabGroup">
-            <li class="TabbedPanelsTab"><img src="../../images/couple-forum-utilisateurs-icone-6640-48.png" alt="Collaborateurs" class="img-responsive center-block" style="width:50px;height:50px"><br>Collaborateurs</li>
+            <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/collaborateurs.ico" alt="Collaborateurs" class="img-responsive center-block" style="width:50px;height:50px"><br>Collaborateurs</li>
 
-            <li class="TabbedPanelsTab"><img src="../../images/femme-groupe-male-utilisateurs-icone-7201-64.png" alt="Clients" class="img-responsive center-block" style="width:50px;height:50px"><br>Clients</li>
+            <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/clients.png" alt="Clients" class="img-responsive center-block" style="width:50px;height:50px"><br>Clients</li>
 
-            <li class="TabbedPanelsTab"><img src="../../images/dalerte-des-infos-des-hommes-utilisateur-icone-7789-48.png" height="48" alt="Appelants" class="img-responsive center-block" style="width:50px;height:50px"><br>Appelants</li>
+            <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/appelant.png" height="48" alt="Appelants" class="img-responsive center-block" style="width:50px;height:50px"><br>Appelants</li>
 
-            <li class="TabbedPanelsTab"><img src="../../images/telephone-icone-9367-64.png" alt="Appels" class="img-responsive center-block" style="width:50px;height:50px"><br>Appels</li>
+            <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/appel.png" alt="Appels" class="img-responsive center-block" style="width:50px;height:50px"><br>Appels</li>
 
-            <li class="TabbedPanelsTab"><img src="../../images/portable-mobile-telephone-icone-4943-48.png" alt="SMS" class="img-responsive center-block" style="width:50px;height:50px"><br>SMS et emails</li>
+            <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/sms.png" alt="SMS" class="img-responsive center-block" style="width:50px;height:50px"><br>SMS et emails</li>
 
-            <li class="TabbedPanelsTab"><img src="../../images/facture-icone-7188-48.png" alt="Rapports" class="img-responsive center-block" style="width:50px;height:50px"><br>Rapports</li>
+            <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/rapport.png" alt="Rapports" class="img-responsive center-block" style="width:50px;height:50px"><br>Rapports</li>
 
-            <li class="TabbedPanelsTab"><img src="../../images/knotes-icone-5773-48.png" alt="Commentaires" class="img-responsive center-block" style="width:50px;height:50px"><br>Commentaires</li>
+            <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/commentaires.png" alt="Commentaires" class="img-responsive center-block" style="width:50px;height:50px"><br>Commentaires</li>
 
-            <li class="TabbedPanelsTab"><img src="../../images/processus-arretez-vous-icone-7560-48.png" alt="D�connexion" class="img-responsive center-block" style="width:50px;height:50px"><br>D�connexion</li>
+            <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/deconnection.png" alt="D�connexion" class="img-responsive center-block" style="width:50px;height:50px"><br>D�connexion</li>
+          
           </ul>
 
           <div class="TabbedPanelsContentGroup">
