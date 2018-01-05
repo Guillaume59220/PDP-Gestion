@@ -1,12 +1,10 @@
-<html lang="fr">
-    <!-- InstanceBegin template="/Templates/pdp-gestion.dwt.php" codeOutsideHTMLIsLocked="false" -->
-        <head>
+<head>
         
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- InstanceBeginEditable name="doctitle" -->
-            <title>Les types d'appels</title>
+            <title>Service clients</title>
             <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
             <!-- InstanceEndEditable -->
             <!-- Menu tab -->
@@ -38,32 +36,17 @@
             
         </head>
 
-    <body>
-        <nav>
-        <div class="container-fluid-white">
-                <script src="Spry-master/widgets/tabbedpanels/SpryTabbedPanels.js" type="text/javascript"></script>
-        <link href="Spry-master/widgets/tabbedpanels/SpryTabbedPanels.css" rel="stylesheet" type="text/css">
-        <link href="../../css/bootstrap-portail.css" rel="stylesheet" type="text/css">
 
-        <div id="TabbedPanels1" class="TabbedPanels">
 
-          <ul class="TabbedPanelsTabGroup">
-            <a href="http://localhost/PDP-Gestion/Aprés%20connection/courrier.php">
-                <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/courrier.png" alt="Courrier" class="img-responsive center-block" style="width:50px;height:50px"><br>Courrier</li>
-            </a>
 
-            <a href="http://localhost/PDP-Gestion/Aprés%20connection/mail.php">
-            <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/mail.ico" alt="Clients" class="img-responsive center-block" style="width:50px;height:50px"><br>Email</li>
-            </a>
 
-            <a href="http://localhost/PDP-Gestion/Aprés%20connection/deconnection.php"><li class="TabbedPanelsTab"><img src="img/icone applications/courrier/deconnection.png" alt="D�connexion" class="img-responsive center-block" style="width:50px;height:50px"><br>D�connexion</li></a>
-          
-          </ul>
 
-                
-        
-                </div>
-            </div>
-        </nav>
-    </body>
-</html>
+<?php
+    require_once "index.php";
+?>
+
+
+
+<div class="TabbedPanelsContent">
+    <h1>Page courrier</h1>
+</div>
