@@ -48,5 +48,65 @@
 
 
 <div class="TabbedPanelsContent">
-    <h1>Page courrier</h1>
+    
+    <div class="form1">
+        <h4>Récupération de votre courrier</h4>
+        <div class="choix">
+            <p>Comment voulez-vous récuperer votre/vos courrier(s)</p>
+        
+        <label><input type="radio" name="genre"> A venir chercher sur place</label><br>
+		<label><input type="radio" name="genre"> A réexpedier</label><br>
+		<label><input type="radio" name="genre"> Scan du courrier</label><br>
+		<label><input type="radio" name="genre"> Un recommandés</label>   <br>
+        </div>
+        
+        <br>
+
+        
+
+        <div class="choix1">
+                <h4>Vous venez le chercher sur place ?</h4>
+
+                <p>Trés bien. <p>Vous avez un mois pour venir le retirer.</p>
+                    N'oubliez pas de nous donner votre numéro de client.
+                </p>            
+        </div>
+        
+        <div class="choix2">
+            <h4>Vous souhaitez la réexpedition de votre/vos courrier(s)</h4>
+
+            <select name="choice">
+                    <option>Quotidienne</option>
+                    <option>Hebdomadaire</option>
+                    <option>Mensuel</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div class="choix3">
+
+            <h4>Vous préférez un scan de votre courrier.</h4>
+            <p>De quel type le voulez-vous</p>
+
+            <a href="http://">Scan simple</a><br>
+            <a href="http://">Scan détaillé</a>
+        </div>
+
+        <br>
+
+        <div class="choix4">
+
+            <h4>C'est un courrier recommandé.</h4>
+
+                <input id="Numero_recommandé" placeholder="Numéro de l'envoie"><br/>
+                <br>
+                <input id="expediteur" placeholder="L'expéditeur"><br/>
+                <br>
+        		<input id="date" type="date"><br/>
+
+        </div>
+
+    </div>
+
 </div>
