@@ -46,10 +46,6 @@
     ?>
 </div>
 
-<div class="image_courrier">
-    <img src="img/icone applications/bureaupdp.png" alt="">
-</div>
-
 
 
 
@@ -79,13 +75,16 @@
         </div>
         
         <div class="choix2">
-            <h4>Vous souhaitez la réexpedition de votre/vos courrier(s)</h4>
+            <h4>Vous souhaitez la réexpedition <br> de votre/vos courrier(s)</h4>
 
-            <select name="choice">
+            <div class="choix2bis">
+                <select name="choice">
                     <option>Quotidienne</option>
                     <option>Hebdomadaire</option>
                     <option>Mensuel</option>
             </select>
+            </div>
+            
         </div>
 
         <br>

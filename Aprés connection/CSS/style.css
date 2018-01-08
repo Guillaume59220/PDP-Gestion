@@ -8,31 +8,26 @@ body{
 }
 
 .choix{
-    background-color: antiquewhite;
-    float: left;
+    background-color: rgba(250, 235, 215, 0.986);
     margin-left: 5%;
 }
 
 .choix1{
     background-color: rgb(228, 250, 215);
-    float: left;
     margin-left: 5%;
 }
 
 .choix2{
     background-color: rgb(250, 215, 215);
-    float: left;
     margin-left: 5%;
 }
 
 .choix3{
     background-color: rgb(215, 217, 250);
-    float: left;
     margin-left: 5%;
 }
 
 .choix4{
     background-color: rgb(215, 250, 245);
-    float: left;
     margin-left: 5%;
 }
