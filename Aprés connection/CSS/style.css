@@ -2,6 +2,10 @@ body{
     background-color: rgba(252, 209, 172, 0.932);
 }
 
+#test1{
+    display: none;
+}
+
 .image_courrier img{
     float: left;
     width: 30%;

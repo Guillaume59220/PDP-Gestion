@@ -56,17 +56,18 @@
         <div class="choix">
             <p>Comment voulez-vous récuperer votre/vos courrier(s)</p>
         
+
+        <a href="javascript:document.getElementById('test1').style.display='block';"></a>
+
         <label><input type="radio" name="genre"> A venir chercher sur place</label><br>
 		<label><input type="radio" name="genre"> A réexpedier</label><br>
 		<label><input type="radio" name="genre"> Scan du courrier</label><br>
 		<label><input type="radio" name="genre"> Un recommandés</label>   <br>
         </div>
         
-        <br>
+        <br>        
 
-        
-
-        <div class="choix1">
+        <div class="choix1" id="test1">
                 <h4>Vous venez le chercher sur place ?</h4>
 
                 <p>Trés bien. <p>Vous avez un mois pour venir le retirer.</p>
