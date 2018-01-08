@@ -1,23 +1,40 @@
 <head>
         
         <meta charset="utf-8">
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <!-- InstanceBeginEditable name="doctitle" -->
             <title>Service clients</title>
             <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
             <!-- InstanceEndEditable -->
             <!-- Menu tab -->
+        
             <script src="Spry-master/includes_packed/SpryTabbedPanels.js" type="text/javascript"></script>
+
             <!-- Bootstrap -->
             <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-            <link rel="stylesheet" type="text/css" href="CSS/style.css">
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-            <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+
             <script src="../../js/ie10-viewport-bug-workaround.min.js"></script>
+            
+            <!--jQuery et jQuery UI-->
             <!-- Datepicker -->
-            <script language="JavaScript" src="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"></script>
+            <script type="text/javascript" src="jquery-ui-1.12.1/jquery-ui.js"></script>
+
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
+            <link rel="stylesheet" type="text/css" href="jquery-ui.min.css ">
+
+
+            <!--FICHIERS LOCAUX-->
+            <link rel="stylesheet" type="text/css" href="CSS/style.css">
+            <script src="JS/script.js"></script>
+
+
             <script>
                 $(function() {
                 var date = $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' }).val();
@@ -46,73 +63,106 @@
     ?>
 </div>
 
+<h1>Récupération de votre courrier</h1>
 
+<h2>Comment voulez-vous récuperer votre courrier</h2>
 
-
-<div class="TabbedPanelsContent">
-    
-    <div class="form1">
-        <h4>Récupération de votre courrier</h4>
-        <div class="choix">
-            <p>Comment voulez-vous récuperer votre/vos courrier(s)</p>
+<div id="accordion" role="tablist">
         
-
-        <a href="javascript:document.getElementById('test1').style.display='block';"></a>
-
-        <label><input type="radio" name="genre"> A venir chercher sur place</label><br>
-		<label><input type="radio" name="genre"> A réexpedier</label><br>
-		<label><input type="radio" name="genre"> Scan du courrier</label><br>
-		<label><input type="radio" name="genre"> Un recommandés</label>   <br>
-        </div>
-        
-        <br>        
-
-        <div class="choix1" id="test1">
-                <h4>Vous venez le chercher sur place ?</h4>
-
-                <p>Trés bien. <p>Vous avez un mois pour venir le retirer.</p>
-                    N'oubliez pas de nous donner votre numéro de client.
-                </p>            
-        </div>
-        
-        <div class="choix2">
-            <h4>Vous souhaitez la réexpedition <br> de votre/vos courrier(s)</h4>
-
-            <div class="choix2bis">
-                <select name="choice">
-                    <option>Quotidienne</option>
-                    <option>Hebdomadaire</option>
-                    <option>Mensuel</option>
-            </select>
-            </div>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+                A venir chercher sur place
+              </a>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                    <div class="choix1" id="test1">
+                            <h4>Vous venez le chercher sur place ?</h4>
             
+                            <p>Trés bien. <p>Vous avez un mois pour venir le retirer.</p>
+                                N'oubliez pas de nous donner votre numéro de client.
+                            </p>            
+                    </div>
+            </div>
+          </div>
         </div>
 
-        <br>
-
-        <div class="choix3">
-
-            <h4>Vous préférez un scan de votre courrier.</h4>
-            <p>De quel type le voulez-vous</p>
-
-            <a href="http://">Scan simple</a><br>
-            <a href="http://">Scan détaillé</a>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                    A réexpedier
+              </a>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                    <div class="choix2">
+                            <h4>Vous souhaitez la réexpedition <br> de votre/vos courrier(s)</h4>
+                
+                            <div class="choix2bis">
+                                <select name="choice">
+                                    <option>Quotidienne</option>
+                                    <option>Hebdomadaire</option>
+                                    <option>Mensuel</option>
+                            </select>
+                            </div>
+            </div>
+            </div>
+          </div>
         </div>
 
-        <br>
+        <div class="card">
+          <div class="card-header" role="tab" id="headingThree">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                    Scan du courrier
+              </a>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                    <div class="choix3">
 
-        <div class="choix4">
-
-            <h4>C'est un courrier recommandé.</h4>
-
-                <input id="Numero_recommandé" placeholder="Numéro de l'envoie"><br/>
-                <br>
-                <input id="expediteur" placeholder="L'expéditeur"><br/>
-                <br>
-        		<input id="date" type="date"><br/>
-
+                            <h4>Vous préférez un scan de votre courrier.</h4>
+                            <p>De quel type le voulez-vous</p>
+                
+                            <a href="http://">Scan simple</a><br>
+                            <a href="http://">Scan détaillé</a>
+                        </div>
+            </div>
+          </div>
         </div>
+      </div>
 
+      <div class="card">
+            <div class="card-header" role="tab" id="headingFour">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseFour">
+                        Un recommandés
+                </a>
+              </h5>
+            </div>
+            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+              <div class="card-body">
+                    <div class="choix4">
+
+                            <h4>C'est un courrier recommandé.</h4>
+                
+                                <input id="Numero_recommandé" placeholder="Numéro de l'envoie"><br/>
+                                <br>
+                                <input id="expediteur" placeholder="L'expéditeur"><br/>
+                                <br>
+                                <input id="date" type="date"><br/>
+                
+                        </div>
+              </div>
+            </div>
+          </div>
+        </div>  
     </div>
-
+</div>
 </div>
