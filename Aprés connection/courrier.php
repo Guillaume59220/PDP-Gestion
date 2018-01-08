@@ -40,10 +40,16 @@
 
 
 
+<div class="php">
+    <?php
+        require_once "index.php";
+    ?>
+</div>
 
-<?php
-    require_once "index.php";
-?>
+<div class="image_courrier">
+    <img src="img/icone applications/bureaupdp.png" alt="">
+</div>
+
 
 
 

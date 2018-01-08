@@ -41,8 +41,10 @@
 
 
 
-<?php
-    require_once "index.php";
-?>
+<div class="php">
+    <?php
+        require_once "index.php";
+    ?>
+</div>
 
 <h1>Page Email</h1>

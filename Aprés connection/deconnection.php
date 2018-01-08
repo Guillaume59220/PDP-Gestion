@@ -41,7 +41,9 @@
 
 
 
-<?php
-    require_once "index.php";
-?>
+<div class="php">
+    <?php
+        require_once "index.php";
+    ?>
+</div>
 <h1>page de Déconnexion</h1>
