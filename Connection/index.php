@@ -78,7 +78,7 @@
                         <br />
                 
                         <div class="btn-group" role="group" aria-label="...">
-                                <button type="button" class="btn btn-default">SE CONNECTER</button>                
+                                <button type="button" class="btn btn-default"><a href="http://localhost/PDP-Gestion/Menu/">SE CONNECTER</a></button>                
                         </div>
                     
                     </div>

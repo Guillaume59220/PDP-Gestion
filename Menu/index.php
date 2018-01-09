@@ -38,7 +38,7 @@
                         </div>
 
                         <div id="courrier">
-                            <a href="http://"><img src="img/icone_applications/courrier/courrier.png" alt="Courrier"></a>
+                            <a href="http://localhost/PDP-Gestion/Aprés%20connection/courrier.php"><img src="img/icone_applications/courrier/courrier.png" alt="Courrier"></a>
                         </div>
 
                         <div id="domiciliation">
