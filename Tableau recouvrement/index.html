@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -9,23 +9,23 @@
     
     <!--Editablegrid-->
         <!--CSS-->
-        <link rel="stylesheet" href="editablegrid.css">
+<!--        <link rel="stylesheet" href="editablegrid.css">
         <!--JS-->
-        <script src="editablegrid.js"></script>
+<!--        <script src="editablegrid.js"></script>
         
     
     <!--Bootstrap-->
         <!--CSS-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
         <!--JS-->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
     
     <!--Fichiers CSS et JS Personnels-->
         <!--CSS-->
-        <link rel="stylesheet" href="style.css">
+        <!--<link rel="stylesheet" href="style.css">
         <!--JS-->
-        <script src="script.js"></script>
-</head>
+        <!--<script src="script.js"></script>-->
+<!--</head>
 <body>
     <h1>Tournoi des Super Héros</h1>
    
@@ -40,7 +40,7 @@
   <th>Confirmée</th>
  </tr>
  <tr id="1">
-  <td>Tintin</td>
+  <td><input type="text"></td>
   <td>9</td>
   <td>be</td>
   <td>10/04/2013</td>
@@ -62,4 +62,84 @@
  </tr>
 </table>
 </body>
+</html>-->
+
+
+<?php session_start() ;  ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+   <head>
+       <title>Ajout de groupe</title>
+       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+       <link rel="stylesheet" media="screen" type="text/css" title="Design" href="mod_pole.css" />
+       <link rel="stylesheet" media="screen" type="text/css" title="Design" href="../banniere/banniere.css" />
+       <script type="text/javascript" src="script.js"></script>
+  
+   </head>
+   <body>
+    
+    <?php
+  if (!isset($_SESSION['pseudo']))       //session ouverte ?
+  {
+    header('Location: '.get_cfg_var("URL_HTTP")."/GDflux/index.php?erreur=authentification");
+        }
+include("../banniere/banniere.php"); 
+                   
+         ?>
+          
+               
+    <?php    
+    $host = get_cfg_var("DBHost"); 
+    $user = get_cfg_var("DBUserW"); 
+    $pass = get_cfg_var("DBPwdW");                      
+    $bdd = get_cfg_var("DBName"); 
+  
+       
+    @mysql_connect($host,$user,$pass)                        l
+    or die("Impossible de se connecter au serveur");
+    @mysql_select_db("$bdd")                                   // sélection 
+    or die("Impossible de se connecter à la base de données");
+  
+    $requete = "SELECT * FROM --BDD--";         
+         
+        try                                                // récupération 
+        {
+            $result = mysql_query($requete);    
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : ' . $e->getMessage());
+        }?>
+         
+         
+         
+         
+<div id="ecran">
+    <table id="tab_equipe"BORDER="1" ALIGN="CENTER" CELLPADDING="10" CELLSPACING="1">
+    <caption>Modifier Pole</caption>
+        <thead><tr>
+            <th>Id</th>
+            <th>Nom</th>
+            </tr></thead>
+  
+        <?php
+        while($user = mysql_fetch_assoc($result))
+        {
+        ?>
+            <tbody><tr>
+                <td class="cellule" ondblclick="inlineMod('<?php echo $user['id']; ?>', this, 'nom', 'nombre')">
+                    <?php echo $user['id']; ?>
+                </td>
+  
+                <td class="cellule" ondblclick="inlineMod('<?php echo $user['id']; ?>', this, 'prenom', 'texte')">
+                    <?php echo $user['nom']; ?>
+                </td>
+                </tr></tbody>
+        <?php
+        }
+        ?>
+    </table>
+    </div>
+  
+   </body>
 </html>
