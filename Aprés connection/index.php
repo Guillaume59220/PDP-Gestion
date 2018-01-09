@@ -56,7 +56,7 @@
             <li class="TabbedPanelsTab"><img src="img/icone applications/courrier/mail.ico" alt="Clients" class="img-responsive center-block" style="width:50px;height:50px"><br>Email</li>
             </a>
 
-            <a href="http://localhost/PDP-Gestion/Aprés%20connection/deconnection.php"><li class="TabbedPanelsTab"><img src="img/icone applications/courrier/deconnection.png" alt="D�connexion" class="img-responsive center-block" style="width:50px;height:50px"><br>Deconnexion</li></a>
+            <a href="http://localhost/PDP-Gestion/Connection/index.php"><li class="TabbedPanelsTab"><img src="img/icone applications/courrier/deconnection.png" alt="D�connexion" class="img-responsive center-block" style="width:50px;height:50px"><br>Deconnexion</li></a>
           
           </ul>
 
