@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    detail
+
+    <div class="scan">
+
+        <div class="form">
+            <h3>  </h3>
+        </div>
+
+    </div>
+
 </body>
 </html>

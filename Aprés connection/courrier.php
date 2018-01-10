@@ -195,11 +195,13 @@
                                       require_once "scan_detail.php";
                                     ?>
                                   
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                            </div>
-                          </form>
+                              </form>
 
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -208,8 +210,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
-</div>
-</div>
+  </div>
 </body>
