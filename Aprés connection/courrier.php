@@ -53,19 +53,17 @@
             
         </head>
 
-
-
-
-
-<div class="php">
+        <body>
+          
+        <div class="php">
     <?php
         require_once "index.php";
     ?>
 </div>
 
-<h1>Récupération de votre courrier</h1>
+<h2>Récupération de votre courrier</h2>
 
-<h2>Comment voulez-vous récuperer votre courrier</h2>
+<h3>Comment voulez-vous récuperer votre courrier</h3>
 
 <div id="accordion" role="tablist">
         
@@ -115,29 +113,6 @@
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-header" role="tab" id="headingThree">
-            <h5 class="mb-0">
-              <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
-                    Scan du courrier
-              </a>
-            </h5>
-          </div>
-          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-            <div class="card-body">
-                    <div class="choix3">
-
-                            <h4>Vous préférez un scan de votre courrier.</h4>
-                            <p>De quel type le voulez-vous</p>
-                
-                            <a href="http://">Scan simple</a><br>
-                            <a href="http://">Scan détaillé</a>
-                        </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="card">
             <div class="card-header" role="tab" id="headingFour">
               <h5 class="mb-0">
@@ -158,11 +133,87 @@
                                 <br>
                                 <input id="date" type="date"><br/>
                 
-                        </div>
+                      </div>
               </div>
             </div>
           </div>
-        </div>  
+        </div>
+
+        <div class="card">
+          <div class="card-header" role="tab" id="headingThree">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                    Scan du courrier
+              </a>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                    <div class="choix3">
+                        
+                      <form class="container" id="form1" enctype="multipart/form-data" method="post" action="Upload.aspx">
+                          <div class="row setup-content" id="step-1">
+                              <div class="col-xs-12">
+                                  <div class="col-md-12 well text-center">
+                      
+                            <label for="fileToUpload">Upload du fichier scan</label><br />
+                            <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+                          </div>
+                          <div id="fileName"></div>
+                          <div id="fileSize"></div>
+                          <div id="fileType"></div>
+                          <div class="row">
+                            <input type="button" onclick="uploadFile()" value="Upload" />
+                          </div>
+                          <div id="progressNumber"></div>
+                        </form>
+
+                        <br>
+
+                      <p>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Scan Simple</a>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Scan détaillé</button>
+                              
+                          </p>
+                          <div class="row">
+                            <div class="col">
+                              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                <div class="card card-body">
+                                  
+                                <?php
+                                require_once "scan_simple.php";
+                                ?>
+
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                <div class="card card-body">
+                                  
+                                <?php
+                                require_once "scan_detail.php";
+                                ?>
+                                  
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </form>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
 </div>
 </div>
+
+
+        </body>
