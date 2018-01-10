@@ -31,26 +31,24 @@ $result = $query->fetch();
 #var_dump($result);
 
     ?>
+    <div class="container">
+      <div style="margin-top: 100px"></div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
 
-
-<div class="row">
-     <div class="col-xs-12 col-sm-8">
-
-      <form method="post" action="formulaireinsertion.php">
-        <div class="form-group row">
+          <form method="post" action="formulaireinsert.php">
+            <div class="form-group row">
               <label class="col-sm-3 col-form-label" for="nomclient">Societe</label>
-              <div class="col-sm-9">
-                  <select name="societe" class="form-control" required>
-                      <option value=""> <?php echo $result; ?> </option>
-
+              <div class="col-sm-6">
+                <select name="societe" class="form-control" required>
+                  <option value=""> <?php echo $result; ?> </option>
                 </select>
               </div>
-
             </div>
-
-      </form>
-    </div><!-- Col -->
-  </div> <!-- Row -->
+          </form>
+        </div><!-- Col -->
+      </div> <!-- Row -->
+    </div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js" integrity="sha256-BSsbXsDErniq/HpuhULFor8x1CpA2sPPwQLlEoEri+0=" crossorigin="anonymous"></script>
