@@ -180,9 +180,9 @@
                               <div class="collapse multi-collapse" id="multiCollapseExample1">
                                 <div class="card card-body">
                                   
-                                <?php
-                                require_once "scan_simple.php";
-                                ?>
+                                    <?php
+                                      require_once "scan_simple.php";
+                                    ?>
 
                                 </div>
                               </div>
@@ -191,29 +191,25 @@
                               <div class="collapse multi-collapse" id="multiCollapseExample2">
                                 <div class="card card-body">
                                   
-                                <?php
-                                require_once "scan_detail.php";
-                                ?>
+                                    <?php
+                                      require_once "scan_detail.php";
+                                    ?>
                                   
-                                              </div>
-                                          </div>
-                                      </div>
-                                    </form>
-
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
+                          </form>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
 </div>
 </div>
-
-
-        </body>
+</body>
