@@ -9,8 +9,8 @@
 <body>
 
     <div class="scan">
-
+        
     </div>
-    
+
 </body>
 </html>
