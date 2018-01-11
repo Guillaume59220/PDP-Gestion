@@ -36,7 +36,7 @@ $result = $query->fetch();
       <div class="row">
         <div class="col-xs-12 col-sm-8">
 
-          <form method="post" action="formulaireinsert.php">
+          <form method="get" action="formulaireinsert.php">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label" for="nomclient">Societe</label>
               <div class="col-sm-6">
