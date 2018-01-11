@@ -53,5 +53,6 @@ $query = $db->query('SELECT idclient,nomclient FROM clients');
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js" integrity="sha256-BSsbXsDErniq/HpuhULFor8x1CpA2sPPwQLlEoEri+0=" crossorigin="anonymous"></script>
+<script src="ajoutercourrier.js"></script>
 </body>
 </html>

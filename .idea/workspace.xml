@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="957fa899-2716-4e58-825b-ad4f397d12d8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/057c43a5-1a71-43cf-8063-0f38339cb7ab.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4971fe61-2183-47c0-9adb-1c863fed8fcb.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f961e36-5d30-47b4-8a28-1bd9f2fef8ac.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9de929d7-fe9f-445c-91e8-06ee2e65ca93.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a60b75b5-2228-461a-a60d-d010f22e883c.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.php" afterPath="$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.php" />
-      <change beforePath="$PROJECT_DIR$/Interne/Courrier/formulaireinsert.html" afterPath="$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php" />
+      <change beforePath="$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php" afterPath="$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,9 +32,11 @@
         <entry file="file://$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
-                <marker date="1515668256906" expanded="true" signature="613:642" ph="SELECT nomcl... clients" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1515682321653" expanded="true" signature="613:620" ph="SELECT nomcl... clients" />
+                <marker date="1515682321653" expanded="true" signature="613:651" ph="SELECT idcli... clients" />
               </folding>
             </state>
           </provider>
@@ -60,8 +55,8 @@
       <file leaf-file-name="formulaireinsert.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+            <state relative-caret-position="546">
+              <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -89,7 +84,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1515682326494" expanded="true" signature="14:186" ph="{...}" />
+                <marker date="1515682326494" expanded="true" signature="98:185" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -225,16 +223,15 @@
       <workItem from="1515493046842" duration="8270000" />
       <workItem from="1515571082682" duration="6375000" />
       <workItem from="1515657654446" duration="19000" />
-      <workItem from="1515667496540" duration="1003000" />
+      <workItem from="1515667496540" duration="1595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23510000" />
+    <option name="totallyTimeSpent" value="24102000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22126746" sideWeight="0.49589685" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -525,7 +522,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1515682326494" expanded="true" signature="14:186" ph="{...}" />
+            <marker date="1515682326494" expanded="true" signature="98:185" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -554,8 +554,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        <state relative-caret-position="546">
+          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -563,9 +563,11 @@
     <entry file="file://$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <marker date="1515668256906" expanded="true" signature="613:642" ph="SELECT nomcl... clients" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1515682321653" expanded="true" signature="613:620" ph="SELECT nomcl... clients" />
+            <marker date="1515682321653" expanded="true" signature="613:651" ph="SELECT idcli... clients" />
           </folding>
         </state>
       </provider>
