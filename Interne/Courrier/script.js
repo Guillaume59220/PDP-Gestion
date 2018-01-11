@@ -7,8 +7,4 @@
         // -- Bloquer la redirection du formulaire
         e.preventDefault();
 
-         if($('#newsletter').find('.has-error').length == 0) {
-
-            }
-        });
     });
