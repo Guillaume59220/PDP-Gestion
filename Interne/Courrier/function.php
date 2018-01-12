@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Kasia
- * Date: 10.01.2018
- * Time: 09:06
- */
 
 // Gestion de la base de donnée
 require_once('database.php');
@@ -78,3 +72,9 @@ function genereTable($query) {
 
     return $table;
 }
+
+
+
+
+
+
