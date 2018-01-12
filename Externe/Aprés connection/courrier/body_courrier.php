@@ -83,11 +83,10 @@
             <div class="card-body">
                     <div class="choix1" id="test1">
                     <ul class="inbox-nav inbox-divider">
-                    <li class="active">
-                        
-
-                    </li>
                     <li>
+                        
+                    </li>
+                    <li onclick="active" >
                         <a href="#"><i class="fa fa-envelope-o"></i> Mail reçu</a>
                     </li>
                     <li>
@@ -100,7 +99,7 @@
                         <a href="#"><i class=" fa fa-trash-o"></i> Corbeille</a>
                     </li>
                 </ul>            
-                    </div>
+                </div>
             </div>
           </div>
         </div>

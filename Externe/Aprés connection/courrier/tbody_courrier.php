@@ -6,7 +6,7 @@
                                   </td>
                                   <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
                                   <td class="view-message  dont-show">MAIL 1</td>
-                                  <td class="view-message ">SUJET DU MAIL A RENDRE DINAMIQUE AVEC LA BDD</td>
+                                  <td class="view-message ">SUJET DU MAIL A RENDRE DYNAMIQUE AVEC LA BDD</td>
                                   <td class="view-message  inbox-small-cells"><!--Favicon trombone pour piece jointe--><i class="fa fa-paperclip"></i></td>
                                   <td class="view-message  text-right">ICI DATE ET HEURE A RENDRE DYNAMIQUE AVEC TIMESTAMP</td>
                               </tr>
@@ -16,7 +16,7 @@
                                   </td>
                                   <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
                                   <td class="view-message dont-show">MAIL 2</td>
-                                  <td class="view-message">SUJET DU MAIL A RENDRE DINAMIQUE AVEC LA BDD</td>
+                                  <td class="view-message">SUJET DU MAIL A RENDRE DYNAMIQUE AVEC LA BDD</td>
                                   <td class="view-message inbox-small-cells"></td>
                                   <td class="view-message text-right">ICI DATE ET HEURE A RENDRE DYNAMIQUE AVEC TIMESTAMP</td>
                               </tr>
@@ -26,7 +26,7 @@
                                   </td>
                                   <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
                                   <td class="view-message dont-show">MAIL 3</td>
-                                  <td class="view-message">SUJET DU MAIL A RENDRE DINAMIQUE AVEC LA BDD</td>
+                                  <td class="view-message">SUJET DU MAIL A RENDRE DYNAMIQUE AVEC LA BDD</td>
                                   <td class="view-message inbox-small-cells"></td>
                                   <td class="view-message text-right">ICI DATE ET HEURE A RENDRE DYNAMIQUE AVEC TIMESTAMP</td>
                               </tr>
