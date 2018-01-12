@@ -15,20 +15,20 @@
                       </div>
                       <div class="inbox-body">
                           <a href="#myModal" data-toggle="modal"  title="Compose">
-                              
+                             <button class="btn btn-standart">Nouveau Message</button> 
                           </a>
                           <!-- Modal -->
                           <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade" style="display: none;">
                               <div class="modal-dialog">
                                   <div class="modal-content">
                                       <div class="modal-header">
-                                          <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                          <h4 class="modal-title">Compose</h4>
+                                          <button aria-hidden="true" data-dismiss="modal" class="close" type="button">Nouveau Message</button>
+                                          <h4 class="modal-title">X</h4>
                                       </div>
                                       <div class="modal-body">
                                           <form role="form" class="form-horizontal">
                                               <div class="form-group">
-                                                  <label class="col-lg-2 control-label">To</label>
+                                                  <label class="col-lg-2 control-label">à</label>
                                                   <div class="col-lg-10">
                                                       <input type="text" placeholder="" id="inputEmail1" class="form-control">
                                                   </div>
@@ -40,7 +40,7 @@
                                                   </div>
                                               </div>
                                               <div class="form-group">
-                                                  <label class="col-lg-2 control-label">Subject</label>
+                                                  <label class="col-lg-2 control-label">Sujet</label>
                                                   <div class="col-lg-10">
                                                       <input type="text" placeholder="" id="inputPassword1" class="form-control">
                                                   </div>
@@ -56,10 +56,10 @@
                                                   <div class="col-lg-offset-2 col-lg-10">
                                                       <span class="btn green fileinput-button">
                                                         <i class="fa fa-plus fa fa-white"></i>
-                                                        <span>Attachment</span>
+                                                        <span>Piece Jointe</span>
                                                         <input type="file" name="files[]" multiple="">
                                                       </span>
-                                                      <button class="btn btn-send" type="submit">Send</button>
+                                                      <button class="btn btn-send" type="submit">Envoyer</button>
                                                   </div>
                                               </div>
                                           </form>
@@ -75,7 +75,7 @@
           <div class="card-header" role="tab" id="headingOne">
             <h5 class="mb-0">
               <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne" class="fa fa-at">
-                E-mail 
+                Nos échanges 
               </a><span class="label label-info pull-right">3<!--Nombre de mail à rendre dynamique--></span>
             </h5>
           </div>
@@ -87,7 +87,7 @@
                         
                     </li>
                     <li onclick="active" >
-                        <a href="#"><i class="fa fa-envelope-o"></i> Mail reçu</a>
+                        <a href="#"><i class="fa fa-envelope-o"></i> Message reçu</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bookmark-o"></i> Important</a>
@@ -127,8 +127,6 @@
                             </div>
 
 </div>
-                      
-                      
 
                   </aside>
                   <aside class="lg-side">
@@ -188,6 +186,9 @@
                          </div>
                             <?php
                                 require_once "courrier/tbody_courrier.php";
+
+                                require_once "localhost/PDP-Gestion/Externe/Aprés%20connection/phpfreechat-2.1.0/examples/default.html";
+                            
                             ?>
                       </div>
                   </aside>

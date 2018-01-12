@@ -10,6 +10,3 @@
 
     require_once "courrier/body_courrier.php";
 ?>
-    <div class="tbody">
-        
-    </div>
