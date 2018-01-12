@@ -75,8 +75,8 @@
           <div class="card-header" role="tab" id="headingOne">
             <h5 class="mb-0">
               <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne" class="fa fa-at">
-                E-mail <span class="label label-info pull-right">3<!--Nombre de mail à rendre dynamique--></span>
-              </a>
+                E-mail 
+              </a><span class="label label-info pull-right">3<!--Nombre de mail à rendre dynamique--></span>
             </h5>
           </div>
           <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
@@ -94,7 +94,7 @@
                         <a href="#"><i class="fa fa-bookmark-o"></i> Important</a>
                     </li>
                     <li>
-                        <a href="#"><i class=" fa fa-external-link"></i> Brouillon <span class="label label-info pull-right"><!--Nombre de brouillons à rendre dynamique--></span></a>
+                        <a href="#"><i class=" fa fa-external-link"></i> Brouillon <span class="label label-info pull-right">50<!--Nombre de brouillons à rendre dynamique--></span></a>
                     </li>
                     <li>
                         <a href="#"><i class=" fa fa-trash-o"></i> Corbeille</a>
