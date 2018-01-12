@@ -1,39 +1,35 @@
-<!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>phpFreeChat - default theme and default parameters</title>
-
-  <meta name="viewport" content="width=device-width" />
-
-
-  <script src="../client/lib/jquery-1.8.2.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../client/themes/default/jquery.phpfreechat.min.css" />
-  <script src="../client/jquery.phpfreechat.min.js" type="text/javascript"></script>
-
-
-  
-</head>
-<body>
-  <header>
-
-  </header>
-  <div role="main">
-
-    <h1 style="font-size:1.5em">phpFreeChat - default theme and default parameters</h1>
-    
-    <div class="pfc-hook"><a href="http://www.phpfreechat.net">Creating chat rooms everywhere - phpFreeChat</a></div>
-    <script type="text/javascript">
-      $('.pfc-hook').phpfreechat();
-    </script>
-
-  </div>
-  <footer>
-
-  </footer>
-</body>
-</html>
+<table class="table table-inbox table-hover">
+                            <tbody>
+                              <tr class="unread">
+                                  <td class="inbox-small-cells">
+                                      <input type="checkbox" class="mail-checkbox">
+                                  </td>
+                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                  <td class="view-message  dont-show">MAIL 1</td>
+                                  <td class="view-message ">SUJET DU MAIL A RENDRE DINAMIQUE AVEC LA BDD</td>
+                                  <td class="view-message  inbox-small-cells"><!--Favicon trombone pour piece jointe--><i class="fa fa-paperclip"></i></td>
+                                  <td class="view-message  text-right">ICI DATE ET HEURE A RENDRE DYNAMIQUE AVEC TIMESTAMP</td>
+                              </tr>
+                              <tr class="unread">
+                                  <td class="inbox-small-cells">
+                                      <input type="checkbox" class="mail-checkbox">
+                                  </td>
+                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                  <td class="view-message dont-show">MAIL 2</td>
+                                  <td class="view-message">SUJET DU MAIL A RENDRE DINAMIQUE AVEC LA BDD</td>
+                                  <td class="view-message inbox-small-cells"></td>
+                                  <td class="view-message text-right">ICI DATE ET HEURE A RENDRE DYNAMIQUE AVEC TIMESTAMP</td>
+                              </tr>
+                              <tr class="">
+                                  <td class="inbox-small-cells">
+                                      <input type="checkbox" class="mail-checkbox">
+                                  </td>
+                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                  <td class="view-message dont-show">MAIL 3</td>
+                                  <td class="view-message">SUJET DU MAIL A RENDRE DINAMIQUE AVEC LA BDD</td>
+                                  <td class="view-message inbox-small-cells"></td>
+                                  <td class="view-message text-right">ICI DATE ET HEURE A RENDRE DYNAMIQUE AVEC TIMESTAMP</td>
+                              </tr>
+                              
+                          </tbody>
+                          </table>

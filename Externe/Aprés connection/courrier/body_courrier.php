@@ -186,10 +186,8 @@
                          </div>
                             <?php
                                 require_once "courrier/tbody_courrier.php";
-
-                                require_once "localhost/PDP-Gestion/Externe/Aprés%20connection/phpfreechat-2.1.0/examples/default.html";
-                            
                             ?>
+                        
                       </div>
                   </aside>
               </div>
