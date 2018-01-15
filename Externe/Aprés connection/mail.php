@@ -210,7 +210,68 @@
                          </div>
                           <table class="table table-inbox table-hover">
                             <tbody>
-                              <tr class="unread">
+
+
+                            <!--CHATBOX-->
+
+
+                            <div class="chat_window">
+                                <div class="top_menu">
+                                    <div class="buttons">
+                                        <div class="button close"></div>
+                                        <div class="button minimize"></div>
+                                        <div class="button maximize"></div>
+                                    </div>
+                                    <div class="title">Chat</div>
+                                </div>
+                                <ul class="messages"></ul>
+                                <div class="bottom_wrapper clearfix">
+                                    <div class="message_input_wrapper">
+                                        <input class="message_input" placeholder="Tapez votre message ici ..." />
+                                    </div>
+                                    <div class="send_message">
+                                        <div class="icon">
+                                    </div>
+                                    <div class="text">
+                                        Send
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message_template">
+                            <li class="message">
+                                <div class="avatar">
+                                
+                                </div>
+                                <div class="text_wrapper">
+                                    <div class="text">
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              <!--<tr class="unread">
                                   <td class="inbox-small-cells">
                                       <input type="checkbox" class="mail-checkbox">
                                   </td>
@@ -239,7 +300,7 @@
                                   <td class="view-message">Last Chance: Upgrade to Pro for </td>
                                   <td class="view-message inbox-small-cells"></td>
                                   <td class="view-message text-right">March 15</td>
-                              </tr>
+                              </tr>-->
                           </tbody>
                           </table>
                       </div>
