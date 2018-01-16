@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Ajouter un courier</title>
-	<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-</head>
-<body>
-
-    <?php
+<?php
     require_once 'function.php';
-
-
-    $_GET['idclient']=$_POST['idclient'];
-
+    #require_once 'menu.php';
 
 
     $errors = [];
@@ -23,14 +10,12 @@
     if (!$db = connexion($errors))
         die("Erreur(s) lors de la connexion : " . implode($errors));
 
-    if (formIsSubmit('courrier')) {
+    if (formIsSubmit('insertCourrier')) {
 
-        $nature = $_POST['nature'];
-        $typecourrier = $_POST['typecourrier'];
-        $date = $_POST['dateentre'];
+        $typecourrier = $_POST['nature_courrier'];
+        $date = $_POST['date_entre'];
         $expediteur = $_POST['expediteur'];
         $addnotation = $_POST['addnotation'];
-        $numerocourrier=$_POST['numerocourrier'];
 
 
         // Fichier scan
@@ -45,16 +30,16 @@
             if (is_uploaded_file($tmp)) //permet de vérifier si le fichier a été uplodé via http
             {
                 //vérification du type de l'img, son poids et sa taille
-                if ($type == "image/gif" && $size <= 20500 && $width <= 100 && $height <= 100) {
+                if ($type == "image" && $size <= 20500 && $width <= 100 && $height <= 100) {
                     // type mime gif, poids < à 20500 octets soit environ 20Ko, largeur = hauteur = 100px
                     //Pour supprimer les espaces dans les noms de fichiers car celà entraîne une erreur lorsque vous voulez l'afficher
-                    $fichier = preg_replace("` `i", "", $fichier);//ligne facultative :)
+                    $fichier = preg_replace("` `i", "", $scan);//ligne facultative :)
                     //On vérifie s'il existe une image qui a le même nom dans le répertoire
-                    if (file_exists('./images_up/' . $fichier)) {
+                    if (file_exists('./images_up/' . $scan)) {
                         //Le fichier existe on rajoute dans son nom le timestamp du moment pour le différencier de la première (comme cela on est sûr de ne pas avoir 2 images avec le même nom :) )
-                        $nom_final = preg_replace("`.gif`is", date("U") . ".gif", $fichier);
+                        $nom_final = preg_replace("`.gif`is", date("U") . ".gif", $scan);
                     } else {
-                        $nom_final = $fichier; //l'image n'existe pas on garde le même nom
+                        $nom_final = $scan; //l'image n'existe pas on garde le même nom
                     }
                     //on déplace l'image dans le répertoire final
                     move_uploaded_file($tmp, './images_up/' . $nom_final);
@@ -92,21 +77,21 @@
 
     $courrier_options = "";
 
-$str_query = "SELECT idtypecourrier, libellecourrier FROM typecourrier";
+$str_query = "SELECT id_type_courrier, libelle_courrier FROM type_courrier";
 
 if (isset($idtypecourrier))
-  $str_query .= " WHERE id = :idtypecourrier";
+  $str_query .= " WHERE id = :id_type_courrier";
 
 $query = $db->prepare($str_query);
 
 if (isset($idtypecourrier))
-  $query->bindValue(":idtypecourrier", $idtypecourrier, PDO::PARAM_INT);
+  $query->bindValue(":id_type_courrier", $id_type_courrier, PDO::PARAM_INT);
 
 $query->execute();
 $types = $query->fetchAll();
 
 foreach($types as $type) {
-  $courrier_options .= '<option value="' . $type['idtypecourrier'] . '" ' . (isset($idtypecourrier) && $type['idtypecourrier'] == $idtypecourrier ? 'selected' : '') . '>' . $type['libellecourrier'] . '</option>';
+  $courrier_options .= '<option value="' . $type['id_type_courrier'] . '" ' . (isset($id_type_courrier) && $type['id_type_courrier'] == $idtypecourrier ? 'selected' : '') . '>' . $type['libellecourrier'] . '</option>';
 }
 
      ?>
@@ -115,8 +100,8 @@ foreach($types as $type) {
     <div style="margin-top:100px"></div>
 
 <div class="container">
-	<form enctype="multipart/form-data" method="post" id="courrier" action="listecourrier.php">
-        <input type="hidden" name="courrier" value="1"/>
+	<form enctype="multipart/form-data" method="post" id="insertCourrier" action="listecourrier.php">
+        <input type="hidden" name="insertCourrier" value="1"/>
 		<div class="form-group row">
             <label class="col-sm-3 col-form-label" for="nature">Categorie</label>
             <div class="col-sm-6">
@@ -130,7 +115,7 @@ foreach($types as $type) {
         <div class="form-group row">
             <label class="col-sm-3 col-form-label" for="typecourrier">Type de courrier</label>
             <div class="col-sm-6">
-                <select class="form-control" value="<?php echo isset($_POST['idtypecourrier']) ? $_POST['idtypecourrier'] : '' ?>" name="typecourrier" id="typecourrier">
+                <select class="form-control" value="<?php echo isset($_POST['idtypecourrier']) ? $_POST['id_type_courrier'] : '' ?>" name="typecourrier" id="typecourrier">
                     <!--<option value="2">-Lettre-</option>
                     <option value="3">-Lettre recommandée-</option>
                     <option value="1">-Colis-</option>-->
@@ -140,9 +125,13 @@ foreach($types as $type) {
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label" for="dateentre">Date</label>
+            <label class="col-sm-3 col-form-label" >Date</label>
             <div class="col-sm-6">
-                <input type="Date" class="datepick" value="<?php echo isset($_POST['dateentre']) ? $_POST['dateentre'] : '' ?>" name="dateentre" id="dateentre">
+                <?php if($_POST['nature']==1): ?>
+                <input type="Date" class="datepick" value="<?php echo isset($_POST['date_entre']) ? $_POST['date_entre'] : '' ?>" name="date" id="date">
+                <?php else: ?>
+                <input type="Date" class="datepick" value="<?php echo isset($_POST['date_sortie']) ? $_POST['date_sortie'] : '' ?>" name="date" id="date">
+                <?php endif;?>
             </div>
         </div>
         <div class="form-group row">

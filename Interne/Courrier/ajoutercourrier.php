@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Courrier</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
 
-<header>
-    <div> Logo PDP</div>
-</header>
 
 <?php
-    require_once 'database.php';
+    require_once 'header.php';
+    require_once 'menu.php';
     require_once 'function.php';
 
 
@@ -24,7 +13,7 @@ $form_errors = [];
 if (!$db = connexion($errors))
     die("Erreur(s) lors de la connexion : " . implode($errors));
 
-$query = $db->query('SELECT idclient,nomclient FROM clients');
+$query = $db->query('SELECT id_client,nom_client FROM clients');
 
 #echo "result : ";
 #var_dump($donnees);
@@ -42,7 +31,7 @@ $query = $db->query('SELECT idclient,nomclient FROM clients');
                 <select name="societe" class="form-control" required id="societe" onchange="this.form.submit()">
                    <?php
                   while($donnees = $query->fetch()){
-                   echo '<option value="'.$donnees['idclient'] .'" >'.$donnees['nomclient'].'</option>';}?>
+                   echo '<option value="'.$donnees['id_client'] .'" >'.$donnees['nom_client'].'</option>';}?>
                 </select>
               </div>
             </div>
