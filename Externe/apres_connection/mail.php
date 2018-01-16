@@ -110,7 +110,7 @@
                                                           <div class="panel panel-default">
                                                             <div class="panel-heading">
                                                               <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
-                                                                 <div class="right-arrow pull-right">+</div>
+                                                                 <div class="right-arrow pull-right"></div>
                                                                 <a href="#">Chat d'entreprise</a>
                                                               </h4>
                                                             </div>
@@ -121,7 +121,7 @@
                                                           <div class="panel panel-default">
                                                             <div class="panel-heading">
                                                               <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
-                                                                  <div class="right-arrow pull-right">+</div>
+                                                                  <div class="right-arrow pull-right"></div>
                                                                 <a href="#">Courrier</a>
                                                               </h4>
                                                             </div>
