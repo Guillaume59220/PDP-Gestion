@@ -45,11 +45,11 @@
                                                  <aside class="sm-side">
                                                      <div class="user-head">
                                                          <a class="inbox-avatar" href="javascript:;">
-                                                             <img  width="64" hieght="60" src="http://bootsnipp.com/img/avatars/ebeb306fd7ec11ab68cbcaa34282158bd80361a7.jpg">
+                                                             <img  width="64" hieght="60" src="Photo du profil client" alt="Photo du profil client">
                                                          </a>
                                                          <div class="user-name">
-                                                             <h5><a href="#">Alireza Zare</a></h5>
-                                                             <span><a href="#">Info.Ali.Pci@Gmail.com</a></span>
+                                                             <h5><a href="#">Nom/Prenom Clients</a></h5>
+                                                             <span><a href="#">adresse@email.client</a></span>
                                                          </div>
                                                          <a class="mail-dropdown pull-right" href="javascript:;">
                                                              <i class="fa fa-chevron-down"></i>
@@ -59,11 +59,7 @@
                                                          <!-- Modal -->
                                                          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade" style="display: none;">
                                                              <div class="modal-dialog">
-                                                                 <div class="modal-content">
-                                                                     <div class="modal-header">
-                                                                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                                                         <h4 class="modal-title">Compose</h4>
-                                                                     </div>
+                                                                 <div class="modal-content">                                                                    
                                                                      <div class="modal-body">
                                                                          <form role="form" class="form-horizontal">
                                                                              <div class="form-group">
@@ -107,51 +103,38 @@
                                                              </div><!-- /.modal-dialog -->
                                                          </div><!-- /.modal -->
                                                      </div>
-                                                     
+
                                                      <div class="container">
 
-                                                            <div class="panel-group" id="accordion">
-                                                              <div class="panel panel-default">
-                                                                <div class="panel-heading">
-                                                                  <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
-                                                                     <div class="right-arrow pull-right">+</div>
-                                                                    <a href="#">Converser avec nous</a>
-                                                                  </h4>
-                                                                </div>
+                                                        <div class="panel-group" id="accordion">
+                                                          <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                              <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
+                                                                 <div class="right-arrow pull-right">+</div>
+                                                                <a href="#">Chat d'entreprise</a>
+                                                              </h4>
+                                                            </div>
+                                                            <div id="collapse1" class="panel-collapse collapse">
+                                                              <div class="panel-body"></div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                              <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
+                                                                  <div class="right-arrow pull-right">+</div>
+                                                                <a href="#">Courrier</a>
+                                                              </h4>
+                                                            </div>
+                                                            <div id="collapse2" class="panel-collapse collapse">
+                                                              <div class="panel-body">
                                                                 <ul class="inbox-nav inbox-divider">
-                                                                        <li class="active">
-                                                                            <a href="#"><i class="fa fa-inbox"></i> Boite de reception <span class="label label-danger pull-right"><!--"Nombre de mail dynamique BDD"--></span></a>
-                                              
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#"><i class="fa fa-envelope-o"></i> Envoyer un mail</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#"><i class="fa fa-bookmark-o"></i> Important</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#"><i class=" fa fa-external-link"></i> Brouillon <span class="label label-info pull-right">30</span></a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="#"><i class=" fa fa-trash-o"></i> Corbeille</a>
-                                                                        </li>
-                                                                    </ul>
+                                                                    <li>
+                                                                        <a href="#"><i class="fa fa-envelope-o"></i> Courrier entrant</a>
+                                                                        <a href="#"><i class="fa fa-envelope-o"></i> Courrier sortant</a>
+                                                                    </li>
+                                                              </ul>
                                                               </div>
-                                                              <div class="panel panel-default">
-                                                                <div class="panel-heading">
-                                                                  <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
-                                                                      <div class="right-arrow pull-right">+</div>
-                                                                    <a href="#">Courrier</a>
-                                                                  </h4>
-                                                                </div>
-                                                                <ul class="inbox-nav inbox-divider">
-                                                                        <li>
-                                                                            <a href="#"><i class="fa fa-envelope-o"></i> Courrier/Colis</a>
-                                                                        </li>
-                                                                  </ul>
-                                                              </div>
-                                                              
-                                                            </div> 
+                                                            </div>
                                                           </div>
                                                  </aside>
                 </div>

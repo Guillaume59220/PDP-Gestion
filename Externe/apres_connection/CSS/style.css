@@ -43,7 +43,7 @@ body{
     border-spacing: 0;
     display: table;
     table-layout: fixed;
-    width: 100%;
+    width: 210%;
 }
 .mail-box aside {
     display: table-cell;
@@ -418,16 +418,15 @@ ul {
   
   .chat_window {
     position: absolute;
-    width: 100%;
+    width: 420%;
     height: 500px;
     border-radius: 10px;
     background-color: #fff;
-    left: 250%;
-    margin-top: -43%;
-    transform: translateX(-50%) translateY(-50%);
+    left: 0%;
+    top: 0%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     background-color: #f8f8f8;
-    overflow: hidden;
+    
   }
   
   .top_menu {
@@ -604,6 +603,3 @@ ul {
   
 
 
-  .col-md-6{
-      float: left;
-  }
