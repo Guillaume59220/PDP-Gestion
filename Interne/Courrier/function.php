@@ -14,6 +14,7 @@ function getVal($value, $default = '') {
     return isset($value) ? $value : $default;
 }
 
+
 function showMessage($message, $type = 'alert-success') {
     $html = "
   <div class=\"alert $type alert-dismissible fade show\" role=\"alert\">
@@ -35,7 +36,7 @@ function genereTable($query) {
         if ($table == "") {
             $table = "
   <table class=\"table table-hover table-responsive-sm\">
-    <caption>Liste de tous les pokemons existants</caption>
+    <caption>Liste des courriers</caption>
     <thead>
       <tr>
         <th scope=\"col\">
@@ -52,7 +53,7 @@ function genereTable($query) {
         $table .= "
       <tr>
         <td scope=\"row\">
-          <a onclick=\"formSubmit('deletePokemon', 'id_delete', '" . $result['id'] . "');\"><i class=\"fa fa-trash-o fa-fw\" aria-hidden=\"true\"></i></a>
+          <a onclick=\"formSubmit('deleteCourier', 'id_delete', '" . $result['id'] . "');\"><i class=\"fa fa-trash-o fa-fw\" aria-hidden=\"true\"></i></a>
         </td>
         <td>
         " . implode('</td><td>', $result) . "
