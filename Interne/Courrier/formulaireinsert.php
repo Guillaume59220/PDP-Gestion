@@ -12,7 +12,6 @@
 
     if (formIsSubmit('insertCourrier')) {
 
-        $typecourrier = $_POST['nature_courrier'];
         $date = $_POST['date_entre'];
         $expediteur = $_POST['expediteur'];
         $addnotation = $_POST['addnotation'];
@@ -55,10 +54,9 @@
 }
  if (count($form_errors) == 0 && isset($db)) {
     $query = $db->prepare("
-      INSERT INTO courrier(nature,  expediteur, addnotation)
-        VALUES           (:nature, :expediteur, :addnotation)
+      INSERT INTO courrier( expediteur, addnotation)
+        VALUES           ( :expediteur, :addnotation)
     ");
-    $query->bindParam(':nature', $nature, PDO::PARAM_STR);
     $query->bindParam(':expediteur', $expediteur, PDO::PARAM_STR);
     $query->bindParam(':addnotation', $addnotation, PDO::PARAM_STR);
 
@@ -103,19 +101,12 @@ foreach($types as $type) {
 	<form enctype="multipart/form-data" method="post" id="insertCourrier" action="listecourrier.php">
         <input type="hidden" name="insertCourrier" value="1"/>
 		<div class="form-group row">
-            <label class="col-sm-3 col-form-label" for="nature">Categorie</label>
-            <div class="col-sm-6">
-                <select class="form-control" value="<?php echo isset($_POST['nature']) ? $_POST['nature'] : '' ?>" name="nature" id="nature">
-                  <option value="Entrent">-Courrier Arrive-</option>
-                   <option value="Sortent">-Courrier Depart-</option>
-                </select>
-                
-            </div>
+            <label class="col-3 col-form-label" for="nature">Categorie</label>
         </div>
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label" for="typecourrier">Type de courrier</label>
-            <div class="col-sm-6">
-                <select class="form-control" value="<?php echo isset($_POST['idtypecourrier']) ? $_POST['id_type_courrier'] : '' ?>" name="typecourrier" id="typecourrier">
+            <label class="col-3 col-form-label" for="type_courrier">Type de courrier</label>
+            <div class="col-6">
+                <select class="form-control" value="<?php echo isset($_POST['id_type_courrier']) ? $_POST['id_type_courrier'] : '' ?>" name="type_courrier" id="type_courrier">
                     <!--<option value="2">-Lettre-</option>
                     <option value="3">-Lettre recommandée-</option>
                     <option value="1">-Colis-</option>-->
@@ -125,32 +116,29 @@ foreach($types as $type) {
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label" >Date</label>
-            <div class="col-sm-6">
-                <?php if($_POST['nature']==1): ?>
-                <input type="Date" class="datepick" value="<?php echo isset($_POST['date_entre']) ? $_POST['date_entre'] : '' ?>" name="date" id="date">
-                <?php else: ?>
-                <input type="Date" class="datepick" value="<?php echo isset($_POST['date_sortie']) ? $_POST['date_sortie'] : '' ?>" name="date" id="date">
-                <?php endif;?>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Expediteur</label>
-            <div class="col-sm-9">
+            <label class="col-3 col-form-label">Expediteur</label>
+            <div class="col-9">
                 <input type="text" id="expediteur" name="expediteur" value="<?php echo isset($_POST['expediteur']) ? $_POST['expediteur'] : '' ?>">
-                
+
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label" for="addnotation">Information complémentaire</label>
-            <div class="col-sm-9">
+            <label class="col-3 col-form-label" for="date_entre">Date</label>
+            <div class="col-6">
+                <input type="Date" class="datepick" value="<?php echo isset($_POST['date_entre']) ? $_POST['date_entre'] : '' ?>" name="date_entre" id="date_entre">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-3 col-form-label" for="addnotation">Information complémentaire</label>
+            <div class="col-9">
                 <textarea name="textarea"  rows="5" cols="30" id="addnotation" name="addnotation" value="<?php echo isset($_POST['addnotation']) ? $_POST['addnotation'] : '' ?>" ></textarea>
                 
             </div>
         </div>
         <div class="form-group row">
-              <label class="col-sm-3 col-form-label" for="scan">Scan</label>
-              <div class="col-sm-9">
+              <label class="col-3 col-form-label" for="scan">Scan</label>
+              <div class="col-9">
               <input type="file" id="scan" name="scan" accept="image/*"/>
 
             </div>
