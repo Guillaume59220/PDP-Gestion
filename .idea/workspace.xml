@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="957fa899-2716-4e58-825b-ad4f397d12d8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e2c8a519-481d-4245-9de5-cc8d0080099b.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.js" afterPath="$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.js" />
-      <change beforePath="$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.php" afterPath="$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.php" />
+      <change beforePath="$PROJECT_DIR$/Interne/Courrier/connexion.php" afterPath="$PROJECT_DIR$/Interne/Courrier/connexion.php" />
       <change beforePath="$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php" afterPath="$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php" />
-      <change beforePath="$PROJECT_DIR$/Interne/Courrier/function.php" afterPath="$PROJECT_DIR$/Interne/Courrier/function.php" />
+      <change beforePath="$PROJECT_DIR$/Interne/Courrier/header.php" afterPath="$PROJECT_DIR$/Interne/Courrier/header.php" />
+      <change beforePath="$PROJECT_DIR$/Interne/domiciliation.sql" afterPath="$PROJECT_DIR$/Interne/domiciliation.sql" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,37 +40,23 @@
       <file leaf-file-name="ajoutercourrier.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="189">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <marker date="1516099822677" expanded="true" signature="256:263" ph="SELECT nomcl... clients" />
                 <marker date="1516099822677" expanded="true" signature="256:296" ph="SELECT idcli... clients" />
-                <marker date="1516099822677" expanded="true" signature="375:939" ph="..." />
-                <marker date="1516099822677" expanded="true" signature="443:939" ph="..." />
-                <marker date="1516099822677" expanded="true" signature="484:939" ph="..." />
-                <marker date="1516099822677" expanded="true" signature="560:939" ph="..." />
-                <marker date="1516099822677" expanded="true" signature="601:939" ph="..." />
-                <marker date="1516099822677" expanded="true" signature="723:939" ph="..." />
-                <marker date="1516099822677" expanded="true" signature="836:939" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connexion.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="connexion.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interne/Courrier/connexion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2121">
-              <caret line="101" column="67" lean-forward="false" selection-start-line="101" selection-start-column="67" selection-end-line="101" selection-end-column="67" />
+            <state relative-caret-position="750">
+              <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
               <folding>
-                <marker date="1516098299315" expanded="true" signature="1555:1619" ph="SELECT id, l... utilisateur" />
-                <marker date="1516098299315" expanded="true" signature="3519:3900" ph="..." />
-                <marker date="1516098299315" expanded="true" signature="3624:3900" ph="..." />
-                <marker date="1516098299315" expanded="true" signature="3657:3900" ph="..." />
-                <marker date="1516098299315" expanded="true" signature="4476:4644" ph="..." />
-                <marker date="1516098299315" expanded="true" signature="4504:4621" ph="..." />
-                <marker date="1516098299315" expanded="true" signature="4871:5736" ph="..." />
-                <marker date="1516098299315" expanded="true" signature="4904:5721" ph="..." />
+                <marker date="1516176096174" expanded="true" signature="1558:1610" ph="SELECT id, l... utilisateur" />
               </folding>
             </state>
           </provider>
@@ -80,8 +65,8 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interne/Courrier/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interne/Courrier/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -133,11 +118,11 @@
       <file leaf-file-name="formulaireinsert.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1516108618611" expanded="true" signature="2751:2867" ph="INSERT INTO courrier... " />
-                <marker date="1516108618611" expanded="true" signature="3397:3457" ph="SELECT idtyp... typecourrier" />
+                <marker date="1516114950352" expanded="true" signature="2700:2800" ph="INSERT INTO courrier... " />
+                <marker date="1516114950352" expanded="true" signature="3271:3331" ph="SELECT idtyp... typecourrier" />
               </folding>
             </state>
           </provider>
@@ -184,12 +169,13 @@
         <option value="$PROJECT_DIR$/Interne/CourrierPOO/Core/Controller/AppController.php" />
         <option value="$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.js" />
         <option value="$PROJECT_DIR$/Interne/Courrier/function.php" />
-        <option value="$PROJECT_DIR$/Interne/Courrier/connexion.php" />
         <option value="$PROJECT_DIR$/Interne/Courrier/header.inc.php" />
         <option value="$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.php" />
-        <option value="$PROJECT_DIR$/Interne/Courrier/header.php" />
         <option value="$PROJECT_DIR$/Interne/Courrier/menu.php" />
+        <option value="$PROJECT_DIR$/Interne/domiciliation.sql" />
+        <option value="$PROJECT_DIR$/Interne/Courrier/header.php" />
         <option value="$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php" />
+        <option value="$PROJECT_DIR$/Interne/Courrier/connexion.php" />
       </list>
     </option>
   </component>
@@ -224,7 +210,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,11 +233,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
@@ -300,22 +286,32 @@
       <workItem from="1515667496540" duration="1595000" />
       <workItem from="1515759108887" duration="3141000" />
       <workItem from="1516003147138" duration="10318000" />
-      <workItem from="1516089442008" duration="9327000" />
+      <workItem from="1516089442008" duration="13891000" />
+      <workItem from="1516175768786" duration="764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46888000" />
+    <option name="totallyTimeSpent" value="52216000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13104188" sideWeight="0.49589685" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13265306" sideWeight="0.49589685" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14285715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -339,18 +335,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php</url>
-          <line>130</line>
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Aprés connection/JS/script.js" />
     <entry file="file://$PROJECT_DIR$/Menu/index.php" />
     <entry file="file://$PROJECT_DIR$/Connection/CSS/style.css" />
     <entry file="file://$PROJECT_DIR$/Connection/index.php" />
@@ -430,23 +419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interne/Courrier/connexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2121">
-          <caret line="101" column="67" lean-forward="false" selection-start-line="101" selection-start-column="67" selection-end-line="101" selection-end-column="67" />
-          <folding>
-            <marker date="1516098299315" expanded="true" signature="1555:1619" ph="SELECT id, l... utilisateur" />
-            <marker date="1516098299315" expanded="true" signature="3519:3900" ph="..." />
-            <marker date="1516098299315" expanded="true" signature="3624:3900" ph="..." />
-            <marker date="1516098299315" expanded="true" signature="3657:3900" ph="..." />
-            <marker date="1516098299315" expanded="true" signature="4476:4644" ph="..." />
-            <marker date="1516098299315" expanded="true" signature="4504:4621" ph="..." />
-            <marker date="1516098299315" expanded="true" signature="4871:5736" ph="..." />
-            <marker date="1516098299315" expanded="true" signature="4904:5721" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Interne/Courrier/function.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -468,6 +440,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Interne/domiciliation.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interne/Courrier/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Interne/Courrier/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Interne/Courrier/menu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -478,48 +473,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Interne/Courrier/ajoutercourrier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="189">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <marker date="1516099822677" expanded="true" signature="256:263" ph="SELECT nomcl... clients" />
             <marker date="1516099822677" expanded="true" signature="256:296" ph="SELECT idcli... clients" />
-            <marker date="1516099822677" expanded="true" signature="375:939" ph="..." />
-            <marker date="1516099822677" expanded="true" signature="443:939" ph="..." />
-            <marker date="1516099822677" expanded="true" signature="484:939" ph="..." />
-            <marker date="1516099822677" expanded="true" signature="560:939" ph="..." />
-            <marker date="1516099822677" expanded="true" signature="601:939" ph="..." />
-            <marker date="1516099822677" expanded="true" signature="723:939" ph="..." />
-            <marker date="1516099822677" expanded="true" signature="836:939" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1516108618611" expanded="true" signature="2751:2867" ph="INSERT INTO courrier... " />
-            <marker date="1516108618611" expanded="true" signature="3397:3457" ph="SELECT idtyp... typecourrier" />
+            <marker date="1516114950352" expanded="true" signature="2700:2800" ph="INSERT INTO courrier... " />
+            <marker date="1516114950352" expanded="true" signature="3271:3331" ph="SELECT idtyp... typecourrier" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interne/Courrier/header.php">
+    <entry file="file://$PROJECT_DIR$/Interne/Courrier/connexion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="750">
+          <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding>
+            <marker date="1516176096174" expanded="true" signature="1558:1610" ph="SELECT id, l... utilisateur" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Interne/Courrier/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

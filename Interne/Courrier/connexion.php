@@ -18,7 +18,7 @@ if (formIsSubmit('form_deconnexion')) {
 
 // Si utilisateur connecté redirection vers liste.php
 if (isset($_SESSION['id'])) {
-    header("location: listecourrie.php");
+    header("location: ajoutercourrier.php");
     return;
 }
 
@@ -55,7 +55,7 @@ if (formIsSubmit('signin_form')) {
     // S'il n'y a pas eu d'erreur dans le formulaire
     if (count($form_errors) == 0) {
         // Récupération du compte utilisateur
-        $query = $db->prepare("SELECT id, login, password FROM utilisateur WHERE login = :login");
+        $query = $db->prepare("SELECT id, login, mdp FROM user WHERE login = :login");
         $query->bindValue(':login', $login, PDO::PARAM_STR);
         $query->execute();
         $user = $query->fetch();
@@ -93,13 +93,10 @@ require_once('header.php');
 
 ?>
 
-    <div class="container">
+    <div class="container form-signin">
     <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="signin" aria-selected="true">Se connecter</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false">S'inscrire</a>
         </li>
     </ul>
 
@@ -121,19 +118,9 @@ require_once('header.php');
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
             </form>
         </div>
-
-        <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
-            <form method="post">
-                <input type="hidden" name="signup_form" value="1"/>
-                <label for="email" class="sr-only">Login</label>
-                <input type="text" id="login" name="login" class="form-control" placeholder="Login" required autofocus>
-                <label for="password" class="sr-only">Mot de passe</label>
-                <input type="password" id="password" name="password" class="form-control" placeholder="Mot de passe" required>
-                <label for="confirmPassword" class="sr-only">Nouveau mot de passe</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirmez le mot de passe" required>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
-            </form>
-        </div>
     </div> <!-- /container -->
+    </div>
     <br/>
+</body>
+</html>
 
