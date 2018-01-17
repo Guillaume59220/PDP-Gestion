@@ -1,6 +1,8 @@
 <?php
+    require 'header.php';
     require_once 'function.php';
     #require_once 'menu.php';
+
 
 
     $errors = [];
@@ -13,9 +15,17 @@
     if (formIsSubmit('insertCourrier')) {
 
         $date = $_POST['date_entre'];
+        $type=$_POST['id_type_courrier'];
         $expediteur = $_POST['expediteur'];
         $addnotation = $_POST['addnotation'];
 
+
+        if (!filter_var($login)) {
+            $form_errors['login'] = 'Adresse email invalide !';
+        }
+        if (empty($mdp)) {
+            $form_errors['mdp'] = 'Mot de passe non renseigné !';
+        }
 
         // Fichier scan
         if (isset($_FILES['scan'])) {
@@ -89,7 +99,9 @@ $query->execute();
 $types = $query->fetchAll();
 
 foreach($types as $type) {
-  $courrier_options .= '<option value="' . $type['id_type_courrier'] . '" ' . (isset($id_type_courrier) && $type['id_type_courrier'] == $idtypecourrier ? 'selected' : '') . '>' . $type['libellecourrier'] . '</option>';
+  $courrier_options .= '<option value="' . $type['id_type_courrier'] . '" ' .
+      (isset($id_type_courrier) && $type['id_type_courrier'] == $id_type_courrier ? 'selected' : '')
+      . '>' . $type['libelle_courrier'] . '</option>';
 }
 
      ?>
@@ -100,9 +112,6 @@ foreach($types as $type) {
 <div class="container">
 	<form enctype="multipart/form-data" method="post" id="insertCourrier" action="listecourrier.php">
         <input type="hidden" name="insertCourrier" value="1"/>
-		<div class="form-group row">
-            <label class="col-3 col-form-label" for="nature">Categorie</label>
-        </div>
         <div class="form-group row">
             <label class="col-3 col-form-label" for="type_courrier">Type de courrier</label>
             <div class="col-6">
