@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- InstanceBeginEditable name="doctitle" -->
             <title>Service clients</title>
-             <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
+            <!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
             <!-- InstanceEndEditable -->
             <!-- Menu tab -->
             <script src="Spry-master/includes_packed/SpryTabbedPanels.js" type="text/javascript"></script>
