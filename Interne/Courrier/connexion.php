@@ -1,100 +1,55 @@
+
 <?php
-session_start(); // démarrer la gestion de session PHP
-
-// Fonctions de bases
+require_once 'header.php';
 require_once 'function.php';
-require 'header.php';
+	if (isset($_POST['submit']))
+	{
+		if (preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $_POST['login']))
+		{
 
-$errors = [];
-$form_errors = [];
+			$login = htmlspecialchars($_POST['login']);
+			$mdp= htmlentities($_POST['mdp']);
+			#$mdp_hash = sha256($_POST['mdp']);
 
+			$req = $bdd->prepare('SELECT id_user FROM users WHERE login = :login AND mdp = :mdp');
+			$req->execute(array(
+			    'login' => $login,
+			    'mdp' => $mdp));
 
-// Déconnexion
-if (formIsSubmit('form_deconnexion')) {
-    // Détruit toutes les variables de la session
-    session_unset();
-    // Détruit toutes les données associées à la session courante
-    session_destroy();
-}
+			$resultat = $req->fetch();
 
-if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
-    if ((isset($_POST['login']) && !empty($_POST['login'])) && (isset($_POST['mdp']) && !empty($_POST['mdp']))) {
+			if (!$resultat)
+			{
+				$login = htmlspecialchars('');
+			    echo 'Les identifiants que vous avez saisis ne sont pas valides !';
+			}
 
+			else
+			{
+			    session_start();
+			    $_SESSION['id'] = $resultat['id'];
+			    $_SESSION['login'] = $login;
+			    $_SESSION['mdp'] = $mdp;
 
-// Si utilisateur connecté redirection vers liste.php
-        if (isset($_SESSION['id'])) {
-            header("location: ajoutercourrier.php");
-            return;
-        }
+			}
+		}
 
-        /*
-        // Envoi d'un mail :
-        // Dans php.ini configurer sendmail_path = "C:\xampp\mailtodisk\mailtodisk.exe"
-        // et sendmail_from="notification@xampp.com"
-        if (!mail($email, "test de mail", "Bienvenue sur XAMPP"))
-          showMessage("Mail en erreur");
-        */
+		elseif (empty($_POST['login']) AND empty($_POST['mdp']))
+		{
+			echo 'Vous n\'avez pas saisis d\'identifiants';
+		}
 
-// Connexion à la base de donnée
-        if (!$db = connexion($errors)) {
-            die ("Erreur de connexion à la base : " . implode($errors) . "\n<br>Contactez un administrateur");
-        }
+		elseif (empty($_POST['login']))
+		{
+			echo 'Vous n\'avez pas renseigné votre login';
+		}
 
-// Gestion des formulaires
-        if (formIsSubmit('signin_form')) {
-            // Traitement du formulaire de connexion
-
-            // Récupération des valeurs du formulaire
-            $login = $_POST['login'];
-            $mdp = $_POST['mdp'];
-            $remember = intVal($_POST['remember-me'] ?? 0);
-
-            // Vérification des saisies
-            if (!$login) {
-                $form_errors['login'] = 'Login invalide !';
-            }
-            if (empty($mdp)) {
-                $form_errors['mdp'] = 'Mot de passe non renseigné !';
-            }
-
-            // S'il n'y a pas eu d'erreur dans le formulaire
-            if (count($form_errors) == 0) {
-                // Récupération du compte utilisateur
-                $query = $db->prepare("SELECT id, login, mdp FROM user WHERE login = :login");
-                $query->bindValue(':login', $login, PDO::PARAM_STR);
-                $query->execute();
-                $user = $query->fetch();
-
-                if (!$user || !password_verify($mdp, $user['mdp'])) {
-                    // Ne soyons pas trop précis sur l'errreur pour éviter de donner des indices aux attaquants
-                    $form_errors['login'] = "Email non trouvé ou mot de passe invalide";
-                } else {
-                    // Ici l'email et le mot de passe sont validés
-                    $_SESSION["id"] = $user['id'];
-                    $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-                    // Mise en place d'un cookie de session
-                    // Ce code est à faire avant l'affichage du HTML ou une redirection
-                    //$_SESSION['token'] = sha1(time() . rand() . $_SERVER['SERVER_NAME']);
-                    //setcookie('token', $_SESSION['token']);
-                    // In practice, you'd want to store this token in a database with the username so it's persistent.
-                    header("location: liste.php");
-                    return;
-                }
-            }
-
-        }
-    }
-}
-
-
-           /* else {
-                $_SESSION["id"] = $user['id'];
-                $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-                header("location: liste.php");
-                return;
-            }*/
-
-?>
+		else
+		{
+			echo 'Login saisit n\'est pas valide !';
+		}
+	}
+	?>
 <div class="container" style="margin-top:40px">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
@@ -103,7 +58,7 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
                     <strong> Connexion</strong>
                 </div>
                 <div class="panel-body">
-                    <form role="form" action="#" method="POST">
+                    <form role="form" action="ajoutercourrier.php" method="POST">
                         <fieldset>
                             </div>
                             <div class="row">
@@ -158,6 +113,3 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
         border-radius: 50%;
     }
 </style>
-
-
-

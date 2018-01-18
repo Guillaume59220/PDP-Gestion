@@ -3,6 +3,8 @@
     require_once 'function.php';
     session_start();
 
+if(!strstr($_SERVER['PHP_SELF'],'index.php')) die('Error !');
+
 
 $id_client = $_POST['id_client'] ?? null;
 
