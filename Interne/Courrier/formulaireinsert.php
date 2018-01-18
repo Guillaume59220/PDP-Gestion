@@ -1,4 +1,14 @@
 <?php
+
+session_start();
+
+/*$login = isset($_SESSION['login']) ? $_SESSION['login'] : NULL;
+if (!$login) {
+    header ('connexion.php');
+    exit();
+}
+*/
+#if(!strstr($_SERVER['PHP_SELF'],'index.php')) die('Error !');
     require 'header.php';
     require_once 'function.php';
     #require_once 'menu.php';
@@ -15,7 +25,7 @@
     if (formIsSubmit('insertCourrier')) {
 
         $date = $_POST['date_entre'];
-        $type=$_POST['id_type_courrier'];
+        $type=$_POST['id_type'];
         $expediteur = $_POST['expediteur'];
         $addnotation = $_POST['addnotation'];
 
@@ -85,22 +95,22 @@
 
     $courrier_options = "";
 
-$str_query = "SELECT id_type_courrier, libelle_courrier FROM type_courrier";
+$str_query = "SELECT id_type, libelle_courrier FROM type_courrier";
 
-if (isset($idtypecourrier))
-  $str_query .= " WHERE id = :id_type_courrier";
+if (isset($id_type))
+  $str_query .= " WHERE id = :id_type";
 
 $query = $db->prepare($str_query);
 
-if (isset($idtypecourrier))
-  $query->bindValue(":id_type_courrier", $id_type_courrier, PDO::PARAM_INT);
+if (isset($id_type))
+  $query->bindValue(":id_type", $id_type, PDO::PARAM_INT);
 
 $query->execute();
 $types = $query->fetchAll();
 
 foreach($types as $type) {
-  $courrier_options .= '<option value="' . $type['id_type_courrier'] . '" ' .
-      (isset($id_type_courrier) && $type['id_type_courrier'] == $id_type_courrier ? 'selected' : '')
+  $courrier_options .= '<option value="' . $type['id_type'] . '" ' .
+      (isset($id_type) && $type['id_type'] == $id_type ? 'selected' : '')
       . '>' . $type['libelle_courrier'] . '</option>';
 }
 
@@ -115,7 +125,8 @@ foreach($types as $type) {
         <div class="form-group row">
             <label class="col-3 col-form-label" for="type_courrier">Type de courrier</label>
             <div class="col-6">
-                <select class="form-control" value="<?php echo isset($_POST['id_type_courrier']) ? $_POST['id_type_courrier'] : '' ?>" name="type_courrier" id="type_courrier">
+                <select class="form-control" value="<?php echo isset($_POST['id_type']) ? $_POST['id_type'] : '' ?>"
+                        name="type_courrier" id="type_courrier">
                     <!--<option value="2">-Lettre-</option>
                     <option value="3">-Lettre recommandée-</option>
                     <option value="1">-Colis-</option>-->

@@ -70,7 +70,8 @@ function genereTable($query) {
         // Récupération de mes courriers
         $query = $db->prepare('
     SELECT courrier.numero_courrier, courrier.date_entre, courrier.scan , courrier.addnotation,type_courrier.libelle_courrier,voie_reexpedition.libelle_reexpedition
-      FROM courrier LEFT OUTER JOIN type_courrier tc ON courrier.id_type_courrier_fk = tc.id_type_courrier LEFT OUTER JOIN voie_reexpedition v ON courrier.id_reexpedition_fk = v.id_reexpedition
+      FROM courrier LEFT OUTER JOIN type_courrier tc ON courrier.id_type_fk = tc.id_type
+                    LEFT OUTER JOIN voie_reexpedition v ON courrier.id_reexpedition_fk = v.id_reexpedition
       WHERE id_client = :id_client
   ');
         $query->bindValue(':id_client', $id_client, PDO::PARAM_INT);
