@@ -1,19 +1,24 @@
-
-
 <?php
     require_once 'header.php';
-    require_once 'menu.php';
+   # require_once 'menu.php';
     require_once 'function.php';
 
 
-$errors = [];
+if(!isset($_SESSION['login'])) {
+    echo '<h1>Vous n\'êtes pas connecté, accés interdit !</h1> <meta http-equiv="refresh" content="0; URL=connexion.php"> ';
+}
 
-$form_errors = [];
 
-if (!$db = connexion($errors))
-    die("Erreur(s) lors de la connexion : " . implode($errors));
 
-$query = $db->query('SELECT id_client,nom_client FROM clients');
+        $errors = [];
+
+        $form_errors = [];
+
+        if (!$db = connexion($errors))
+            die("Erreur(s) lors de la connexion : " . implode($errors));
+
+
+        $query = $db->query('SELECT id_client,nom_client FROM clients');
 
 #echo "result : ";
 #var_dump($donnees);
