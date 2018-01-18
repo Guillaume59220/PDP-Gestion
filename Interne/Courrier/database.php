@@ -12,7 +12,7 @@
 define('HOST', 'localhost'); // Domaine ou IP du serveur ou est située la base de données
 define('USER', 'root'); // Nom d'utilisateur autorisé à se connecter à la base
 define('PASS', ''); // Mot de passe de connexion à la base
-define('DB', 'domiciliation'); // Base de données sur laquelle on va faire les requêtes
+define('DB', 'test_courrier'); // Base de données sur laquelle on va faire les requêtes
 
 $db_options = array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,// On affiche des warnings pour les erreurs, à commenter en prod (valeur par défaut PDO::ERRMODE_SILENT)
