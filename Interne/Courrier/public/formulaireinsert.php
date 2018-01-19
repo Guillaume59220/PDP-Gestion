@@ -10,7 +10,7 @@ if (!$login) {
 */
 #if(!strstr($_SERVER['PHP_SELF'],'index.php')) die('Error !');
     require 'header.php';
-    require_once 'function.php';
+    require_once '../src/function.php';
     #require_once 'menu.php';
 
 
