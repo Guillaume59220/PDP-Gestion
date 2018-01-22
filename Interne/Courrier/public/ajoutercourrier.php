@@ -1,27 +1,27 @@
 <?php
     require_once 'header.php';
    # require_once 'menu.php';
-    require_once 'function.php';
+    require_once '../src/function.php';
 
 
 if(!isset($_SESSION['login'])) {
-    echo '<h1>Vous n\'êtes pas connecté, accés interdit !</h1> <meta http-equiv="refresh" content="0; URL=connexion.php"> ';
-}
+   echo '<h1>Vous n\'êtes pas connecté, accés interdit !</h1> <meta http-equiv="refresh" content="0; URL=connexion.php"> ';
+}else {
 
 
+    $errors = [];
 
-        $errors = [];
+    $form_errors = [];
 
-        $form_errors = [];
-
-        if (!$db = connexion($errors))
-            die("Erreur(s) lors de la connexion : " . implode($errors));
+    if (!$db = connexion($errors))
+        die("Erreur(s) lors de la connexion : " . implode($errors));
 
 
-        $query = $db->query('SELECT id_client,nom_client FROM clients');
+    $query = $db->query('SELECT id_client,nom_client FROM clients');
 
 #echo "result : ";
-#var_dump($donnees);
+#var_dump($donnees);}
+}
 
     ?>
     <div class="container">
@@ -34,6 +34,7 @@ if(!isset($_SESSION['login'])) {
               <label class="col-sm-3 col-form-label" for="nomclient">Societe</label>
               <div class="col-sm-6">
                 <select name="societe" class="form-control" required id="societe" onchange="this.form.submit()">
+                    <option>-Choix client-</option>
                    <?php
                   while($donnees = $query->fetch()){
                    echo '<option value="'.$donnees['id_client'] .'" >'.$donnees['nom_client'].'</option>';}?>
