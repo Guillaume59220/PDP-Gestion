@@ -53,8 +53,8 @@ CREATE TABLE `courrier` (
   `id_courrier` int(11) NOT NULL,
   `date_entre` date NOT NULL,
   `addnotation` longtext,
-  `id_client_fk` int(11) NOT NULL,
-  `id_type_fk` int(11) NOT NULL
+  `id_client` int(11) NOT NULL,
+  `id_type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -108,14 +108,14 @@ CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
   `login` varchar(145) NOT NULL,
   `mdp` varchar(145) NOT NULL,
-  `id_droit_fk` int(11) NOT NULL
+  `id_droit` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id_user`, `login`, `mdp`, `id_droit_fk`) VALUES
+INSERT INTO `users` (`id_user`, `login`, `mdp`, `id_droit`) VALUES
 (1, 'toto', 'kot', 1),
 (2, 'kot', 'toto', 3);
 
@@ -133,9 +133,9 @@ ALTER TABLE `clients`
 -- Index pour la table `courrier`
 --
 ALTER TABLE `courrier`
-  ADD PRIMARY KEY (`id_courrier`,`id_client_fk`,`id_type_fk`),
-  ADD KEY `fk_courrier_clients1_idx` (`id_client_fk`),
-  ADD KEY `fk_courrier_type_courrier1_idx` (`id_type_fk`);
+  ADD PRIMARY KEY (`id_courrier`,`id_client`,`id_type`),
+  ADD KEY `fk_courrier_clients1_idx` (`id_client`),
+  ADD KEY `fk_courrier_type_courrier1_idx` (`id_type`);
 
 --
 -- Index pour la table `droit`
@@ -153,8 +153,8 @@ ALTER TABLE `type_courrier`
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`,`id_droit_fk`),
-  ADD KEY `fk_users_droit_idx` (`id_droit_fk`);
+  ADD PRIMARY KEY (`id_user`,`id_droit`),
+  ADD KEY `fk_users_droit_idx` (`id_droit`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -198,14 +198,14 @@ ALTER TABLE `users`
 -- Contraintes pour la table `courrier`
 --
 ALTER TABLE `courrier`
-  ADD CONSTRAINT `fk_courrier_clients1` FOREIGN KEY (`id_client_fk`) REFERENCES `clients` (`id_client`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_courrier_type_courrier1` FOREIGN KEY (`id_type_fk`) REFERENCES `type_courrier` (`id_type`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_courrier_clients1` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_courrier_type_courrier1` FOREIGN KEY (`id_type`) REFERENCES `type_courrier` (`id_type`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `fk_users_droit` FOREIGN KEY (`id_droit_fk`) REFERENCES `droit` (`id_droit`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_users_droit` FOREIGN KEY (`id_droit`) REFERENCES `droit` (`id_droit`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
