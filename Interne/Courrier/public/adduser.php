@@ -5,14 +5,18 @@
  * Date: 22.01.2018
  * Time: 09:27
  */
-
+session_start();
 require_once 'header.php';
 require_once '../src/function.php';
 require_once '../src/database.php';
-session_start();
+
 
     $errors = [];
     $form_errors = [];
+
+if (!$db = connexion($errors)) {
+    die ("Erreur de connexion à la base : " . implode($errors) . "\n<br>Contactez un administrateur");
+}
 
 if (formIsSubmit('signup_form')) {
     // Traitement du formulaire d'inscription
@@ -22,7 +26,7 @@ if (formIsSubmit('signup_form')) {
     $mdp = htmlentities($_POST['mdp']);
     $hashMdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-
+    var_dump($db);
     // Vérification des saisies
     if (!filter_var($login)) {
         $form_errors['login'] = 'Login invalide !';

@@ -4,7 +4,7 @@ session_start(); // démarrer la gestion de session PHP
 // Fonctions de bases
 require_once('../src/function.php');
 
-if (isset($_SESSION['id'])==1) {
+if (isset($_SESSION['id'])) {
 // Détruit toutes les variables de la session
     session_unset();
 // Détruit toutes les données associées à la session courante
