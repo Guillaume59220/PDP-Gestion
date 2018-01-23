@@ -99,11 +99,13 @@ require_once 'header.php';
                 <input type="hidden" name="signin_form" value="1"/>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input class="form-control" id="login" type="text" name="login" placeholder="Login">
+                    <input class="form-control  <?php echo isset($form_errors['login']) ? 'is-invalid' : '' ?>" id="login" type="text" name="login" placeholder="Login">
+                    <?php echo isset($form_errors['login']) ? '<div class="invalid-feedback">' . $form_errors['login'] . '</div>' : '' ?>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Mot de passe">
+                    <?php echo isset($form_errors['mdp']) ? '<div class="invalid-feedback">' . $form_errors['mdp'] . '</div>' : '' ?>
                 </div>
                 <div class="input-group">
                     <div class="checkbox">
