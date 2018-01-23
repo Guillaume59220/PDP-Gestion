@@ -2,6 +2,7 @@
 
 session_start();
 
+
 /*$login = isset($_SESSION['login']) ? $_SESSION['login'] : NULL;
 if (!$login) {
     header ('connexion.php');
@@ -11,7 +12,7 @@ if (!$login) {
 #if(!strstr($_SERVER['PHP_SELF'],'index.php')) die('Error !');
     require 'header.php';
     require_once '../src/function.php';
-    #require_once 'menu.php';
+    require_once 'menu.php';
 
 
 
@@ -22,20 +23,14 @@ if (!$login) {
     if (!$db = connexion($errors))
         die("Erreur(s) lors de la connexion : " . implode($errors));
 
-    if (formIsSubmit('insertCourrier')) {
+    if (formIsSubmit('ajouter_courrier')) {
 
-        $date = $_POST['date_entre'];
+        $date_entre = $_POST['date_entre'];
         $type=$_POST['id_type'];
-        $expediteur = $_POST['expediteur'];
+        $scan = $_POST['scan'];
         $addnotation = $_POST['addnotation'];
 
 
-        if (!filter_var($login)) {
-            $form_errors['login'] = 'Adresse email invalide !';
-        }
-        if (empty($mdp)) {
-            $form_errors['mdp'] = 'Mot de passe non renseigné !';
-        }
 
         // Fichier scan
         if (isset($_FILES['scan'])) {
@@ -74,10 +69,10 @@ if (!$login) {
 }
  if (count($form_errors) == 0 && isset($db)) {
     $query = $db->prepare("
-      INSERT INTO courrier( expediteur, addnotation)
-        VALUES           ( :expediteur, :addnotation)
+      INSERT INTO courrier( date_entre, addnotation)
+        VALUES           ( :date_entre, :addnotation)
     ");
-    $query->bindParam(':expediteur', $expediteur, PDO::PARAM_STR);
+    $query->bindParam(':date_entre', $date_entre);
     $query->bindParam(':addnotation', $addnotation, PDO::PARAM_STR);
 
     // exécution de la requête préparée
@@ -121,7 +116,7 @@ foreach($types as $type) {
 
 <div class="container">
 	<form enctype="multipart/form-data" method="post" id="insertCourrier" action="listecourrier.php">
-        <input type="hidden" name="insertCourrier" value="1"/>
+        <input type="hidden" name="ajouter_courrier" value="1"/>
         <div class="form-group row">
             <label class="col-3 col-form-label" for="type_courrier">Type de courrier</label>
             <div class="col-6">

@@ -1,7 +1,22 @@
-
 <?php
-require_once 'header.php';
-require_once '../src/function.php';
+session_start(); // démarrer la gestion de session PHP
+
+// Fonctions de bases
+require_once('../src/function.php');
+
+if (isset($_SESSION['id'])==1) {
+// Détruit toutes les variables de la session
+    session_unset();
+// Détruit toutes les données associées à la session courante
+    session_destroy();
+
+    header("location:connexion.php");
+}
+
+
+$errors = [];
+$form_errors = [];
+
 
 // Si utilisateur connecté redirection vers liste.php
 if (isset($_SESSION['id'])) {
@@ -21,9 +36,10 @@ if (!mail($email, "test de mail", "Bienvenue sur XAMPP"))
 if (!$db = connexion($errors)) {
     die ("Erreur de connexion à la base : " . implode($errors) . "\n<br>Contactez un administrateur");
 }
-if ( isset($_POST['log']) and !empty($_POST['log']) and isset($_POST['passe']) and !empty($_POST['passe'])){
 
-
+// Gestion des formulaires
+if (formIsSubmit('signin_form')) {
+    // Traitement du formulaire de connexion
 
     // Récupération des valeurs du formulaire
     $login = $_POST['login'];
@@ -31,8 +47,15 @@ if ( isset($_POST['log']) and !empty($_POST['log']) and isset($_POST['passe']) a
     $remember = intVal($_POST['remember-me'] ?? 0);
 
     // Vérification des saisies
-    if (!filter_var($login, FILTER_DEFAULT)) {
-        $form_errors['login'] = 'Login invalide !';
+    if (empty($login)) {
+        $form_errors['login'] = 'Login email invalide !';
+    }
+    if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#', $mdp)) {
+        echo 'Mot de passe conforme';
+    }
+
+    else {
+        echo 'Mot de passe non conforme';
     }
     if (empty($mdp)) {
         $form_errors['mdp'] = 'Mot de passe non renseigné !';
@@ -41,7 +64,7 @@ if ( isset($_POST['log']) and !empty($_POST['log']) and isset($_POST['passe']) a
     // S'il n'y a pas eu d'erreur dans le formulaire
     if (count($form_errors) == 0) {
         // Récupération du compte utilisateur
-        $query = $db->prepare("SELECT id_user,login,mdp  FROM users WHERE login = :login");
+        $query = $db->prepare("SELECT login,mdp FROM users WHERE login = :login");
         $query->bindValue(':login', $login, PDO::PARAM_STR);
         $query->execute();
         $user = $query->fetch();
@@ -53,75 +76,46 @@ if ( isset($_POST['log']) and !empty($_POST['log']) and isset($_POST['passe']) a
             // Ici l'email et le mot de passe sont validés
             $_SESSION["id"] = $user['id'];
             $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+
             // Mise en place d'un cookie de session
             // Ce code est à faire avant l'affichage du HTML ou une redirection
-            //$_SESSION['token'] = sha1(time() . rand() . $_SERVER['SERVER_NAME']);
-            //setcookie('token', $_SESSION['token']);
+            #$_SESSION['token'] = sha1(time() . rand() . $_SERVER['SERVER_NAME']);
+            #setcookie('token', $_SESSION['token']);
             // In practice, you'd want to store this token in a database with the username so it's persistent.
-            header("location: ajoutercourrier.php");
+            header("location: listecourrier.php");
             return;
         }
     }
-}
 
+}
+require_once 'header.php';
 
 ?>
-<div class="container" style="margin-top:40px">
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <strong> Connexion</strong>
+
+<div class="container">
+    <div class="content_panel" style="margin-top: 50px">
+        <div class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <form class="form-horizontal" method="post" action="listecourrier.php">
+                <input type="hidden" name="signin_form" value="1"/>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input class="form-control" id="login" type="text" name="login" placeholder="Login">
                 </div>
-                <div class="panel-body">
-                    <form role="form"  method="POST" action="login.php" name="#singin">
-                        <fieldset>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-10  col-md-offset-1 ">
-                                    <div class="form-group">
-                                        <div class="input-group">
-												<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                            <input class="form-control" placeholder="Login" name="login" type="text" required autofocus>
-                                            <?php echo isset($form_errors['login']) ? '<div class="invalid-feedback">' . $form_errors['login'] . '</div>' : '' ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-												<span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
-                                            <input class="form-control" placeholder="Mot de passe" name="mdp" type="mdp" required>
-                                            <?php echo isset($form_errors['mdp']) ? '<div class="invalid-feedback">' . $form_errors['mdp'] . '</div>' : '' ?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Connexion">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Mot de passe">
                 </div>
-            </div>
+                <div class="input-group">
+                    <div class="checkbox">
+                        <label>
+                            <input id="remember" type="checkbox" name="remember" value="1"> Se souvenir
+                        </label>
+                    </div>
+                </div>
+                <button class="btn btn-lg btn-primary" type="submit">Connexion</button>
+            </form>
         </div>
     </div>
 </div>
-<style>
-    .panel-heading {
-        padding: 5px 15px;
-    }
 
-    .panel-footer {
-        padding: 1px 15px;
-        color: #A0A0A0;
-    }
 
-    .profile-img {
-        width: 96px;
-        height: 96px;
-        margin: 0 auto 10px;
-        display: block;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        border-radius: 50%;
-    }
-</style>
