@@ -4,7 +4,7 @@
     require 'menu.php';
 session_start();
 
-if (isset($_SESSION['id'])==1) {
+if (isset($_SESSION['id'])) {
     $errors = [];
 
     $form_errors = [];
