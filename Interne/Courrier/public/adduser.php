@@ -7,6 +7,8 @@
  */
 
 require_once '../src/function.php';
+require_once 'header.php';
+require_once 'menu.php';
 session_start();
 
 if (formIsSubmit('signup_form')) {
@@ -66,6 +68,6 @@ if (formIsSubmit('signup_form')) {
         <input type="text" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
         <label for="mdp" class="sr-only">Mot de passe</label>
         <input type="password" id="mdp" name="mdp" class="form-control" placeholder="Mot de passe" required>
-        <button class="btn btn-lg" type="submit">Ajouter utilisateur</button>
+        <button class="btn " type="submit">Ajouter utilisateur</button>
     </form>
 </div>
