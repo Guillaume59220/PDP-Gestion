@@ -19,6 +19,8 @@ $db_options = array(
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC   // Mode ASSOC par défaut pour les fetch
 );
 
+
+
 // Connexion renvoie soit un objet PDO, soit false
 // Dans le cas ou le résultat est false, la raison est précisée dans le tableau $msg
 function connexion(&$msg = array()) {

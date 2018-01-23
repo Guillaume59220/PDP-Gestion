@@ -11,11 +11,14 @@ require_once '../src/function.php';
 
     session_start();
 
+if (formIsSubmit('form_deconnexion')) {
     // Détruit toutes les variables de la session
     session_unset();
     // Détruit toutes les données associées à la session courante
     session_destroy();
+
     header("location:connexion.php");
+}
 
 ?>
 
