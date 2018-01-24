@@ -14,7 +14,7 @@ require_once '../src/function.php';
                 </form>
             </div>
             <div class="col-md-2 align-items-center">
-                <form action="ajoutercourrier.php" method="post">
+                <form action="formulaireinsert.php" method="post">
                     <input type="hidden"  value="1"/>
                     <button class="btn fa fa-envelope-o" > Ajouter un courrier</button>
                 </form>
