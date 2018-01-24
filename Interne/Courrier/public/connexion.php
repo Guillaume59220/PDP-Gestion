@@ -18,7 +18,7 @@ if (formIsSubmit('form_deconnexion')) {
 
 // Si utilisateur connecté redirection vers liste.php
 if (isset($_SESSION['id'])) {
-    header("location: public/listecourrier.php");
+    header("location:listecourrier.php");
     return;
 }
 
@@ -34,7 +34,7 @@ if (!mail($email, "test de mail", "Bienvenue sur XAMPP"))
 if (!$db = connexion($errors)) {
     die ("Erreur de connexion à la base : " . implode($errors) . "\n<br>Contactez un administrateur");
 };
-
+var_dump($errors);
 // Gestion des formulaires
 if (formIsSubmit('singin_form')) {
     // Traitement du formulaire de connexion
@@ -51,7 +51,7 @@ if (formIsSubmit('singin_form')) {
     if (empty($mdp)) {
         $form_errors['mdp'] = 'Mot de passe non renseigné !';
     }
-
+var_dump($form_errors);
     // S'il n'y a pas eu d'erreur dans le formulaire
     if (count($form_errors) == 0) {
         // Récupération du compte utilisateur
@@ -59,7 +59,6 @@ if (formIsSubmit('singin_form')) {
         $query->bindValue(':email', $email, PDO::PARAM_STR);
         $query->execute();
         $user = $query->fetch();
-        var_dump($user);
         if (!$user || !password_verify($mdp, $user['mdp'])) {
             // Ne soyons pas trop précis sur l'errreur pour éviter de donner des indices aux attaquants
             $form_errors['email'] = "Email non trouvé ou mot de passe invalide";
@@ -72,7 +71,7 @@ if (formIsSubmit('singin_form')) {
             //$_SESSION['token'] = sha1(time() . rand() . $_SERVER['SERVER_NAME']);
             //setcookie('token', $_SESSION['token']);
             // In practice, you'd want to store this token in a database with the username so it's persistent.
-            header("location: public/listecourrier.php");
+            header("location:listecourrier.php");
             return;
         }
     }

@@ -9,7 +9,12 @@
 require_once '../src/function.php';
 require_once 'header.php';
 require_once 'menu.php';
-session_start();
+
+
+$errors = [];
+$form_errors = [];
+
+
 
 if (formIsSubmit('signup_form')) {
     // Traitement du formulaire d'inscription
@@ -27,7 +32,9 @@ if (formIsSubmit('signup_form')) {
         $form_errors['mdp'] = 'Mot de passe non renseigné !';
     }
 
-
+    if (!$db = connexion($errors)) {
+        die ("Erreur de connexion à la base : " . implode($errors) . "\n<br>Contactez un administrateur");
+    };
 
     // S'il n'y a pas eu d'erreur dans le formulaire
     if (count($form_errors) == 0) {
@@ -42,7 +49,7 @@ if (formIsSubmit('signup_form')) {
             // Ici tout est valide, l'insertion peut être faite
             $query = $db->prepare("
         INSERT INTO users(email,    mdp)
-          VALUES            (:email,  :mdp)
+          VALUES         (:email,  :mdp)
       ");
             $query->bindValue(':email', $email, PDO::PARAM_STR);
             $query->bindValue(':mdp', $hashMdp, PDO::PARAM_STR);

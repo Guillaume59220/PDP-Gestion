@@ -88,6 +88,8 @@ if (!$login) {
     }
   }
 
+$query = $db->query('SELECT id_client,nom_client FROM clients');
+
     $courrier_options = "";
 
 $str_query = "SELECT id_type, libelle_courrier FROM type_courrier";
@@ -118,6 +120,17 @@ foreach($types as $type) {
 	<form enctype="multipart/form-data" method="post" id="insertCourrier" action="listecourrier.php">
         <input type="hidden" name="ajouter_courrier" value="1"/>
         <div class="form-group row">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label" for="nomclient">Societe</label>
+                <div class="col-sm-6">
+                    <select name="societe" class="form-control" required id="societe" onchange="this.form.submit()">
+                        <option>-Choix client-</option>
+                        <?php
+                        while($donnees = $query->fetch()){
+                            echo '<option value="'.$donnees['id_client'] .'" >'.$donnees['nom_client'].'</option>';}?>
+                    </select>
+                </div>
+            </div>
             <label class="col-3 col-form-label" for="type_courrier">Type de courrier</label>
             <div class="col-6">
                 <select class="form-control" value="<?php echo isset($_POST['id_type']) ? $_POST['id_type'] : '' ?>"
