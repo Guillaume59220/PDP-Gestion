@@ -7,7 +7,6 @@
  */
 
 require_once '../src/function.php';
-require_once 'header.php';
 require_once 'menu.php';
 
 
@@ -22,7 +21,7 @@ if (formIsSubmit('signup_form')) {
     // Récupération des valeurs du formulaire
     $email = $_POST['email'];
     $mdp = $_POST['mdp'];
-    $hashMdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+    $hashPassword = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
     // Vérification des saisies
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -32,14 +31,10 @@ if (formIsSubmit('signup_form')) {
         $form_errors['mdp'] = 'Mot de passe non renseigné !';
     }
 
-    if (!$db = connexion($errors)) {
-        die ("Erreur de connexion à la base : " . implode($errors) . "\n<br>Contactez un administrateur");
-    };
-
     // S'il n'y a pas eu d'erreur dans le formulaire
     if (count($form_errors) == 0) {
         // Vérification de l'email en base de donnée
-        $query = $db->prepare("SELECT id_user, email,mdp FROM users WHERE email = :email");
+        $query = $db->prepare("SELECT id_user, email, mdp FROM users WHERE email = :email");
         $query->bindValue(':email', $email, PDO::PARAM_STR);
         $query->execute();
         $users = $query->fetchAll();
@@ -48,33 +43,43 @@ if (formIsSubmit('signup_form')) {
         } else {
             // Ici tout est valide, l'insertion peut être faite
             $query = $db->prepare("
-        INSERT INTO users(email,    mdp)
-          VALUES         (:email,  :mdp)
-      ");
+        INSERT INTO users(email, mdp)
+          VALUES         (:email,:mdp)");
             $query->bindValue(':email', $email, PDO::PARAM_STR);
-            $query->bindValue(':mdp', $hashMdp, PDO::PARAM_STR);
+            $query->bindValue(':mdp', $hashPassword, PDO::PARAM_STR);
             if (!$query->execute())
                 showMessage("Erreurs lors de l'inscription : " . implode($query->errorInfo()), 'alert-danger');
             else {
-                $_SESSION["id"] = $user['id'];
-                $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-                header("location: liste.php");
+               showMessage('Ajout reussi','alert-success');
                 return;
             }
         }
     }
 }
 
-
-
 ?>
-<div class="container" id="signup"  aria-labelledby="signup-tab">
-    <form method="post">
-        <input type="hidden" name="signup_form" value="1"/>
-        <label for="login" class="sr-only">Email</label>
-        <input type="text" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
-        <label for="mdp" class="sr-only">Mot de passe</label>
-        <input type="password" id="mdp" name="mdp" class="form-control" placeholder="Mot de passe" required>
-        <button class="btn " type="submit">Ajouter utilisateur</button>
-    </form>
+<div class="container">
+    <div class="content_panel" style="margin-top: 50px">
+        <div class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <form class="form-horizontal" method="post">
+                <input type="hidden" name="signup_form" value="1"/>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input class="form-control  <?php echo isset($form_errors['email']) ? 'is-invalid' : '' ?>" id="email" type="text" name="email" placeholder="Email">
+                    <?php echo isset($form_errors['email']) ? '<div class="invalid-feedback">' . $form_errors['email'] . '</div>' : '' ?>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Mot de passe">
+                    <?php echo isset($form_errors['mdp']) ? '<div class="invalid-feedback">' . $form_errors['mdp'] . '</div>' : '' ?>
+                </div>
+                <div class="input-group">
+                    <div class="checkbox">
+
+                    </div>
+                </div>
+                <button class="btn " type="submit">Ajouter</button>
+            </form>
+        </div>
+    </div>
 </div>
