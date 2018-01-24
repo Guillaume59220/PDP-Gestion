@@ -121,17 +121,16 @@ foreach($types as $type) {
         <input type="hidden" name="ajouter_courrier" value="1"/>
         <div class="form-group row">
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label" for="nomclient">Societe</label>
-                <div class="col-sm-6">
-                    <select name="societe" class="form-control" required id="societe" onchange="this.form.submit()">
-                        <option>-Choix client-</option>
-                        <?php
-                        while($donnees = $query->fetch()){
-                            echo '<option value="'.$donnees['id_client'] .'" >'.$donnees['nom_client'].'</option>';}?>
-                    </select>
-                </div>
-            </div>
-            <label class="col-3 col-form-label" for="type_courrier">Type de courrier</label>
+                <label class="col-12 col-form-label" for="nomclient">Societe</label>
+                    <div class="col-6">
+                        <select name="societe" class="form-control" required id="societe" onchange="this.form.submit()">
+                            <option>-Choix client-</option>
+                            <?php
+                            while($donnees = $query->fetch()){
+                                echo '<option value="'.$donnees['id_client'] .'" >'.$donnees['nom_client'].'</option>';}?>
+                        </select>
+                    </div>
+            <label class="col-12 col-form-label" for="type_courrier">Type de courrier</label>
             <div class="col-6">
                 <select class="form-control" value="<?php echo isset($_POST['id_type']) ? $_POST['id_type'] : '' ?>"
                         name="type_courrier" id="type_courrier">
@@ -171,8 +170,10 @@ foreach($types as $type) {
 
             </div>
           </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary" name="ok">Valider</button>
+          <div class="col-12">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" name="ok">Valider</button>
+            </div>
           </div>
         </div>
 
