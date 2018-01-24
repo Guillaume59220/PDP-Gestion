@@ -5,7 +5,9 @@
 
 
 
-$id_client = $_POST['id_client'] ?? null;
+$id_client = $_SESSION['id_user'] ?? null;
+
+var_dump($id_client);
 
 if(isset($_POST['id_client'])) {
     afficheMesCourriers($id_client);

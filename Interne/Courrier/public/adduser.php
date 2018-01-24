@@ -51,6 +51,7 @@ if (formIsSubmit('signup_form')) {
                 showMessage("Erreurs lors de l'inscription : " . implode($query->errorInfo()), 'alert-danger');
             else {
                showMessage('Ajout reussi','alert-success');
+               header("location: listecourrier.php");
                 return;
             }
         }
