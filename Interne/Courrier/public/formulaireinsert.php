@@ -25,9 +25,10 @@ if (!$login) {
 
     if (formIsSubmit('ajouter_courrier')) {
 
-        $date_entre = $_POST['date_entre'];
-        $type=$_POST['id_type'];
-        $scan = $_POST['scan'];
+        $date_entre  = $_POST['date_entre'];
+        $societe     = $_POST['id_client'];
+        $type        = $_POST['id_type'];
+        $scan        = $_POST['scan'];
         $addnotation = $_POST['addnotation'];
 
 
@@ -87,8 +88,22 @@ if (!$login) {
       var_dump($e);
     }
   }
+    $societe_options="";
 
-$query = $db->query('SELECT id_client,nom_client FROM clients');
+$soc_query="SELECT id_client,nom_client FROM clients";
+if(isset($id_client))
+    $soc_query .= "WHERE id = :id_client";
+$query=$db->prepare($soc_query);
+if(isset($id_client))
+    $query->bindValue(':id_client',$id_client,PDO::PARAM_INT);
+    $query->execute();
+    $societes=$query->fetchAll();
+foreach($societes as $societe) {
+    $societe_options .= '<option value="' . $societe['id_client'] . '" ' .
+        (isset($id_client) && $societe['id_client'] == $id_client ? 'selected' : '')
+        . '>' . $societe['nom_client'] . '</option>';
+}
+
 
     $courrier_options = "";
 
@@ -120,17 +135,13 @@ foreach($types as $type) {
 	<form enctype="multipart/form-data" method="post" id="insertCourrier" action="listecourrier.php">
         <input type="hidden" name="ajouter_courrier" value="1"/>
         <div class="form-group row">
-            <div class="form-group row">
                 <label class="col-sm-3 col-form-label" for="nomclient">Societe</label>
                 <div class="col-sm-6">
-                    <select name="societe" class="form-control" required id="societe" onchange="this.form.submit()">
-                        <option>-Choix client-</option>
-                        <?php
-                        while($donnees = $query->fetch()){
-                            echo '<option value="'.$donnees['id_client'] .'" >'.$donnees['nom_client'].'</option>';}?>
+                    <select name="societe" class="form-control" required id="societe">
+                        <?= $societe_options; ?>
+
                     </select>
                 </div>
-            </div>
             <label class="col-3 col-form-label" for="type_courrier">Type de courrier</label>
             <div class="col-6">
                 <select class="form-control" value="<?php echo isset($_POST['id_type']) ? $_POST['id_type'] : '' ?>"
@@ -141,13 +152,6 @@ foreach($types as $type) {
                     <?php echo $courrier_options; ?>
                 </select>
                 
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-3 col-form-label">Expediteur</label>
-            <div class="col-9">
-                <input type="text" id="expediteur" name="expediteur" value="<?php echo isset($_POST['expediteur']) ? $_POST['expediteur'] : '' ?>">
-
             </div>
         </div>
         <div class="form-group row">
@@ -172,11 +176,12 @@ foreach($types as $type) {
             </div>
           </div>
           <div class="text-center">
-            <button type="submit" class="btn btn-primary" name="ok">Valider</button>
+            <button type="submit" class="btn btn-primary">Valider</button>
           </div>
         </div>
 
 	</form>
 	
 </div>
+<?php require_once 'footer.php'; ?>
 
