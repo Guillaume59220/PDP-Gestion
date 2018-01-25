@@ -135,28 +135,14 @@ foreach($types as $type) {
 	<form enctype="multipart/form-data" method="post" id="insertCourrier" action="listecourrier.php">
         <input type="hidden" name="ajouter_courrier" value="1"/>
         <div class="form-group row">
-<<<<<<< HEAD
-            <div class="form-group row">
                 <label class="col-12 col-form-label" for="nomclient">Societe</label>
-                    <div class="col-6">
-                        <select name="societe" class="form-control" required id="societe" onchange="this.form.submit()">
-                            <option>-Choix client-</option>
-                            <?php
-                            while($donnees = $query->fetch()){
-                                echo '<option value="'.$donnees['id_client'] .'" >'.$donnees['nom_client'].'</option>';}?>
-                        </select>
-                    </div>
-            <label class="col-12 col-form-label" for="type_courrier">Type de courrier</label>
-=======
-                <label class="col-sm-3 col-form-label" for="nomclient">Societe</label>
                 <div class="col-sm-6">
                     <select name="societe" class="form-control" required id="societe">
                         <?= $societe_options; ?>
 
                     </select>
                 </div>
-            <label class="col-3 col-form-label" for="type_courrier">Type de courrier</label>
->>>>>>> 38bf5a6b0405e2f37514265794063e0cb2f437f6
+            <label class="col-12 col-form-label" for="type_courrier">Type de courrier</label>
             <div class="col-6">
                 <select class="form-control" value="<?php echo isset($_POST['id_type']) ? $_POST['id_type'] : '' ?>"
                         name="type_courrier" id="type_courrier">
@@ -189,15 +175,10 @@ foreach($types as $type) {
 
             </div>
           </div>
-<<<<<<< HEAD
           <div class="col-12">
             <div class="text-center">
-                <button type="submit" class="btn btn-primary" name="ok">Valider</button>
+                <button type="submit" class="btn btn-primary">Valider</button>
             </div>
-=======
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Valider</button>
->>>>>>> 38bf5a6b0405e2f37514265794063e0cb2f437f6
           </div>
         </div>
 
