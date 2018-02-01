@@ -150,11 +150,11 @@
                           </form>
                       </div>
 
-                        <!--<div class="inbox-body">
+                        <div class="inbox-body">
                         <?php
                             require_once "chatbox.php"
                         ?>
 
-                  </aside>-->
+                  </aside>
 </div>
 </body>
