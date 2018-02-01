@@ -38,7 +38,7 @@
           <div class="row sideBar-body">
             <div class="col-sm-3 col-xs-3 sideBar-avatar">
               <div class="avatar-icon">
-                <img src="">
+                <img src="img/avatar/Mme-Legache.gif">
               </div>
             </div>
             <div class="col-sm-9 col-xs-9 sideBar-main">
@@ -57,7 +57,7 @@
           <div class="row sideBar-body">
             <div class="col-sm-3 col-xs-3 sideBar-avatar">
               <div class="avatar-icon">
-                <img src="">
+                <img src="img/avatar/anne.gif">
               </div>
             </div>
             <div class="col-sm-9 col-xs-9 sideBar-main">
@@ -76,7 +76,7 @@
           <div class="row sideBar-body">
             <div class="col-sm-3 col-xs-3 sideBar-avatar">
               <div class="avatar-icon">
-                <img src="">
+                <img src="img/avatar/anne-sophie.gif">
               </div>
             </div>
             <div class="col-sm-9 col-xs-9 sideBar-main">
@@ -95,7 +95,7 @@
           <div class="row sideBar-body">
             <div class="col-sm-3 col-xs-3 sideBar-avatar">
               <div class="avatar-icon">
-                <img src="">
+                <img src="img/avatar/fanny.gif">
               </div>
             </div>
             <div class="col-sm-9 col-xs-9 sideBar-main">
@@ -114,7 +114,7 @@
           <div class="row sideBar-body">
             <div class="col-sm-3 col-xs-3 sideBar-avatar">
               <div class="avatar-icon">
-                <img src="">
+                <img src="img/avatar/louise.gif">
               </div>
             </div>
             <div class="col-sm-9 col-xs-9 sideBar-main">
@@ -133,7 +133,7 @@
           <div class="row sideBar-body">
             <div class="col-sm-3 col-xs-3 sideBar-avatar">
               <div class="avatar-icon">
-                <img src="">
+                <img src="img/avatar/mathieu.gif">
               </div>
             </div>
             <div class="col-sm-9 col-xs-9 sideBar-main">
@@ -152,7 +152,7 @@
           <div class="row sideBar-body">
             <div class="col-sm-3 col-xs-3 sideBar-avatar">
               <div class="avatar-icon">
-                <img src="">
+                <img src="img/avatar/martial.gif">
               </div>
             </div>
             <div class="col-sm-9 col-xs-9 sideBar-main">
