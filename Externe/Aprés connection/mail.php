@@ -141,20 +141,16 @@
 
                   <aside class="lg-side">
                       <div class="inbox-head">
-                          <h3>Inbox</h3>
+                          <h3>Boite de reception</h3>
                           <form action="#" class="pull-right position">
-                              <div class="input-append">
-                                  <input type="text" class="sr-input" placeholder="Search Mail">
-                                  <button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
-                              </div>
                           </form>
                       </div>
 
-                        <!--<div class="inbox-body">
+                        <div class="inbox-body">
                         <?php
                             require_once "chatbox.php"
                         ?>
 
-                  </aside>-->
+                  </aside>
 </div>
 </body>
