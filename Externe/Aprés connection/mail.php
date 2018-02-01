@@ -139,18 +139,17 @@
                       </ul>
                   </aside>
 
-                  <aside class="lg-side">
-                      <div class="inbox-head">
-                          <h3>Boite de reception</h3>
-                          <form action="#" class="pull-right position">
-                          </form>
-                      </div>
-
+                    <aside class="lg-side">
+                        <div class="inbox-head">
+                            <h3>Boite de reception</h3>
+                            <form action="#" class="pull-right position">
+                            </form>
+                        </div>
+                      
                         <div class="inbox-body">
-                        <?php
-                            require_once "chatbox.php"
-                        ?>
-
-                  </aside>
-</div>
+                            <?php
+                                require_once "chatbox.php"
+                            ?>
+                        </div>
+                    </aside>
 </body>
