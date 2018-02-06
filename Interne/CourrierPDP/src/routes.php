@@ -8,3 +8,5 @@
 
 #$app->mount('/admin', new AdminControllerProvider());
 #$app->mount('/collabolateur', new CollabControllerProvider());
+$app->get('/login', "CourrierPDP\Controller\AppController::loginAction")
+    ->bind('login');

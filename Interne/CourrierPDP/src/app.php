@@ -18,7 +18,7 @@ use Silex\Provider\AssetServiceProvider;
 
 $app['debug']=true;
 
-require PATH_SRC . '/routes.php';
+#require PATH_SRC . '/routes.php';
 
 $app->register(new TwigServiceProvider(), [
     'twig.path' => [

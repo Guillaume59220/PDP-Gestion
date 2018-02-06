@@ -15,6 +15,22 @@ class Courrier
             $clientObj;
 
     /**
+     * Courrier constructor.
+     * @param $id_courrier
+     * @param $date_entre
+     * @param $addnotation
+     * @param $id_client
+     */
+    public function __construct($id_courrier, $date_entre, $addnotation, $id_client)
+    {
+        $this->id_courrier = $id_courrier;
+        $this->date_entre = $date_entre;
+        $this->addnotation = $addnotation;
+        $this->id_client = $id_client;
+    }
+
+
+    /**
      * @return mixed
      */
     public function getIdCourrier()

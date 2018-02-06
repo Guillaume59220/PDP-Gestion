@@ -13,6 +13,8 @@
         "symfony/config": "^4.0"
     },
     "autoload": {
-        "psr-4": {"CourrierPDP\\": "src"}
+        "psr-4": {"CourrierPDP\\": "src/Courrier",
+                     "Idiorm\\" : "src/Idiorm"
+        }
     }
 }
