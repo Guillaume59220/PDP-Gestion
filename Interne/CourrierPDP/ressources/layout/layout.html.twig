@@ -35,8 +35,8 @@
     </div>
 
     {# Menu du Site #}
-    {#{% include "inc/menu.html" %}#}
-    {{ render(controller('Controller\\NewsController::menu')) }}
+    {% include "inc/menu.html" %}
+
 
     {# Contenu du Site #}
     {% block contenu %}{% endblock %}

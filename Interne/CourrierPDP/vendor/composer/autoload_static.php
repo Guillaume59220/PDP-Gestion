@@ -46,6 +46,10 @@ class ComposerStaticInitca067229948371e3c5a620372079b177
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
         ),
+        'I' => 
+        array (
+            'Idiorm\\' => 7,
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 26,
@@ -152,6 +156,10 @@ class ComposerStaticInitca067229948371e3c5a620372079b177
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Idiorm\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Idiorm',
+        ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
@@ -170,7 +178,7 @@ class ComposerStaticInitca067229948371e3c5a620372079b177
         ),
         'CourrierPDP\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/src/Courrier',
         ),
     );
 

@@ -80,7 +80,7 @@ class AppController
         # Affectation de Valeurs
         $user->email         = $request->get('email');
         $user->mdp           = $app['security.default_encoder']
-            ->encodePassword($request->get('MDPAUTEUR'), '');
+            ->encodePassword($request->get('mdp'), '');
         $user->role_user     = 'role_user';
 
         # On persiste en BDD

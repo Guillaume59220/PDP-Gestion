@@ -7,7 +7,6 @@
  */
 
 use Silex\Provider\DoctrineServiceProvider;
-use Idiorm\Silex\Provider\IdiormServiceProvider;
 
 $app->register(new DoctrineServiceProvider(), [
     'db.options' => [
@@ -26,7 +25,8 @@ $app->register(new \Idiorm\Silex\Provider\IdiormServiceProvider(), array(
         'id_column_overrides' => array(
             'view_articles'   =>  'id_courrier',
             'clients'         =>  'id_client',
-            'courrier'        =>  'id_courrier'
+            'courrier'        =>  'id_courrier',
+            'type_courrier'   =>   'id_type'
         )
     )
 ));
@@ -47,4 +47,7 @@ $app['idiorm_clients'] = function() use($app) {
 $app['idiorm_courrier'] = function() use($app) {
     return $app['idiorm.db']->for_table('courrier')
         ->find_result_set();
+};
+$app['idiorm_type_courrier']=function ()use ($app){
+    return $app['idiorm.db']->for_table('type_courrier')->find_result_set();
 };
