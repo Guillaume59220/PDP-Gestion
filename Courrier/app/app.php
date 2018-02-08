@@ -44,14 +44,14 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
         ),
     ),
     'security.role_hierarchy' => array(
-        'ROLE_ADMIN' => array('ROLE_USER'),
+        'ROLE_ADMIN' => array('ROLE_USER', 'ROLE_EVENT_CREATE'),
+        'ROLE_CREATE_EVENT'=> array('ROLE_USER')
+
     ),
     'security.access_rules' => array(
         array('^/admin', 'ROLE_ADMIN'),
+        array('^/collaborateur', 'ROLE_EVENT_CREATE')
     ),
-    'security.role_hierarchy' => array(
-        array('^/collaborateur', 'ROLE_')
-    )
 ));
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->register(new Silex\Provider\LocaleServiceProvider());
@@ -76,13 +76,13 @@ $app['dao.comment'] = function ($app) {
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     switch ($code) {
         case 403:
-            $message = 'Access refuse.';
+            $message = 'Accès refusé.';
             break;
         case 404:
-            $message = 'Le page n\'existe pas.';
+            $message = 'Le page n\'a pas pu être trouvée.';
             break;
         default:
-            $message = "Error.";
+            $message = "Quelque chose s'est mal passé.";
     }
     return $app['twig']->render('error.html.twig', array('message' => $message));
 });
