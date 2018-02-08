@@ -1,0 +1,45 @@
+{% extends "layout.html.twig" %}
+
+{% block title %} Inscription {% endblock %}
+
+{% block contenu %}
+
+    <div class="row">
+        <div class="col-xs-6 col-xs-push-3">
+            <h2 class="text-center">Inscription d'un Utilisateur</h2>
+            <form action="{{ url('news_inscription_post') }}" method="POST"
+                  class="form-horizontal">
+
+                {# Prénom et Nom #}
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <input name="nom_client" id="nom_client"
+                               class="form-control" required type="text"
+                               placeholder="Saisissez le nom de client">
+                    </div>
+                </div>
+
+                {# Email et Mot de Passe #}
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <input name="email" id="email"
+                               class="form-control" required type="email"
+                               placeholder="Saisissez votre Email">
+                    </div>
+                    <div class="col-xs-6">
+                        <input name="mdp" id="mdp"
+                               class="form-control" required type="password"
+                               placeholder="*******">
+                    </div>
+                </div>
+
+                {# Bouton Submit #}
+                <input type="submit" class="btn btn-block btn-primary"
+                       value="Ajouter !">
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
