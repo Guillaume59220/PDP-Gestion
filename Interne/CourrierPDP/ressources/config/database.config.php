@@ -7,6 +7,7 @@
  */
 
 use Silex\Provider\DoctrineServiceProvider;
+use Idiorm\Silex\Provider\IdiormServiceProvider;
 
 $app->register(new DoctrineServiceProvider(), [
     'db.options' => [
