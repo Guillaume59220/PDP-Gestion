@@ -49,6 +49,9 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     'security.access_rules' => array(
         array('^/admin', 'ROLE_ADMIN'),
     ),
+    'security.role_hierarchy' => array(
+        array('^/collaborateur', 'ROLE_')
+    )
 ));
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->register(new Silex\Provider\LocaleServiceProvider());
@@ -57,14 +60,14 @@ $app->register(new Silex\Provider\ValidatorServiceProvider());
 
 // Register services
 $app['dao.article'] = function ($app) {
-    return new Courrier\DAO\ArticleDAO($app['db']);
+    return new Courrier\DAO\ClientDAO($app['db']);
 };
 $app['dao.user'] = function ($app) {
     return new Courrier\DAO\UserDAO($app['db']);
 };
 $app['dao.comment'] = function ($app) {
-    $commentDAO = new Courrier\DAO\CommentDAO($app['db']);
-    $commentDAO->setArticleDAO($app['dao.article']);
+    $commentDAO = new Courrier\DAO\CourrierDAO($app['db']);
+    $commentDAO->setClientDAO($app['dao.client']);
     $commentDAO->setUserDAO($app['dao.user']);
     return $commentDAO;
 };
