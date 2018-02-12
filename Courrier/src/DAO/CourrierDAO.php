@@ -2,62 +2,45 @@
 
 namespace MicroCMS\DAO;
 
-use MicroCMS\Domain\Article;
+use Courrier\Domain\Courrier;
 
-class ArticleDAO extends DAO
+class CourrierDAO extends DAO
 {
-    /**
-     * Return a list of all articles, sorted by date (most recent first).
-     *
-     * @return array A list of all articles.
-     */
     public function findAll() {
-        $sql = "select * from t_article order by art_id desc";
+        $sql = "select * from view_courrier order by id_courrier desc";
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
         $articles = array();
         foreach ($result as $row) {
-            $articleId = $row['art_id'];
-            $articles[$articleId] = $this->buildDomainObject($row);
+            $courrierId = $row['id_courrier'];
+            $courriers[$courrierId] = $this->buildDomainObject($row);
         }
-        return $articles;
+        return $courriers;
     }
 
-    /**
-     * Returns an article matching the supplied id.
-     *
-     * @param integer $id The article id.
-     *
-     * @return \MicroCMS\Domain\Article|throws an exception if no matching article is found
-     */
-    public function find($id) {
-        $sql = "select * from t_article where art_id=?";
-        $row = $this->getDb()->fetchAssoc($sql, array($id));
+    public function find($id_courrier) {
+        $sql = "select * from view_courrier where id_courrier =?";
+        $row = $this->getDb()->fetchAssoc($sql, array($id_courrier));
 
         if ($row)
             return $this->buildDomainObject($row);
         else
-            throw new \Exception("No article matching id " . $id);
+            throw new \Exception("Pas de courrier corresprndent " . $id_courrier);
     }
 
-    /**
-     * Saves an article into the database.
-     *
-     * @param \MicroCMS\Domain\Article $article The article to save
-     */
-    public function save(Article $article) {
-        $articleData = array(
-            'art_title' => $article->getTitle(),
-            'art_content' => $article->getContent(),
+    public function save(Courrier $courrier) {
+        $courrierData = array(
+            'No' => $courrier->getId(),
+            '' => $courrier->getContent(),
             );
 
-        if ($article->getId()) {
+        if ($courrier->getId()) {
             // The article has already been saved : update it
-            $this->getDb()->update('t_article', $articleData, array('art_id' => $article->getId()));
+            $this->getDb()->update('courrier', $courrierData, array('id_courrier' => $courrier->getId()));
         } else {
             // The article has never been saved : insert it
-            $this->getDb()->insert('t_article', $articleData);
+            $this->getDb()->insert('t_article', $courrierData);
             // Get the id of the newly created article and set it on the entity.
             $id = $this->getDb()->lastInsertId();
             $article->setId($id);

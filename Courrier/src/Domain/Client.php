@@ -1,8 +1,8 @@
 <?php
 
-namespace MicroCMS\Domain;
+namespace Courrier\Domain;
 
-class Article 
+class Client
 {
     /**
      * Article id.
