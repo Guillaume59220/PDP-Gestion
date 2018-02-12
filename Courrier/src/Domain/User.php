@@ -1,6 +1,6 @@
 <?php
 
-namespace MicroCMS\Domain;
+namespace Courrier\Domain;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -11,28 +11,27 @@ class User implements UserInterface
      *
      * @var integer
      */
-    private $id;
+    private $id_user;
 
     /**
      * User name.
      *
      * @var string
      */
-    private $username;
+    private $email;
 
     /**
      * User password.
      *
      * @var string
      */
-    private $password;
+    private $mdp;
 
     /**
      * Salt that was originally used to encode the password.
      *
      * @var string
      */
-    private $salt;
 
     /**
      * Role.
@@ -40,10 +39,10 @@ class User implements UserInterface
      *
      * @var string
      */
-    private $role;
+    private $role_user;
 
     public function getId() {
-        return $this->id;
+        return $this->id_user;
     }
 
     public function setId($id) {
@@ -54,8 +53,8 @@ class User implements UserInterface
     /**
      * @inheritDoc
      */
-    public function getUsername() {
-        return $this->username;
+    public function getEmail() {
+        return $this->email;
     }
 
     public function setUsername($username) {
@@ -66,33 +65,23 @@ class User implements UserInterface
     /**
      * @inheritDoc
      */
-    public function getPassword() {
-        return $this->password;
+    public function getMdp() {
+        return $this->mdp;
     }
 
-    public function setPassword($password) {
-        $this->password = $password;
+    public function setMdp($mdp) {
+        $this->mdp = $mdp;
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function getSalt() {
-        return $this->salt;
-    }
 
-    public function setSalt($salt) {
-        $this->salt = $salt;
-        return $this;
-    }
 
     public function getRole() {
-        return $this->role;
+        return $this->role_user;
     }
 
-    public function setRole($role) {
-        $this->role = $role;
+    public function setRole($role_user) {
+        $this->role = $role_user;
         return $this;
     }
 
