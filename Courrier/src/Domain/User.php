@@ -3,73 +3,66 @@
 namespace Courrier\Domain;
 
 use Symfony\Component\Security\Core\User\UserInterface;
+use Courrier\DAO\UserDAO;
 
 class User implements UserInterface
 {
-    /**
-     * User id.
-     *
-     * @var integer
-     */
+
     private $id_user;
 
-    /**
-     * User name.
-     *
-     * @var string
-     */
+
     private $email;
 
-    /**
-     * User password.
-     *
-     * @var string
-     */
+
     private $mdp;
 
-    /**
-     * Salt that was originally used to encode the password.
-     *
-     * @var string
-     */
+    private $salt;
 
-    /**
-     * Role.
-     * Values : ROLE_USER or ROLE_ADMIN.
-     *
-     * @var string
-     */
     private $role_user;
 
     public function getId() {
         return $this->id_user;
     }
 
-    public function setId($id) {
-        $this->id = $id;
+    public function setId($id_user) {
+        $this->id_user = $id_user;
         return $this;
     }
 
     /**
-     * @inheritDoc
+     * @return mixed
      */
-    public function getEmail() {
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    /**
+     * @param mixed $salt
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+    }
+
+
+    public function getUsername() {
         return $this->email;
     }
 
-    public function setUsername($username) {
-        $this->username = $username;
+    public function setUsername($email) {
+        $this->email = $email;
         return $this;
     }
 
     /**
      * @inheritDoc
      */
-    public function getMdp() {
+    public function getPassword() {
         return $this->mdp;
     }
 
-    public function setMdp($mdp) {
+    public function setPassword($mdp) {
         $this->mdp = $mdp;
         return $this;
     }

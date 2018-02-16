@@ -2,6 +2,7 @@
 
 namespace MicroCMS\Controller;
 
+use Courrier\Domain\Client;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use MicroCMS\Domain\Article;
@@ -12,115 +13,70 @@ use MicroCMS\Form\Type\UserType;
 
 class AdminController {
 
-    /**
-     * Admin home page controller.
-     *
-     * @param Application $app Silex application
-     */
     public function indexAction(Application $app) {
-        $articles = $app['dao.article']->findAll();
-        $comments = $app['dao.comment']->findAll();
+        $courriers = $app['dao.courrier']->findAll();
+        $clients = $app['dao.client']->findAll();
         $users = $app['dao.user']->findAll();
         return $app['twig']->render('admin.html.twig', array(
-            'articles' => $articles,
-            'comments' => $comments,
+            'courriers' => $courriers,
+            'clients' => $clients,
             'users' => $users));
     }
 
-    /**
-     * Add article controller.
-     *
-     * @param Request $request Incoming request
-     * @param Application $app Silex application
-     */
     public function addArticleAction(Request $request, Application $app) {
-        $article = new Article();
-        $articleForm = $app['form.factory']->create(ArticleType::class, $article);
-        $articleForm->handleRequest($request);
-        if ($articleForm->isSubmitted() && $articleForm->isValid()) {
-            $app['dao.article']->save($article);
-            $app['session']->getFlashBag()->add('success', 'The article was successfully created.');
+        $courrier = new Courrier();
+        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier);
+        $courrierForm->handleRequest($request);
+        if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
+            $app['dao.courrier']->save($courrier);
+            $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
         }
-        return $app['twig']->render('article_form.html.twig', array(
-            'title' => 'New article',
-            'articleForm' => $articleForm->createView()));
+        return $app['twig']->render('courrier_form.html.twig', array(
+            'title' => 'Ajouter courrier',
+            'courrierForm' => $courrierForm->createView()));
     }
 
-    /**
-     * Edit article controller.
-     *
-     * @param integer $id Article id
-     * @param Request $request Incoming request
-     * @param Application $app Silex application
-     */
-    public function editArticleAction($id, Request $request, Application $app) {
-        $article = $app['dao.article']->find($id);
-        $articleForm = $app['form.factory']->create(ArticleType::class, $article);
-        $articleForm->handleRequest($request);
-        if ($articleForm->isSubmitted() && $articleForm->isValid()) {
-            $app['dao.article']->save($article);
-            $app['session']->getFlashBag()->add('success', 'The article was successfully updated.');
+    public function editCourrierAction($id_courrier, Request $request, Application $app) {
+        $courrier = $app['dao.courrier']->find($id_courrier);
+        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier);
+        $courrierForm->handleRequest($request);
+        if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
+            $app['dao.courrier']->save($courrier);
+            $app['session']->getFlashBag()->add('success', 'Liste des courriers a ete bien modifie.');
         }
         return $app['twig']->render('article_form.html.twig', array(
-            'title' => 'Edit article',
-            'articleForm' => $articleForm->createView()));
+            'title' => 'Modification courrier',
+            'courrierForm' => $courrierForm->createView()));
     }
 
-    /**
-     * Delete article controller.
-     *
-     * @param integer $id Article id
-     * @param Application $app Silex application
-     */
-    public function deleteArticleAction($id, Application $app) {
-        // Delete all associated comments
-        $app['dao.comment']->deleteAllByArticle($id);
-        // Delete the article
-        $app['dao.article']->delete($id);
-        $app['session']->getFlashBag()->add('success', 'The article was successfully removed.');
-        // Redirect to admin home page
+    public function deleteCourrierAction($id_courrier, Application $app) {
+        $app['dao.courrier']->delete($id_courrier);
+        $app['session']->getFlashBag()->add('success', 'Le courrier a ete supprime.');
         return $app->redirect($app['url_generator']->generate('admin'));
     }
 
-    /**
-     * Edit comment controller.
-     *
-     * @param integer $id Comment id
-     * @param Request $request Incoming request
-     * @param Application $app Silex application
-     */
-    public function editCommentAction($id, Request $request, Application $app) {
-        $comment = $app['dao.comment']->find($id);
-        $commentForm = $app['form.factory']->create(CommentType::class, $comment);
-        $commentForm->handleRequest($request);
-        if ($commentForm->isSubmitted() && $commentForm->isValid()) {
-            $app['dao.comment']->save($comment);
-            $app['session']->getFlashBag()->add('success', 'The comment was successfully updated.');
+
+    public function editClientAction($id_client, Request $request, Application $app) {
+        $client = $app['dao.client']->find($id_client);
+        $clientForm = $app['form.factory']->create(ClientType::class, $client);
+        $clientForm->handleRequest($request);
+        if ($clientForm->isSubmitted() && $clientForm->isValid()) {
+            $app['dao.client']->save($client);
+            $app['session']->getFlashBag()->add('success', 'Les donnees client a bien ete modifie.');
         }
         return $app['twig']->render('comment_form.html.twig', array(
-            'title' => 'Edit comment',
-            'commentForm' => $commentForm->createView()));
+            'title' => 'Edit client',
+            'clientForm' => $clientForm->createView()));
     }
 
-    /**
-     * Delete comment controller.
-     *
-     * @param integer $id Comment id
-     * @param Application $app Silex application
-     */
-    public function deleteCommentAction($id, Application $app) {
-        $app['dao.comment']->delete($id);
-        $app['session']->getFlashBag()->add('success', 'The comment was successfully removed.');
+
+    public function deleteClientAction($id_client, Application $app) {
+        $app['dao.client']->delete($id_client);
+        $app['session']->getFlashBag()->add('success', 'Le client a ete supprime.');
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));
     }
 
-    /**
-     * Add user controller.
-     *
-     * @param Request $request Incoming request
-     * @param Application $app Silex application
-     */
     public function addUserAction(Request $request, Application $app) {
         $user = new User();
         $userForm = $app['form.factory']->create(UserType::class, $user);

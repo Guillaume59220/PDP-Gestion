@@ -40,35 +40,28 @@ class CourrierDAO extends DAO
             $this->getDb()->update('courrier', $courrierData, array('id_courrier' => $courrier->getId()));
         } else {
             // The article has never been saved : insert it
-            $this->getDb()->insert('t_article', $courrierData);
+            $this->getDb()->insert('courrier', $courrierData);
             // Get the id of the newly created article and set it on the entity.
-            $id = $this->getDb()->lastInsertId();
-            $article->setId($id);
+            $id_courrier = $this->getDb()->lastInsertId();
+            $courrier->setId($id_courrier);
         }
     }
 
-    /**
-     * Removes an article from the database.
-     *
-     * @param integer $id The article id.
-     */
-    public function delete($id) {
+
+    public function delete($id_courrier) {
         // Delete the article
-        $this->getDb()->delete('t_article', array('art_id' => $id));
+        $this->getDb()->delete('courrier', array('id_courrier' => $id_courrier));
     }
 
-    /**
-     * Creates an Article object based on a DB row.
-     *
-     * @param array $row The DB row containing Article data.
-     * @return \MicroCMS\Domain\Article
-     */
 
     protected function buildDomainObject(array $row) {
-        $article = new Article();
-        $article->setId($row['art_id']);
-        $article->setTitle($row['art_title']);
-        $article->setContent($row['art_content']);
-        return $article;
+        $courrier = new Courrier();
+        $courrier->setId($row['id_courrier']);
+        $courrier->setDateEntre($row['date_entre']);
+        $courrier->setAnnotation($row['annotation']);
+        $courrier->setDateSortie($row['date_sortie']);
+        $courrier->setScan($row['scan']);
+
+        return $courrier;
     }
 }
