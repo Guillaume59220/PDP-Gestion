@@ -1,12 +1,12 @@
 <?php
 
-namespace MicroCMS\DAO;
+namespace Courrier\DAO;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
-use MicroCMS\Domain\User;
+use Courrier\Domain\User;
 
 class UserDAO extends DAO implements UserProviderInterface
 {
@@ -16,33 +16,27 @@ class UserDAO extends DAO implements UserProviderInterface
      * @return array A list of all users.
      */
     public function findAll() {
-        $sql = "select * from t_user order by usr_role, usr_name";
+        $sql = "select * from user order by role_user, email";
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
         $entities = array();
         foreach ($result as $row) {
-            $id = $row['usr_id'];
-            $entities[$id] = $this->buildDomainObject($row);
+            $id_user = $row['id_user'];
+            $entities[$id_user] = $this->buildDomainObject($row);
         }
         return $entities;
     }
 
-    /**
-     * Returns a user matching the supplied id.
-     *
-     * @param integer $id The user id.
-     *
-     * @return \MicroCMS\Domain\User|throws an exception if no matching user is found
-     */
-    public function find($id) {
-        $sql = "select * from t_user where usr_id=?";
-        $row = $this->getDb()->fetchAssoc($sql, array($id));
+
+    public function find($id_user) {
+        $sql = "select * from user where id_user=?";
+        $row = $this->getDb()->fetchAssoc($sql, array($id_user));
 
         if ($row)
             return $this->buildDomainObject($row);
         else
-            throw new \Exception("No user matching id " . $id);
+            throw new \Exception("No user matching id " . $id_user);
     }
 
     /**
@@ -52,21 +46,21 @@ class UserDAO extends DAO implements UserProviderInterface
      */
     public function save(User $user) {
         $userData = array(
-            'usr_name' => $user->getUsername(),
+            'email' => $user->getUsername(),
             'usr_salt' => $user->getSalt(),
-            'usr_password' => $user->getPassword(),
-            'usr_role' => $user->getRole()
+            'mdp' => $user->getPassword(),
+            'role_user' => $user->getRole()
             );
 
         if ($user->getId()) {
             // The user has already been saved : update it
-            $this->getDb()->update('t_user', $userData, array('usr_id' => $user->getId()));
+            $this->getDb()->update('user', $userData, array('id_user' => $user->getId()));
         } else {
             // The user has never been saved : insert it
-            $this->getDb()->insert('t_user', $userData);
+            $this->getDb()->insert('user', $userData);
             // Get the id of the newly created user and set it on the entity.
-            $id = $this->getDb()->lastInsertId();
-            $user->setId($id);
+            $id_user = $this->getDb()->lastInsertId();
+            $user->setId($id_user);
         }
     }
 

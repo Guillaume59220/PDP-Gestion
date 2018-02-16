@@ -1,70 +1,151 @@
 <?php
 
-namespace MicroCMS\Domain;
+namespace Courrier\Domain;
 
-class Comment 
+class Courrier
 {
-    /**
-     * Comment id.
-     *
-     * @var integer
-     */
-    private $id;
+
+    private $id_courrier,
+        $date_entre,
+        $date_sortie,
+        $scan,
+        $fax,
+        $annotation,
+        $id_client,
+        $id_type_courrier,
+        $id_lettre,
+        $id_reexpedition;
 
     /**
-     * Comment author.
-     *
-     * @var \MicroCMS\Domain\User
+     * @return mixed
      */
-    private $author;
+    public function getIdCourrier()
+    {
+        return $this->id_courrier;
+    }
 
     /**
-     * Comment content.
-     *
-     * @var integer
+     * @param mixed $id_courrier
      */
-    private $content;
+    public function setIdCourrier($id_courrier)
+    {
+        $this->id_courrier = $id_courrier;
+    }
 
     /**
-     * Associated article.
-     *
-     * @var \MicroCMS\Domain\Article
+     * @return mixed
      */
-    private $article;
-
-    public function getId() {
-        return $this->id;
+    public function getDateEntre()
+    {
+        return $this->date_entre;
     }
 
-    public function setId($id) {
-        $this->id = $id;
-        return $this;
+    /**
+     * @param mixed $date_entre
+     */
+    public function setDateEntre($date_entre)
+    {
+        $this->date_entre = $date_entre;
     }
 
-    public function getAuthor() {
-        return $this->author;
+    /**
+     * @return mixed
+     */
+    public function getDateSortie()
+    {
+        return $this->date_sortie;
     }
 
-    public function setAuthor(User $author) {
-        $this->author = $author;
-        return $this;
+    /**
+     * @param mixed $date_sortie
+     */
+    public function setDateSortie($date_sortie)
+    {
+        $this->date_sortie = $date_sortie;
     }
 
-    public function getContent() {
-        return $this->content;
+    /**
+     * @return mixed
+     */
+    public function getScan()
+    {
+        return $this->scan;
     }
 
-    public function setContent($content) {
-        $this->content = $content;
-        return $this;
+    /**
+     * @param mixed $scan
+     */
+    public function setScan($scan)
+    {
+        $this->scan = $scan;
     }
 
-    public function getArticle() {
-        return $this->article;
+    /**
+     * @return mixed
+     */
+    public function getFax()
+    {
+        return $this->fax;
     }
 
-    public function setArticle(Article $article) {
-        $this->article = $article;
-        return $this;
+    /**
+     * @param mixed $fax
+     */
+    public function setFax($fax)
+    {
+        $this->fax = $fax;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAnnotation()
+    {
+        return $this->annotation;
+    }
+
+    /**
+     * @param mixed $annotation
+     */
+    public function setAnnotation($annotation)
+    {
+        $this->annotation = $annotation;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdClient()
+    {
+        return $this->id_client;
+    }
+
+    /**
+     * @param mixed $id_client
+     */
+    public function setIdClient(Client $id_client)
+    {
+        $this->client = $id_client;
+    }
+
+
+
+    public function getIdTypeCourrier()
+    {
+        return $this->id_type_courrier;
+    }
+
+
+    public function getIdLettre()
+    {
+        return $this->id_lettre;
+    }
+
+
+    public function getIdReexpedition()
+    {
+        return $this->id_reexpedition;
+    }
+
+
 }
