@@ -39,11 +39,7 @@ class UserDAO extends DAO implements UserProviderInterface
             throw new \Exception("No user matching id " . $id_user);
     }
 
-    /**
-     * Saves a user into the database.
-     *
-     * @param \MicroCMS\Domain\User $user The user to save
-     */
+
     public function save(User $user) {
         $userData = array(
             'email' => $user->getUsername(),
@@ -71,7 +67,7 @@ class UserDAO extends DAO implements UserProviderInterface
      */
     public function delete($id) {
         // Delete the user
-        $this->getDb()->delete('t_user', array('usr_id' => $id));
+        $this->getDb()->delete('user', array('id_user' => $id));
     }
 
     /**
@@ -79,7 +75,7 @@ class UserDAO extends DAO implements UserProviderInterface
      */
     public function loadUserByUsername($username)
     {
-        $sql = "select * from t_user where usr_name=?";
+        $sql = "select * from user where email=?";
         $row = $this->getDb()->fetchAssoc($sql, array($username));
 
         if ($row)
@@ -105,15 +101,10 @@ class UserDAO extends DAO implements UserProviderInterface
      */
     public function supportsClass($class)
     {
-        return 'MicroCMS\Domain\User' === $class;
+        return 'Courrier\Domain\User' === $class;
     }
 
-    /**
-     * Creates a User object based on a DB row.
-     *
-     * @param array $row The DB row containing User data.
-     * @return \MicroCMS\Domain\User
-     */
+
     protected function buildDomainObject(array $row) {
         $user = new User();
         $user->setId($row['usr_id']);
