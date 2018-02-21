@@ -60,17 +60,17 @@ $app->register(new Silex\Provider\TranslationServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 
 // Register services
-$app['dao.article'] = function ($app) {
+$app['dao.client'] = function ($app) {
     return new Courrier\DAO\ClientDAO($app['db']);
 };
 $app['dao.user'] = function ($app) {
     return new Courrier\DAO\UserDAO($app['db']);
 };
-$app['dao.comment'] = function ($app) {
-    $commentDAO = new Courrier\DAO\CourrierDAO($app['db']);
-    $commentDAO->setClientDAO($app['dao.client']);
-    $commentDAO->setUserDAO($app['dao.user']);
-    return $commentDAO;
+$app['dao.courrier'] = function ($app) {
+    $courrierDAO = new Courrier\DAO\CourrierDAO($app['db']);
+    $courrierDAO->setClientDAO($app['dao.client']);
+    $courrierDAO->setUserDAO($app['dao.user']);
+    return $courrierDAO;
 };
 
 // Register error handler
