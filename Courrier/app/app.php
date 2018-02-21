@@ -15,6 +15,7 @@ use Courrier\DAO\UserDAO;
 // Register global error and exception handlers
 ErrorHandler::register();
 ExceptionHandler::register();
+$app['debug'] = true;
 
 // Register service providers
 $app->register(new Silex\Provider\DoctrineServiceProvider());
@@ -36,7 +37,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     'security.firewalls' => array(
         'secured' => array(
             'pattern' => '^/',
-            'anonymous' => false,
+            'anonymous' => true,
             'logout' => true,
             'form' => array('login_path' => '/login', 'check_path' => '/login_check'),
             'users' => function () use ($app) {
@@ -50,6 +51,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
 
     ),
     'security.access_rules' => array(
+        array('^/', 'IS_AUTHENTICATED_ANONYMOUSLY'),
         array('^/admin', 'ROLE_ADMIN'),
         array('^/collaborateur', 'ROLE_EVENT_CREATE')
     ),
@@ -72,21 +74,6 @@ $app['dao.courrier'] = function ($app) {
     $courrierDAO->setUserDAO($app['dao.user']);
     return $courrierDAO;
 };
-
-// Register error handler
-$app->error(function (\Exception $e, Request $request, $code) use ($app) {
-    switch ($code) {
-        case 403:
-            $message = 'Accès refusé.';
-            break;
-        case 404:
-            $message = 'Le page n\'a pas pu être trouvée.';
-            break;
-        default:
-            $message = "Quelque chose s'est mal passé.";
-    }
-    return $app['twig']->render('error.html.twig', array('message' => $message));
-});
 
 // Register JSON data decoder for JSON requests
 $app->before(function (Request $request) {
