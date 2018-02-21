@@ -1,7 +1,7 @@
 <?php
 
 // Home page
-$app->get('/login', "Courrier\Controller\HomeController::loginAction")
+$app->get('/index', "Courrier\Controller\HomeController::loginAction")
     ->bind('login');
 // Detailed info about an article
 $app->match('/courrier/{id}', "Courrier\Controller\HomeController::CourrierAction")
