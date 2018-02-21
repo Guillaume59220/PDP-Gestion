@@ -43,7 +43,7 @@ class ApiController {
         if (!$request->request->has('fax')) {
             return $app->json('Missing required parameter: ', 400);
         }
-       
+
         // Build and save the new article
         $courrier = new Courrier();
         $courrier->setDateEntre($request->request->get('date_entre'));
