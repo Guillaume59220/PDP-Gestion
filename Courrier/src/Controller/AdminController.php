@@ -5,11 +5,10 @@ namespace MicroCMS\Controller;
 use Courrier\Domain\Client;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-use MicroCMS\Domain\Article;
-use MicroCMS\Domain\User;
-use MicroCMS\Form\Type\ArticleType;
-use MicroCMS\Form\Type\CommentType;
-use MicroCMS\Form\Type\UserType;
+use Courrier\Domain\User;
+use Courrier\Form\Type\ClientType;
+use Courrier\Form\Type\CourrierType;
+use Courrier\Form\Type\UserType;
 
 class AdminController {
 
@@ -92,7 +91,7 @@ class AdminController {
             $password = $encoder->encodePassword($plainPassword, $user->getSalt());
             $user->setPassword($password); 
             $app['dao.user']->save($user);
-            $app['session']->getFlashBag()->add('success', 'The user was successfully created.');
+            $app['session']->getFlashBag()->add('success', 'utilisateur a ete cree.');
         }
         return $app['twig']->render('user_form.html.twig', array(
             'title' => 'New user',
@@ -125,12 +124,7 @@ class AdminController {
             'userForm' => $userForm->createView()));
     }
 
-    /**
-     * Delete user controller.
-     *
-     * @param integer $id User id
-     * @param Application $app Silex application
-     */
+
     public function deleteUserAction($id, Application $app) {
         // Delete all associated comments
         $app['dao.comment']->deleteAllByUser($id);
