@@ -61,7 +61,6 @@ $app->register(new Silex\Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 
-// Register services
 $app['dao.client'] = function ($app) {
     return new Courrier\DAO\ClientDAO($app['db']);
 };
@@ -70,12 +69,9 @@ $app['dao.user'] = function ($app) {
 };
 $app['dao.courrier'] = function ($app) {
     $courrierDAO = new Courrier\DAO\CourrierDAO($app['db']);
-    $courrierDAO->setClientDAO($app['dao.client']);
-    $courrierDAO->setUserDAO($app['dao.user']);
     return $courrierDAO;
 };
 
-// Register JSON data decoder for JSON requests
 $app->before(function (Request $request) {
     if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
         $data = json_decode($request->getContent(), true);
