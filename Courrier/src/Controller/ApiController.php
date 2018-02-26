@@ -57,11 +57,11 @@ class ApiController {
     }
 
 
-    private function buildCourrierArray(Article $article) {
+    private function buildCourrierArray(Courrier $courrier) {
         $data  = array(
-            'id_courrier' => $article->getIdCourrier(),
-            'id_client' => $article->getIdClient(),
-            'id_type_courrier' => $article->getIdTypeCourrier()
+            'id_courrier' => $courrier->getIdCourrier(),
+            'id_client' => $courrier->getIdClient(),
+            'id_type_courrier' => $courrier->getIdTypeCourrier()
             );
         return $data;
     }

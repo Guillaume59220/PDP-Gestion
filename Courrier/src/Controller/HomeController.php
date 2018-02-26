@@ -27,7 +27,7 @@ class HomeController {
             $clientForm->handleRequest($request);
             if ($clientForm->isSubmitted() && $clientForm->isValid()) {
                 $app['dao.client']->save($client);
-                $app['session']->getFlashBag()->add('success', 'Your comment was successfully added.');
+                $app['session']->getFlashBag()->add('success');
             }
             $clientFormView = $clientForm->createView();
         }

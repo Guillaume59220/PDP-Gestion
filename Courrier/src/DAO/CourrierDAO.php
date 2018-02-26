@@ -1,6 +1,6 @@
 <?php
 
-namespace MicroCMS\DAO;
+namespace Courrier\DAO;
 
 use Courrier\Domain\Courrier;
 
@@ -11,7 +11,7 @@ class CourrierDAO extends DAO
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
-        $articles = array();
+        $courriers = array();
         foreach ($result as $row) {
             $courrierId = $row['id_courrier'];
             $courriers[$courrierId] = $this->buildDomainObject($row);

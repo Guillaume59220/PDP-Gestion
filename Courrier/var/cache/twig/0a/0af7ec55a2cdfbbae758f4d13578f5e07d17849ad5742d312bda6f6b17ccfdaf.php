@@ -43,7 +43,7 @@ class __TwigTemplate_7e3557e4e4c221b7ab285bb171d04afae2cae11f54d282bc33cdfd3d826
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new Twig_Error_Runtime('Variable "error" does not exist.', 7, $this->getSourceContext()); })())) {
             // line 8
             echo "        <div class=\"alert alert-danger\">
-            <strong>Login failed!</strong> ";
+            <strong>Error de conexxion!</strong> ";
             // line 9
             echo twig_escape_filter($this->env, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new Twig_Error_Runtime('Variable "error" does not exist.', 9, $this->getSourceContext()); })()), "html", null, true);
             echo "
@@ -61,12 +61,12 @@ class __TwigTemplate_7e3557e4e4c221b7ab285bb171d04afae2cae11f54d282bc33cdfd3d826
                     <input type=\"text\" name=\"_username\" value=\"";
         // line 16
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new Twig_Error_Runtime('Variable "last_username" does not exist.', 16, $this->getSourceContext()); })()), "html", null, true);
-        echo "\" class=\"form-control\" placeholder=\"Enter your username\" required autofocus>
+        echo "\" class=\"form-control\" placeholder=\"Nom utilisateur\" required autofocus>
                 </div>
             </div>
             <div class=\"form-group\">
                 <div class=\"col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4\">
-                    <input type=\"password\" name=\"_password\" class=\"form-control\" placeholder=\"Enter your password\" required>
+                    <input type=\"password\" name=\"_password\" class=\"form-control\" placeholder=\"Mot de passe\" required>
                 </div>
             </div>
             <div class=\"form-group\">
@@ -104,19 +104,19 @@ class __TwigTemplate_7e3557e4e4c221b7ab285bb171d04afae2cae11f54d282bc33cdfd3d826
     <h2 class=\"text-center\">{{ block('title') }}</h2>
     {% if error %}
         <div class=\"alert alert-danger\">
-            <strong>Login failed!</strong> {{ error }}
+            <strong>Error de conexxion!</strong> {{ error }}
         </div>
     {% endif %}
     <div class=\"well\">
         <form class=\"form-signin form-horizontal\" role=\"form\" action=\"{{ path('login_check') }}\" method=\"post\">
             <div class=\"form-group\">
                 <div class=\"col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4\">
-                    <input type=\"text\" name=\"_username\" value=\"{{ last_username }}\" class=\"form-control\" placeholder=\"Enter your username\" required autofocus>
+                    <input type=\"text\" name=\"_username\" value=\"{{ last_username }}\" class=\"form-control\" placeholder=\"Nom utilisateur\" required autofocus>
                 </div>
             </div>
             <div class=\"form-group\">
                 <div class=\"col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4\">
-                    <input type=\"password\" name=\"_password\" class=\"form-control\" placeholder=\"Enter your password\" required>
+                    <input type=\"password\" name=\"_password\" class=\"form-control\" placeholder=\"Mot de passe\" required>
                 </div>
             </div>
             <div class=\"form-group\">
