@@ -322,7 +322,7 @@ $context["user"], "role", array()) == "ROLE_USER")) {
                                                     <h4 class=\"modal-title\" id=\"myModalLabel\">Confirmation exiger</h4>
                                                 </div>
                                                 <div class=\"modal-body\">
-                                                    Do you really want to delete this user ?
+                                                    Suprimer ?
                                                 </div>
                                                 <div class=\"modal-footer\">
                                                     <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Annuler</button>
@@ -541,7 +541,7 @@ $context["user"], "role", array()) == "ROLE_USER")) {
                                                     <h4 class=\"modal-title\" id=\"myModalLabel\">Confirmation exiger</h4>
                                                 </div>
                                                 <div class=\"modal-body\">
-                                                    Do you really want to delete this user ?
+                                                    Suprimer ?
                                                 </div>
                                                 <div class=\"modal-footer\">
                                                     <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Annuler</button>

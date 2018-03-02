@@ -6,6 +6,7 @@ use Courrier\Domain\Client;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\Domain\User;
+use Courrier\DAO\UserDAO;
 use Courrier\Form\Type\ClientType;
 use Courrier\Form\Type\CourrierType;
 use Courrier\Form\Type\UserType;
