@@ -46,12 +46,14 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
         ),
     ),
     'security.role_hierarchy' => array(
-        'ROLE_ADMIN' => array('ROLE_USER', 'ROLE_EVENT_CREATE'),
-        'ROLE_CREATE_EVENT'=> array('ROLE_USER')
+        'ROLE_ADMIN' => array('ROLE_EVENT_CREATE', 'ROLE_CUSTOMER'),
+        'ROLE_CREATE_EVENT' => array('ROLE_USER'),
+        'ROLE_CUSTOMER' => array('ROLE_USER')
 
     ),
     'security.access_rules' => array(
-        array('^/', 'IS_AUTHENTICATED_ANONYMOUSLY'),
+        array('^/login', 'IS_AUTHENTICATED_ANONYMOUSLY'),
+        array('^/', 'ROLE_CUSTOMER'),
         array('^/admin', 'ROLE_ADMIN'),
         array('^/collaborateur', 'ROLE_EVENT_CREATE')
     ),
