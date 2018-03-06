@@ -1,6 +1,9 @@
 <?php
 
-$app->get('/', "Courrier\Controller\HomeController::loginAction")
+$app->get('/', "Courrier\Controller\HomeController::indexAction")
+    ->bind('home');
+
+$app->get('/login', "Courrier\Controller\HomeController::loginAction")
     ->bind('login');
 
 $app->match('/courrier/{id}', "Courrier\Controller\HomeController::CourrierAction")
