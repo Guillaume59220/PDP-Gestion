@@ -18,7 +18,7 @@ class User implements UserInterface
 
     private $salt;
 
-    private $role_user;
+    private $roles;
 
     public function getId() {
         return $this->id_user;
@@ -69,21 +69,13 @@ class User implements UserInterface
 
 
 
-    public function getRole() {
-        return $this->role_user;
+    public function getRoles() {
+        return $this->roles;
     }
 
-    public function setRole($role_user) {
-        $this->role = $role_user;
+    public function setRoles($role) {
+        $this->roles = [$role];
         return $this;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getRoles()
-    {
-        return array($this->getRole());
     }
 
     /**
