@@ -117,3 +117,4 @@ class UserDAO extends DAO implements UserProviderInterface
         return $user;
     }
 }
+
