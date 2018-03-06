@@ -25,14 +25,14 @@ class AdminController {
 
 
 
-    public function deleteCourrierAction($id_courrier, Application $app) {
-        $app['dao.courrier']->delete($id_courrier);
+    public function deleteCourrierAction($id, Application $app) {
+        $app['dao.courrier']->delete($id);
         $app['session']->getFlashBag()->add('success', 'Le courrier a ete supprime.');
         return $app->redirect($app['url_generator']->generate('admin'));
     }
 
-    public function deleteClientAction($id_client, Application $app) {
-        $app['dao.client']->delete($id_client);
+    public function deleteClientAction($id, Application $app) {
+        $app['dao.client']->delete($id);
         $app['session']->getFlashBag()->add('success', 'Le client a ete supprime.');
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));

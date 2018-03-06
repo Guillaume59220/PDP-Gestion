@@ -20,7 +20,7 @@ class HomeController {
         $commentFormView = null;
         if ($app['security.authorization_checker']->isGranted('IS_AUTHENTICATED_FULLY')) {
             $client = new Client();
-            $client->setcourrier($courrier);
+            $client->setCourrier($courrier);
             $user = $app['user'];
             $client->setClient($client);
             $clientForm = $app['form.factory']->create(ClientType::class, $client);

@@ -4,51 +4,135 @@ namespace Courrier\Domain;
 
 class Client
 {
-    /**
-     * Article id.
-     *
-     * @var integer
-     */
-    private $id;
+
+    private $id_client;
+
+
+    private $code_client;
+
+
+    private $nom_client;
+
+    private $siren;
+
+    private $date_contract;
+
+    private $domination_sociale;
+
+    private $capital;
 
     /**
-     * Article title.
-     *
-     * @var string
+     * @return mixed
      */
-    private $title;
+    public function getIdClient()
+    {
+        return $this->id_client;
+    }
 
     /**
-     * Article content.
-     *
-     * @var string
+     * @param mixed $id_client
      */
-    private $content;
-
-    public function getId() {
-        return $this->id;
+    public function setIdClient($id_client)
+    {
+        $this->id_client = $id_client;
     }
 
-    public function setId($id) {
-        $this->id = $id;
-        return $this;
+    /**
+     * @return mixed
+     */
+    public function getCodeClient()
+    {
+        return $this->code_client;
     }
 
-    public function getTitle() {
-        return $this->title;
+    /**
+     * @param mixed $code_client
+     */
+    public function setCodeClient($code_client)
+    {
+        $this->code_client = $code_client;
     }
 
-    public function setTitle($title) {
-        $this->title = $title;
-        return $this;
+    /**
+     * @return mixed
+     */
+    public function getNomClient()
+    {
+        return $this->nom_client;
     }
 
-    public function getContent() {
-        return $this->content;
+    /**
+     * @param mixed $nom_client
+     */
+    public function setNomClient($nom_client)
+    {
+        $this->nom_client = $nom_client;
     }
 
-    public function setContent($content) {
-        $this->content = $content;
-        return $this;
+    /**
+     * @return mixed
+     */
+    public function getSiren()
+    {
+        return $this->siren;
     }
+
+    /**
+     * @param mixed $siren
+     */
+    public function setSiren($siren)
+    {
+        $this->siren = $siren;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateContract()
+    {
+        return $this->date_contract;
+    }
+
+    /**
+     * @param mixed $date_contract
+     */
+    public function setDateContract($date_contract)
+    {
+        $this->date_contract = $date_contract;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDominationSociale()
+    {
+        return $this->domination_sociale;
+    }
+
+    /**
+     * @param mixed $domination_sociale
+     */
+    public function setDominationSociale($domination_sociale)
+    {
+        $this->domination_sociale = $domination_sociale;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCapital()
+    {
+        return $this->capital;
+    }
+
+    /**
+     * @param mixed $capital
+     */
+    public function setCapital($capital)
+    {
+        $this->capital = $capital;
+    }
+
+
+
 }
