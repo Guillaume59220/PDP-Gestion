@@ -32,9 +32,9 @@
                             <th></th>  <!-- Actions column -->
                         </tr>
                         </thead>
-                        {% for client in clients %}
+                        {% for client in clients if client %}
                             <tr>
-                                <td><a class="client" href="{{ path('client', { 'id': clients.id_client }) }}">{{ client.nom_client }}</a></td>
+                                <td><a class="client" href="{{ path('client', { 'id': client.id_client }) }}">{{ client.nom_client }}</a></td>
                                 <td>
                                     <a href="{{ path('admin_client_edit', { 'id': client.id_client }) }}"
                                        class="btn btn-info btn-xs" title="Edit"><span class="fa fa-pencil-square"></span></a>
@@ -140,9 +140,9 @@
                                 <td>{{ user.username }}</a></td>
                                 <td>
 
-                                    {% if user.role == 'ROLE_ADMIN' %}
+                                    {% if user.roles == 'ROLE_ADMIN' %}
                                         Admin
-                                    {% elseif  user.role == 'ROLE_USER'%}
+                                    {% elseif  user.roles == 'ROLE_USER'%}
                                         User
                                     {% else %}
                                         Collaborateur
@@ -150,12 +150,12 @@
 
                                 </td>
                                 <td>
-                                    <a href="{{ path('admin_user_edit', { 'id': user.id_user }) }}" class="btn btn-info btn-xs" title="Edit">
+                                    <a href="{{ path('admin_user_edit', { 'id': user.id }) }}" class="btn btn-info btn-xs" title="Edit">
                                         <span class="fa fa-pencil-square"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
-                                            data-target="#userDialog{{ user.id_user }}"><span class="fa fa-trash"></span>
+                                            data-target="#userDialog{{ user.id }}"><span class="fa fa-trash"></span>
                                     </button>
-                                    <div class="modal fade" id="userDialog{{ user.id_user }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="userDialog{{ user.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -167,7 +167,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                                    <a href="{{ path('admin_user_delete', { 'id': user.id_user }) }}" class="btn btn-danger">Confirmer</a>
+                                                    <a href="{{ path('admin_user_delete', { 'id': user.id }) }}" class="btn btn-danger">Confirmer</a>
                                                 </div>
                                             </div><!-- /.modal-content -->
                                         </div><!-- /.modal-dialog -->

@@ -15,8 +15,8 @@ class HomeController {
     }
     
 
-    public function courrierAction($id, Request $request, Application $app) {
-        $courrier = $app['dao.courrier']->find($id);
+    public function courrierAction($id_courrier, Request $request, Application $app) {
+        $courrier = $app['dao.courrier']->find($id_courrier);
         $commentFormView = null;
         if ($app['security.authorization_checker']->isGranted('IS_AUTHENTICATED_FULLY')) {
             $client = new Client();

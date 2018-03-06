@@ -6,7 +6,7 @@ $app->get('/', "Courrier\Controller\HomeController::indexAction")
 $app->get('/login', "Courrier\Controller\HomeController::loginAction")
     ->bind('login');
 
-$app->match('/courrier/{id}', "Courrier\Controller\HomeController::CourrierAction")
+$app->match('/courrier/{id_courrier}', "Courrier\Controller\HomeController::CourrierAction")
     ->bind('courrier');
 
 $app->get('/admin', "Courrier\Controller\AdminController::indexAction")

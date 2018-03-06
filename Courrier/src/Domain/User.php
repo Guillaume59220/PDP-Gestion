@@ -19,10 +19,7 @@ class User implements UserInterface
     private $salt;
 
     private $roles;
-<<<<<<< HEAD
 
-=======
->>>>>>> 82e2b05d3a2a77c57fa48fec6272498c5e6ee513
 
     public function getId() {
         return $this->id_user;
