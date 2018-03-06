@@ -1,2 +1,22 @@
+<<<<<<< HEAD
 
 *.lock
+=======
+/.idea
+/.vs
+/.vscode
+
+/Courrier/var/*
+!/Courrier/var/cache
+/Courrier/var/cache/*
+!Courrier/var/cache/.gitkeep
+!/Courrier/var/logs
+/Courrier/var/logs/*
+!Courrier/var/logs/.gitkeep
+!/Courrier/var/sessions
+/Courrier/var/sessions/*
+!Courrier/var/sessions/.gitkeep
+/Courrier/vendor
+
+/Interne/CourrierPDP/vendor
+>>>>>>> 0d1ad2bdd6b4ddb4e195c87df387772f8639a5f7
