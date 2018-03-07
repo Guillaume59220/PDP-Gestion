@@ -43,7 +43,7 @@ class UserDAO extends DAO implements UserProviderInterface
     public function save(User $user) {
         $userData = array(
             'username' => $user->getUsername(),
-            'usr_salt' => $user->getSalt(),
+            'salt' => $user->getSalt(),
             'password' => $user->getPassword(),
             'roles' => $user->getRoles()
             );
@@ -112,7 +112,7 @@ class UserDAO extends DAO implements UserProviderInterface
         $user->setId($row['id_user']);
         $user->setUsername($row['username']);
         $user->setPassword($row['password']);
-        #$user->setSalt($row['salt']);
+        $user->setSalt($row['salt']);
         $user->setRoles($row['role_user']);
         return $user;
     }
