@@ -9,8 +9,8 @@ use Courrier\Domain\Courrier;
 class ApiController {
 
     public function getCourriersAction(Application $app) {
-        $courrierss = $app['dao.courrier']->findAll();
-        // Convert an array of objects ($articles) into an array of associative arrays ($responseData)
+        $courriers = $app['dao.courrier']->findAll();
+
         $responseData = array();
         foreach ($courriers as $courrier) {
             $responseData[] = $this->buildCourrierArray($courrier);
@@ -44,7 +44,7 @@ class ApiController {
             return $app->json('Missing required parameter: ', 400);
         }
 
-        // Build and save the new article
+
         $courrier = new Courrier();
         $courrier->setDateEntre($request->request->get('date_entre'));
         $courrier->setDateSortie($request->request->get('date_sortie'));
