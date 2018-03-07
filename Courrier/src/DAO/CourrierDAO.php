@@ -26,13 +26,15 @@ class CourrierDAO extends DAO
         if ($row)
             return $this->buildDomainObject($row);
         else
-            throw new \Exception("Pas de courrier correspondent " . $id_courrier);
+
             throw new \Exception("Pas de courrier correspandent " . $id_courrier);
+
     }
 
     public function save(Courrier $courrier) {
         $courrierData = array(
             'No' => $courrier->getIdCourrier(),
+
             );
 
         if ($courrier->getIdCourrier()) {
