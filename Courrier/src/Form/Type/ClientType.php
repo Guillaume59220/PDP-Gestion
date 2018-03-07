@@ -15,7 +15,9 @@ class ClientType extends AbstractType
             ->add('nom', TextType::class)
             ->add('code client', TextareaType::class)
             ->add('siren', TextType::class)
-            ->add('domination_sociale', TextType::class);
+            ->add('domination_sociale', TextType::class)
+            ->add('capital',TextType::class);
+
     }
 
     public function getName()
