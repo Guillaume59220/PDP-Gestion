@@ -43,9 +43,9 @@ class UserDAO extends DAO implements UserProviderInterface
     public function save(User $user) {
         $userData = array(
             'username' => $user->getUsername(),
-            'usr_salt' => $user->getSalt(),
+            'salt' => $user->getSalt(),
             'password' => $user->getPassword(),
-            'roles' => $user->getRoles()
+            'role_user' => $user->getRoles()[0][0]
             );
 
         if ($user->getId()) {

@@ -18,7 +18,7 @@ class User implements UserInterface
 
     private $salt;
 
-    private $roles;
+    private $roles = [];
 
     public function getId() {
         return $this->id_user;
@@ -74,7 +74,7 @@ class User implements UserInterface
     }
 
     public function setRoles($role) {
-        $this->roles = [$role];
+        $this->roles[] = $role;
         return $this;
     }
 
