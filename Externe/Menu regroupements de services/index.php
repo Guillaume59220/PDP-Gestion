@@ -34,31 +34,31 @@
                     <div id="boutons">
 
                         <div id="telephonie">
-                        <a href="http://"><img src="img/icone_applications/courrier/telephonie.png" alt="Téléphonie"></a>
+                        <a href="Pages_externes/1.html"><img src="img/icone_applications/courrier/telephonie.png" alt="Téléphonie"></a>
                         </div>
 
                         <div id="courrier">
-                            <a href="http://localhost/PDP-Gestion/Aprés%20connection/courrier.php"><img src="img/icone_applications/courrier/courrier.png" alt="Courrier"></a>
+                            <a href="../Apres_connection/mail.php"><img src="img/icone_applications/courrier/courrier.png" alt="Courrier"></a>
                         </div>
 
                         <div id="domiciliation">
-                            <a href="http://"><img src="img/icone_applications/courrier/domiciliation.png" alt="Domiciliation"></a>
+                            <a href="Pages_externes/2.html"><img src="img/icone_applications/courrier/domiciliation.png" alt="Domiciliation"></a>
                         </div>
 
                         <div id="paie">
-                            <a href="http://"><img src="img/icone_applications/courrier/paie.png" alt="Paie"></a>
+                            <a href="Pages_externes/3.html"><img src="img/icone_applications/courrier/paie.png" alt="Paie"></a>
                         </div>
 
                         <div id="gestion">
-                            <a href="http://"><img src="img/icone_applications/courrier/gestion.png" alt="Gestion"></a>
+                            <a href="Pages_externes/4.html"><img src="img/icone_applications/courrier/gestion.png" alt="Gestion"></a>
                         </div>
 
                         <div id="recouvrement">
-                            <a href="http://"><img src="img/icone_applications/courrier/recouvrement.png" alt="Recouvrement"></a>
+                            <a href="Pages_externes/5.html"><img src="img/icone_applications/courrier/recouvrement.png" alt="Recouvrement"></a>
                         </div>
 
                         <div  id="audit">
-                            <a href="http://"><img src="img/icone_applications/courrier/audit.png" alt="Audit"></a>                    
+                            <a href="Pages_externes/6.html"><img src="img/icone_applications/courrier/audit.png" alt="Audit"></a>                    
                         </div>
 
                     </div>

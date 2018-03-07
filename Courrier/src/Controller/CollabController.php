@@ -1,5 +1,7 @@
 <?php
 
+namespace Courrier\Controller;
+
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\Domain\Courrier;

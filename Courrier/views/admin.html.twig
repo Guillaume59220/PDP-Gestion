@@ -123,6 +123,7 @@
             {% else %}
                 <div class="alert alert-warning">Pas de courrier trouver.</div>
             {% endif %}
+            <a href="{{ path('admin_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="fa fa-plus"></span> Ajouter courrier</button></a>
         </div>
         <div class="tab-pane fade adminTable" id="users">
             {% if users %}

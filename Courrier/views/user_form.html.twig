@@ -10,9 +10,9 @@
             {{ flashMessage }}
         </div>
     {% endfor %}
-    {% if form_errors(userForm.password.first) %}
+    {% if form_errors(userForm.password) %}
         <div class="alert alert-danger">
-            {{ form_errors(userForm.password.first) }}
+            {{ form_errors(userForm.password) }}
         </div>
     {% endif %}
 
@@ -23,29 +23,29 @@
                 'class': 'col-sm-5 control-label'
             }}) }}
             <div class="col-sm-4">
-                {{ form_errors(userForm.email) }}
-                {{ form_widget(userForm.email, { 'attr':  {
+                {{ form_errors(userForm.username) }}
+                {{ form_widget(userForm.username, { 'attr':  {
                     'class': 'form-control'
                 }}) }}
             </div>
         </div>
         <div class="form-group">
-            {{ form_label(userForm.mdp.first, null, { 'label_attr':  {
+            {{ form_label(userForm.password, null, { 'label_attr':  {
                 'class': 'col-sm-5 control-label'
             }}) }}
             <div class="col-sm-4">
-                {{ form_widget(userForm.mdp.first, { 'attr':  {
+                {{ form_widget(userForm.password, { 'attr':  {
                     'class': 'form-control'
                 }}) }}
             </div>
         </div>
             <div class="form-group">
-            {{ form_label(userForm.role, null, { 'label_attr':  {
+            {{ form_label(userForm.roles, null, { 'label_attr':  {
                 'class': 'col-sm-5 control-label'
             }}) }}
             <div class="col-sm-2">
-                {{ form_errors(userForm.role) }}
-                {{ form_widget(userForm.role, { 'attr':  {
+                {{ form_errors(userForm.roles) }}
+                {{ form_widget(userForm.roles, { 'attr':  {
                     'class': 'form-control'
                 }}) }}
             </div>

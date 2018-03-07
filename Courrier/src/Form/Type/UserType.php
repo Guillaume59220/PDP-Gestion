@@ -9,28 +9,32 @@
 namespace Courrier\Form\Type;
 
 
+use Courrier\Domain\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', TextType::class)
-            ->add('mdp', RepeatedType::class, array(
-                'type'            => PasswordType::class,
-                'invalid_message' => 'The password fields must match.',
-                'options'         => array('required' => true),
-                'first_options'   => array('label' => 'Password')
-            ))
-            ->add('role', ChoiceType::class, array(
-                'choices' => array('Admin' => 'ROLE_ADMIN', 'User' => 'ROLE_USER', 'Collaborateur' => 'ROLE_EVENT_CREATE')
+            ->add('username', TextType::class)
+            ->add('password', PasswordType::class)
+            ->add('roles', ChoiceType::class, array(
+                'choices' => array('Admin' => 'ROLE_ADMIN', 'User' => 'ROLE_USER', 'Collaborateur' => 'ROLE_EVENT_CREATE'),
+                'multiple' => true
             ));
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => User::class,
+        ));
     }
 
     public function getName()
