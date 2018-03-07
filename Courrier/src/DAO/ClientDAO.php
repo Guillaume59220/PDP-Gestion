@@ -8,32 +8,17 @@ use Courrier\DAO\CourrierDAO;
 class ClientDAO extends DAO
 {
 
-    private $courrierDAO;
-
-
-    private $userDAO;
-
-    public function setCourrierDAO(CourrierDAO $courrierDAO)
-    {
-        $this->courrierDAO = $courrierDAO;
-    }
-
-    public function setUserDAO(UserDAO $userDAO)
-    {
-        $this->userDAO = $userDAO;
-    }
-
 
     public function findAll()
     {
-        $sql = "select * from courrier order by id_courrier desc";
+        $sql = "select * from clients order by id_client desc";
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
         $entities = array();
         foreach ($result as $row) {
-            $id_courrier = $row['id_courrier'];
-            $entities[$id_courrier] = $this->buildDomainObject($row);
+            $id_client = $row['id_client'];
+            $entities[$id_client] = $this->buildDomainObject($row);
         }
         return $entities;
     }
@@ -42,10 +27,7 @@ class ClientDAO extends DAO
     public function findAllByClient($id_client)
     {
 
-        $courrier = $this->courrierDAO->find($id_client);
-
-
-        $sql = "select * from view_courrier where id_courrier=? order by id_client";
+        $sql = "select * from view_client where id_client=? order by id_client";
         $result = $this->getDb()->fetchAll($sql, array($id_client));
 
         $comments = array();
@@ -53,7 +35,7 @@ class ClientDAO extends DAO
             $clientId = $row['id_client'];
             $client = $this->buildDomainObject($row);
             // The associated article is defined for the constructed comment
-            $client->setCourrier($courrier);
+            $client->setCourrier($client);
         }
         return $client;
     }
@@ -71,10 +53,10 @@ class ClientDAO extends DAO
     }
 
 
-    public function delete($id_courrier)
+    public function delete($id_client)
     {
         // Delete the comment
-        $this->getDb()->delete('courrier', array('id_courrier' => $id_courrier));
+        $this->getDb()->delete('client', array('id_client' => $id_client));
     }
 
 

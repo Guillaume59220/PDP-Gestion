@@ -15,8 +15,7 @@
             <ul class="nav nav-tabs nav-justified">
                 <li class="active"><a href="#clients" data-toggle="tab">Clients</a></li>
                 <li><a href="#courriers" data-toggle="tab">Courriers</a></li>
-                <li><a href="#users" data-toggle="tab">Users</a></li>
-                <li><a href="#collaborateur" data-toggle="tab">Collaborateur</a> </li>
+                <li><a href="#users" data-toggle="tab">Collaborateur</a></li>
             </ul>
         </div>
     </div>
@@ -32,9 +31,9 @@
                             <th></th>  <!-- Actions column -->
                         </tr>
                         </thead>
-                        {% for client in clients if client %}
+                        {% for client in clients %}
                             <tr>
-                                <td><a class="client" href="{{ path('client', { 'id': client.id_client }) }}">{{ client.nom_client }}</a></td>
+                                <td>{{ clients.nom_client }}</td>
                                 <td>
                                     <a href="{{ path('admin_client_edit', { 'id': client.id_client }) }}"
                                        class="btn btn-info btn-xs" title="Edit"><span class="fa fa-pencil-square"></span></a>
@@ -141,13 +140,7 @@
                                 <td>{{ user.username }}</a></td>
                                 <td>
 
-                                    {% if user.roles == 'ROLE_ADMIN' %}
-                                        Admin
-                                    {% elseif  user.roles == 'ROLE_USER'%}
-                                        User
-                                    {% else %}
-                                        Collaborateur
-                                    {% endif %}
+                                    {{ user.roles[0] }}
 
                                 </td>
                                 <td>
