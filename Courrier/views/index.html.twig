@@ -18,49 +18,6 @@
         <h1>Liste de courrier</h1>
         <hr />
 
-<<<<<<< HEAD
-    <div class="row">
-        <!--colleft-->
-        <div class="col-md-8 col-sm-12">
-            <div class="box-caption">
-                <span>spotlight</span>
-            </div>
-            <!--spotlight-->
-            <section class="owl-carousel owl-spotlight">
-                {% for article in spotlight %}
-                    <div>
-                        <article class="spotlight-item">
-                            <div class="spotlight-img">
-                                <img alt="" src="{{ asset('images/product/'~article.FEATUREDIMAGEARTICLE) }}" class="img-responsive" />
-                                <a href="{{ url('news_categorie',
-                                    {libellecategorie : article.LIBELLECATEGORIE | lower }) }}"
-                                   class="cate-tag">{{ article.LIBELLECATEGORIE }}</a>
-                            </div>
-                            <div class="spotlight-item-caption">
-                                <h2 class="font-heading">
-                                    <a href="{{ url('news_article', {
-                                        libellecategorie : article.LIBELLECATEGORIE | lower,
-                                        slugarticle      : article.TITREARTICLE | slugify,
-                                        idarticle        : article.IDARTICLE }) }}"> 
-                                        {{ article.TITREARTICLE }}
-                                    </a>
-                                </h2>
-                                <div class="meta-post">
-                                    <a href="#">
-                                        {{ article.PRENOMAUTEUR }} {{ article.NOMAUTEUR }}
-                                    </a>
-                                    <em></em>
-                                    <span>
-                                        {{ article.DATECREATIONARTICLE }}
-                                    </span>
-                                </div>
-                                {{ article.CONTENUARTICLE | accroche }}
-                            </div>
-                        </article>
-                    </div>
-                {% endfor %}
-            </section>
-=======
         <table>
             <tr>
                 <th>Numero courrier</th>
@@ -69,7 +26,6 @@
                 <th>Nom client</th>
                 <th>Annotation</th>
             </tr>
->>>>>>> d7c98ed9ce8f919e8ce8174925141b11e970e0df
 
 
 
