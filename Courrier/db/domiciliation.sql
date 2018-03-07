@@ -252,19 +252,17 @@ CREATE TABLE `type_courrier` (
 
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `mdp` varchar(150) NOT NULL,
+  `username` varchar(150) NOT NULL,
+  `password` varchar(150) NOT NULL,
   `role_user` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Déchargement des données de la table `user`
---
 
-INSERT INTO `user` (`id_user`, `email`, `mdp`, `role_user`) VALUES
-(1, 'kot@kot.fr', '$2y$10$3i9/lVd8UOFIJ6PAMFt8gu3/r5g0qeCJvoSlLCsvMTythye19F77a', 'admin');
-
--- --------------------------------------------------------
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Doublure de structure pour la vue `view_courrier`
