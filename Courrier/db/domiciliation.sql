@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 06 mars 2018 à 16:23
+-- Généré le :  mer. 07 mars 2018 à 16:58
 -- Version du serveur :  10.1.22-MariaDB
 -- Version de PHP :  7.1.4
 
@@ -257,12 +257,7 @@ CREATE TABLE `user` (
   `salt` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
--- Index pour la table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
 
 --
 -- Doublure de structure pour la vue `view_courrier`
@@ -322,9 +317,7 @@ ALTER TABLE `civilite`
 -- Index pour la table `clients`
 --
 ALTER TABLE `clients`
-  ADD PRIMARY KEY (`id_client`,`id_user`),
-  ADD UNIQUE KEY `codeclient_UNIQUE` (`code_client`),
-  ADD KEY `fk_clients_user1_idx` (`id_user`);
+  ADD PRIMARY KEY (`id_client`);
 
 --
 -- Index pour la table `contract`
@@ -439,71 +432,94 @@ ALTER TABLE `voie_reexpedition`
   ADD KEY `fk_voie_reexpedition_courrier1_idx` (`id_courrier`);
 
 --
--- Contraintes pour les tables déchargées
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- Contraintes pour la table `clients`
+-- AUTO_INCREMENT pour la table `clients`
 --
 ALTER TABLE `clients`
-  ADD CONSTRAINT `fk_clients_user1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Contraintes pour la table `contract`
+-- AUTO_INCREMENT pour la table `contract`
 --
 ALTER TABLE `contract`
-  ADD CONSTRAINT `fk_contract_clients1` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_contract_justificatif1` FOREIGN KEY (`id_justificatif`) REFERENCES `justificatif` (`id_justificatif`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_contract_option_contract1` FOREIGN KEY (`id_option`) REFERENCES `option_contract` (`id_option`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  MODIFY `id_contract` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Contraintes pour la table `courrier`
+-- AUTO_INCREMENT pour la table `courrier`
 --
 ALTER TABLE `courrier`
-  ADD CONSTRAINT `fk_courrier_clients1` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_courrier_type_courrier1` FOREIGN KEY (`id_type_courrier`) REFERENCES `type_courrier` (`id_type_courrier`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  MODIFY `id_courrier` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Contraintes pour la table `forme_juridique`
+-- AUTO_INCREMENT pour la table `departement`
+--
+ALTER TABLE `departement`
+  MODIFY `id_departement` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `fonction`
+--
+ALTER TABLE `fonction`
+  MODIFY `id_fonction` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `forme_juridique`
 --
 ALTER TABLE `forme_juridique`
-  ADD CONSTRAINT `fk_forme_juridique_clients1` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  MODIFY `id_forme` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Contraintes pour la table `incident`
+-- AUTO_INCREMENT pour la table `incident`
 --
 ALTER TABLE `incident`
-  ADD CONSTRAINT `fk_incident_clients1` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  MODIFY `id_incident` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Contraintes pour la table `lettres_recommandees`
+-- AUTO_INCREMENT pour la table `justificatif`
+--
+ALTER TABLE `justificatif`
+  MODIFY `id_justificatif` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `lettres_recommandees`
 --
 ALTER TABLE `lettres_recommandees`
-  ADD CONSTRAINT `fk_lettres_recommandees_courrier1` FOREIGN KEY (`id_courrier`) REFERENCES `courrier` (`id_courrier`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_lettres_recommandees_tarif1` FOREIGN KEY (`id_tarif`) REFERENCES `tarif` (`id_tarif`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  MODIFY `id_lettre` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Contraintes pour la table `option_contract`
+-- AUTO_INCREMENT pour la table `numero_boite`
+--
+ALTER TABLE `numero_boite`
+  MODIFY `id_boite` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `option_contract`
 --
 ALTER TABLE `option_contract`
-  ADD CONSTRAINT `fk_option_contract_numero_boite1` FOREIGN KEY (`id_boite`) REFERENCES `numero_boite` (`id_boite`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  MODIFY `id_option` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Contraintes pour la table `responsable_legale`
+-- AUTO_INCREMENT pour la table `pays`
+--
+ALTER TABLE `pays`
+  MODIFY `id_pays` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `responsable_legale`
 --
 ALTER TABLE `responsable_legale`
-  ADD CONSTRAINT `fk_responsable_legale_civilite1` FOREIGN KEY (`id_civilite`) REFERENCES `civilite` (`id_civilite`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_responsable_legale_clients1` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_responsable_legale_departement1` FOREIGN KEY (`id_departement`) REFERENCES `departement` (`id_departement`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_responsable_legale_fonction1` FOREIGN KEY (`id_fonction`) REFERENCES `fonction` (`id_fonction`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_responsable_legale_pays1` FOREIGN KEY (`id_pays`) REFERENCES `pays` (`id_pays`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+  MODIFY `id_responsable` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Contraintes pour la table `voie_reexpedition`
+-- AUTO_INCREMENT pour la table `tarif`
+--
+ALTER TABLE `tarif`
+  MODIFY `id_tarif` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `type_courrier`
+--
+ALTER TABLE `type_courrier`
+  MODIFY `id_type_courrier` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `voie_reexpedition`
 --
 ALTER TABLE `voie_reexpedition`
-  ADD CONSTRAINT `fk_voie_reexpedition_courrier1` FOREIGN KEY (`id_courrier`) REFERENCES `courrier` (`id_courrier`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
+  MODIFY `id_reexpedition` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
