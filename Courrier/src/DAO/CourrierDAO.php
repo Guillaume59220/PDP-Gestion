@@ -26,24 +26,31 @@ class CourrierDAO extends DAO
         if ($row)
             return $this->buildDomainObject($row);
         else
-            throw new \Exception("Pas de courrier corresprndent " . $id_courrier);
+<<<<<<< HEAD
+            throw new \Exception("Pas de courrier correspondent " . $id_courrier);
+=======
+            throw new \Exception("Pas de courrier correspandent " . $id_courrier);
+>>>>>>> 6c9fea59ae9edc7627dbbd77446e6d0f4173fc4d
     }
 
     public function save(Courrier $courrier) {
         $courrierData = array(
-            'No' => $courrier->getId(),
+            'No' => $courrier->getIdCourrier(),
+<<<<<<< HEAD
             '' => $courrier->getContent(),
+=======
+>>>>>>> 6c9fea59ae9edc7627dbbd77446e6d0f4173fc4d
             );
 
-        if ($courrier->getId()) {
+        if ($courrier->getIdCourrier()) {
             // The article has already been saved : update it
-            $this->getDb()->update('courrier', $courrierData, array('id_courrier' => $courrier->getId()));
+            $this->getDb()->update('courrier', $courrierData, array('id_courrier' => $courrier->getIdCourrier()));
         } else {
             // The article has never been saved : insert it
             $this->getDb()->insert('courrier', $courrierData);
             // Get the id of the newly created article and set it on the entity.
             $id_courrier = $this->getDb()->lastInsertId();
-            $courrier->setId($id_courrier);
+            $courrier->setIdCourrier($id_courrier);
         }
     }
 
@@ -56,7 +63,7 @@ class CourrierDAO extends DAO
 
     protected function buildDomainObject(array $row) {
         $courrier = new Courrier();
-        $courrier->setId($row['id_courrier']);
+        $courrier->setIdCourrier($row['id_courrier']);
         $courrier->setDateEntre($row['date_entre']);
         $courrier->setAnnotation($row['annotation']);
         $courrier->setDateSortie($row['date_sortie']);
