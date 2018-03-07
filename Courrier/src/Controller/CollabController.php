@@ -3,7 +3,7 @@
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\Domain\Courrier;
-use Courrier\DAO\CourrierDAO;
+use Courrier\Domain\Client;
 
 class CollabController{
 

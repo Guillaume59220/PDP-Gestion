@@ -53,8 +53,8 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     ),
     'security.access_rules' => array(
         array('^/login', 'IS_AUTHENTICATED_ANONYMOUSLY'),
-        /*array('^/', 'ROLE_CUSTOMER'),*/
-        //rarray('^/admin', 'ROLE_ADMIN'),
+        //array('^/', 'ROLE_CUSTOMER'),
+        //array('^/admin', 'ROLE_ADMIN'),
         array('^/collaborateur', 'ROLE_EVENT_CREATE')
     ),
 ));
