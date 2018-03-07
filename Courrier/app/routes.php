@@ -15,17 +15,17 @@ $app->get('/admin', "Courrier\Controller\AdminController::indexAction")
 $app->match('/admin/courrier/add', "Courrier\Controller\AdminController::addCourrierAction")
     ->bind('admin_courrier_add');
 
-$app->match('/admin/client/add', "Courrier\Controller\AdminController::addCourrierAction")
+$app->match('/admin/client/add', "Courrier\Controller\CollabController::addCourrierAction")
     ->bind('admin_client_add');
 
 
-$app->match('/admin/courrier/{id}/edit', "Courrier\Controller\AdminController::editCourrierAction")
+$app->match('/admin/courrier/{id}/edit', "Courrier\Controller\CollabController::editCourrierAction")
     ->bind('admin_courrier_edit');
 
 $app->get('/admin/courrier/{id}/delete', "Courrier\Controller\AdminController::deleteCourrierAction")
     ->bind('admin_courrier_delete');
 
-$app->match('/admin/client/{id}/edit', "Courrier\Controller\AdminController::editClientAction")
+$app->match('/admin/client/{id}/edit', "Courrier\Controller\CollabController::editClientAction")
     ->bind('admin_client_edit');
 
 $app->get('/admin/client/{id}/delete', "Courrier\Controller\AdminController::deleteClientAction")
