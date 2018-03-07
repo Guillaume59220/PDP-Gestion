@@ -46,8 +46,7 @@ CREATE TABLE `clients` (
   `siren` varchar(145) NOT NULL,
   `date_contract` date NOT NULL,
   `domination_sociale` varchar(145) NOT NULL,
-  `capital` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL
+  `capital` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -254,7 +253,8 @@ CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `username` varchar(150) NOT NULL,
   `password` varchar(150) NOT NULL,
-  `role_user` varchar(150) NOT NULL
+  `role_user` varchar(150) NOT NULL,
+  `salt` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 

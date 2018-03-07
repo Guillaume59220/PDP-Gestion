@@ -10,9 +10,9 @@
             {{ flashMessage }}
         </div>
     {% endfor %}
-    {% if form_errors(userForm.password.first) %}
+    {% if form_errors(userForm.password) %}
         <div class="alert alert-danger">
-            {{ form_errors(userForm.password.first) }}
+            {{ form_errors(userForm.password) }}
         </div>
     {% endif %}
 
@@ -30,11 +30,11 @@
             </div>
         </div>
         <div class="form-group">
-            {{ form_label(userForm.password.first, null, { 'label_attr':  {
+            {{ form_label(userForm.password, null, { 'label_attr':  {
                 'class': 'col-sm-5 control-label'
             }}) }}
             <div class="col-sm-4">
-                {{ form_widget(userForm.password.first, { 'attr':  {
+                {{ form_widget(userForm.password, { 'attr':  {
                     'class': 'form-control'
                 }}) }}
             </div>
