@@ -25,9 +25,17 @@ body {
 .btn-primary {
     background-color: #337ab7;
     border-color: #2e6da4;
-    width: 20%;
     display: block;
     margin: auto;
+}
+
+.btn-login{
+        color: #000;
+        background-color: #ccc;
+        border-color: #fff;
+        display: block;
+        margin: auto;
+        width: 100%;
 }
 
 .form-signin {
