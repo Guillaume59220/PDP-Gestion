@@ -65,7 +65,10 @@ class AdminController {
             $encoder = $app['security.encoder.bcrypt'];
             // compute the encoded password
             $password = $encoder->encodePassword($plainPassword, $user->getSalt());
-            $user->setPassword($password); 
+            $user->setPassword($password);
+            if (is_array($user->getRoles()[0])) {
+                $user->setRoles($user->getRoles()[0][0], true);
+            }
             $app['dao.user']->save($user);
             $app['session']->getFlashBag()->add('success', 'utilisateur a ete cree.');
             return $app->redirect($app['url_generator']->generate('admin'));

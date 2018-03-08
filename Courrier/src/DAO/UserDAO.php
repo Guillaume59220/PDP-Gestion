@@ -45,7 +45,7 @@ class UserDAO extends DAO implements UserProviderInterface
             'username' => $user->getUsername(),
             'salt' => $user->getSalt(),
             'password' => $user->getPassword(),
-            'role_user' => $user->getRoles()[0][0]
+            'role_user' => $user->getRoles()[0]
             );
 
         if ($user->getId()) {

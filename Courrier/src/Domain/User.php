@@ -73,11 +73,15 @@ class User implements UserInterface
         return $this->roles;
     }
 
-    public function setRoles($role) {
+    public function setRoles($role, $cleanup = false) {
+
+        if (true === $cleanup) {
+            $this->roles = [];
+        }
+
         $this->roles[] = $role;
         return $this;
     }
-
     /**
      * @inheritDoc
      */
