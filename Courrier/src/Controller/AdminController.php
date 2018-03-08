@@ -80,7 +80,7 @@ class AdminController {
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
             $app['dao.clients']->save($client);
-            $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
+            $app['session']->getFlashBag()->add('success', 'Le client a ete bien ajoute.');
         }
         return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Ajouter client',
