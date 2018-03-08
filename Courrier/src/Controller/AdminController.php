@@ -110,8 +110,7 @@ class AdminController {
 
 
     public function deleteUserAction($id, Application $app) {
-        // Delete all associated comments
-        $app['dao.user']->deleteAllByUser($id);
+
         // Delete the user
         $app['dao.user']->delete($id);
         $app['session']->getFlashBag()->add('success', 'The user was successfully removed.');
