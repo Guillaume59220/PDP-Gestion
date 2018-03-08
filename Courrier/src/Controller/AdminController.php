@@ -60,6 +60,20 @@ class AdminController {
             'userForm' => $userForm->createView()));
     }
 
+    public function addClientAction( Request $request,Application $app){
+        $client= new Client;
+        $clientForm= $app['form.factory']->create(ClientType::class, $client);
+        $clientForm->handleRequest($request);
+        if ($clientForm->isSubmitted() && $clientForm->isValid()) {
+            $app['dao.clients']->save($client);
+            $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
+        }
+        return $app['twig']->render('client_form.html.twig', array(
+            'title' => 'Ajouter client',
+            'clientForm' => $clientForm->createView()));
+
+    }
+
 
     public function editUserAction($id, Request $request, Application $app) {
         $user = $app['dao.user']->find($id);

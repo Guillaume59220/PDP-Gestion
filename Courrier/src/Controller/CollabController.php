@@ -30,7 +30,7 @@ class CollabController{
             $app['dao.courrier']->save($courrier);
             $app['session']->getFlashBag()->add('success', 'Liste des courriers a ete bien modifie.');
         }
-        return $app['twig']->render('article_form.html.twig', array(
+        return $app['twig']->render('courrier_form.html.twig', array(
             'title' => 'Modification courrier',
             'courrierForm' => $courrierForm->createView()));
     }
@@ -43,7 +43,7 @@ class CollabController{
             $app['dao.client']->save($client);
             $app['session']->getFlashBag()->add('success', 'Les donnees client a bien ete modifie.');
         }
-        return $app['twig']->render('comment_form.html.twig', array(
+        return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Edit client',
             'clientForm' => $clientForm->createView()));
     }
