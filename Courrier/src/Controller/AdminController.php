@@ -69,6 +69,7 @@ class AdminController {
             if (is_array($user->getRoles()[0])) {
                 $user->setRoles($user->getRoles()[0][0], true);
             }
+            dump($user);
             $app['dao.user']->save($user);
             $app['session']->getFlashBag()->add('success', 'utilisateur a ete cree.');
             return $app->redirect($app['url_generator']->generate('admin'));
@@ -89,6 +90,20 @@ class AdminController {
         }
         return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Ajouter client',
+            'clientForm' => $clientForm->createView()));
+
+    }
+    public function editClientAction($id,Request $request, Application $app){
+
+        $client=$app['dao.clients']->find($id);
+        $clientForm=$app['form.factory']->create(ClientType::class, $client);
+        $clientForm->handleRequest($request);
+        if ($clientForm->isSubmitted() && $clientForm->isValid()) {
+            $app['dao.clients']->save($client);
+            $app['session']->getFlashBag()->add('success', 'Le client a ete bien change.');
+        }
+        return $app['twig']->render('client_form.html.twig', array(
+            'title' => 'Edit client',
             'clientForm' => $clientForm->createView()));
 
     }
