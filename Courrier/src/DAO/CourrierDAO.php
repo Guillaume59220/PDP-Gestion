@@ -7,7 +7,7 @@ use Courrier\Domain\Courrier;
 class CourrierDAO extends DAO
 {
     public function findAll() {
-        $sql = "select * from view_courrier order by id_courrier desc";
+        $sql = "select * from courrier order by id_courrier desc";
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -20,7 +20,7 @@ class CourrierDAO extends DAO
     }
 
     public function find($id_courrier) {
-        $sql = "select * from view_courrier where id_courrier =?";
+        $sql = "select * from courrier where id_courrier =?";
         $row = $this->getDb()->fetchAssoc($sql, array($id_courrier));
 
         if ($row)
