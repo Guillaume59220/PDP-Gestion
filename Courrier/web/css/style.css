@@ -82,13 +82,10 @@ body {
     margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
 .glyphicon-pencil, .glyphicon-trash {
     margin: auto;
 }
 
-=======
->>>>>>> b4fc214b86dfc8ef1bcee4b26e6aeb191fd495e9
 @media only screen and (min-width: 1200px) {
    
     .well {
