@@ -49,8 +49,8 @@ input[type="password"] {
 }
 
 .form-control {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 90%;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -67,6 +67,29 @@ input[type="password"] {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
+.glyphicon {
+    position: relative;
+    top: 1px;
+    margin-left: 5px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-off,
+.glyphicon-plus,
+.glyphicon-pencil,
+.glyphicon-trash {
+    font-size : 14px;
+}
+
+
+
 @media only screen and (min-width: 1200px) {
    
     .well {
@@ -78,6 +101,9 @@ input[type="password"] {
 
     }
 }
+
+
+
 
 
 
