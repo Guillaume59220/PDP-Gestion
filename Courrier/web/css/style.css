@@ -76,13 +76,15 @@ body {
     font-size : 14px;
 }
 
-<<<<<<< HEAD
-=======
+
+
 .input-group {
     margin-bottom: 20px;
 }
->>>>>>> d60202c0bff115c5d09ca3ce89f9586a8503b5e6
 
+.glyphicon-pencil, .glyphicon-trash {
+    margin: auto;
+}
 
 @media only screen and (min-width: 1200px) {
    
@@ -91,9 +93,5 @@ body {
         background-repeat: no-repeat;
         background-position-x: 60px;
     }
-<<<<<<< HEAD
-}
-=======
 }
 
->>>>>>> d60202c0bff115c5d09ca3ce89f9586a8503b5e6
