@@ -12,7 +12,7 @@ $app->match('/courrier/{id_courrier}', "Courrier\Controller\HomeController::Cour
 $app->get('/admin', "Courrier\Controller\AdminController::indexAction")
     ->bind('admin');
 
-$app->match('/admin/courrier/add', "Courrier\Controller\CollabController::addCourrierAction")
+$app->match('/admin/courrier/add', "Courrier\Controller\AdminController::addCourrierAction")
     ->bind('admin_courrier_add');
 
 $app->match('/admin/client/add', "Courrier\Controller\AdminController::addClientAction")

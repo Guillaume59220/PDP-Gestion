@@ -3,6 +3,7 @@
 namespace Courrier\Controller;
 
 use Courrier\Domain\Client;
+use Courrier\Domain\Courrier;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\Domain\User;
@@ -21,6 +22,19 @@ class AdminController {
             'courriers' => $courriers,
             'clients' => $clients,
             'users' => $users));
+    }
+
+    public function addCourrierAction(Request $request, Application $app) {
+        $courrier = new Courrier();
+        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier);
+        $courrierForm->handleRequest($request);
+        if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
+            $app['dao.courrier']->save($courrier);
+            $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
+        }
+        return $app['twig']->render('courrier_form.html.twig', array(
+            'title' => 'Ajouter courrier',
+            'courrierForm' => $courrierForm->createView()));
     }
 
 
