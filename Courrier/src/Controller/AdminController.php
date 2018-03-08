@@ -104,6 +104,7 @@ class AdminController {
             $user->setPassword($password); 
             $app['dao.user']->save($user);
             $app['session']->getFlashBag()->add('success', 'The user was successfully updated.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('user_form.html.twig', array(
             'title' => 'Edit user',
