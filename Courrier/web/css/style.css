@@ -94,6 +94,10 @@ body {
     margin: auto;
 }
 
+.navbar-collapse img{
+    max-width: 25%;
+}
+
 @media only screen and (min-width: 1200px) {
    
     .well {
