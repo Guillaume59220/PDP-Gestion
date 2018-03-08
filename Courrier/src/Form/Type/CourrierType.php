@@ -50,9 +50,11 @@ class CourrierType extends AbstractType
             ->add('annotation', TextareaType::class)
             ->add('date_sortie', DateType::class)
             ->add('client',ChoiceType::class, array(
-                'choices' => choiceClient()))
+                'choices' =>$this->choiceClient(),
+                'multiple' => true))
             ->add('libelle', ChoiceType::class, array(
-                'choices' =>  choiceCourrier()));
+                'choices' =>  $this-> choiceCourrier(),
+                'multiple' => true));
     }
 
 
