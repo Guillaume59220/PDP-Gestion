@@ -100,7 +100,7 @@ class AdminController {
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
             $app['dao.clients']->save($client);
-            $app['session']->getFlashBag()->add('success', 'Le client a ete bien change.');
+            $app['session']->getFlashBag()->add('success', '.');
         }
         return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Edit client',
