@@ -64,7 +64,7 @@ $app->register(new Silex\Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 
-$app['dao.client'] = function ($app) {
+$app['dao.clients'] = function ($app) {
     return new Courrier\DAO\ClientDAO($app['db']);
 };
 $app['dao.user'] = function ($app) {

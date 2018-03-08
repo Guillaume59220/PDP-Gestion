@@ -28,7 +28,7 @@ class HomeController {
             $clientForm = $app['form.factory']->create(ClientType::class, $client);
             $clientForm->handleRequest($request);
             if ($clientForm->isSubmitted() && $clientForm->isValid()) {
-                $app['dao.client']->save($client);
+                $app['dao.clients']->save($client);
                 $app['session']->getFlashBag()->add('success');
             }
             $clientFormView = $clientForm->createView();
