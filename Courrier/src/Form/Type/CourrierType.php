@@ -23,12 +23,8 @@ class CourrierType extends AbstractType
             ->add('fax', TextType::class)
             ->add('annotation', TextareaType::class)
             ->add('date_sortie', DateType::class)
-            ->add('id_client',ChoiceType::class, [
-                'choices'   => $clients(),
-            ] )
-            ->add('id_type_courrier', ChoiceType::class, [
-                'choices'   => $types(),
-    ]);
+            ->add('id_client',ChoiceType::class )
+            ->add('id_type_courrier', ChoiceType::class);
     }
 
 

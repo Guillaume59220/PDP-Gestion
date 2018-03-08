@@ -67,6 +67,7 @@ input[type="password"] {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
+<<<<<<< HEAD
 .glyphicon {
     position: relative;
     top: 1px;
@@ -88,6 +89,8 @@ input[type="password"] {
     font-size : 14px;
 }
 
+=======
+>>>>>>> 784db5b04e540d92dc5c7ff842da935bb4b2abfd
 
 
 @media only screen and (min-width: 1200px) {
@@ -96,10 +99,8 @@ input[type="password"] {
         background-image: url("../images/mascotte.png");
         background-repeat: no-repeat;
         background-position-x: 60px;
-
-
-
     }
+<<<<<<< HEAD
 }
 
 
@@ -120,3 +121,6 @@ input[type="password"] {
 
 
 
+=======
+}
+>>>>>>> 784db5b04e540d92dc5c7ff842da935bb4b2abfd

@@ -109,9 +109,7 @@ class Client
         return $this->domination_sociale;
     }
 
-    /**
-     * @param mixed $domination_sociale
-     */
+
     public function setDominationSociale($domination_sociale)
     {
         $this->domination_sociale = $domination_sociale;
