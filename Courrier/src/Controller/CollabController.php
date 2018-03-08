@@ -25,7 +25,7 @@ class CollabController{
     }
 
     public function editClientAction($id_client, Request $request, Application $app) {
-        $client = $app['dao.client']->find($id_client);
+        $client = $app['dao.clients']->find($id_client);
         $clientForm = $app['form.factory']->create(ClientType::class, $client);
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {

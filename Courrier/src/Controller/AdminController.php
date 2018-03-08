@@ -16,7 +16,7 @@ class AdminController {
 
     public function indexAction(Application $app) {
         $courriers = $app['dao.courrier']->findAll();
-        $clients = $app['dao.client']->findAll();
+        $clients = $app['dao.clients']->findAll();
         $users = $app['dao.user']->findAll();
         return $app['twig']->render('admin.html.twig', array(
             'courriers' => $courriers,
