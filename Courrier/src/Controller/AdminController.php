@@ -68,10 +68,12 @@ class AdminController {
             $user->setPassword($password); 
             $app['dao.user']->save($user);
             $app['session']->getFlashBag()->add('success', 'utilisateur a ete cree.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('user_form.html.twig', array(
             'title' => 'New user',
             'userForm' => $userForm->createView()));
+
     }
 
     public function addClientAction( Request $request,Application $app){
