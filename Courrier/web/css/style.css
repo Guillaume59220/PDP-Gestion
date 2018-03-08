@@ -25,19 +25,9 @@ body {
 .btn-primary {
     background-color: #337ab7;
     border-color: #2e6da4;
-    width: 100%;
-}
-
-input[type="text"] {
-    margin-bottom: 20px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-input[type="password"] {
-    margin-bottom: 20px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    width: 20%;
+    display: block;
+    margin: auto;
 }
 
 .form-signin {
@@ -49,8 +39,6 @@ input[type="password"] {
 }
 
 .form-control {
-    display: inline-block;
-    width: 90%;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -75,7 +63,7 @@ input[type="password"] {
     font-family: 'Glyphicons Halflings';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -88,6 +76,12 @@ input[type="password"] {
     font-size : 14px;
 }
 
+<<<<<<< HEAD
+=======
+.input-group {
+    margin-bottom: 20px;
+}
+>>>>>>> d60202c0bff115c5d09ca3ce89f9586a8503b5e6
 
 
 @media only screen and (min-width: 1200px) {
@@ -97,4 +91,9 @@ input[type="password"] {
         background-repeat: no-repeat;
         background-position-x: 60px;
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> d60202c0bff115c5d09ca3ce89f9586a8503b5e6

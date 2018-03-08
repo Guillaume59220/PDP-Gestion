@@ -6,15 +6,14 @@ class Courrier
 {
 
     private $id_courrier,
-        $date_entre,
-        $date_sortie,
-        $scan,
-        $fax,
-        $annotation,
-        $id_client,
-        $id_type_courrier,
-        $id_lettre,
-        $id_reexpedition;
+            $date_entre,
+            $date_sortie,
+            $scan,
+            $fax,
+            $annotation,
+            $id_client,
+            $id_type_courrier;
+
 
     /**
      * @return mixed
@@ -136,17 +135,6 @@ class Courrier
     }
 
 
-    public function getIdLettre()
-    {
-        return $this->id_lettre;
-    }
-
-
-    public function getIdReexpedition()
-    {
-        return $this->id_reexpedition;
-    }
-
-
+   
 
 }

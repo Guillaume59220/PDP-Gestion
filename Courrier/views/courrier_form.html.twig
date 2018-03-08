@@ -49,6 +49,18 @@
 
         </div>
         <div class="form-group">
+            {{ form_label(courrierForm.nom_client, null , {'label_attr':   {
+                'class': 'col-sm-4 control-label'
+            }} ) }}
+            <div class = "col-sm-6">
+                {{ form_errors(courrierForm.nom_client) }}
+                {{ form_widget(courrierForm.nom_client, { 'attr':  {
+                    'class': 'col-sm-4 control-label'
+                }}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
             <div class="col-sm-offset-4 col-sm-3">
                 <input type="submit" class="btn btn-primary" value="Save" />
             </div>

@@ -9,18 +9,7 @@ use Courrier\Domain\Client;
 
 class CollabController{
 
-    public function addCourrierAction(Request $request, Application $app) {
-        $courrier = new Courrier();
-        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier);
-        $courrierForm->handleRequest($request);
-        if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
-            $app['dao.courrier']->save($courrier);
-            $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
-        }
-        return $app['twig']->render('courrier_form.html.twig', array(
-            'title' => 'Ajouter courrier',
-            'courrierForm' => $courrierForm->createView()));
-    }
+
 
     public function editCourrierAction($id_courrier, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id_courrier);
@@ -36,7 +25,7 @@ class CollabController{
     }
 
     public function editClientAction($id_client, Request $request, Application $app) {
-        $client = $app['dao.client']->find($id_client);
+        $client = $app['dao.clients']->find($id_client);
         $clientForm = $app['form.factory']->create(ClientType::class, $client);
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {

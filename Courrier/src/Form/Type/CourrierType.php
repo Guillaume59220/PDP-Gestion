@@ -9,7 +9,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Silex\Application;
+
+
 class CourrierType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -23,7 +24,7 @@ class CourrierType extends AbstractType
             ->add('fax', TextType::class)
             ->add('annotation', TextareaType::class)
             ->add('date_sortie', DateType::class)
-            ->add('id_client',ChoiceType::class )
+            ->add('id_client',ChoiceType::class)
             ->add('id_type_courrier', ChoiceType::class);
     }
 
