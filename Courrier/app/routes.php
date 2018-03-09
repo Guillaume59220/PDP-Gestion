@@ -47,8 +47,10 @@ $app->delete('/api/courrier/{id}', "Courrier\Controller\ApiController::deleteCou
 
 /// CLIENT
 
-$app->get('/collaborateur/client/add', "Courrier\Controller\CollabController::addClientAction")
+
+$app->match('/collaborateur/client/add', "Courrier\Controller\CollabController::addClientAction")
     ->bind('collaborateur_client_add');
+
 
 $app->match('/collaborateur/client/{id}/edit', "Courrier\Controller\CollabController::editClientAction")
     ->bind('collaborateur_client_edit');

@@ -20,7 +20,7 @@ class ClientDAO extends DAO
             $id_client = $row['id_client'];
             $entities[$id_client] = $this->buildDomainObject($row);
         }
-        return $result;
+        return $entities;
     }
 
 
@@ -36,13 +36,14 @@ class ClientDAO extends DAO
 
     public function find($id_client)
     {
-        $sql = "select nom_client,code_client from clients where id_client=?";
+        $sql = "select * from clients where id_client=?";
         $row = $this->getDb()->fetchAssoc($sql, array($id_client));
 
         if ($row)
             return $this->buildDomainObject($row);
-        else
+
             throw new \Exception("Pas de courrier corespendent client " . $id_client);
+
     }
 
 
@@ -55,8 +56,11 @@ class ClientDAO extends DAO
 
     public function save(Client $client) {
         $clientData = array(
+            'code_client' => $client->getCodeClient(),
             'nom_client' => $client->getNomClient(),
-            'code_client' => $client->getCodeClient()
+            'date_contract' => $client->getDateContract(),
+            'siren' => $client->getSiren(),
+            'capital' => $client->getCapital()
         );
 
         if ($client->getIdClient()) {

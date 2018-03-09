@@ -7,9 +7,7 @@ class Client
 
     private $id_client;
 
-
     private $code_client;
-
 
     private $nom_client;
 
