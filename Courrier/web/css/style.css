@@ -26,7 +26,7 @@ body {
     background-color: #337ab7;
     border-color: #2e6da4;
     display: block;
-    margin: auto;
+    float: right;
 }
 
 .btn-login{
@@ -44,6 +44,7 @@ body {
     margin: 0 auto;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 7px 7px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .form-control {
@@ -106,7 +107,7 @@ body {
     color: #fff;
 }
 
-.navbar-nav>li>a :hover{
+.navbar-nav li:hover {
     background-color: #000;
 }
 
