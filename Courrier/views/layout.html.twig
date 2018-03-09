@@ -20,17 +20,29 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="{% if adminMenu is defined %}active{% endif %}"><a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
+                        <ul>
+                            <li><a href="{{ path('admin_logout') }}"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
+                        </ul>
                     {% endif %}
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% if is_granted('ROLE_EVENT_CREATE') %}
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-user"></span> Welcome, {{ app.user.username }} <b class="caret"></b></a>
+                        <li class="{% if collabMenu is defined %}active{% endif %}"><a href="{{ path('collaborateur') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
                             <ul class="dropdown-menu">
-                            <li><a href="{{ path('admin_logout') }}"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
+                            <li><a href="{{ path('collab_logout') }}"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
                             </ul>
                         </li>
-                    {% else %}
-
+                    {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> Welcome, {{ app.user.username }} <b class="caret"></b></a>
+                    <li class="{% if userMenu is defined %}active{% endif %}"><a href="{{ path('user') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('user_logout') }}"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
+                    </ul>
+                    </li>
                     {% endif %}
                 </ul>
             </div>

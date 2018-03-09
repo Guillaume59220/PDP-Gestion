@@ -12,6 +12,10 @@ $app->match('/courrier/{id_courrier}', "Courrier\Controller\HomeController::Cour
 $app->get('/admin', "Courrier\Controller\AdminController::indexAction")
     ->bind('admin');
 
+$app->get('/collaborateur', "Courrier\Controller\CollabController::indexAction")
+    ->bind('collaborateur');
+
+
 $app->match('/admin/courrier/add', "Courrier\Controller\AdminController::addCourrierAction")
     ->bind('admin_courrier_add');
 

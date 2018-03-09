@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Silex\Application;
+use Courrier\Domain\Client;
 
 
 class CourrierType extends AbstractType
@@ -50,10 +51,10 @@ class CourrierType extends AbstractType
             ->add('annotation', TextareaType::class)
             ->add('date_sortie', DateType::class)
             ->add('client',ChoiceType::class, array(
-                'choices' =>$this->choiceClient(),
+                'choices' =>$this->choiceClient(   ),
                 'multiple' => true))
             ->add('libelle', ChoiceType::class, array(
-                'choices' =>  $this-> choiceCourrier(),
+                'choices' =>  $this-> choiceCourrier($this->libelle_courrier),
                 'multiple' => true));
     }
 
