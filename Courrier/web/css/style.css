@@ -111,6 +111,24 @@ body {
     background-color: #000;
 }
 
+.nav-tabs.nav-justified .active a {
+    border-bottom-color: #fff;
+    background-color: #777;
+    color: #fff;
+}
+
+.nav-tabs.nav-justified .active a:focus {
+    border-bottom-color: #fff;
+    background-color: #777;
+    color: #fff;
+}
+
+.nav-tabs.nav-justified .active a:hover {
+    border-bottom-color: #fff;
+    background-color: #777;
+    color: #fff;
+}
+
 @media only screen and (min-width: 1200px) {
    
     .well {
