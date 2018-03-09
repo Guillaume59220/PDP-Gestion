@@ -12,24 +12,30 @@ $app->match('/courrier/{id_courrier}', "Courrier\Controller\HomeController::Cour
 $app->get('/admin', "Courrier\Controller\AdminController::indexAction")
     ->bind('admin');
 
-$app->match('/admin/courrier/add', "Courrier\Controller\AdminController::addCourrierAction")
-    ->bind('admin_courrier_add');
 
-$app->match('/admin/client/add', "Courrier\Controller\AdminController::addClientAction")
-    ->bind('admin_client_add');
+/// COURRIER
 
+$app->match('/collaborateur/courrier/add', "Courrier\Controller\CollabController::addCourrierAction")
+    ->bind('collaborateur_courrier_add');
 
-$app->match('/admin/courrier/{id}/edit', "Courrier\Controller\AdminController::editCourrierAction")
-    ->bind('admin_courrier_edit');
+$app->match('/collaborateur/courrier/{id}/edit', "Courrier\Controller\CollabController::editCourrierAction")
+    ->bind('collaborateur_courrier_edit');
 
 $app->get('/admin/courrier/{id}/delete', "Courrier\Controller\AdminController::deleteCourrierAction")
     ->bind('admin_courrier_delete');
 
-$app->match('/admin/client/{id}/edit', "Courrier\Controller\CollabController::editClientAction")
-    ->bind('admin_client_edit');
+/// CLIENT
+
+$app->get('/collaborateur/client/add', "Courrier\Controller\CollabController::addClientAction")
+    ->bind('collaborateur_client_add');
+
+$app->match('/collaborateur/client/{id}/edit', "Courrier\Controller\CollabController::editClientAction")
+    ->bind('collaborateur_client_edit');
 
 $app->get('/admin/client/{id}/delete', "Courrier\Controller\AdminController::deleteClientAction")
     ->bind('admin_client_delete');
+
+/// USER
 
 $app->match('/admin/user/add', "Courrier\Controller\AdminController::addUserAction")
     ->bind('admin_user_add');
@@ -39,6 +45,12 @@ $app->match('/admin/user/{id}/edit', "Courrier\Controller\AdminController::editU
 
 $app->get('/admin/user/{id}/delete', "Courrier\Controller\AdminController::deleteUserAction")
     ->bind('admin_user_delete');
+
+
+
+
+
+
 
 $app->get('/api/courrier', "Courrier\Controller\ApiController::getCourrierAction")
     ->bind('api_courrier');

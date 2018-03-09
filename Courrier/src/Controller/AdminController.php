@@ -24,19 +24,6 @@ class AdminController {
             'users' => $users));
     }
 
-    public function addCourrierAction(Request $request, Application $app) {
-        $courrier = new Courrier();
-        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier);
-        $courrierForm->handleRequest($request);
-        if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
-            $app['dao.courrier']->save($courrier);
-            $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
-        }
-        return $app['twig']->render('courrier_form.html.twig', array(
-            'title' => 'Ajouter courrier',
-            'courrierForm' => $courrierForm->createView()));
-    }
-
 
 
     public function deleteCourrierAction($id, Application $app) {
@@ -44,6 +31,7 @@ class AdminController {
         $app['session']->getFlashBag()->add('success', 'Le courrier a ete supprime.');
         return $app->redirect($app['url_generator']->generate('admin'));
     }
+
 
     public function deleteClientAction($id, Application $app) {
         $app['dao.client']->delete($id);
@@ -80,35 +68,6 @@ class AdminController {
 
     }
 
-    public function addClientAction( Request $request,Application $app){
-        $client= new Client;
-        $clientForm= $app['form.factory']->create(ClientType::class, $client);
-        $clientForm->handleRequest($request);
-        if ($clientForm->isSubmitted() && $clientForm->isValid()) {
-            $app['dao.clients']->save($client);
-            $app['session']->getFlashBag()->add('success', 'Le client a ete bien ajoute.');
-        }
-        return $app['twig']->render('client_form.html.twig', array(
-            'title' => 'Ajouter client',
-            'clientForm' => $clientForm->createView()));
-
-    }
-    public function editClientAction($id,Request $request, Application $app){
-
-        $client=$app['dao.clients']->find($id);
-        $clientForm=$app['form.factory']->create(ClientType::class, $client);
-        $clientForm->handleRequest($request);
-        if ($clientForm->isSubmitted() && $clientForm->isValid()) {
-            $app['dao.clients']->save($client);
-            $app['session']->getFlashBag()->add('success', '.');
-        }
-        return $app['twig']->render('client_form.html.twig', array(
-            'title' => 'Edit client',
-            'clientForm' => $clientForm->createView()));
-
-    }
-
-
     public function editUserAction($id, Request $request, Application $app) {
         $user = $app['dao.user']->find($id);
         $userForm = $app['form.factory']->create(UserType::class, $user);
@@ -128,7 +87,6 @@ class AdminController {
             'title' => 'Edit user',
             'userForm' => $userForm->createView()));
     }
-
 
     public function deleteUserAction($id, Application $app) {
 

@@ -19,7 +19,11 @@
                     </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if is_granted('ROLE_ADMIN') %}
-                        <li class="{% if adminMenu is defined %}active{% endif %}"><a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
+                        <li class="{% if adminMenu is defined %}active{% endif %}">
+                            <a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog">
+                                </span> Administration
+                            </a>
+                        </li>
                     {% endif %}
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li class="dropdown">
