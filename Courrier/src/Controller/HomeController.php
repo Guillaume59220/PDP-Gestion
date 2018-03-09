@@ -34,10 +34,9 @@ class HomeController {
             $clientFormView = $clientForm->createView();
         }
 
-        return $app['twig']->render('courrier.html.twig', array(
+        return $app['twig']->render('index.html.twig', array(
             'courrier' => $courrier,
-            'client' => $client,
-            'clientForm' => $clientFormView));
+            ));
     }
     
 

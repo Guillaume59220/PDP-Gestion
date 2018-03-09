@@ -76,7 +76,7 @@
             {% if courriers %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
-                    <a href="{{ path('admin_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
+                    <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
                         <thead>
                         <tr>
                             <th>Client</th>
@@ -88,11 +88,11 @@
                         </thead>
                         {% for courrier in courriers %}
                             <tr>
-                                <td><a class="articleTitle" href="{{ path('courrier', { 'id': courrier.id_courrier }) }}"></a></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ courrier.date_entre }}</td>
+                                <td>{{ courrier.date_sortie }}</td>
+                                <td>{{ courrier.annotation }}</td>
+                                <td>{{ courrier.id_client }}</td>
+                                <td>{{ courrier.id_type_courrier }}</td>
                                 <td>
                                     <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier.id_courrier }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>

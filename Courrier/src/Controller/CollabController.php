@@ -6,6 +6,8 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\Domain\Courrier;
 use Courrier\Domain\Client;
+use Courrier\Form\Type\CourrierType;
+use Courrier\Form\Type\ClientType;
 
 class CollabController{
 
