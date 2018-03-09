@@ -34,7 +34,7 @@ class AdminController {
 
 
     public function deleteClientAction($id, Application $app) {
-        $app['dao.client']->delete($id);
+        $app['dao.clients']->delete($id);
         $app['session']->getFlashBag()->add('success', 'Le client a ete supprime.');
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));

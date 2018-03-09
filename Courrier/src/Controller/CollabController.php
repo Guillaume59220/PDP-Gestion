@@ -6,6 +6,7 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\Domain\Courrier;
 use Courrier\Domain\Client;
+use Courrier\Form\Type\ClientType;
 
 class CollabController{
 
@@ -62,13 +63,13 @@ class CollabController{
     }
 
     public function editClientAction($id,Request $request, Application $app){
-
-        $client=$app['dao.clients']->find($id);
-        $clientForm=$app['form.factory']->create(ClientType::class, $client);
+        $clients=$app['dao.clients']->find($id);
+        $clientForm=$app['form.factory']->create(ClientType::class, $clients);
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
-            $app['dao.clients']->save($client);
-            $app['session']->getFlashBag()->add('success', '.');
+
+            $app['dao.clients']->save($clients);
+            $app['session']->getFlashBag()->add('Success', 'Les données du client ont été modifiées.');
         }
         return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Edit client',
