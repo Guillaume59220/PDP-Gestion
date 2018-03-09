@@ -66,6 +66,7 @@
                     </table>
                 </div>
             {% else %}
+            <a href="{{ path('admin_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
                 <div class="alert alert-warning">Aucun client trouvé</div>
             {% endif %}
             
@@ -123,6 +124,7 @@
                     </table>
                 </div>
             {% else %}
+            <a href="{{ path('admin_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
                 <div class="alert alert-warning">Pas de courrier trouvé.</div>
             {% endif %}
             
@@ -176,6 +178,7 @@
                     </table>
                 </div>
             {% else %}
+            <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter utilisateur</button></a>
                 <div class="alert alert-warning">Aucun utilisateur trouvé.</div>
             {% endif %}
             
