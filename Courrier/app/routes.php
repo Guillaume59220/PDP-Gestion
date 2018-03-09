@@ -15,6 +15,10 @@ $app->get('/admin', "Courrier\Controller\AdminController::indexAction")
 $app->get('/collaborateur', "Courrier\Controller\CollabController::indexAction")
     ->bind('collaborateur');
 
+$app->get('/user', "Courrier\Controller\CollabController::indexAction")
+    ->bind('user');
+
+
 
 
 $app->get('/api/courrier', "Courrier\Controller\ApiController::getCourrierAction")
