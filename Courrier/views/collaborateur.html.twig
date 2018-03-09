@@ -1,5 +1,5 @@
 {% extends "layout.html.twig" %}
-{% set adminMenu = true %}
+
 
 {% block title %}Administration{% endblock %}
 
@@ -24,7 +24,6 @@
             {% if clients %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
-                    <a href="{{ path('admin_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
                         <thead>
                         <tr>
                             <th>Nom</th>
@@ -51,7 +50,7 @@
                                                     <h4 class="modal-title" id="myModalLabel">Confirmation exigée</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                     ?
+                                                    ?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
@@ -66,21 +65,15 @@
                     </table>
                 </div>
             {% else %}
-            <a href="{{ path('admin_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
                 <div class="alert alert-warning">Aucun client trouvé</div>
             {% endif %}
-<<<<<<< HEAD
             <a href="{{ path('collaborateur_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
-=======
-            
->>>>>>> fa5d6dc7bf9dbcd96ae7a3ddaae89d193381517b
         </div>
         <div class="tab-pane fade adminTable" id="courriers">
             <!-- Insérer ici le code de gestion des commentaires -->
             {% if courriers %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
-                    <a href="{{ path('admin_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
                         <thead>
                         <tr>
                             <th>Client</th>
@@ -98,7 +91,7 @@
                                 <td></td>
                                 <td></td>
                                 <td>
-                                    <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier.id_courrier }) }}" class="btn btn-info btn-xs"
+                                    <a href="{{ path('admin_courrier_edit', { 'id': courrier.id_courrier }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
                                             data-target="#courrierDialog{{ courrier.id_courrier }}"><span class="glyphicon glyphicon-trash"></span>
@@ -107,7 +100,7 @@
                                          role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                 <div class="modal-header">
+                                                <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                                     <h4 class="modal-title" id="myModalLabel">Confirmation exigée</h4>
                                                 </div>
@@ -128,20 +121,14 @@
                     </table>
                 </div>
             {% else %}
-            <a href="{{ path('admin_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
                 <div class="alert alert-warning">Pas de courrier trouvé.</div>
             {% endif %}
-<<<<<<< HEAD
-            <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
-=======
-            
->>>>>>> fa5d6dc7bf9dbcd96ae7a3ddaae89d193381517b
+            <a href="{{ path('admin_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
         </div>
         <div class="tab-pane fade adminTable" id="users">
             {% if users %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
-                    <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter utilisateur</button></a>
                         <thead>
                         <tr>
                             <th>Name</th>
@@ -186,10 +173,9 @@
                     </table>
                 </div>
             {% else %}
-            <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter utilisateur</button></a>
                 <div class="alert alert-warning">Aucun utilisateur trouvé.</div>
             {% endif %}
-            
+            <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter utilisateur</button></a>
         </div>
     </div>
 {% endblock %}

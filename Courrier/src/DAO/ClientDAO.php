@@ -3,7 +3,6 @@
 namespace Courrier\DAO;
 
 use Courrier\Domain\Client;
-use Courrier\DAO\CourrierDAO;
 
 class ClientDAO extends DAO
 {

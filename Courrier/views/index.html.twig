@@ -3,18 +3,8 @@
 {% block title %} Liste courrier {% endblock %}
 
 {% block content %}
-    <td>{{ user.username }}</a></td>
-                                <td>
+    <td>{{ user.username }}</td>
 
-                                    {% if user.id == 'ROLE_ADMIN' %}
-                                        Admin
-                                    {% elseif  user.id == 'ROLE_USER'%}
-                                        User
-                                    {% else %}
-                                        Collaborateur
-                                    {% endif %}
-
-                                </td>
 
     <div class="container">
         <h1>Liste de courrier</h1>
