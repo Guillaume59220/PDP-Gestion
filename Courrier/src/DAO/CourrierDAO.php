@@ -9,7 +9,7 @@ class CourrierDAO extends DAO
     public function findAll() {
         $sql = "select * from courrier
         INNER JOIN type_courrier tc ON courrier.id_type_courrier = tc.id_type_courrier
-        INNER JOIN clients c2 ON courrier.id_client = c2.id_client
+        INNER JOIN client c2 ON courrier.id_client = c2.id_client
         order by id_courrier desc";
         $result = $this->getDb()->fetchAll($sql);
 

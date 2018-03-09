@@ -31,7 +31,7 @@ class CourrierType extends AbstractType
 
     private function choiceClient(Application $app){
 
-        $clients=$app['dao.clients']->for_table('clients')->find_result_set();
+        $clients=$app['dao.client']->for_table('client')->find_result_set();
 
         $array=[];
         foreach ($clients as $client):

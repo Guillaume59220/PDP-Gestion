@@ -13,7 +13,7 @@ class CollabController{
 
     public function indexAction(Application $app) {
         $courriers = $app['dao.courrier']->findAll();
-        $clients = $app['dao.clients']->findAll();
+        $clients = $app['dao.client']->findAll();
         return $app['twig']->render('collaborateur.html.twig', array(
             'courriers' => $courriers,
             'clients' => $clients,
@@ -54,7 +54,7 @@ class CollabController{
         $clientForm= $app['form.factory']->create(ClientType::class, $client);
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
-            $app['dao.clients']->save($client);
+            $app['dao.client']->save($client);
             $app['session']->getFlashBag()->add('success', 'Le client a ete bien ajoute.');
         }
         return $app['twig']->render('client_form.html.twig', array(
@@ -65,11 +65,11 @@ class CollabController{
 
     public function editClientAction($id,Request $request, Application $app){
 
-        $client=$app['dao.clients']->find($id);
+        $client=$app['dao.client']->find($id);
         $clientForm=$app['form.factory']->create(ClientType::class, $client);
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
-            $app['dao.clients']->save($client);
+            $app['dao.client']->save($client);
             $app['session']->getFlashBag()->add('success', '.');
         }
         return $app['twig']->render('client_form.html.twig', array(

@@ -16,7 +16,7 @@ class AdminController {
 
     public function indexAction(Application $app) {
         $courriers = $app['dao.courrier']->findAll();
-        $clients = $app['dao.clients']->findAll();
+        $clients = $app['dao.client']->findAll();
         $users = $app['dao.user']->findAll();
         return $app['twig']->render('admin.html.twig', array(
             'courriers' => $courriers,
@@ -34,7 +34,7 @@ class AdminController {
 
 
     public function deleteClientAction($id, Application $app) {
-        $app['dao.clients']->delete($id);
+        $app['dao.client']->delete($id);
         $app['session']->getFlashBag()->add('success', 'Le client a ete supprime.');
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));

@@ -18,7 +18,7 @@ class ClientType extends AbstractType
             ->add('nom_client', TextType::class)
             ->add('code_client', TextType::class)
             ->add('siren', TextType::class)
-            ->add('date_contract', DateType::class)
+            ->add('date_contract', TextType::class)
             ->add('capital',NumberType::class);
 
     }

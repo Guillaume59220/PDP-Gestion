@@ -26,7 +26,7 @@ class AppController
     public function clientAction($id_client, Application $app) {
 
         # Récupération des Articles de la Catégorie
-        $articles = $app['idiorm.db']->for_table('clients')
+        $clients = $app['idiorm.db']->for_table('client')
             ->where('', ucfirst($id_client))
             ->find_result_set();
 

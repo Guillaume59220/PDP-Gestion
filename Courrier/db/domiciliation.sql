@@ -36,10 +36,10 @@ CREATE TABLE `civilite` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `clients`
+-- Structure de la table `client`
 --
 
-CREATE TABLE `clients` (
+CREATE TABLE `client` (
   `id_client` int(11) NOT NULL,
   `code_client` varchar(45) NOT NULL,
   `nom_client` varchar(145) NOT NULL,
@@ -316,7 +316,7 @@ ALTER TABLE `civilite`
 --
 -- Index pour la table `clients`
 --
-ALTER TABLE `clients`
+ALTER TABLE `client`
   ADD PRIMARY KEY (`id_client`);
 
 --
@@ -438,7 +438,7 @@ ALTER TABLE `voie_reexpedition`
 --
 -- AUTO_INCREMENT pour la table `clients`
 --
-ALTER TABLE `clients`
+ALTER TABLE `client`
   MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `contract`

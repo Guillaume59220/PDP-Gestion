@@ -10,7 +10,7 @@ class ClientDAO extends DAO
 
     public function findAll()
     {
-        $sql = "select * from clients order by id_client desc";
+        $sql = "select * from client order by id_client desc";
         $result = $this->getDb()->fetchAll($sql);
 
 
@@ -27,7 +27,7 @@ class ClientDAO extends DAO
     public function findAllByClient($id_client)
     {
 
-        $sql = "select * from clients where id_client=? order by id_client";
+        $sql = "select * from client where id_client=? order by id_client";
         $result = $this->getDb()->fetchAll($sql, array($id_client));
 
         return $result;
@@ -36,12 +36,12 @@ class ClientDAO extends DAO
 
     public function find($id_client)
     {
-        $sql = "select * from clients where id_client=?";
+        $sql = "select * from client where id_client=?";
         $row = $this->getDb()->fetchAssoc($sql, array($id_client));
 
         if ($row)
             return $this->buildDomainObject($row);
-
+        else
             throw new \Exception("Pas de courrier corespendent client " . $id_client);
 
     }
@@ -65,10 +65,10 @@ class ClientDAO extends DAO
 
         if ($client->getIdClient()) {
             // The user has already been saved : update it
-            $this->getDb()->update('clients', $clientData, array('id_client' => $client->getId()));
+            $this->getDb()->update('client', $clientData, array('id_client' => $client->getIdClient()));
         } else {
             // The user has never been saved : insert it
-            $this->getDb()->insert('clients', $clientData);
+            $this->getDb()->insert('client', $clientData);
             // Get the id of the newly created user and set it on the entity.
             $id_client = $this->getDb()->lastInsertId();
             $client->setIdClient($id_client);
@@ -78,6 +78,15 @@ class ClientDAO extends DAO
 
     protected function buildDomainObject(array $row)
     {
+        $client = new Client();
+        $client->setIdClient($row['id_client']);
+        $client->setCodeClient($row['code_client']);
+        $client->setNomClient($row['nom_client']);
+        $client->setSiren($row['siren']);
+        $client->setDateContract($row['date_contract']);
+        $client->setDominationSociale($row['domination_sociale']);
+        $client->setCapital($row['capital']);
 
+        return $client;
     }
 }

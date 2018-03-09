@@ -6,7 +6,7 @@
  * Time: 15:43
  */
 
-class Clients
+class Client
 {
     private $id_client,
             $nom_client;
