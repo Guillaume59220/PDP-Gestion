@@ -9,6 +9,14 @@ use Courrier\Domain\Client;
 
 class CollabController{
 
+    public function indexAction(Application $app) {
+        $courriers = $app['dao.courrier']->findAll();
+        $clients = $app['dao.clients']->findAll();
+        return $app['twig']->render('collaborateur.html.twig', array(
+            'courriers' => $courriers,
+            'clients' => $clients,
+            ));
+    }
 
     public function addCourrierAction(Request $request, Application $app) {
         $courrier = new Courrier();
