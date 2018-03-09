@@ -24,7 +24,7 @@
             {% if clients %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
-                    <a href="{{ path('admin_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
+                    <a href="{{ path('collaborateur_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
                         <thead>
                         <tr>
                             <th>Nom</th>
@@ -69,11 +69,9 @@
             <a href="{{ path('admin_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
                 <div class="alert alert-warning">Aucun client trouvé</div>
             {% endif %}
-<<<<<<< HEAD
+
             <a href="{{ path('collaborateur_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
-=======
-            
->>>>>>> fa5d6dc7bf9dbcd96ae7a3ddaae89d193381517b
+
         </div>
         <div class="tab-pane fade adminTable" id="courriers">
             <!-- Insérer ici le code de gestion des commentaires -->
@@ -128,14 +126,12 @@
                     </table>
                 </div>
             {% else %}
-            <a href="{{ path('admin_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
+            <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
                 <div class="alert alert-warning">Pas de courrier trouvé.</div>
             {% endif %}
-<<<<<<< HEAD
             <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
-=======
-            
->>>>>>> fa5d6dc7bf9dbcd96ae7a3ddaae89d193381517b
+
+
         </div>
         <div class="tab-pane fade adminTable" id="users">
             {% if users %}
