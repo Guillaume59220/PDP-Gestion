@@ -10,17 +10,19 @@ use Courrier\Form\Type\ClientType;
 class HomeController {
 
     public function indexAction(Application $app) {
+        $token = $app['security.token_storage']->getToken();
         $courrier = $app['dao.courrier']->findAll();
-        return $app['twig']->render('index.html.twig', array('courrier' => $courrier));
+        $user = $token->getUser();
+        return $app['twig']->render('index.html.twig', array('courrier' => $courrier,'user'=> $user));
     }
     
 
-    public function courrierAction($id, Request $request, Application $app) {
-        $courrier = $app['dao.courrier']->find($id);
+    public function courrierAction($id_courrier, Request $request, Application $app) {
+        $courrier = $app['dao.courrier']->find($id_courrier);
         $commentFormView = null;
         if ($app['security.authorization_checker']->isGranted('IS_AUTHENTICATED_FULLY')) {
             $client = new Client();
-            $client->setcourrier($courrier);
+            $client->setCourrier($courrier);
             $user = $app['user'];
             $client->setClient($client);
             $clientForm = $app['form.factory']->create(ClientType::class, $client);
@@ -32,10 +34,9 @@ class HomeController {
             $clientFormView = $clientForm->createView();
         }
 
-        return $app['twig']->render('courrier.html.twig', array(
+        return $app['twig']->render('index.html.twig', array(
             'courrier' => $courrier,
-            'client' => $client,
-            'clientForm' => $clientFormView));
+            ));
     }
     
 

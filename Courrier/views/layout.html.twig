@@ -6,27 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('lib/font.awesome/css/font-awesome.min.css') }}">
-    <link href="{{ asset('css/microcms.css') }}" rel="stylesheet">
-    <title>Courrier - {% block title %}{% endblock %}</title>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
             <div class="collapse navbar-collapse" id="navbar-collapse-target">
+                <ul class="nav navbar-nav navbar-left">
+                    <a href="http://www.pdpgestion.com/" target="_blank"><img class= "img-responsive pull-left" src= "{{asset('images/logo-pdp-nord-59.png')}}" alt="logo PDP"/></a>
+                    </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="{% if adminMenu is defined %}active{% endif %}"><a href="{{ path('admin') }}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
                     {% endif %}
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <span class="fas fa-user"></span> Welcome, {{ app.user.username }} <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                            </ul>
-                        </li>
-                    {% else %}
-
+                    {% if is_granted('ROLE_EVENT_CREATE') %}
+                    {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> Welcome, {{ app.user.username }} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('admin_logout') }}"><span class="glyphicon glyphicon-off"></span> Déconnexion</a></li>
+                    </ul>
+                    </li>
                     {% endif %}
                 </ul>
             </div>

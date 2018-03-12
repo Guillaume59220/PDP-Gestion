@@ -11,14 +11,14 @@ class User implements UserInterface
     private $id_user;
 
 
-    private $email;
+    private $username;
 
 
-    private $mdp;
+    private $password;
 
     private $salt;
 
-    private $role_user;
+    private $roles = [];
 
     public function getId() {
         return $this->id_user;
@@ -47,11 +47,11 @@ class User implements UserInterface
 
 
     public function getUsername() {
-        return $this->email;
+        return $this->username;
     }
 
-    public function setUsername($email) {
-        $this->email = $email;
+    public function setUsername($username) {
+        $this->username = $username;
         return $this;
     }
 
@@ -59,33 +59,29 @@ class User implements UserInterface
      * @inheritDoc
      */
     public function getPassword() {
-        return $this->mdp;
+        return $this->password;
     }
 
-    public function setPassword($mdp) {
-        $this->mdp = $mdp;
+    public function setPassword($password) {
+        $this->password = $password;
         return $this;
     }
 
 
 
-    public function getRole() {
-        return $this->role_user;
+    public function getRoles() {
+        return $this->roles;
     }
 
-    public function setRole($role_user) {
-        $this->role = $role_user;
+    public function setRoles($role, $cleanup = false) {
+
+        if (true === $cleanup) {
+            $this->roles = [];
+        }
+
+        $this->roles[] = $role;
         return $this;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public function getRoles()
-    {
-        return array($this->getRole());
-    }
-
     /**
      * @inheritDoc
      */

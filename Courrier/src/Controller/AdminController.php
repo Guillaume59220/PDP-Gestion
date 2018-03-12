@@ -3,6 +3,7 @@
 namespace Courrier\Controller;
 
 use Courrier\Domain\Client;
+use Courrier\Domain\Courrier;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\Domain\User;
@@ -25,14 +26,15 @@ class AdminController {
 
 
 
-    public function deleteCourrierAction($id_courrier, Application $app) {
-        $app['dao.courrier']->delete($id_courrier);
+    public function deleteCourrierAction($id, Application $app) {
+        $app['dao.courrier']->delete($id);
         $app['session']->getFlashBag()->add('success', 'Le courrier a ete supprime.');
         return $app->redirect($app['url_generator']->generate('admin'));
     }
 
-    public function deleteClientAction($id_client, Application $app) {
-        $app['dao.client']->delete($id_client);
+
+    public function deleteClientAction($id, Application $app) {
+        $app['dao.client']->delete($id);
         $app['session']->getFlashBag()->add('success', 'Le client a ete supprime.');
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));
@@ -51,15 +53,20 @@ class AdminController {
             $encoder = $app['security.encoder.bcrypt'];
             // compute the encoded password
             $password = $encoder->encodePassword($plainPassword, $user->getSalt());
-            $user->setPassword($password); 
+            $user->setPassword($password);
+            if (is_array($user->getRoles()[0])) {
+                $user->setRoles($user->getRoles()[0][0], true);
+            }
+            dump($user);
             $app['dao.user']->save($user);
             $app['session']->getFlashBag()->add('success', 'utilisateur a ete cree.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('user_form.html.twig', array(
             'title' => 'New user',
             'userForm' => $userForm->createView()));
-    }
 
+    }
 
     public function editUserAction($id, Request $request, Application $app) {
         $user = $app['dao.user']->find($id);
@@ -74,16 +81,15 @@ class AdminController {
             $user->setPassword($password); 
             $app['dao.user']->save($user);
             $app['session']->getFlashBag()->add('success', 'The user was successfully updated.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('user_form.html.twig', array(
             'title' => 'Edit user',
             'userForm' => $userForm->createView()));
     }
 
-
     public function deleteUserAction($id, Application $app) {
-        // Delete all associated comments
-        $app['dao.comment']->deleteAllByUser($id);
+
         // Delete the user
         $app['dao.user']->delete($id);
         $app['session']->getFlashBag()->add('success', 'The user was successfully removed.');

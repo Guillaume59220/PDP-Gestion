@@ -1,5 +1,5 @@
 {% extends 'layout.html.twig' %}
-{% set adminMenu = true %}
+{#{% set adminMenu = true %}#}
 
 {% block title %}{{ title }}{% endblock %}
 
@@ -12,49 +12,61 @@
     {% endfor %}
 
     <div class="well">
-        {{ form_start(courrierForm, { 'attr': {'class': 'form-horizontal'} }) }}
+        {{ form_start(clientForm, { 'attr': {'class': 'form-horizontal'} }) }}
         <div class="form-group">
-            {{ form_label(courrierForm.date_entre, null, { 'label_attr':  {
+            {{ form_label(clientForm.code_client, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}
             <div class="col-sm-6">
-                {{ form_errors(courrierForm.date_entre) }}
-                {{ form_widget(courrierForm.date_entre, { 'attr':  {
+                {{ form_errors(clientForm.code_client) }}
+                {{ form_widget(clientForm.code_client, { 'attr':  {
                     'class': 'form-control'
                 }}) }}
             </div>
         </div>
         <div class="form-group">
-            {{ form_label(courrierForm.annotation, null, { 'label_attr':  {
+            {{ form_label(clientForm.nom_client, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}
             <div class="col-sm-6">
-                {{ form_errors(courrierForm.annotation) }}
-                {{ form_widget(courrierForm.annotation, { 'attr':  {
+                {{ form_errors(clientForm.nom_client) }}
+                {{ form_widget(clientForm.nom_client, { 'attr':  {
                     'class': 'form-control',
                     'rows': '8'
                 }}) }}
             </div>
         </div>
         <div class="form-group">
-            {{ form_label(courrierForm.type_courrier, null , {'label_attr':   {
+            {{ form_label(clientForm.date_contract, null , {'label_attr':   {
                 'class': 'col-sm-4 control-label'
             }} ) }}
             <div class = "col-sm-6">
-                {{ form_errors(courrierForm.type_courrier) }}
-                {{ form_widget(courrierForm.type_courrier, { 'attr':  {
+                {{ form_errors(clientForm.date_contract) }}
+                {{ form_widget(clientForm.date_contract, { 'attr':  {
                     'class': 'col-sm-4 control-label'
                 }}) }}
             </div>
 
         </div>
         <div class="form-group">
-            {{ form_label(courrierForm.nom_client, null , {'label_attr':   {
+            {{ form_label(clientForm.siren, null , {'label_attr':   {
                 'class': 'col-sm-4 control-label'
             }} ) }}
             <div class = "col-sm-6">
-                {{ form_errors(courrierForm.nom_client) }}
-                {{ form_widget(courrierForm.nom_client, { 'attr':  {
+                {{ form_errors(clientForm.siren) }}
+                {{ form_widget(clientForm.siren, { 'attr':  {
+                    'class': 'col-sm-4 control-label'
+                }}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(clientForm.capital, null , {'label_attr':   {
+                'class': 'col-sm-4 control-label'
+            }} ) }}
+            <div class = "col-sm-6">
+                {{ form_errors(clientForm.capital) }}
+                {{ form_widget(clientForm.capital, { 'attr':  {
                     'class': 'col-sm-4 control-label'
                 }}) }}
             </div>
@@ -65,6 +77,6 @@
                 <input type="submit" class="btn btn-primary" value="Save" />
             </div>
         </div>
-        {{ form_end(courrierForm) }}
+        {{ form_end(clientForm) }}
     </div>
 {% endblock %}

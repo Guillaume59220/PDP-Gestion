@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
-{% set adminMenu = true %}
 
-{% block title %}Administration{% endblock %}
+
+{% block title %}Collaborateur{% endblock %}
 
 {% block content %}
     <h2 class="text-center">{{ block('title') }}</h2>
@@ -24,7 +24,6 @@
             {% if clients %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
-                    <a href="{{ path('collaborateur_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
                         <thead>
                         <tr>
                             <th>Nom</th>
@@ -34,15 +33,13 @@
                         </thead>
                         {% for client in clients %}
                             <tr>
-                                <td>{{ client.nomclient }}</td>
-                                <td>{{ client.codeclient }}</td>
+                                <td>{{ client.nom_client }}</td>
+                                <td>{{ client.code_client }}</td>
                                 <td>
-                                    <a href="{{ path('collaborateur_client_edit', { 'id': client.idclient }) }}"
+                                    <a href="{{ path('collaborateur_client_edit', { 'id': client.id_client }) }}"
                                        class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
-                                    <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
-                                            data-target="#clientDialog{{ client.idclient }}"><span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                    <div class="modal fade" id="articleDialog{{ client.idclient }}" tabindex="-1" role="dialog"
+
+                                    <div class="modal fade" id="articleDialog{{ client.id_client }}" tabindex="-1" role="dialog"
                                          aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -51,11 +48,11 @@
                                                     <h4 class="modal-title" id="myModalLabel">Confirmation exigée</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                     ?
+                                                    ?
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                                    <a href="{{ path('admin_client_delete', { 'id': client.idclient }) }}" class="btn btn-danger">Confirmer</a>
+                                                    <a href="{{ path('admin_client_delete', { 'id': client.id_client }) }}" class="btn btn-danger">Confirmer</a>
                                                 </div>
                                             </div><!-- /.modal-content -->
                                         </div><!-- /.modal-dialog -->
@@ -66,17 +63,15 @@
                     </table>
                 </div>
             {% else %}
-            <a href="{{ path('collaborateur_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
                 <div class="alert alert-warning">Aucun client trouvé</div>
             {% endif %}
-
+            <a href="{{ path('collaborateur_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
         </div>
         <div class="tab-pane fade adminTable" id="courriers">
             <!-- Insérer ici le code de gestion des commentaires -->
             {% if courriers %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
-                    <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
                         <thead>
                         <tr>
                             <th>Client</th>
@@ -88,13 +83,13 @@
                         </thead>
                         {% for courrier in courriers %}
                             <tr>
-                                <td>{{ courrier.date_entre }}</td>
-                                <td>{{ courrier.date_sortie }}</td>
-                                <td>{{ courrier.annotation }}</td>
-                                <td>{{ courrier.id_client }}</td>
-                                <td>{{ courrier.id_type_courrier }}</td>
+                                <td><a class="articleTitle" href="{{ path('courrier', { 'id': courrier.id_courrier }) }}"></a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td>
-                                    <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier.id_courrier }) }}" class="btn btn-info btn-xs"
+                                    <a href="{{ path('admin_courrier_edit', { 'id': courrier.id_courrier }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
                                             data-target="#courrierDialog{{ courrier.id_courrier }}"><span class="glyphicon glyphicon-trash"></span>
@@ -103,7 +98,7 @@
                                          role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                 <div class="modal-header">
+                                                <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                                     <h4 class="modal-title" id="myModalLabel">Confirmation exigée</h4>
                                                 </div>
@@ -124,66 +119,10 @@
                     </table>
                 </div>
             {% else %}
-            <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
                 <div class="alert alert-warning">Pas de courrier trouvé.</div>
             {% endif %}
-            
-
-
-        </div>
-        <div class="tab-pane fade adminTable" id="users">
-            {% if users %}
-                <div class="table-responsive">
-                    <table class="table table-hover table-condensed">
-                    <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter utilisateur</button></a>
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Role</th>
-                            <th></th>  <!-- Actions column -->
-                        </tr>
-                        </thead>
-                        {% for user in users %}
-                            <tr>
-                                <td>{{ user.username }}</a></td>
-                                <td>
-
-                                    {{ user.roles[0] }}
-
-                                </td>
-                                <td>
-                                    <a href="{{ path('admin_user_edit', { 'id': user.id }) }}" class="btn btn-info btn-xs" title="Edit">
-                                        <span class="glyphicon glyphicon-pencil"></span></a>
-                                    <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
-                                            data-target="#userDialog{{ user.id }}"><span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-                                    <div class="modal fade" id="userDialog{{ user.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                    <h4 class="modal-title" id="myModalLabel">Confirmation exigée</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Supprimer ?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                                    <a href="{{ path('admin_user_delete', { 'id': user.id }) }}" class="btn btn-danger">Confirmer</a>
-                                                </div>
-                                            </div><!-- /.modal-content -->
-                                        </div><!-- /.modal-dialog -->
-                                    </div><!-- /.modal -->
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-            {% else %}
-            <a href="{{ path('admin_user_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter utilisateur</button></a>
-                <div class="alert alert-warning">Aucun utilisateur trouvé.</div>
-            {% endif %}
-            
+            <a href="{{ path('admin_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
         </div>
     </div>
+
 {% endblock %}

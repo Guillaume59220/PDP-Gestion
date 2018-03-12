@@ -16,7 +16,7 @@ class UserDAO extends DAO implements UserProviderInterface
      * @return array A list of all users.
      */
     public function findAll() {
-        $sql = "select * from user order by role_user, email";
+        $sql = "select * from user order by role_user, username";
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -42,10 +42,10 @@ class UserDAO extends DAO implements UserProviderInterface
 
     public function save(User $user) {
         $userData = array(
-            'email' => $user->getUsername(),
-            'usr_salt' => $user->getSalt(),
-            'mdp' => $user->getPassword(),
-            'role_user' => $user->getRole()
+            'username' => $user->getUsername(),
+            'salt' => $user->getSalt(),
+            'password' => $user->getPassword(),
+            'role_user' => $user->getRoles()[0]
             );
 
         if ($user->getId()) {
@@ -75,11 +75,11 @@ class UserDAO extends DAO implements UserProviderInterface
      */
     public function loadUserByUsername($username)
     {
-        $sql = "select * from user where email=?";
+        $sql = "select * from user where username=?";
         $row = $this->getDb()->fetchAssoc($sql, array($username));
 
         if ($row) {
-            dump($this->buildDomainObject($row));
+            #dump($this->buildDomainObject($row));
             return $this->buildDomainObject($row);
         } else {
             throw new UsernameNotFoundException(sprintf('User "%s" not found.', $username));
@@ -110,10 +110,11 @@ class UserDAO extends DAO implements UserProviderInterface
     protected function buildDomainObject(array $row) {
         $user = new User();
         $user->setId($row['id_user']);
-        $user->setUsername($row['email']);
-        $user->setPassword($row['mdp']);
-        #$user->setSalt($row['salt']);
-        $user->setRole($row['role_user']);
+        $user->setUsername($row['username']);
+        $user->setPassword($row['password']);
+        $user->setSalt($row['salt']);
+        $user->setRoles($row['role_user']);
         return $user;
     }
 }
+

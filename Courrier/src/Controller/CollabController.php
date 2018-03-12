@@ -1,11 +1,24 @@
 <?php
 
+namespace Courrier\Controller;
+
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\Domain\Courrier;
-use Courrier\DAO\CourrierDAO;
+use Courrier\Domain\Client;
+use Courrier\Form\Type\CourrierType;
+use Courrier\Form\Type\ClientType;
 
 class CollabController{
+
+    public function indexAction(Application $app) {
+        $courriers = $app['dao.courrier']->findAll();
+        $clients = $app['dao.client']->findAll();
+        return $app['twig']->render('collaborateur.html.twig', array(
+            'courriers' => $courriers,
+            'clients' => $clients,
+            ));
+    }
 
     public function addCourrierAction(Request $request, Application $app) {
         $courrier = new Courrier();
@@ -28,22 +41,41 @@ class CollabController{
             $app['dao.courrier']->save($courrier);
             $app['session']->getFlashBag()->add('success', 'Liste des courriers a ete bien modifie.');
         }
-        return $app['twig']->render('article_form.html.twig', array(
+        return $app['twig']->render('courrier_form.html.twig', array(
             'title' => 'Modification courrier',
             'courrierForm' => $courrierForm->createView()));
     }
 
-    public function editClientAction($id_client, Request $request, Application $app) {
-        $client = $app['dao.client']->find($id_client);
-        $clientForm = $app['form.factory']->create(ClientType::class, $client);
+
+
+
+    public function addClientAction( Request $request,Application $app){
+        $client= new Client;
+        $clientForm= $app['form.factory']->create(ClientType::class, $client);
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
             $app['dao.client']->save($client);
-            $app['session']->getFlashBag()->add('success', 'Les donnees client a bien ete modifie.');
+            $app['session']->getFlashBag()->add('success', 'Le client a ete bien ajoute.');
         }
-        return $app['twig']->render('comment_form.html.twig', array(
+        return $app['twig']->render('client_form.html.twig', array(
+            'title' => 'Ajouter client',
+            'clientForm' => $clientForm->createView()));
+
+    }
+
+    public function editClientAction($id,Request $request, Application $app){
+
+        $client=$app['dao.client']->find($id);
+        $clientForm=$app['form.factory']->create(ClientType::class, $client);
+        $clientForm->handleRequest($request);
+        if ($clientForm->isSubmitted() && $clientForm->isValid()) {
+            $app['dao.client']->save($client);
+            $app['session']->getFlashBag()->add('success', '.');
+        }
+        return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Edit client',
             'clientForm' => $clientForm->createView()));
+
     }
 
 

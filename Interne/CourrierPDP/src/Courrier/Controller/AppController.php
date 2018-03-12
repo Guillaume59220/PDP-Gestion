@@ -26,7 +26,7 @@ class AppController
     public function clientAction($id_client, Application $app) {
 
         # Récupération des Articles de la Catégorie
-        $articles = $app['idiorm.db']->for_table('clients')
+        $clients = $app['idiorm.db']->for_table('client')
             ->where('', ucfirst($id_client))
             ->find_result_set();
 
@@ -78,10 +78,10 @@ class AppController
         $user = $app['idiorm.db']->for_table('user')->create();
 
         # Affectation de Valeurs
-        $user->email         = $request->get('email');
-        $user->mdp           = $app['security.default_encoder']
-            ->encodePassword($request->get('mdp'), '');
-        $user->role_user     = 'role_user';
+        $user->username         = $request->get('username');
+        $user->password         = $app['security.default_encoder']
+            ->encodePassword($request->get('password'), '');
+        $user->roles            = 'role_user';
 
         # On persiste en BDD
         $user->save();
