@@ -55,7 +55,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                                    <a href="{{ path('admin_client_delete', { 'id': client.idclient }) }}" class="btn btn-danger">Confirmer</a>
+                                                    <a href="{{ path('admin_client_delete', { 'id': client.idclient }) }}" class="btn btn-primary">Confirmer</a>
                                                 </div>
                                             </div><!-- /.modal-content -->
                                         </div><!-- /.modal-dialog -->
@@ -98,6 +98,12 @@
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
                                             data-target="#courrierDialog{{ courrier.id_courrier }}"><span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-success btn-xs" title="Download" data-toggle="modal"
+                                            data-target="#clientDialog{{ client.idclient }}"><span class="glyphicon glyphicon-cloud-download"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-xs" title="Upload" data-toggle="modal"
+                                            data-target="#clientDialog{{ client.idclient }}"><span class="glyphicon glyphicon-cloud-upload"></span>
                                     </button>
                                     <div class="modal fade" id="courrierDialog{{ courrier.id_courrier }}" tabindex="-1"
                                          role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
