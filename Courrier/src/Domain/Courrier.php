@@ -122,7 +122,7 @@ class Courrier
     /**
      * @param mixed $id_client
      */
-    public function setIdClient(Client $id_client)
+    public function setIdClient($id_client)
     {
         $this->client = $id_client;
     }

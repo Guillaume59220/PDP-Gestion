@@ -74,6 +74,33 @@
             </div>
         </div>
 
+
+        <div class="form-group">
+            {{ form_label(courrierForm.fax, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(courrierForm.fax) }}
+                {{ form_widget(courrierForm.fax, { 'attr':  {
+                    'class': 'col-sm-4 control-label'
+
+                }}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(courrierForm.date_sortie, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(courrierForm.date_sortie) }}
+                {{ form_widget(courrierForm.date_sortie, { 'attr':  {
+                    'class': 'col-sm-4 control-label'
+
+                }}) }}
+            </div>
+        </div>
+
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-3">
                 <input type="submit" class="btn btn-primary" value="Save" />

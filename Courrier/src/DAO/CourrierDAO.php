@@ -70,8 +70,8 @@ class CourrierDAO extends DAO
             'date_entre'=> $courrier->getDateEntre(),
             'date_sortie'=> $courrier->getDateSortie(),
             'annotation'=>$courrier->getAnnotation(),
-            #'scan'=>$courrier->getScan(),
-            #'fax'=> $courrier->getFax(),
+            'scan'=>$courrier->getScan(),
+            'fax'=> $courrier->getFax(),
             'id_type_courrier'=>$courrier->getIdTypeCourrier(),
             'id_client'=>$courrier->getIdClient()
 

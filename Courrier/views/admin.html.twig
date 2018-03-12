@@ -4,7 +4,7 @@
 {% block title %}Administration{% endblock %}
 
 {% block content %}
-    <h2 class="text-center">{{ block('title') }}</h2>
+    <h1 class="text-center">{{ block('title') }}</h1>
     {% for flashMessage in app.session.flashbag.get('success') %}
         <div class="alert alert-success">
             {{ flashMessage }}
@@ -55,7 +55,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                                    <a href="{{ path('admin_client_delete', { 'id': client.idclient }) }}" class="btn btn-primary">Confirmer</a>
+                                                    <a href="{{ path('admin_client_delete', { 'id': client.idclient }) }}" class="btn btn-danger">Confirmer</a>
                                                 </div>
                                             </div><!-- /.modal-content -->
                                         </div><!-- /.modal-dialog -->
