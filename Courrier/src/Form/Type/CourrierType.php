@@ -47,7 +47,9 @@ class CourrierType extends AbstractType
         $app = $options['app'];
         $builder
             ->add('date_entre', DateType::class)
-            ->add('scan', FileType::class)
+            ->add('scan', FileType::class, array(
+                'label'=> ' '
+            ))
             ->add('fax', TextType::class)
             ->add('annotation', TextareaType::class)
             ->add('date_sortie', DateType::class)
@@ -60,7 +62,7 @@ class CourrierType extends AbstractType
                 'choices' =>  $this-> choiceCourrier($app),
                 'multiple' => true,
                 'label'=> 'Type Courrier'
-            ));
+                ));
     }
 
     public function configureOptions(OptionsResolver $resolver)

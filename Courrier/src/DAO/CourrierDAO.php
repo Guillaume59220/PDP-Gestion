@@ -36,14 +36,20 @@ class CourrierDAO extends DAO
 
     public function findAllTypeCourrier() {
 
-       /* $sql = "SELECT * FROM type_courrier ";
-        $types= $this->getDb()->fetchAll($sql);
+       $sql = "SELECT * FROM type_courrier";
+       $result= $this->getDb()->fetchAll($sql);
 
-        return $types; */
+       $types = [];
+       foreach ($result as $type) {
+            $types[$type['libelle_courrier']] = $type['libelle_courrier'];
+       }
+       dump($types);
+
+       return $types;
 
 
 
-        return ['normal', 'recommandé'];
+       #return ['normal', 'recommandé'];
     }
 
     public function save(Courrier $courrier) {
