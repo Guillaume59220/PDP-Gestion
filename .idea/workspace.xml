@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="957fa899-2716-4e58-825b-ad4f397d12d8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65f9d897-00fc-47af-9f2d-63ec52f1b0ba.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/65f9d897-00fc-47af-9f2d-63ec52f1b0ba.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7bd66949-6b24-4c4d-8197-88b35b51b7af.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/7bd66949-6b24-4c4d-8197-88b35b51b7af.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Courrier/var/cache/twig/0a/0af7ec55a2cdfbbae758f4d13578f5e07d17849ad5742d312bda6f6b17ccfdaf.php" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Courrier/var/cache/twig/4a/4a8be0d48b4c1b85548c94886b5466b2c3b1422364a90524da2b90f77aa36113.php" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Courrier/var/cache/twig/58/58b233424b5b254cc70d6482168499f88d3f4229d9b4ab51bb8b093470c4b3c3.php" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Courrier/var/cache/twig/64/645c9a0aef6ce5e46b5be5fe429adf049757efb5e7dece21e2045b335a9f86fd.php" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Courrier/var/cache/twig/69/69f61902ae2d065f8a6d490d08403f7e25330bd67f2b37d9d0ae8800516694eb.php" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Courrier/views/admin.html.twig" afterPath="$PROJECT_DIR$/Courrier/views/admin.html.twig" />
+=======
+      <change beforePath="$PROJECT_DIR$/Courrier/src/Controller/CollabController.php" afterPath="$PROJECT_DIR$/Courrier/src/Controller/CollabController.php" />
+      <change beforePath="$PROJECT_DIR$/Courrier/src/DAO/CourrierDAO.php" afterPath="$PROJECT_DIR$/Courrier/src/DAO/CourrierDAO.php" />
+      <change beforePath="$PROJECT_DIR$/Courrier/src/Domain/Courrier.php" afterPath="$PROJECT_DIR$/Courrier/src/Domain/Courrier.php" />
+      <change beforePath="$PROJECT_DIR$/Courrier/src/Form/Type/CourrierType.php" afterPath="$PROJECT_DIR$/Courrier/src/Form/Type/CourrierType.php" />
+      <change beforePath="$PROJECT_DIR$/Courrier/views/courrier_form.html.twig" afterPath="$PROJECT_DIR$/Courrier/views/courrier_form.html.twig" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,30 +41,39 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="test@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="domiciliation@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="test@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="domiciliation@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="test@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="domiciliation@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="test: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="domiciliation: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="test@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="domiciliation@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="test: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="users: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="domiciliation: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="domiciliation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="domiciliation: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="type_courrier: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Courrier/app/app.php">
@@ -61,63 +82,156 @@
               <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
+=======
+    <leaf>
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Courrier/src/Controller/AdminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-60">
+              <caret line="44" column="64" lean-forward="true" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Courrier/app/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="820">
+              <caret line="82" column="3" lean-forward="false" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
+              <folding>
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
                 <element signature="e#90#131#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Courrier/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="20" />
+=======
+      <file leaf-file-name="Courrier.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Courrier/src/Domain/Courrier.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1960">
+              <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="22" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Courrier/views/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="27" />
               <folding />
+=======
+      <file leaf-file-name="CourrierDAO.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Courrier/src/DAO/CourrierDAO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+              <folding>
+                <marker date="1520851036001" expanded="true" signature="143:352" ph="select * fro... courrier" />
+                <marker date="1520851036001" expanded="true" signature="688:731" ph="select * fro... courrier" />
+                <marker date="1520851036001" expanded="true" signature="1042:1069" ph="SELECT * FRO... type_courrier" />
+              </folding>
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Courrier/src/Controller/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
+=======
+      <file leaf-file-name="UserDAO.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Courrier/src/DAO/UserDAO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-840">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1520523483382" expanded="true" signature="559:606" ph="select * fro... user" />
+                <marker date="1520523483382" expanded="true" signature="990:1024" ph="select * fro... user" />
+                <marker date="1520523483382" expanded="true" signature="2360:2395" ph="select * fro... user" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientDAO.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Courrier/src/DAO/ClientDAO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1520607252766" expanded="true" signature="145:189" ph="select * fro... client" />
+                <marker date="1520607252766" expanded="true" signature="598:655" ph="select * fro... client" />
+                <marker date="1520607252766" expanded="true" signature="819:857" ph="select * fro... client" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CollabController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Courrier/src/Controller/CollabController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="37" column="100" lean-forward="false" selection-start-line="37" selection-start-column="100" selection-end-line="37" selection-end-column="100" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Courrier/views/admin.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="157">
               <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+=======
+      <file leaf-file-name="CourrierType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Courrier/src/Form/Type/CourrierType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Courrier/src/Controller/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="42" />
+=======
+      <file leaf-file-name="courrier_form.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Courrier/views/courrier_form.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="940">
+              <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+<<<<<<< HEAD
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -130,6 +244,8 @@
     <dirStrings>
       <dir>C:\xampp\htdocs\PDP-Gestion\Courrier</dir>
     </dirStrings>
+=======
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -137,9 +253,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Interne/CourrierPOO/Application/Model/Client/Client.php" />
         <option value="$PROJECT_DIR$/Interne/CourrierPOO/Core/Core.php" />
         <option value="$PROJECT_DIR$/Interne/CourrierPOO/public/bootstrap.php" />
+=======
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
         <option value="$PROJECT_DIR$/Interne/CourrierPOO/Core/Model/Helper.php" />
         <option value="$PROJECT_DIR$/Interne/CourrierPOO/Core/Model/DbTable.php" />
         <option value="$PROJECT_DIR$/Interne/CourrierPOO/Core/Model/DbFactory.php" />
@@ -186,8 +305,16 @@
         <option value="$PROJECT_DIR$/Courrier/vendor/symfony/css-selector/XPath/Translator.php" />
         <option value="$PROJECT_DIR$/Courrier/app/app.php" />
         <option value="$PROJECT_DIR$/Courrier/app/routes.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Courrier/src/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/Courrier/views/admin.html.twig" />
+=======
+        <option value="$PROJECT_DIR$/Courrier/src/Domain/Courrier.php" />
+        <option value="$PROJECT_DIR$/Courrier/src/Controller/CollabController.php" />
+        <option value="$PROJECT_DIR$/Courrier/views/courrier_form.html.twig" />
+        <option value="$PROJECT_DIR$/Courrier/src/Form/Type/CourrierType.php" />
+        <option value="$PROJECT_DIR$/Courrier/src/DAO/CourrierDAO.php" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
       </list>
     </option>
   </component>
@@ -198,10 +325,17 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="793" />
+    <option name="width" value="814" />
+    <option name="height" value="867" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -237,8 +371,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
       <pane id="Scratches" />
+=======
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,6 +398,7 @@
               <item name="PDP-Gestion" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDP-Gestion" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
@@ -274,6 +412,8 @@
               <item name="PDP-Gestion" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDP-Gestion" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
+=======
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -316,6 +456,7 @@
               <item name="PDP-Gestion" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDP-Gestion" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
+<<<<<<< HEAD
               <item name="var" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -337,6 +478,8 @@
               <item name="PDP-Gestion" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDP-Gestion" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
+=======
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -345,6 +488,7 @@
               <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+<<<<<<< HEAD
             <path>
               <item name="PDP-Gestion" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDP-Gestion" type="2a2b976b:PhpTreeStructureProvider$1" />
@@ -352,10 +496,17 @@
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+=======
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+      <pane id="Scratches" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,11 +573,16 @@
       <workItem from="1519738944135" duration="6000" />
       <workItem from="1519738994507" duration="25000" />
       <workItem from="1519739108689" duration="52000" />
+      <workItem from="1520844468811" duration="6167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="147079000" />
+=======
+    <option name="totallyTimeSpent" value="152015000" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,6 +597,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12260128" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -474,6 +631,19 @@
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11821086" sideWeight="0.49589685" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14430244" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20837809" sideWeight="0.5041032" order="2" side_tool="true" content_ui="tabs" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -484,10 +654,14 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12153518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -506,6 +680,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Interne/CourrierPOO/public/config.php" />
     <entry file="file://$PROJECT_DIR$/Interne/CourrierPOO/public/index.php" />
     <entry file="file://$PROJECT_DIR$/Interne/CourrierPOO/Core/Core.php" />
@@ -518,6 +693,29 @@
     <entry file="das://src:table:/52bd7fe0/65f9d897-00fc-47af-9f2d-63ec52f1b0ba/domiciliation.departement" />
     <entry file="das://src:table:/52bd7fe0/65f9d897-00fc-47af-9f2d-63ec52f1b0ba/domiciliation.courrier" />
     <entry file="das://table:/52bd7fe0/65f9d897-00fc-47af-9f2d-63ec52f1b0ba/domiciliation.courrier" />
+=======
+    <entry file="das://src:table:/52bd7fe0/65f9d897-00fc-47af-9f2d-63ec52f1b0ba/domiciliation.departement">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://src:table:/52bd7fe0/65f9d897-00fc-47af-9f2d-63ec52f1b0ba/domiciliation.courrier">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/52bd7fe0/65f9d897-00fc-47af-9f2d-63ec52f1b0ba/domiciliation.courrier">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6d45b504-46ba-4443-8d89-57d908f1d57a/console.sql" />
     <entry file="file://$PROJECT_DIR$/Externe/Aprés connection/Fichiers à supprimer plus tard/Code depart non utilisable" />
     <entry file="file://$PROJECT_DIR$/Interne/Courrier/formulaireinsert.php" />
@@ -661,10 +859,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Courrier/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="59" column="34" lean-forward="false" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Courrier/app/app.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="284">
           <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+=======
+        <state relative-caret-position="820">
+          <caret line="82" column="3" lean-forward="false" selection-start-line="82" selection-start-column="3" selection-end-line="82" selection-end-column="3" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
             <element signature="e#90#131#0#PHP" expanded="true" />
@@ -672,8 +883,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Courrier/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/Courrier/src/Domain/User.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="187">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="20" />
           <folding />
@@ -692,7 +904,103 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 30d4ea2568e81be5fc56a9657d94d0ef8c4e7dcf
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a4cf46e6-c550-46d6-b6a9-a70cb670fe29/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4ca80890-a89c-4265-8c31-d6a3900b8f04/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Courrier/src/DAO/UserDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520523483382" expanded="true" signature="559:606" ph="select * fro... user" />
+            <marker date="1520523483382" expanded="true" signature="990:1024" ph="select * fro... user" />
+            <marker date="1520523483382" expanded="true" signature="2360:2395" ph="select * fro... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Courrier/src/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="44" column="64" lean-forward="true" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Courrier/src/Controller/CollabController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="37" column="100" lean-forward="false" selection-start-line="37" selection-start-column="100" selection-end-line="37" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Courrier/views/courrier_form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="940">
+          <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Courrier/src/DAO/ClientDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520607252766" expanded="true" signature="145:189" ph="select * fro... client" />
+            <marker date="1520607252766" expanded="true" signature="598:655" ph="select * fro... client" />
+            <marker date="1520607252766" expanded="true" signature="819:857" ph="select * fro... client" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Courrier/src/Form/Type/CourrierType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Courrier/src/Domain/Courrier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1960">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Courrier/src/DAO/CourrierDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <marker date="1520851036001" expanded="true" signature="143:352" ph="select * fro... courrier" />
+            <marker date="1520851036001" expanded="true" signature="688:731" ph="select * fro... courrier" />
+            <marker date="1520851036001" expanded="true" signature="1042:1069" ph="SELECT * FRO... type_courrier" />
+          </folding>
         </state>
       </provider>
     </entry>

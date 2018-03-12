@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="domiciliation@localhost" uuid="65f9d897-00fc-47af-9f2d-63ec52f1b0ba">
-      <database-info product="MySQL" version="5.5.5-10.1.28-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )">
+    <data-source name="domiciliation@localhost" uuid="4ca80890-a89c-4265-8c31-d6a3900b8f04">
+      <database-info product="MySQL" version="5.5.5-10.1.22-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
@@ -10,16 +10,6 @@
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
       <introspection-schemas>*:domiciliation</introspection-schemas>
-    </data-source>
-    <data-source name="test@localhost" uuid="7bd66949-6b24-4c4d-8197-88b35b51b7af">
-      <database-info product="MySQL" version="5.5.5-10.1.28-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <introspection-schemas>*:test</introspection-schemas>
     </data-source>
   </component>
 </project>
