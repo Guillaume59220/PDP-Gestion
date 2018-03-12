@@ -54,26 +54,28 @@ class CourrierDAO extends DAO
 
     public function findClient(){
 
-        $sql="SELECT nom_client FROM client";
+        $sql="SELECT id_client, nom_client FROM client";
         $resultat=$this->getDb()->fetchAll($sql);
 
         $clients = [];
 
         foreach ($resultat as $client){
-            $clients[$client['nom_client']]= $client['nom_client'];
+            $clients[$client['nom_client']]= $client['id_client'];
         }
+
         return $clients;
     }
 
     public function save(Courrier $courrier) {
+        dump($courrier);
         $courrierData = array(
             'date_entre'=> $courrier->getDateEntre(),
             'date_sortie'=> $courrier->getDateSortie(),
             'annotation'=>$courrier->getAnnotation(),
             'scan'=>$courrier->getScan(),
             'fax'=> $courrier->getFax(),
-            'id_type_courrier'=>$courrier->getIdTypeCourrier(),
-            'id_client'=>$courrier->getIdClient()
+            'id_type_courrier'=>$courrier->getIdTypeCourrier()[0],
+            'id_client'=>$courrier->client[0]
 
             );
 

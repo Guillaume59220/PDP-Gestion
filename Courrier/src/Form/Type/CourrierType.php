@@ -32,12 +32,8 @@ class CourrierType extends AbstractType
     private function choiceClient(Application $app){
 
         $clients=$app['dao.courrier']->findClient();
-
-       /*$array=[];
-        foreach ($clients as $client):
-            $array[$client->nom_client]= $client->id_client;
-        endforeach;*/
         return $clients;
+
     }
 
 
@@ -45,13 +41,13 @@ class CourrierType extends AbstractType
     {
         $app = $options['app'];
         $builder
-            ->add('date_entre', DateType::class)
+            ->add('date_entre', TextType::class)
             ->add('scan', FileType::class, array(
                 'label'=> ' '
             ))
             ->add('fax', TextType::class)
             ->add('annotation', TextareaType::class)
-            ->add('date_sortie', DateType::class)
+            ->add('date_sortie', TextType::class)
             ->add('id_client',ChoiceType::class, array(
                 'choices' =>$this->choiceClient($app),
                 'multiple' => true,

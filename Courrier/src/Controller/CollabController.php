@@ -8,6 +8,9 @@ use Courrier\Domain\Courrier;
 use Courrier\Domain\Client;
 use Courrier\Form\Type\CourrierType;
 use Courrier\Form\Type\ClientType;
+use App\Service\FileUploader;
+
+
 
 class CollabController{
 
@@ -25,6 +28,17 @@ class CollabController{
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
+        dump($courrierForm['scan']->getData());
+            $file = $courrier->getScan();
+            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            $file->move(
+                '../uploads/Scans',
+                $fileName
+            );
+            $courrier->setScan($fileName);
+            //return $app->redirect($app["url_generator"]->generate('app_scan_list'));
+
+
             $app['dao.courrier']->save($courrier);
             $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
         }
@@ -32,6 +46,33 @@ class CollabController{
             'title' => 'Ajouter courrier',
             'courrierForm' => $courrierForm->createView()));
     }
+
+    private function generateUniqueFileName()
+    {
+        return md5(uniqid());
+    }
+
+    public function new(Request $request, FileUploader $fileUploader)
+    {
+        // ...
+
+        if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
+            $file = $courrier->getScan();
+            $fileName = $fileUploader->upload($file);
+
+            $courrier->setScan($fileName);
+
+            // ...
+        }
+
+        // ...
+    }
+
+
+
+
+
+
 
     public function editCourrierAction($id_courrier, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id_courrier);
