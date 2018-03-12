@@ -58,7 +58,7 @@ class CourrierType extends AbstractType
                 'label'=> 'Client'
                 ))
             ->add('id_type_courrier', ChoiceType::class, array(
-                'choices' =>  $this-> choiceCourrier($app),
+                'choices' =>  $this->choiceCourrier($app),
                 'multiple' => true,
                 'label'=> 'Type Courrier'
                 ));
