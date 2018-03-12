@@ -10,7 +10,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Silex\Application;
-use Courrier\Domain\Client;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 
@@ -32,13 +31,13 @@ class CourrierType extends AbstractType
 
     private function choiceClient(Application $app){
 
-        $clients=$app['dao.client']->findAll();
+        $clients=$app['dao.courrier']->findClient();
 
-        $array=[];
+       /*$array=[];
         foreach ($clients as $client):
             $array[$client->nom_client]= $client->id_client;
-        endforeach;
-        return $array;
+        endforeach;*/
+        return $clients;
     }
 
 

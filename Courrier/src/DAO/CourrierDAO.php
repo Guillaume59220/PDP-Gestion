@@ -43,7 +43,7 @@ class CourrierDAO extends DAO
        foreach ($result as $type) {
             $types[$type['libelle_courrier']] = $type['libelle_courrier'];
        }
-       dump($types);
+
 
        return $types;
 
@@ -52,13 +52,26 @@ class CourrierDAO extends DAO
        #return ['normal', 'recommandé'];
     }
 
+    public function findClient(){
+
+        $sql="SELECT nom_client FROM client";
+        $resultat=$this->getDb()->fetchAll($sql);
+
+        $clients = [];
+
+        foreach ($resultat as $client){
+            $clients[$client['nom_client']]= $client['nom_client'];
+        }
+        return $clients;
+    }
+
     public function save(Courrier $courrier) {
         $courrierData = array(
             'date_entre'=> $courrier->getDateEntre(),
             'date_sortie'=> $courrier->getDateSortie(),
             'annotation'=>$courrier->getAnnotation(),
-            'scan'=>$courrier->getScan(),
-            'fax'=> $courrier->getFax(),
+            #'scan'=>$courrier->getScan(),
+            #'fax'=> $courrier->getFax(),
             'id_type_courrier'=>$courrier->getIdTypeCourrier(),
             'id_client'=>$courrier->getIdClient()
 
