@@ -57,7 +57,6 @@ class AdminController {
             if (is_array($user->getRoles()[0])) {
                 $user->setRoles($user->getRoles()[0][0], true);
             }
-            dump($user);
             $app['dao.user']->save($user);
             $app['session']->getFlashBag()->add('success', 'utilisateur a ete cree.');
             return $app->redirect($app['url_generator']->generate('admin'));
