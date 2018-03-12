@@ -134,6 +134,15 @@ class Courrier
         return $this->id_type_courrier;
     }
 
+    /**
+     * @param mixed $id_type_courrier
+     */
+    public function setIdTypeCourrier($id_type_courrier)
+    {
+        $this->id_type_courrier = $id_type_courrier;
+    }
+    
+
 
 
 

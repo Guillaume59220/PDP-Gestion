@@ -34,9 +34,27 @@ class CourrierDAO extends DAO
 
     }
 
+    public function findAllTypeCourrier() {
+
+       /* $sql = "SELECT * FROM type_courrier ";
+        $types= $this->getDb()->fetchAll($sql);
+
+        return $types; */
+
+
+
+        return ['normal', 'recommandé'];
+    }
+
     public function save(Courrier $courrier) {
         $courrierData = array(
-            'Nom' => $courrier->getIdCourrier(),
+            'date_entre'=> $courrier->getDateEntre(),
+            'date_sortie'=> $courrier->getDateSortie(),
+            'annotation'=>$courrier->getAnnotation(),
+            'scan'=>$courrier->getScan(),
+            'fax'=> $courrier->getFax(),
+            'id_type_courrier'=>$courrier->getIdTypeCourrier(),
+            'id_client'=>$courrier->getIdClient()
 
             );
 
@@ -66,6 +84,8 @@ class CourrierDAO extends DAO
         $courrier->setAnnotation($row['annotation']);
         $courrier->setDateSortie($row['date_sortie']);
         $courrier->setScan($row['scan']);
+        $courrier->setIdClient($row['id_client']);
+        $courrier->setIdTypeCourrier($row['id_type_courrier']);
 
         return $courrier;
     }

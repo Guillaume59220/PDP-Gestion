@@ -22,7 +22,7 @@ class CollabController{
 
     public function addCourrierAction(Request $request, Application $app) {
         $courrier = new Courrier();
-        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier);
+        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
             $app['dao.courrier']->save($courrier);
@@ -35,7 +35,7 @@ class CollabController{
 
     public function editCourrierAction($id_courrier, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id_courrier);
-        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier);
+        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
             $app['dao.courrier']->save($courrier);

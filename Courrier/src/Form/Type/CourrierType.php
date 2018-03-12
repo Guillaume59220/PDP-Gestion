@@ -11,27 +11,28 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Silex\Application;
 use Courrier\Domain\Client;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 
 class CourrierType extends AbstractType
 {
 
     private function choiceCourrier(Application $app){
-        $types = $app['dao.type_courrier']->for_table('type_courrier')
-            ->find_result_set();
+        $types = $app['dao.courrier']->findAllTypeCourrier();
 
-        $array = [];
+        /*$array = [];
         foreach ($types as $type):
             $array[$type->libelle_courrier] = $type->id_type_courrier;
         endforeach;
 
-        return $array;
+        return $array;*/
+        return $types;
 
     }
 
     private function choiceClient(Application $app){
 
-        $clients=$app['dao.client']->for_table('client')->find_result_set();
+        $clients=$app['dao.client']->findAll();
 
         $array=[];
         foreach ($clients as $client):
@@ -43,23 +44,29 @@ class CourrierType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
+        $app = $options['app'];
         $builder
             ->add('date_entre', DateType::class)
             ->add('scan', FileType::class)
             ->add('fax', TextType::class)
             ->add('annotation', TextareaType::class)
             ->add('date_sortie', DateType::class)
-            ->add('client',ChoiceType::class, array(
-                'choices' =>$this->choiceClient(),
-                'multiple' => true))
-            ->add('libelle', ChoiceType::class, array(
-                'choices' =>  $this-> choiceCourrier(),
-                'multiple' => true));
+            ->add('id_client',ChoiceType::class, array(
+                'choices' =>$this->choiceClient($app),
+                'multiple' => true,
+                'label'=> 'Client'
+                ))
+            ->add('id_type_courrier', ChoiceType::class, array(
+                'choices' =>  $this-> choiceCourrier($app),
+                'multiple' => true,
+                'label'=> 'Type Courrier'
+            ));
     }
 
-
-
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setRequired('app');
+    }
 
     public function getName()
     {
