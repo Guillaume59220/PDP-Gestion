@@ -39,8 +39,10 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
             'pattern' => '^/',
             'anonymous' => true,
             
-            'form' => array('login_path' => '/login', 'check_path' => '/login_check'),
-            'logout' => array('logout_path' => '/admin/logout', 'invalidate_session' => true),
+            'form' => array('login_path' => '/login',
+                            'check_path' => '/login_check'),
+            'logout' => array('logout_path' => '/admin/logout',
+                              'invalidate_session' => true),
             'users' => function () use ($app) {
                 return new UserDAO($app['db']);
             },
@@ -53,10 +55,10 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
 
     ),
     'security.access_rules' => array(
+        array('^/admin', 'ROLE_ADMIN'),
         array('^/login', 'IS_AUTHENTICATED_ANONYMOUSLY'),
         array('^/', 'ROLE_USER'),
         array('^/collaborateur', 'ROLE_EVENT_CREATE'),
-        array('^/admin', 'ROLE_ADMIN'),
     ),
 ));
 $app->register(new Silex\Provider\FormServiceProvider());
