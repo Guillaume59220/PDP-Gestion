@@ -75,7 +75,7 @@ class CourrierDAO extends DAO
             'id_type_courrier'=>$courrier->getIdTypeCourrier(),
             'id_client'=>$courrier->getIdClient()
 
-            );
+            ); 
 
         if ($courrier->getIdCourrier()) {
             // The article has already been saved : update it
