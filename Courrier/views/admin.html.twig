@@ -94,18 +94,12 @@
                                 <td>{{ courrier.id_client }}</td>
                                 <td>{{ courrier.id_type_courrier }}</td>
                                 <td>
-                                    <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier.id_courrier }) }}" class="btn btn-info btn-xs"
+                                    <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier.idcourrier }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
-                                            data-target="#courrierDialog{{ courrier.id_courrier }}"><span class="glyphicon glyphicon-trash"></span>
+                                            data-target="#courrierDialog{{ courrier.idcourrier }}"><span class="glyphicon glyphicon-trash"></span>
                                     </button>
-                                    <button type="button" class="btn btn-success btn-xs" title="Download" data-toggle="modal"
-                                            data-target="#clientDialog{{ client.idclient }}"><span class="glyphicon glyphicon-cloud-download"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-warning btn-xs" title="Upload" data-toggle="modal"
-                                            data-target="#clientDialog{{ client.idclient }}"><span class="glyphicon glyphicon-cloud-upload"></span>
-                                    </button>
-                                    <div class="modal fade" id="courrierDialog{{ courrier.id_courrier }}" tabindex="-1"
+                                    <div class="modal fade" id="courrierDialog{{ courrier.idcourrier }}" tabindex="-1"
                                          role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">

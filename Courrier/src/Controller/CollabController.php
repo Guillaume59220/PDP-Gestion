@@ -68,12 +68,6 @@ class CollabController{
         // ...
     }
 
-
-
-
-
-
-
     public function editCourrierAction($id_courrier, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id_courrier);
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
