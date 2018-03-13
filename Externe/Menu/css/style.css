@@ -1,0 +1,68 @@
+body{
+    background-color: rgb(235, 235, 235);
+}
+
+.menu{
+    margin-left: 10px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.col-xs-6 img{
+    width: 20%;
+}
+
+
+
+@media (max-width: 300px) {
+    #image{
+        
+    }
+}
+
+
+
+@media (min-width: 924px) {
+
+    .menu{
+        margin-left: 10%;
+    }
+
+    .col-xs-6{
+        margin-top: 3%;
+        margin-left: -20%;
+    }
+    
+    #telephonie{
+        margin-top: -10%;
+        margin-left: -50%;
+    }
+
+    #courrier{
+        margin-top: -10%;
+    }
+
+    #domiciliation{
+        margin-top: 5%;
+        margin-left: 35%;
+    }
+
+    #paie{
+        margin-top: 5%;
+        margin-left: 35%;
+    }
+
+    #gestion{
+        margin-top: 5%;
+        margin-left: 35%;
+    }
+
+    #recouvrement{
+
+    }
+
+    #audit{
+        margin-top: -10%;
+        margin-left: -50%;
+    }
+}
