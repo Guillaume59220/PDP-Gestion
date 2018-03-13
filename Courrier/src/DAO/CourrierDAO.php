@@ -13,12 +13,12 @@ class CourrierDAO extends DAO
         order by id_courrier desc";
         $result = $this->getDb()->fetchAll($sql);
 
-
         $courrier = array();
         foreach ($result as $row) {
             $courrierId = $row['id_courrier'];
             $courrier[$courrierId] = $this->buildDomainObject($row);
         }
+        dump($courrier);
         return $courrier;
     }
 
@@ -48,8 +48,6 @@ class CourrierDAO extends DAO
        return $types;
 
 
-
-       #return ['normal', 'recommandé'];
     }
 
     public function findClient(){
@@ -66,7 +64,7 @@ class CourrierDAO extends DAO
         return $clients;
     }
 
-    public function save(Courrier $courrier) {
+    public function save($courrier) {
         dump($courrier);
         $courrierData = array(
             'date_entre'=> $courrier->getDateEntre(),
@@ -92,9 +90,9 @@ class CourrierDAO extends DAO
     }
 
 
-    public function delete($id_courrier) {
+    public function delete($id) {
         // Delete the article
-        $this->getDb()->delete('courrier', array('id_courrier' => $id_courrier));
+        $this->getDb()->delete('courrier', array('id_courrier' => $id));
     }
 
 
@@ -107,7 +105,6 @@ class CourrierDAO extends DAO
         $courrier->setScan($row['scan']);
         $courrier->setIdClient($row['id_client']);
         $courrier->setIdTypeCourrier($row['id_type_courrier']);
-
         return $courrier;
     }
 
