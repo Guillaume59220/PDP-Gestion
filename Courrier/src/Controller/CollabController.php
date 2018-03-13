@@ -52,7 +52,7 @@ class CollabController{
         return md5(uniqid());
     }
 
-    public function new(Request $request, FileUploader $fileUploader)
+   /* public function new(Request $request, FileUploader $fileUploader)
     {
         // ...
 
@@ -66,10 +66,10 @@ class CollabController{
         }
 
         // ...
-    }
+    }*/
 
-    public function editCourrierAction($id_courrier, Request $request, Application $app) {
-        $courrier = $app['dao.courrier']->find($id_courrier);
+    public function editCourrierAction($id, Request $request, Application $app) {
+        $courrier = $app['dao.courrier']->find($id);
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {

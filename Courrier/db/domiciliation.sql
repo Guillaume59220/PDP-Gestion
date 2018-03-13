@@ -301,7 +301,7 @@ CREATE TABLE `voie_reexpedition` (
 --
 DROP TABLE IF EXISTS `view_courrier`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_courrier`  AS  select `courrier`.`id_courrier` AS `id_courrier`,`courrier`.`id_client` AS `id_client`,`courrier`.`id_type_courrier` AS `id_type_courrier`,`type_courrier`.`libelle_courrier` AS `libelle_courrier`,`courrier`.`date_entre` AS `date_entre`,`courrier`.`annotation` AS `annotation`,`courrier`.`scan` AS `scan`,`courrier`.`date_sortie` AS `date_sortie`,`lettres_recommandees`.`id_lettre` AS `id_lettre`,`lettres_recommandees`.`destinateur` AS `destinateur`,`lettres_recommandees`.`expediteur` AS `expediteur`,`clients`.`nom_client` AS `nom_client`,`clients`.`code_client` AS `code_client`,`voie_reexpedition`.`libelle_reexpedition` AS `libelle_reexpedition`,`voie_reexpedition`.`id_reexpedition` AS `id_reexpedition`,`tarif`.`tarif_envoie` AS `tarif_envoie` from (((((`courrier` join `clients`) join `type_courrier`) join `lettres_recommandees`) join `voie_reexpedition`) join `tarif`) where ((`courrier`.`id_client` = `clients`.`id_client`) and (`courrier`.`id_type_courrier` = `type_courrier`.`id_type_courrier`) and (`lettres_recommandees`.`id_tarif` = `tarif`.`id_tarif`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_courrier`  AS  select `courrier`.`id_courrier` AS `id_courrier`,`courrier`.`id_client` AS `id_client`,`courrier`.`id_type_courrier` AS `id_type_courrier`,`type_courrier`.`libelle_courrier` AS `libelle_courrier`,`courrier`.`date_entre` AS `date_entre`,`courrier`.`annotation` AS `annotation`,`courrier`.`scan` AS `scan`,`courrier`.`date_sortie` AS `date_sortie`,`lettres_recommandees`.`id_lettre` AS `id_lettre`,`lettres_recommandees`.`destinateur` AS `destinateur`,`lettres_recommandees`.`expediteur` AS `expediteur`,`client`.`nom_client` AS `nom_client`,`client`.`code_client` AS `code_client`,`voie_reexpedition`.`libelle_reexpedition` AS `libelle_reexpedition`,`voie_reexpedition`.`id_reexpedition` AS `id_reexpedition`,`tarif`.`tarif_envoie` AS `tarif_envoie` from (((((`courrier` join `client`) join `type_courrier`) join `lettres_recommandees`) join `voie_reexpedition`) join `tarif`) where ((`courrier`.`id_client` = `client`.`id_client`) and (`courrier`.`id_type_courrier` = `type_courrier`.`id_type_courrier`) and (`lettres_recommandees`.`id_tarif` = `tarif`.`id_tarif`)) ;
 
 --
 -- Index pour les tables déchargées
@@ -333,7 +333,7 @@ ALTER TABLE `contract`
 --
 ALTER TABLE `courrier`
   ADD PRIMARY KEY (`id_courrier`,`id_client`,`id_type_courrier`),
-  ADD KEY `fk_courrier_clients1_idx` (`id_client`),
+  ADD KEY `fk_courrier_client1_idx` (`id_client`),
   ADD KEY `fk_courrier_type_courrier1_idx` (`id_type_courrier`);
 
 --
@@ -360,7 +360,7 @@ ALTER TABLE `forme_juridique`
 --
 ALTER TABLE `incident`
   ADD PRIMARY KEY (`id_incident`,`id_client`),
-  ADD KEY `fk_incident_clients1_idx` (`id_client`);
+  ADD KEY `fk_incident_client1_idx` (`id_client`);
 
 --
 -- Index pour la table `justificatif`
@@ -404,7 +404,7 @@ ALTER TABLE `responsable_legale`
   ADD KEY `fk_responsable_legale_pays1_idx` (`id_pays`),
   ADD KEY `fk_responsable_legale_fonction1_idx` (`id_fonction`),
   ADD KEY `fk_responsable_legale_civilite1_idx` (`id_civilite`),
-  ADD KEY `fk_responsable_legale_clients1_idx` (`id_client`);
+  ADD KEY `fk_responsable_legale_client1_idx` (`id_client`);
 
 --
 -- Index pour la table `tarif`
