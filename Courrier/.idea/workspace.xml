@@ -93,6 +93,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CourrierType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/Type/CourrierType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="760">
+              <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="liste_courrier.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/liste_courrier.html.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,16 +118,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1240">
               <caret line="68" column="7" lean-forward="false" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourrierType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Form/Type/CourrierType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -160,13 +160,13 @@
       <file leaf-file-name="CourrierDAO.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DAO/CourrierDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="66" column="37" lean-forward="true" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+            <state relative-caret-position="920">
+              <caret line="67" column="9" lean-forward="false" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
               <folding>
-                <marker date="1520953803561" expanded="true" signature="143:352" ph="select * fro... courrier" />
-                <marker date="1520953803561" expanded="true" signature="712:755" ph="select * fro... courrier" />
-                <marker date="1520953803561" expanded="true" signature="1063:1090" ph="SELECT * FRO... type_courrier" />
-                <marker date="1520953803561" expanded="true" signature="1364:1404" ph="SELECT id_cl... client" />
+                <marker date="1520955568799" expanded="true" signature="143:352" ph="select * fro... courrier" />
+                <marker date="1520955568799" expanded="true" signature="712:755" ph="select * fro... courrier" />
+                <marker date="1520955568799" expanded="true" signature="1063:1090" ph="SELECT * FRO... type_courrier" />
+                <marker date="1520955568799" expanded="true" signature="1364:1404" ph="SELECT id_cl... client" />
               </folding>
             </state>
           </provider>
@@ -183,6 +183,7 @@
         <option value="$PROJECT_DIR$/src/Controller/CollabController.php" />
         <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/views/admin.html.twig" />
+        <option value="$PROJECT_DIR$/src/Form/Type/CourrierType.php" />
         <option value="$PROJECT_DIR$/src/DAO/CourrierDAO.php" />
       </list>
     </option>
@@ -266,11 +267,6 @@
             <path>
               <item name="Courrier" type="b2602c69:ProjectViewProjectNode" />
               <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="uploads" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Courrier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -317,12 +313,12 @@
       <option name="presentableId" value="Default" />
       <updated>1520343629248</updated>
       <workItem from="1520343631804" duration="473000" />
-      <workItem from="1520935308797" duration="11236000" />
+      <workItem from="1520935308797" duration="12876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11709000" />
+    <option name="totallyTimeSpent" value="13349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -496,21 +492,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/Type/CourrierType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="760">
+          <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/CourrierDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="66" column="37" lean-forward="true" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+        <state relative-caret-position="920">
+          <caret line="67" column="9" lean-forward="false" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
           <folding>
-            <marker date="1520953803561" expanded="true" signature="143:352" ph="select * fro... courrier" />
-            <marker date="1520953803561" expanded="true" signature="712:755" ph="select * fro... courrier" />
-            <marker date="1520953803561" expanded="true" signature="1063:1090" ph="SELECT * FRO... type_courrier" />
-            <marker date="1520953803561" expanded="true" signature="1364:1404" ph="SELECT id_cl... client" />
+            <marker date="1520955568799" expanded="true" signature="143:352" ph="select * fro... courrier" />
+            <marker date="1520955568799" expanded="true" signature="712:755" ph="select * fro... courrier" />
+            <marker date="1520955568799" expanded="true" signature="1063:1090" ph="SELECT * FRO... type_courrier" />
+            <marker date="1520955568799" expanded="true" signature="1364:1404" ph="SELECT id_cl... client" />
           </folding>
         </state>
       </provider>

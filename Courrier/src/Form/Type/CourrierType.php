@@ -50,12 +50,12 @@ class CourrierType extends AbstractType
             ->add('date_sortie', TextType::class)
             ->add('id_client',ChoiceType::class, array(
                 'choices' =>$this->choiceClient($app),
-                'multiple' => true,
+                'multiple' => false,
                 'label'=> 'Client'
                 ))
             ->add('id_type_courrier', ChoiceType::class, array(
                 'choices' =>  $this->choiceCourrier($app),
-                'multiple' => true,
+                'multiple' => false,
                 'label'=> 'Type Courrier'
                 ));
     }

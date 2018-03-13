@@ -65,7 +65,7 @@ class CourrierDAO extends DAO
     }
 
     public function save($courrier) {
-        dump($courrier);
+        #dump($courrier);
         $courrierData = array(
             'date_entre'=> $courrier->getDateEntre(),
             'date_sortie'=> $courrier->getDateSortie(),
@@ -78,12 +78,12 @@ class CourrierDAO extends DAO
             ); 
 
         if ($courrier->getIdCourrier()) {
-            // The article has already been saved : update it
+
             $this->getDb()->update('courrier', $courrierData, array('id_courrier' => $courrier->getIdCourrier()));
         } else {
-            // The article has never been saved : insert it
+
             $this->getDb()->insert('courrier', $courrierData);
-            // Get the id of the newly created article and set it on the entity.
+
             $id_courrier = $this->getDb()->lastInsertId();
             $courrier->setIdCourrier($id_courrier);
         }
@@ -91,7 +91,7 @@ class CourrierDAO extends DAO
 
 
     public function delete($id) {
-        // Delete the article
+
         $this->getDb()->delete('courrier', array('id_courrier' => $id));
     }
 
