@@ -19,7 +19,6 @@ class HomeController {
 
     public function courrierAction($id_courrier, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id_courrier);
-        $commentFormView = null;
         if ($app['security.authorization_checker']->isGranted('IS_AUTHENTICATED_FULLY')) {
             $client = new Client();
             $client->setCourrier($courrier);
@@ -31,7 +30,7 @@ class HomeController {
                 $app['dao.client']->save($client);
                 $app['session']->getFlashBag()->add('success');
             }
-            $clientFormView = $clientForm->createView();
+             $clientForm->createView();
         }
 
         return $app['twig']->render('index.html.twig', array(

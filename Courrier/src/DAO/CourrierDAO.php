@@ -41,7 +41,7 @@ class CourrierDAO extends DAO
 
        $types = [];
        foreach ($result as $type) {
-            $types[$type['libelle_courrier']] = $type['libelle_courrier'];
+            $types[$type['libelle_courrier']] = $type['id_type_courrier'];
        }
 
 
