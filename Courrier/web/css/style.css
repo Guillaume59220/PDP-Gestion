@@ -82,8 +82,7 @@ body {
 .glyphicon-plus,
 .glyphicon-pencil,
 .glyphicon-trash,
-.glyphicon-cloud-download,
-.glyphicon-cloud-upload {
+.glyphicon-cloud-download {
     font-size : 14px;
 }
 
@@ -95,8 +94,7 @@ body {
 
 .glyphicon-pencil,
 .glyphicon-trash,
-.glyphicon-cloud-download,
-.glyphicon-cloud-upload {
+.glyphicon-cloud-download {
     margin: auto;
 }
 
