@@ -6,7 +6,7 @@
     <td>{{ user.username }}</td>
 
 
-    <div class="container">
+        <div class="container">
         <h1>Liste de courrier</h1>
         <hr />
 
@@ -17,20 +17,21 @@
                 <th>Libelle</th>
                 <th>Nom client</th>
                 <th>Annotation</th>
+                <th>Scan</th>
             </tr>
 
 
 
-            <tr>
-                <td>  </td>
-                <td>  </td>
-                <td>  </td>
-                <td>  </td>
-                <td>  </td>
+           <tr>
+                <td> 0 </td>
+                <td> 0 </td>
+                <td> 0 </td>
+                <td> 0 </td>
+                <td> 0 </td>
+                <td><a href="{{ path('collaborateur_courrier_edit', {'id': courrier.idcourrier }) }}" class="btn btn-download btn-xs" title="Download"
+                    <span class="glyphicon glyphicon-cloud-download"></span></a></td>
             </tr>
-
-
-        </table>
+        </table> 
     </div>
 
 {% endblock %}
