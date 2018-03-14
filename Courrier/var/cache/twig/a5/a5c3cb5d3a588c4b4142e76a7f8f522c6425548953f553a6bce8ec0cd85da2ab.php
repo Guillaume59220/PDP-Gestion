@@ -118,7 +118,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
         echo "
                 ";
         // line 45
+<<<<<<< HEAD
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 45, $this->source); })()), "id_type_courrier", array()), 'widget', array("attr" => array("class" => "col-sm-4 control-label")));
+=======
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 45, $this->source); })()), "id_type_courrier", array()), 'widget', array("attr" => array("class" => "form-control")));
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
         // line 47
         echo "
             </div>
@@ -137,7 +141,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
         echo "
                 ";
         // line 57
+<<<<<<< HEAD
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 57, $this->source); })()), "id_client", array()), 'widget', array("attr" => array("class" => "col-sm-4 control-label")));
+=======
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 57, $this->source); })()), "id_client", array()), 'widget', array("attr" => array("class" => "form-control")));
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
         // line 59
         echo "
             </div>
@@ -157,7 +165,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
         echo "
                 ";
         // line 70
+<<<<<<< HEAD
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 70, $this->source); })()), "scan", array()), 'widget', array("attr" => array("class" => "col-sm-4 control-label")));
+=======
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 70, $this->source); })()), "scan", array()), 'widget', array("attr" => array("class" => "")));
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
         // line 73
         echo "
             </div>
@@ -177,7 +189,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
         echo "
                 ";
         // line 84
+<<<<<<< HEAD
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 84, $this->source); })()), "fax", array()), 'widget', array("attr" => array("class" => "col-sm-4 control-label")));
+=======
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 84, $this->source); })()), "fax", array()), 'widget', array("attr" => array("class" => "form-control")));
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
         // line 87
         echo "
             </div>
@@ -196,7 +212,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
         echo "
                 ";
         // line 97
+<<<<<<< HEAD
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 97, $this->source); })()), "date_sortie", array()), 'widget', array("attr" => array("class" => "col-sm-4 control-label")));
+=======
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["courrierForm"]) || array_key_exists("courrierForm", $context) ? $context["courrierForm"] : (function () { throw new Twig_Error_Runtime('Variable "courrierForm" does not exist.', 97, $this->source); })()), "date_sortie", array()), 'widget', array("attr" => array("class" => "form-control")));
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
         // line 100
         echo "
             </div>
@@ -277,7 +297,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
             <div class = \"col-sm-6\">
                 {{ form_errors(courrierForm.id_type_courrier) }}
                 {{ form_widget(courrierForm.id_type_courrier, { 'attr':  {
+<<<<<<< HEAD
                     'class': 'col-sm-4 control-label'
+=======
+                    'class': 'form-control'
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
                 }}) }}
             </div>
 
@@ -289,7 +313,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
             <div class = \"col-sm-6\">
                 {{ form_errors(courrierForm.id_client) }}
                 {{ form_widget(courrierForm.id_client, { 'attr':  {
+<<<<<<< HEAD
                     'class': 'col-sm-4 control-label'
+=======
+                    'class': 'form-control'
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
                 }}) }}
             </div>
 
@@ -302,7 +330,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
             <div class=\"col-sm-6\">
                 {{ form_errors(courrierForm.scan) }}
                 {{ form_widget(courrierForm.scan, { 'attr':  {
+<<<<<<< HEAD
                     'class': 'col-sm-4 control-label'
+=======
+                    'class': ''
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
 
                 }}) }}
             </div>
@@ -316,7 +348,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
             <div class=\"col-sm-6\">
                 {{ form_errors(courrierForm.fax) }}
                 {{ form_widget(courrierForm.fax, { 'attr':  {
+<<<<<<< HEAD
                     'class': 'col-sm-4 control-label'
+=======
+                    'class': 'form-control'
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
 
                 }}) }}
             </div>
@@ -329,7 +365,11 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
             <div class=\"col-sm-6\">
                 {{ form_errors(courrierForm.date_sortie) }}
                 {{ form_widget(courrierForm.date_sortie, { 'attr':  {
+<<<<<<< HEAD
                     'class': 'col-sm-4 control-label'
+=======
+                    'class': 'form-control'
+>>>>>>> f6f47ddf7a7e5b459ac8ea33cd26c3b742de6759
 
                 }}) }}
             </div>
