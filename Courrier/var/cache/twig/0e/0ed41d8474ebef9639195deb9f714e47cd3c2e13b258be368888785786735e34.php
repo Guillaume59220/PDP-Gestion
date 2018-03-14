@@ -66,11 +66,7 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
                 <td> 0 </td>
                 <td> 0 </td>
                 <td> 0 </td>
-                <td><a href=\"";
-        // line 31
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client_courrier_download", array("id" => twig_get_attribute($this->env, $this->source, (isset($context["courrier"]) || array_key_exists("courrier", $context) ? $context["courrier"] : (function () { throw new Twig_Error_Runtime('Variable "courrier" does not exist.', 31, $this->source); })()), "idcourrier", array()))), "html", null, true);
-        echo "\" class=\"btn btn-download btn-xs\" title=\"Download\"
-                    <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
+                
             </tr>
         </table> 
     </div>
@@ -90,7 +86,7 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
 
     public function getDebugInfo()
     {
-        return array (  71 => 31,  42 => 6,  39 => 5,  33 => 3,  15 => 1,);
+        return array (  42 => 6,  39 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -125,8 +121,7 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
                 <td> 0 </td>
                 <td> 0 </td>
                 <td> 0 </td>
-                <td><a href=\"{{ path('client_courrier_download', {'id': courrier.idcourrier }) }}\" class=\"btn btn-download btn-xs\" title=\"Download\"
-                    <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
+                
             </tr>
         </table> 
     </div>
