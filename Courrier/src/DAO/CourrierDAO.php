@@ -13,7 +13,6 @@ class CourrierDAO extends DAO
         order by id_courrier desc";
         $result = $this->getDb()->fetchAll($sql);
 
-
         $courrier = array();
         foreach ($result as $row) {
             $courrierId = $row['id_courrier'];
@@ -41,15 +40,13 @@ class CourrierDAO extends DAO
 
        $types = [];
        foreach ($result as $type) {
-            $types[$type['libelle_courrier']] = $type['libelle_courrier'];
+            $types[$type['libelle_courrier']] = $type['id_type_courrier'];
        }
 
 
        return $types;
 
 
-
-       #return ['normal', 'recommandé'];
     }
 
     public function findClient(){
@@ -66,8 +63,8 @@ class CourrierDAO extends DAO
         return $clients;
     }
 
-    public function save(Courrier $courrier) {
-        dump($courrier);
+    public function save($courrier) {
+            dump($courrier);
         $courrierData = array(
             'date_entre'=> $courrier->getDateEntre(),
             'date_sortie'=> $courrier->getDateSortie(),
@@ -75,26 +72,26 @@ class CourrierDAO extends DAO
             'scan'=>$courrier->getScan(),
             'fax'=> $courrier->getFax(),
             'id_type_courrier'=>$courrier->getIdTypeCourrier()[0],
-            'id_client'=>$courrier->client[0]
+            'id_client'=>$courrier->getIdClient()
 
             ); 
 
         if ($courrier->getIdCourrier()) {
-            // The article has already been saved : update it
+
             $this->getDb()->update('courrier', $courrierData, array('id_courrier' => $courrier->getIdCourrier()));
         } else {
-            // The article has never been saved : insert it
+
             $this->getDb()->insert('courrier', $courrierData);
-            // Get the id of the newly created article and set it on the entity.
+
             $id_courrier = $this->getDb()->lastInsertId();
             $courrier->setIdCourrier($id_courrier);
         }
     }
 
 
-    public function delete($id_courrier) {
-        // Delete the article
-        $this->getDb()->delete('courrier', array('id_courrier' => $id_courrier));
+    public function delete($id) {
+
+        $this->getDb()->delete('courrier', array('id_courrier' => $id));
     }
 
 
@@ -107,7 +104,6 @@ class CourrierDAO extends DAO
         $courrier->setScan($row['scan']);
         $courrier->setIdClient($row['id_client']);
         $courrier->setIdTypeCourrier($row['id_type_courrier']);
-
         return $courrier;
     }
 

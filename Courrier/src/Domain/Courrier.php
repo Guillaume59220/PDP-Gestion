@@ -124,7 +124,7 @@ class Courrier
      */
     public function setIdClient($id_client)
     {
-        $this->client = $id_client;
+        $this->id_client = $id_client;
     }
 
 

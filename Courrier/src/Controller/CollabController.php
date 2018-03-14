@@ -8,7 +8,6 @@ use Courrier\Domain\Courrier;
 use Courrier\Domain\Client;
 use Courrier\Form\Type\CourrierType;
 use Courrier\Form\Type\ClientType;
-use App\Service\FileUploader;
 
 
 
@@ -21,6 +20,17 @@ class CollabController{
             'courriers' => $courriers,
             'clients' => $clients,
             ));
+    }
+    public function courrierAction(Application $app){
+        $courrier= $app['dao.courrier']->findAll();
+        $type=$app['dao.type_courrier']->fechtAll();
+        $client= $app['dao.client']->fechAll();
+        return $app['twig']->render('admin.html.twig', array(
+            'courriers'=>$courrier,
+            'types'=> $type,
+            'clients'=> $client
+        ));
+
     }
 
     public function addCourrierAction(Request $request, Application $app) {
@@ -52,7 +62,7 @@ class CollabController{
         return md5(uniqid());
     }
 
-    public function new(Request $request, FileUploader $fileUploader)
+   /* public function new(Request $request, FileUploader $fileUploader)
     {
         // ...
 
@@ -66,11 +76,18 @@ class CollabController{
         }
 
         // ...
+<<<<<<< HEAD
     }
 
 
     public function editCourrierAction($id_courrier, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id_courrier);
+=======
+    }*/
+
+    public function editCourrierAction($id, Request $request, Application $app) {
+        $courrier = $app['dao.courrier']->find($id);
+>>>>>>> 615d15986967d378365f0ad5bba73fd8a369ed8b
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {

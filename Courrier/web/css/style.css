@@ -38,6 +38,14 @@ body {
         width: 100%;
 }
 
+.btn-download {
+        color:#fff;
+        background-color: rgb(7, 160, 7);
+        border-color: rgb(90, 211, 90);
+        display: block;
+        margin: 0 auto;
+}
+
 .form-signin {
     max-width: 380px;
     padding: 15px 35px 45px;
@@ -82,22 +90,18 @@ body {
 .glyphicon-plus,
 .glyphicon-pencil,
 .glyphicon-trash,
-.glyphicon-cloud-download,
-.glyphicon-cloud-upload {
+.glyphicon-cloud-download {
     font-size : 14px;
-}
-
-
-
-.input-group {
-    margin-bottom: 20px;
 }
 
 .glyphicon-pencil,
 .glyphicon-trash,
-.glyphicon-cloud-download,
-.glyphicon-cloud-upload {
+.glyphicon-cloud-download {
     margin: auto;
+}
+
+.input-group {
+    margin-bottom: 20px;
 }
 
 .navbar-collapse img{

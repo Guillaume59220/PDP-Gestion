@@ -33,13 +33,13 @@
                         </thead>
                         {% for client in clients %}
                             <tr>
-                                <td>{{ client.nom_client }}</td>
-                                <td>{{ client.code_client }}</td>
+                                <td>{{ client.nomclient }}</td>
+                                <td>{{ client.codeclient }}</td>
                                 <td>
-                                    <a href="{{ path('collaborateur_client_edit', { 'id': client.id_client }) }}"
+                                    <a href="{{ path('collaborateur_client_edit', { 'id': client.idclient }) }}"
                                        class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
 
-                                    <div class="modal fade" id="articleDialog{{ client.id_client }}" tabindex="-1" role="dialog"
+                                    <div class="modal fade" id="articleDialog{{ client.idclient }}" tabindex="-1" role="dialog"
                                          aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -83,18 +83,18 @@
                         </thead>
                         {% for courrier in courriers %}
                             <tr>
-                                <td><a class="articleTitle" href="{{ path('courrier', { 'id': courrier.id_courrier }) }}"></a></td>
+                                <td><a class="articleTitle" href="{{ path('courrier', { 'id': courrier.idcourrier }) }}"></a></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
-                                    <a href="{{ path('admin_courrier_edit', { 'id': courrier.id_courrier }) }}" class="btn btn-info btn-xs"
+                                    <a href="{{ path('admin_courrier_edit', { 'id': courrier.idcourrier }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
                                             data-target="#courrierDialog{{ courrier.id_courrier }}"><span class="glyphicon glyphicon-trash"></span>
                                     </button>
-                                    <div class="modal fade" id="courrierDialog{{ courrier.id_courrier }}" tabindex="-1"
+                                    <div class="modal fade" id="courrierDialog{{ courrier.idcourrier }}" tabindex="-1"
                                          role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -107,7 +107,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                                    <a href="{{ path('admin_courrier_delete', { 'id': courrier.id_courrier }) }}"
+                                                    <a href="{{ path('admin_courrier_delete', { 'id': courrier.idcourrier }) }}"
                                                        class="btn btn-danger">Confirmer</a>
                                                 </div>
                                             </div><!-- /.modal-content -->

@@ -24,13 +24,17 @@
             {% if clients %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
+<<<<<<< HEAD
                     <a href="{{ path('collaborateur_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter un client</button></a>
+=======
+                        <a href="{{ path('collaborateur_client_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add client</button></a>
+>>>>>>> 615d15986967d378365f0ad5bba73fd8a369ed8b
                         <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Code client</th>
-                            <th></th>  <!-- Actions column -->
-                        </tr>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Code client</th>
+                                <th></th>  <!-- Actions column -->
+                            </tr>
                         </thead>
                         {% for client in clients %}
                             <tr>
@@ -72,8 +76,9 @@
 
         </div>
         <div class="tab-pane fade adminTable" id="courriers">
-            <!-- Insérer ici le code de gestion des commentaires -->
-            {% if courriers %}
+            <!-- Insérer ici le code de gestion des courrier-->
+            {% if courriers is not empty %}
+
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
                     <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter du courrier</button></a>
@@ -87,25 +92,19 @@
                         </tr>
                         </thead>
                         {% for courrier in courriers %}
+
                             <tr>
-                                <td>{{ courrier.date_entre }}</td>
-                                <td>{{ courrier.date_sortie }}</td>
+                                <td>{{ courrier.idclient }}</td>
+                                <td>{{ courrier.dateentre }}</td>
                                 <td>{{ courrier.annotation }}</td>
-                                <td>{{ courrier.id_client }}</td>
-                                <td>{{ courrier.id_type_courrier }}</td>
+                                <td>{{ courrier.idtypecourrier }}</td>
                                 <td>
-                                    <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier.id_courrier }) }}" class="btn btn-info btn-xs"
+                                    <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier.idcourrier }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
-                                            data-target="#courrierDialog{{ courrier.id_courrier }}"><span class="glyphicon glyphicon-trash"></span>
+                                            data-target="#courrierDialog{{ courrier.idcourrier }}"><span class="glyphicon glyphicon-trash"></span>
                                     </button>
-                                    <button type="button" class="btn btn-success btn-xs" title="Download" data-toggle="modal"
-                                            data-target="#clientDialog{{ client.idclient }}"><span class="glyphicon glyphicon-cloud-download"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-warning btn-xs" title="Upload" data-toggle="modal"
-                                            data-target="#clientDialog{{ client.idclient }}"><span class="glyphicon glyphicon-cloud-upload"></span>
-                                    </button>
-                                    <div class="modal fade" id="courrierDialog{{ courrier.id_courrier }}" tabindex="-1"
+                                    <div class="modal fade" id="courrierDialog{{ courrier.idcourrier }}" tabindex="-1"
                                          role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -118,7 +117,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                                    <a href="{{ path('admin_courrier_delete', { 'id': courrier.id_courrier }) }}"
+                                                    <a href="{{ path('admin_courrier_delete', { 'id': courrier.idcourrier }) }}"
                                                        class="btn btn-danger">Confirmer</a>
                                                 </div>
                                             </div><!-- /.modal-content -->
@@ -133,9 +132,6 @@
             <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
                 <div class="alert alert-warning">Pas de courrier trouvé.</div>
             {% endif %}
-            
-
-
         </div>
         <div class="tab-pane fade adminTable" id="users">
             {% if users %}
