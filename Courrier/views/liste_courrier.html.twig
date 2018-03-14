@@ -1,0 +1,37 @@
+{% extends "layout.html.twig" %}
+{% block title %} Liste courrier {% endblock %}
+
+{% block contenu %}
+
+    <div class="container">
+        <h1>Liste de courrier</h1>
+        <hr />
+
+        <table>
+            <tr>
+                <th>Numero courrier</th>
+                <th>Date</th>
+                <th>Libelle</th>
+                <th>Nom client</th>
+                <th>Annotation</th>
+                <th>Scan</th>
+            </tr>
+
+
+
+           <tr>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td><a href="{{ path('client_courrier_download', {'id': courrier.idcourrier }) }}" class="btn btn-download btn-xs" title="Download"
+                    <span class="glyphicon glyphicon-cloud-download"></span></a></td>
+            </tr>
+
+
+        </table>
+ 
+    </div>
+
+{% endblock %}

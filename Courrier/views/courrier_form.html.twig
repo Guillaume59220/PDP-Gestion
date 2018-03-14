@@ -1,0 +1,111 @@
+{% extends 'layout.html.twig' %}
+{% set adminMenu = true %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">{{ block('title') }}</h2>
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="well">
+        {{ form_start(courrierForm, { 'attr': {'class': 'form-horizontal'} }) }}
+        <div class="form-group">
+            {{ form_label(courrierForm.date_entre, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(courrierForm.date_entre) }}
+                {{ form_widget(courrierForm.date_entre, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(courrierForm.annotation, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(courrierForm.annotation) }}
+                {{ form_widget(courrierForm.annotation, { 'attr':  {
+                    'class': 'form-control',
+                    'rows': '8'
+                }}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(courrierForm.id_type_courrier, null , {'label_attr':   {
+                'class': 'col-sm-4 control-label'
+            }} ) }}
+            <div class = "col-sm-6">
+                {{ form_errors(courrierForm.id_type_courrier) }}
+                {{ form_widget(courrierForm.id_type_courrier, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(courrierForm.id_client, null , {'label_attr':   {
+                'class': 'col-sm-4 control-label'
+            }} ) }}
+            <div class = "col-sm-6">
+                {{ form_errors(courrierForm.id_client) }}
+                {{ form_widget(courrierForm.id_client, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            {{ form_label(courrierForm.scan, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(courrierForm.scan) }}
+                {{ form_widget(courrierForm.scan, { 'attr':  {
+                    'class': ''
+
+                }}) }}
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            {{ form_label(courrierForm.fax, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(courrierForm.fax) }}
+                {{ form_widget(courrierForm.fax, { 'attr':  {
+                    'class': 'form-control'
+
+                }}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(courrierForm.date_sortie, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(courrierForm.date_sortie) }}
+                {{ form_widget(courrierForm.date_sortie, { 'attr':  {
+                    'class': 'form-control'
+
+                }}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-3">
+                <input type="submit" class="btn btn-primary" value="Save" />
+            </div>
+        </div>
+        {{ form_end(courrierForm) }}
+    </div>
+{% endblock %}

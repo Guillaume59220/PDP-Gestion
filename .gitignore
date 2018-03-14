@@ -1,0 +1,29 @@
+<<<<<<< HEAD
+
+*.lock
+=======
+/.idea
+/.vs
+/.vscode
+
+/Courrier/var/*
+!/Courrier/var/cache
+/Courrier/var/cache/*
+!Courrier/var/cache/.gitkeep
+!/Courrier/var/logs
+/Courrier/var/logs/*
+!Courrier/var/logs/.gitkeep
+!/Courrier/var/sessions
+/Courrier/var/sessions/*
+!Courrier/var/sessions/.gitkeep
+/Courrier/vendor
+
+/Interne/CourrierPDP/vendor
+<<<<<<< HEAD
+>>>>>>> 0d1ad2bdd6b4ddb4e195c87df387772f8639a5f7
+=======
+Courrier/src/Domain/User.php
+Courrier/src/Domain/User.php
+Courrier/src/Domain/User.php
+Courrier/src/DAO/CourrierDAO.php
+>>>>>>> 46e48b1aea9cddcec85d91d081f99d19dd3755d9
