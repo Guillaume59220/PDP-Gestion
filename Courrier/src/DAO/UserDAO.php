@@ -86,6 +86,8 @@ class UserDAO extends DAO implements UserProviderInterface
         }
     }
 
+
+
     /**
      * {@inheritDoc}
      */

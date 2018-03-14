@@ -4,6 +4,7 @@ namespace Courrier\Form\Type;
 
 use Courrier\Domain\Client;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -19,7 +20,8 @@ class ClientType extends AbstractType
             ->add('code_client', TextType::class)
             ->add('siren', TextType::class)
             ->add('date_contract', TextType::class)
-            ->add('capital',NumberType::class);
+            ->add('capital',NumberType::class)
+            ->add('password', PasswordType::class);
 
     }
 

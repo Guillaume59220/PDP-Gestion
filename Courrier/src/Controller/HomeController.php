@@ -10,10 +10,10 @@ use Courrier\Form\Type\ClientType;
 class HomeController {
 
     public function indexAction(Application $app) {
-        $token = $app['security.token_storage']->getToken();
+        /*$token = $app['security.token_storage']->getToken();*/
         $courrier = $app['dao.courrier']->findAll();
-        $user = $token->getUser();
-        return $app['twig']->render('index.html.twig', array('courrier' => $courrier,'user'=> $user));
+       /* $user = $token->getUser();*/
+        return $app['twig']->render('index.html.twig', array('courrier' => $courrier));
     }
     
 
@@ -23,7 +23,7 @@ class HomeController {
         if ($app['security.authorization_checker']->isGranted('IS_AUTHENTICATED_FULLY')) {
             $client = new Client();
             $client->setCourrier($courrier);
-            $user = $app['user'];
+           // $user = $app['user'];
             $client->setClient($client);
             $clientForm = $app['form.factory']->create(ClientType::class, $client);
             $clientForm->handleRequest($request);
@@ -41,9 +41,10 @@ class HomeController {
     
 
     public function loginAction(Request $request, Application $app) {
+
         return $app['twig']->render('login.html.twig', array(
             'error'         => $app['security.last_error']($request),
-            'last_username' => $app['session']->get('_security.last_username'),
+            'last_code_client' => $app['session']->get('_security.last_code_client'),
         ));
     }
 }

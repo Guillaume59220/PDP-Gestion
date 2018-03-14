@@ -11,6 +11,7 @@ use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\ExceptionHandler;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\DAO\UserDAO;
+use Courrier\DAO\ClientDAO;
 
 // Register global error and exception handlers
 ErrorHandler::register();
@@ -34,19 +35,64 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
 ));
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\SecurityServiceProvider(), array(
+
+    /*'security.user_providers' => array(
+        'db_client' => array(
+            'entity' => array(
+                'class' => Client::class,
+                'property' => 'code_client',
+            ),
+        ),
+        'db_user' => array(
+            'entity' => array(
+                'class' => User::class,
+                'property' => 'username',
+            ),
+        ),
+    ),*/
+
     'security.firewalls' => array(
-        'secured' => array(
-            'pattern' => '^/',
-            'anonymous' => true,
-            
-            'form' => array('login_path' => '/login',
-                            'check_path' => '/login_check'),
-            'logout' => array('logout_path' => '/admin/logout',
-                              'invalidate_session' => true),
+
+        'client' => array(
+            'pattern' => '^/client/',
+
+            'form' => array(
+                'login_path' => '/login',
+                'check_path' => '/login_check',
+                'logout' => array('logout_path' => '/logout',
+                    'invalidate_session' => true
+                ),
+
+            ),
+
+            'users' => function () use ($app) {
+                return new ClientDAO($app['db']);
+            },
+
+        ),
+
+
+        'admin' => array(
+            'pattern' => '^/admin/',
+
+            'form' => array(
+                'login_path' => '/admin/login',
+                'check_path' => '/admin/login_check',
+                'logout' => array('logout_path' => '/admin/logout',
+                    'invalidate_session' => true
+                ),
+
+            ),
+
             'users' => function () use ($app) {
                 return new UserDAO($app['db']);
             },
         ),
+
+
+
+
+
     ),
     'security.role_hierarchy' => array(
         'ROLE_ADMIN' => array('ROLE_EVENT_CREATE', 'ROLE_CUSTOMER'),
@@ -56,7 +102,8 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     ),
     'security.access_rules' => array(
         array('^/admin', 'ROLE_ADMIN'),
-        array('^/login', 'IS_AUTHENTICATED_ANONYMOUSLY'),
+        array('^admin/login', 'IS_AUTHENTICATED_ANONYMOUSLY'),
+        array('^/login$', 'IS_AUTHENTICATED_ANONYMOUSLY'),
         array('^/', 'ROLE_USER'),
         array('^/collaborateur', 'ROLE_EVENT_CREATE'),
     ),

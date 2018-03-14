@@ -25,7 +25,7 @@ class UserType extends AbstractType
             ->add('username', TextType::class)
             ->add('password', PasswordType::class)
             ->add('roles', ChoiceType::class, array(
-                'choices' => array('Admin' => 'ROLE_ADMIN', 'User' => 'ROLE_USER', 'Collaborateur' => 'ROLE_EVENT_CREATE'),
+                'choices' => array('Admin' => 'ROLE_ADMIN', 'Collaborateur' => 'ROLE_EVENT_CREATE'),
                 'multiple' => true
             ));
     }

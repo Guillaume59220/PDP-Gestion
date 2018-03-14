@@ -24,6 +24,12 @@ class AdminController {
             'users' => $users));
     }
 
+    public function loginAction(Request $request, Application $app) {
+        return $app['twig']->render('admin_login.html.twig', array(
+            'error'            => $app['security.last_error']($request),
+            'last_username' => $app['session']->get('_security.last_username'),
+        ));
+    }
 
 
     public function deleteCourrierAction($id, Application $app) {

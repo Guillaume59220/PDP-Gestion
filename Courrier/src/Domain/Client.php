@@ -19,6 +19,10 @@ class Client
 
     private $capital;
 
+    private $password;
+
+    private $salt;
+
     /**
      * @return mixed
      */
@@ -34,6 +38,23 @@ class Client
     {
         $this->id_client = $id_client;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->code_client;
+    }
+
+    /**
+     * @param mixed $code_client
+     */
+    public function setUsername($code_client)
+    {
+        $this->code_client = $code_client;
+    }
+
 
     /**
      * @return mixed
@@ -129,6 +150,41 @@ class Client
         $this->capital = $capital;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    /**
+     * @param mixed $salt
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+    }
+
+    public function eraseCredentials() {
+        // Nothing to do here
+    }
 
 
 }

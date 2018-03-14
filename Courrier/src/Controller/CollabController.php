@@ -69,11 +69,6 @@ class CollabController{
     }
 
 
-
-
-
-
-
     public function editCourrierAction($id_courrier, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id_courrier);
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
@@ -95,6 +90,15 @@ class CollabController{
         $clientForm= $app['form.factory']->create(ClientType::class, $client);
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
+            // generate a random salt value
+            $salt = substr(md5(time()), 0, 23);
+            $client->setSalt($salt);
+            $plainPassword = $client->getPassword();
+            // find the default encoder
+            $encoder = $app['security.encoder.bcrypt'];
+            // compute the encoded password
+            $password = $encoder->encodePassword($plainPassword, $client->getSalt());
+            $client->setPassword($password);
             $app['dao.client']->save($client);
             $app['session']->getFlashBag()->add('success', 'Le client a ete bien ajoute.');
         }

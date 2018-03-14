@@ -35,7 +35,7 @@
                         {% for client in clients %}
                             <tr>
                                 <td>{{ client.nomclient }}</td>
-                                <td>{{ client.codeclient }}</td>
+                                <td>{{ client.username }}</td>
                                 <td>
                                     <a href="{{ path('collaborateur_client_edit', { 'id': client.idclient }) }}"
                                        class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -76,7 +76,7 @@
             {% if courriers %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
-                    <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter courrier</button></a>
+                    <a href="{{ path('collaborateur_courrier_add') }}"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Ajouter du courrier</button></a>
                         <thead>
                         <tr>
                             <th>Client</th>
