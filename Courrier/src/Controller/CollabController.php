@@ -50,7 +50,8 @@ class CollabController{
 
 
             $app['dao.courrier']->save($courrier);
-            $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
+            $app['session']->getFlashBag()->add('success', 'Le client a été ajouté.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('courrier_form.html.twig', array(
             'title' => 'Ajouter courrier',
@@ -76,23 +77,16 @@ class CollabController{
         }
 
         // ...
-<<<<<<< HEAD
-    }
-
-
-    public function editCourrierAction($id_courrier, Request $request, Application $app) {
-        $courrier = $app['dao.courrier']->find($id_courrier);
-=======
     }*/
 
     public function editCourrierAction($id, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id);
->>>>>>> 615d15986967d378365f0ad5bba73fd8a369ed8b
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
             $app['dao.courrier']->save($courrier);
-            $app['session']->getFlashBag()->add('success', 'Liste des courriers a ete bien modifie.');
+            $app['session']->getFlashBag()->add('success', 'Le courrier a été modifié.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('courrier_form.html.twig', array(
             'title' => 'Modification courrier',
@@ -117,7 +111,8 @@ class CollabController{
             $password = $encoder->encodePassword($plainPassword, $client->getSalt());
             $client->setPassword($password);
             $app['dao.client']->save($client);
-            $app['session']->getFlashBag()->add('success', 'Le client a ete bien ajoute.');
+            $app['session']->getFlashBag()->add('success', 'Le client a été ajouté.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Ajouter client',
@@ -132,7 +127,8 @@ class CollabController{
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
             $app['dao.client']->save($client);
-            $app['session']->getFlashBag()->add('success', '.');
+            $app['session']->getFlashBag()->add('success', 'Le client a été modifié.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Edit client',

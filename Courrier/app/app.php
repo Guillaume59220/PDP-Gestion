@@ -76,7 +76,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
             'pattern' => '^/admin/',
 
             'form' => array(
-                'login_path' => '/admin/login',
+                'login_path' => '/login/admin',
                 'check_path' => '/admin/login_check',
                 'logout' => array('logout_path' => '/admin/logout',
                     'invalidate_session' => true

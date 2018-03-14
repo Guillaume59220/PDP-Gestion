@@ -34,14 +34,14 @@ class AdminController {
 
     public function deleteCourrierAction($id, Application $app) {
         $app['dao.courrier']->delete($id);
-        $app['session']->getFlashBag()->add('success', 'Le courrier a ete supprime.');
+        $app['session']->getFlashBag()->add('success', 'Le courrier a été supprimé');
         return $app->redirect($app['url_generator']->generate('admin'));
     }
 
 
     public function deleteClientAction($id, Application $app) {
         $app['dao.client']->delete($id);
-        $app['session']->getFlashBag()->add('success', 'Le client a ete supprime.');
+        $app['session']->getFlashBag()->add('success', 'Le client a été supprimé.');
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));
     }
@@ -64,7 +64,7 @@ class AdminController {
                 $user->setRoles($user->getRoles()[0][0], true);
             }
             $app['dao.user']->save($user);
-            $app['session']->getFlashBag()->add('success', 'utilisateur a ete cree.');
+            $app['session']->getFlashBag()->add('success', 'L\'utilisateur a été crée.');
             return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('user_form.html.twig', array(
@@ -85,7 +85,7 @@ class AdminController {
             $password = $encoder->encodePassword($plainPassword, $user->getSalt());
             $user->setPassword($password); 
             $app['dao.user']->save($user);
-            $app['session']->getFlashBag()->add('success', 'The user was successfully updated.');
+            $app['session']->getFlashBag()->add('success', 'L\'utilisateur a été modifié.');
             return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('user_form.html.twig', array(
@@ -97,7 +97,7 @@ class AdminController {
 
         // Delete the user
         $app['dao.user']->delete($id);
-        $app['session']->getFlashBag()->add('success', 'The user was successfully removed.');
+        $app['session']->getFlashBag()->add('success', 'L\'utilisateur a été supprimé.');
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));
     }
