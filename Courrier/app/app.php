@@ -77,6 +77,7 @@ $app['dao.courrier'] = function ($app) {
     return $courrierDAO;
 };
 
+
 $app->before(function (Request $request) {
     if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
         $data = json_decode($request->getContent(), true);

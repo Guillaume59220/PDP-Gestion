@@ -18,7 +18,6 @@ class CourrierDAO extends DAO
             $courrierId = $row['id_courrier'];
             $courrier[$courrierId] = $this->buildDomainObject($row);
         }
-        dump($courrier);
         return $courrier;
     }
 
@@ -65,7 +64,7 @@ class CourrierDAO extends DAO
     }
 
     public function save($courrier) {
-        #dump($courrier);
+            dump($courrier);
         $courrierData = array(
             'date_entre'=> $courrier->getDateEntre(),
             'date_sortie'=> $courrier->getDateSortie(),
@@ -73,7 +72,7 @@ class CourrierDAO extends DAO
             'scan'=>$courrier->getScan(),
             'fax'=> $courrier->getFax(),
             'id_type_courrier'=>$courrier->getIdTypeCourrier()[0],
-            'id_client'=>$courrier->client[0]
+            'id_client'=>$courrier->getIdClient()
 
             ); 
 

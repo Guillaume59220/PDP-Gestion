@@ -8,7 +8,6 @@ use Courrier\Domain\Courrier;
 use Courrier\Domain\Client;
 use Courrier\Form\Type\CourrierType;
 use Courrier\Form\Type\ClientType;
-use App\Service\FileUploader;
 
 
 
@@ -21,6 +20,17 @@ class CollabController{
             'courriers' => $courriers,
             'clients' => $clients,
             ));
+    }
+    public function courrierAction(Application $app){
+        $courrier= $app['dao.courrier']->findAll();
+        $type=$app['dao.type_courrier']->fechtAll();
+        $client= $app['dao.client']->fechAll();
+        return $app['twig']->render('admin.html.twig', array(
+            'courriers'=>$courrier,
+            'types'=> $type,
+            'clients'=> $client
+        ));
+
     }
 
     public function addCourrierAction(Request $request, Application $app) {

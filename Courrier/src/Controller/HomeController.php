@@ -17,21 +17,21 @@ class HomeController {
     }
     
 
-    public function courrierAction($id_courrier, Request $request, Application $app) {
-        $courrier = $app['dao.courrier']->find($id_courrier);
-        if ($app['security.authorization_checker']->isGranted('IS_AUTHENTICATED_FULLY')) {
-            $client = new Client();
-            $client->setCourrier($courrier);
-            $user = $app['user'];
-            $client->setClient($client);
-            $clientForm = $app['form.factory']->create(ClientType::class, $client);
-            $clientForm->handleRequest($request);
-            if ($clientForm->isSubmitted() && $clientForm->isValid()) {
-                $app['dao.client']->save($client);
-                $app['session']->getFlashBag()->add('success');
-            }
-             $clientForm->createView();
-        }
+    public function courrierAction($id, Request $request, Application $app) {
+            $courrier = $app['dao.courrier']->find($id);
+            /*if ($app['security.authorization_checker']->isGranted('IS_AUTHENTICATED_FULLY')) {
+                $client = new Client();
+                $client->setCourrier($courrier);
+                $user = $app['user'];
+                $client->setClient($client);
+                $clientForm = $app['form.factory']->create(ClientType::class, $client);
+                $clientForm->handleRequest($request);
+                if ($clientForm->isSubmitted() && $clientForm->isValid()) {
+                    $app['dao.client']->save($client);
+                    $app['session']->getFlashBag()->add('success');
+                }
+                $clientForm->createView();
+            }*/
 
         return $app['twig']->render('index.html.twig', array(
             'courrier' => $courrier,

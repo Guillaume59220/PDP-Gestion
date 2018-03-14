@@ -90,10 +90,10 @@
                         {% for courrier in courriers %}
 
                             <tr>
-                                <td>{{ courrier.getIdClient() }}</td>
-                                <td>{{ courrier.getDateEntre() }}</td>
-                                <td>{{ courrier.getAnnotation() }}</td>
-                                <td>{{ courrier.getIdTypeCourrier }}</td>
+                                <td>{{ courrier.idclient }}</td>
+                                <td>{{ courrier.dateentre }}</td>
+                                <td>{{ courrier.annotation }}</td>
+                                <td>{{ courrier.idtypecourrier }}</td>
                                 <td>
                                     <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier.idcourrier }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>

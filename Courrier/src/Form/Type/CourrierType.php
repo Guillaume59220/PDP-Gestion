@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Silex\Application;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 
 class CourrierType extends AbstractType
@@ -43,7 +44,7 @@ class CourrierType extends AbstractType
         $builder
             ->add('date_entre', TextType::class)
             ->add('scan', FileType::class, array(
-                'label'=> ' '
+                'label'=> 'Fichier '
             ))
             ->add('fax', TextType::class)
             ->add('annotation', TextareaType::class)
@@ -56,7 +57,7 @@ class CourrierType extends AbstractType
             ->add('id_type_courrier', ChoiceType::class, array(
                 'choices' =>  $this->choiceCourrier($app),
                 'multiple' => false,
-                'label'=> 'Type Courrier'
+                'label'=> 'Type courrier'
                 ));
     }
 
