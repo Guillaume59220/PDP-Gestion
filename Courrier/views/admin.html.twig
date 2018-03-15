@@ -84,6 +84,7 @@
                             <th>Date</th>
                             <th>Annotation</th>
                             <th>Type courrier</th>
+                            <th>Fichier</th>
                             <th></th>  <!-- Actions column -->
                         </tr>
                         </thead>
@@ -94,6 +95,7 @@
                                 <td>{{ courrier['date_entre'] }}</td>
                                 <td>{{ courrier['annotation'] }}</td>
                                 <td>{{ courrier['libelle_courrier'] }}</td>
+                                <td> {{ courrier['scan'] }} </td>
                                 <td>
                                     <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier['id_courrier'] }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>

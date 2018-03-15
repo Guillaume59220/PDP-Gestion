@@ -44,11 +44,17 @@ class CourrierType extends AbstractType
         $builder
             ->add('date_entre', TextType::class)
             ->add('scan', FileType::class, array(
-                'label'=> 'Fichier '
+                'label'=> 'Fichier ',
+                'data_class' => null,
+                'required' => false
             ))
-            ->add('fax', TextType::class)
+            ->add('fax', TextType::class, array(
+                'required' => false
+            ))
             ->add('annotation', TextareaType::class)
-            ->add('date_sortie', TextType::class)
+            ->add('date_sortie', TextType::class , array(
+                'required' => false
+            ))
             ->add('id_client',ChoiceType::class, array(
                 'choices' =>$this->choiceClient($app),
                 'multiple' => false,

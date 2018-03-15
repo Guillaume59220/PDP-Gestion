@@ -37,6 +37,7 @@ class CollabController{
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
+            if(!empty ($courrierForm['scan'])){
         dump($courrierForm['scan']->getData());
             $file = $courrier->getScan();
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
@@ -45,11 +46,14 @@ class CollabController{
                 $fileName
             );
             $courrier->setScan($fileName);
+            }
+
             //return $app->redirect($app["url_generator"]->generate('app_scan_list'));
 
 
             $app['dao.courrier']->save($courrier);
             $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
+
         }
         return $app['twig']->render('courrier_form.html.twig', array(
             'title' => 'Ajouter courrier',
@@ -61,7 +65,7 @@ class CollabController{
         return md5(uniqid());
     }
 
-   /* public function new(Request $request, FileUploader $fileUploader)
+   public function new(Request $request, FileUploader $fileUploader)
     {
         // ...
 
@@ -75,7 +79,7 @@ class CollabController{
         }
 
         // ...
-    }*/
+    }
 
     public function editCourrierAction($id, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id);

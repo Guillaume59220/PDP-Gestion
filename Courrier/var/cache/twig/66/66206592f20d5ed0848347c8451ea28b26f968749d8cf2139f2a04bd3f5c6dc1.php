@@ -183,48 +183,53 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
                             <th>Date</th>
                             <th>Annotation</th>
                             <th>Type courrier</th>
+                            <th>Fichier</th>
                             <th></th>  <!-- Actions column -->
                         </tr>
                         </thead>
                         ";
-            // line 90
+            // line 91
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["courriers"]) || array_key_exists("courriers", $context) ? $context["courriers"] : (function () { throw new Twig_Error_Runtime('Variable "courriers" does not exist.', 90, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["courriers"]) || array_key_exists("courriers", $context) ? $context["courriers"] : (function () { throw new Twig_Error_Runtime('Variable "courriers" does not exist.', 91, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["courrier"]) {
-                // line 91
-                echo "                           ";
                 // line 92
+                echo "                           ";
+                // line 93
                 echo "                            <tr>
                                 <td>";
-                // line 93
+                // line 94
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "nom_client", array(), "array"), "html", null, true);
                 echo "</td>
                                 <td>";
-                // line 94
+                // line 95
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "date_entre", array(), "array"), "html", null, true);
                 echo "</td>
                                 <td>";
-                // line 95
+                // line 96
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "annotation", array(), "array"), "html", null, true);
                 echo "</td>
                                 <td>";
-                // line 96
+                // line 97
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "libelle_courrier", array(), "array"), "html", null, true);
                 echo "</td>
+                                <td> ";
+                // line 98
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "scan", array(), "array"), "html", null, true);
+                echo " </td>
                                 <td>
                                     <a href=\"";
-                // line 98
+                // line 100
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("collaborateur_courrier_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["courrier"], "id_courrier", array(), "array"))), "html", null, true);
                 echo "\" class=\"btn btn-info btn-xs\"
                                        title=\"Edit\"><span class=\"glyphicon glyphicon-pencil\"></span></a>
                                     <button type=\"button\" class=\"btn btn-danger btn-xs\" title=\"Delete\" data-toggle=\"modal\"
                                             data-target=\"#courrierDialog";
-                // line 101
+                // line 103
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "id_courrier", array(), "array"), "html", null, true);
                 echo "\"><span class=\"glyphicon glyphicon-trash\"></span>
                                     </button>
                                     <div class=\"modal fade\" id=\"courrierDialog";
-                // line 103
+                // line 105
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "id_courrier", array(), "array"), "html", null, true);
                 echo "\" tabindex=\"-1\"
                                          role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
@@ -240,7 +245,7 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
                                                 <div class=\"modal-footer\">
                                                     <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Annuler</button>
                                                     <a href=\"";
-                // line 116
+                // line 118
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_courrier_delete", array("id" => twig_get_attribute($this->env, $this->source, $context["courrier"], "id_courrier", array(), "array"))), "html", null, true);
                 echo "\"
                                                        class=\"btn btn-danger\">Confirmer</a>
@@ -255,29 +260,29 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['courrier'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 125
+            // line 127
             echo "                    </table>
                 </div>
             ";
         } else {
-            // line 128
+            // line 130
             echo "            <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("collaborateur_courrier_add");
             echo "\"><button type=\"button\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-plus\"></span> Ajouter courrier</button></a>
                 <div class=\"alert alert-warning\">Pas de courrier trouvé.</div>
             ";
         }
-        // line 131
+        // line 133
         echo "        </div>
         <div class=\"tab-pane fade adminTable\" id=\"users\">
             ";
-        // line 133
-        if ((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new Twig_Error_Runtime('Variable "users" does not exist.', 133, $this->source); })())) {
-            // line 134
+        // line 135
+        if ((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new Twig_Error_Runtime('Variable "users" does not exist.', 135, $this->source); })())) {
+            // line 136
             echo "                <div class=\"table-responsive\">
                     <table class=\"table table-hover table-condensed\">
                     <a href=\"";
-            // line 136
+            // line 138
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_add");
             echo "\"><button type=\"button\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-plus\"></span> Ajouter utilisateur</button></a>
                         <thead>
@@ -288,38 +293,38 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
                         </tr>
                         </thead>
                         ";
-            // line 144
+            // line 146
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new Twig_Error_Runtime('Variable "users" does not exist.', 144, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new Twig_Error_Runtime('Variable "users" does not exist.', 146, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-                // line 145
+                // line 147
                 echo "                            <tr>
                                 <td>";
-                // line 146
+                // line 148
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "username", array()), "html", null, true);
                 echo "</a></td>
                                 <td>
 
                                     ";
-                // line 149
+                // line 151
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["user"], "roles", array()), 0, array(), "array"), "html", null, true);
                 echo "
 
                                 </td>
                                 <td>
                                     <a href=\"";
-                // line 153
+                // line 155
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", array()))), "html", null, true);
                 echo "\" class=\"btn btn-info btn-xs\" title=\"Edit\">
                                         <span class=\"glyphicon glyphicon-pencil\"></span></a>
                                     <button type=\"button\" class=\"btn btn-danger btn-xs\" title=\"Delete\" data-toggle=\"modal\"
                                             data-target=\"#userDialog";
-                // line 156
+                // line 158
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", array()), "html", null, true);
                 echo "\"><span class=\"glyphicon glyphicon-trash\"></span>
                                     </button>
                                     <div class=\"modal fade\" id=\"userDialog";
-                // line 158
+                // line 160
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", array()), "html", null, true);
                 echo "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
                                         <div class=\"modal-dialog\">
@@ -334,7 +339,7 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
                                                 <div class=\"modal-footer\">
                                                     <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Annuler</button>
                                                     <a href=\"";
-                // line 170
+                // line 172
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_delete", array("id" => twig_get_attribute($this->env, $this->source, $context["user"], "id", array()))), "html", null, true);
                 echo "\" class=\"btn btn-danger\">Confirmer</a>
                                                 </div>
@@ -348,19 +353,19 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 178
+            // line 180
             echo "                    </table>
                 </div>
             ";
         } else {
-            // line 181
+            // line 183
             echo "            <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_user_add");
             echo "\"><button type=\"button\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-plus\"></span> Ajouter utilisateur</button></a>
                 <div class=\"alert alert-warning\">Aucun utilisateur trouvé.</div>
             ";
         }
-        // line 184
+        // line 186
         echo "            
         </div>
     </div>
@@ -379,7 +384,7 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
 
     public function getDebugInfo()
     {
-        return array (  364 => 184,  357 => 181,  352 => 178,  338 => 170,  323 => 158,  318 => 156,  312 => 153,  305 => 149,  299 => 146,  296 => 145,  292 => 144,  281 => 136,  277 => 134,  275 => 133,  271 => 131,  264 => 128,  259 => 125,  244 => 116,  228 => 103,  223 => 101,  217 => 98,  212 => 96,  208 => 95,  204 => 94,  200 => 93,  197 => 92,  195 => 91,  191 => 90,  178 => 80,  173 => 77,  171 => 76,  165 => 72,  158 => 69,  153 => 66,  139 => 58,  123 => 45,  118 => 43,  112 => 40,  107 => 38,  103 => 37,  100 => 36,  96 => 35,  85 => 27,  81 => 25,  79 => 24,  66 => 13,  57 => 10,  54 => 9,  50 => 8,  45 => 7,  42 => 6,  36 => 4,  32 => 1,  30 => 2,  15 => 1,);
+        return array (  369 => 186,  362 => 183,  357 => 180,  343 => 172,  328 => 160,  323 => 158,  317 => 155,  310 => 151,  304 => 148,  301 => 147,  297 => 146,  286 => 138,  282 => 136,  280 => 135,  276 => 133,  269 => 130,  264 => 127,  249 => 118,  233 => 105,  228 => 103,  222 => 100,  217 => 98,  213 => 97,  209 => 96,  205 => 95,  201 => 94,  198 => 93,  196 => 92,  192 => 91,  178 => 80,  173 => 77,  171 => 76,  165 => 72,  158 => 69,  153 => 66,  139 => 58,  123 => 45,  118 => 43,  112 => 40,  107 => 38,  103 => 37,  100 => 36,  96 => 35,  85 => 27,  81 => 25,  79 => 24,  66 => 13,  57 => 10,  54 => 9,  50 => 8,  45 => 7,  42 => 6,  36 => 4,  32 => 1,  30 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -470,6 +475,7 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
                             <th>Date</th>
                             <th>Annotation</th>
                             <th>Type courrier</th>
+                            <th>Fichier</th>
                             <th></th>  <!-- Actions column -->
                         </tr>
                         </thead>
@@ -480,6 +486,7 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
                                 <td>{{ courrier['date_entre'] }}</td>
                                 <td>{{ courrier['annotation'] }}</td>
                                 <td>{{ courrier['libelle_courrier'] }}</td>
+                                <td> {{ courrier['scan'] }} </td>
                                 <td>
                                     <a href=\"{{ path('collaborateur_courrier_edit', { 'id': courrier['id_courrier'] }) }}\" class=\"btn btn-info btn-xs\"
                                        title=\"Edit\"><span class=\"glyphicon glyphicon-pencil\"></span></a>
