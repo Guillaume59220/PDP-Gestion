@@ -66,7 +66,9 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
                 <td> 0 </td>
                 <td> 0 </td>
                 <td> 0 </td>
-                
+                <td><a href=\"images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg\"
+                    class=\"btn btn-download btn-xs\" title=\"Download\" download=\"Mota.jpeg\">
+                    <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
             </tr>
         </table> 
     </div>
@@ -121,7 +123,9 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
                 <td> 0 </td>
                 <td> 0 </td>
                 <td> 0 </td>
-                
+                <td><a href=\"images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg\"
+                    class=\"btn btn-download btn-xs\" title=\"Download\" download=\"Mota.jpeg\">
+                    <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
             </tr>
         </table> 
     </div>

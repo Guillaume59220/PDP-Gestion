@@ -46,6 +46,12 @@ body {
         margin: 0 auto;
 }
 
+.btn.focus,
+.btn:focus,
+.btn:hover {
+    color: #fff;
+}
+
 .form-signin {
     max-width: 380px;
     padding: 15px 35px 45px;
