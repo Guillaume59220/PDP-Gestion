@@ -44,33 +44,37 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
         echo "</td>
 
 
-        <div class=\"container\">
-        <h1>Liste de courrier</h1>
-        <hr />
+    <div class=\"container\">
+            <h1>Liste de courrier</h1>
+            <hr />
+        <div class=\"table-responsive\">
+                <table class=\"table table-hover table-condensed\">
+                <thead>
 
-        <table>
-            <tr>
-                <th>Numero courrier</th>
-                <th>Date</th>
-                <th>Libelle</th>
-                <th>Nom client</th>
-                <th>Annotation</th>
-                <th>Scan</th>
-            </tr>
+                        <tr>
+                            <th>Numero courrier</th>
+                            <th>Date</th>
+                            <th>Libelle</th>
+                            <th>Nom client</th>
+                            <th>Annotation</th>
+                            <th>Scan</th>
+                        </tr>
+                        </thead>
 
 
 
-           <tr>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td><a href=\"images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg\"
-                    class=\"btn btn-download btn-xs\" title=\"Download\" download=\"Mota.jpeg\">
-                    <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
-            </tr>
-        </table> 
+                        <tr>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td><a href=\"images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg\"
+                                class=\"btn btn-success btn-xs\" title=\"Download\" download=\"Mota.jpeg\">
+                                <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
+                        </tr>
+                </table> 
+        </div>
     </div>
 
 ";
@@ -101,33 +105,37 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
     <td>{{ user.username }}</td>
 
 
-        <div class=\"container\">
-        <h1>Liste de courrier</h1>
-        <hr />
+    <div class=\"container\">
+            <h1>Liste de courrier</h1>
+            <hr />
+        <div class=\"table-responsive\">
+                <table class=\"table table-hover table-condensed\">
+                <thead>
 
-        <table>
-            <tr>
-                <th>Numero courrier</th>
-                <th>Date</th>
-                <th>Libelle</th>
-                <th>Nom client</th>
-                <th>Annotation</th>
-                <th>Scan</th>
-            </tr>
+                        <tr>
+                            <th>Numero courrier</th>
+                            <th>Date</th>
+                            <th>Libelle</th>
+                            <th>Nom client</th>
+                            <th>Annotation</th>
+                            <th>Scan</th>
+                        </tr>
+                        </thead>
 
 
 
-           <tr>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td><a href=\"images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg\"
-                    class=\"btn btn-download btn-xs\" title=\"Download\" download=\"Mota.jpeg\">
-                    <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
-            </tr>
-        </table> 
+                        <tr>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td><a href=\"images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg\"
+                                class=\"btn btn-success btn-xs\" title=\"Download\" download=\"Mota.jpeg\">
+                                <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
+                        </tr>
+                </table> 
+        </div>
     </div>
 
 {% endblock %}", "index.html.twig", "C:\\xampp\\htdocs\\PDP-Gestion\\Courrier\\views\\index.html.twig");

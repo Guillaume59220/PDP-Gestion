@@ -6,33 +6,37 @@
     <td>{{ user.username }}</td>
 
 
-        <div class="container">
-        <h1>Liste de courrier</h1>
-        <hr />
+    <div class="container">
+            <h1>Liste de courrier</h1>
+            <hr />
+        <div class="table-responsive">
+                <table class="table table-hover table-condensed">
+                <thead>
 
-        <table>
-            <tr>
-                <th>Numero courrier</th>
-                <th>Date</th>
-                <th>Libelle</th>
-                <th>Nom client</th>
-                <th>Annotation</th>
-                <th>Scan</th>
-            </tr>
+                        <tr>
+                            <th>Numero courrier</th>
+                            <th>Date</th>
+                            <th>Libelle</th>
+                            <th>Nom client</th>
+                            <th>Annotation</th>
+                            <th>Scan</th>
+                        </tr>
+                        </thead>
 
 
 
-           <tr>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td><a href="images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg"
-                    class="btn btn-download btn-xs" title="Download" download="Mota.jpeg">
-                    <span class="glyphicon glyphicon-cloud-download"></span></a></td>
-            </tr>
-        </table> 
+                        <tr>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td> 0 </td>
+                            <td><a href="images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg"
+                                class="btn btn-success btn-xs" title="Download" download="Mota.jpeg">
+                                <span class="glyphicon glyphicon-cloud-download"></span></a></td>
+                        </tr>
+                </table> 
+        </div>
     </div>
 
 {% endblock %}
