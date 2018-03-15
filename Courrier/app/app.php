@@ -76,7 +76,9 @@ $app['dao.courrier'] = function ($app) {
     $courrierDAO = new Courrier\DAO\CourrierDAO($app['db']);
     return $courrierDAO;
 };
-
+$app['dao_type_courrier'] = function() use($app) {
+    return $app['db']->fetchAll('SELECT * FROM type_courrier');
+};
 
 $app->before(function (Request $request) {
     if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {

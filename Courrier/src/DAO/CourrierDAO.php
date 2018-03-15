@@ -10,7 +10,7 @@ class CourrierDAO extends DAO
         $sql = "select * from courrier
         INNER JOIN type_courrier tc ON courrier.id_type_courrier = tc.id_type_courrier
         INNER JOIN client c2 ON courrier.id_client = c2.id_client
-        order by id_courrier desc";
+        order by date_entre desc";
         $result = $this->getDb()->fetchAll($sql);
 
         $courrier = array();
@@ -18,7 +18,7 @@ class CourrierDAO extends DAO
             $courrierId = $row['id_courrier'];
             $courrier[$courrierId] = $this->buildDomainObject($row);
         }
-        return $courrier;
+        return $result;
     }
 
     public function find($id_courrier) {
@@ -71,7 +71,7 @@ class CourrierDAO extends DAO
             'annotation'=>$courrier->getAnnotation(),
             'scan'=>$courrier->getScan(),
             'fax'=> $courrier->getFax(),
-            'id_type_courrier'=>$courrier->getIdTypeCourrier()[0],
+            'id_type_courrier'=>$courrier->getIdTypeCourrier(),
             'id_client'=>$courrier->getIdClient()
 
             ); 

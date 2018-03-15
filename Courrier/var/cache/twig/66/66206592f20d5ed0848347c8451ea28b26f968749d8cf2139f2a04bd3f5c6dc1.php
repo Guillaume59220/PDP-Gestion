@@ -192,39 +192,40 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
             $context['_seq'] = twig_ensure_traversable((isset($context["courriers"]) || array_key_exists("courriers", $context) ? $context["courriers"] : (function () { throw new Twig_Error_Runtime('Variable "courriers" does not exist.', 90, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["courrier"]) {
                 // line 91
-                echo "
-                            <tr>
+                echo "                           ";
+                // line 92
+                echo "                            <tr>
                                 <td>";
                 // line 93
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "idclient", array()), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "nom_client", array(), "array"), "html", null, true);
                 echo "</td>
                                 <td>";
                 // line 94
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "dateentre", array()), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "date_entre", array(), "array"), "html", null, true);
                 echo "</td>
                                 <td>";
                 // line 95
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "annotation", array()), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "annotation", array(), "array"), "html", null, true);
                 echo "</td>
                                 <td>";
                 // line 96
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "idtypecourrier", array()), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "libelle_courrier", array(), "array"), "html", null, true);
                 echo "</td>
                                 <td>
                                     <a href=\"";
                 // line 98
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("collaborateur_courrier_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["courrier"], "idcourrier", array()))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("collaborateur_courrier_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["courrier"], "id_courrier", array(), "array"))), "html", null, true);
                 echo "\" class=\"btn btn-info btn-xs\"
                                        title=\"Edit\"><span class=\"glyphicon glyphicon-pencil\"></span></a>
                                     <button type=\"button\" class=\"btn btn-danger btn-xs\" title=\"Delete\" data-toggle=\"modal\"
                                             data-target=\"#courrierDialog";
                 // line 101
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "idcourrier", array()), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "id_courrier", array(), "array"), "html", null, true);
                 echo "\"><span class=\"glyphicon glyphicon-trash\"></span>
                                     </button>
                                     <div class=\"modal fade\" id=\"courrierDialog";
                 // line 103
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "idcourrier", array()), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "id_courrier", array(), "array"), "html", null, true);
                 echo "\" tabindex=\"-1\"
                                          role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
                                         <div class=\"modal-dialog\">
@@ -240,7 +241,7 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
                                                     <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Annuler</button>
                                                     <a href=\"";
                 // line 116
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_courrier_delete", array("id" => twig_get_attribute($this->env, $this->source, $context["courrier"], "idcourrier", array()))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_courrier_delete", array("id" => twig_get_attribute($this->env, $this->source, $context["courrier"], "id_courrier", array(), "array"))), "html", null, true);
                 echo "\"
                                                        class=\"btn btn-danger\">Confirmer</a>
                                                 </div>
@@ -378,7 +379,7 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
 
     public function getDebugInfo()
     {
-        return array (  363 => 184,  356 => 181,  351 => 178,  337 => 170,  322 => 158,  317 => 156,  311 => 153,  304 => 149,  298 => 146,  295 => 145,  291 => 144,  280 => 136,  276 => 134,  274 => 133,  270 => 131,  263 => 128,  258 => 125,  243 => 116,  227 => 103,  222 => 101,  216 => 98,  211 => 96,  207 => 95,  203 => 94,  199 => 93,  195 => 91,  191 => 90,  178 => 80,  173 => 77,  171 => 76,  165 => 72,  158 => 69,  153 => 66,  139 => 58,  123 => 45,  118 => 43,  112 => 40,  107 => 38,  103 => 37,  100 => 36,  96 => 35,  85 => 27,  81 => 25,  79 => 24,  66 => 13,  57 => 10,  54 => 9,  50 => 8,  45 => 7,  42 => 6,  36 => 4,  32 => 1,  30 => 2,  15 => 1,);
+        return array (  364 => 184,  357 => 181,  352 => 178,  338 => 170,  323 => 158,  318 => 156,  312 => 153,  305 => 149,  299 => 146,  296 => 145,  292 => 144,  281 => 136,  277 => 134,  275 => 133,  271 => 131,  264 => 128,  259 => 125,  244 => 116,  228 => 103,  223 => 101,  217 => 98,  212 => 96,  208 => 95,  204 => 94,  200 => 93,  197 => 92,  195 => 91,  191 => 90,  178 => 80,  173 => 77,  171 => 76,  165 => 72,  158 => 69,  153 => 66,  139 => 58,  123 => 45,  118 => 43,  112 => 40,  107 => 38,  103 => 37,  100 => 36,  96 => 35,  85 => 27,  81 => 25,  79 => 24,  66 => 13,  57 => 10,  54 => 9,  50 => 8,  45 => 7,  42 => 6,  36 => 4,  32 => 1,  30 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -473,19 +474,19 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
                         </tr>
                         </thead>
                         {% for courrier in courriers %}
-
+                           {#{{ dump(courriers) }}#}
                             <tr>
-                                <td>{{ courrier.idclient }}</td>
-                                <td>{{ courrier.dateentre }}</td>
-                                <td>{{ courrier.annotation }}</td>
-                                <td>{{ courrier.idtypecourrier }}</td>
+                                <td>{{ courrier['nom_client'] }}</td>
+                                <td>{{ courrier['date_entre'] }}</td>
+                                <td>{{ courrier['annotation'] }}</td>
+                                <td>{{ courrier['libelle_courrier'] }}</td>
                                 <td>
-                                    <a href=\"{{ path('collaborateur_courrier_edit', { 'id': courrier.idcourrier }) }}\" class=\"btn btn-info btn-xs\"
+                                    <a href=\"{{ path('collaborateur_courrier_edit', { 'id': courrier['id_courrier'] }) }}\" class=\"btn btn-info btn-xs\"
                                        title=\"Edit\"><span class=\"glyphicon glyphicon-pencil\"></span></a>
                                     <button type=\"button\" class=\"btn btn-danger btn-xs\" title=\"Delete\" data-toggle=\"modal\"
-                                            data-target=\"#courrierDialog{{ courrier.idcourrier }}\"><span class=\"glyphicon glyphicon-trash\"></span>
+                                            data-target=\"#courrierDialog{{ courrier['id_courrier'] }}\"><span class=\"glyphicon glyphicon-trash\"></span>
                                     </button>
-                                    <div class=\"modal fade\" id=\"courrierDialog{{ courrier.idcourrier }}\" tabindex=\"-1\"
+                                    <div class=\"modal fade\" id=\"courrierDialog{{ courrier['id_courrier'] }}\" tabindex=\"-1\"
                                          role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
                                         <div class=\"modal-dialog\">
                                             <div class=\"modal-content\">
@@ -498,7 +499,7 @@ class __TwigTemplate_e461da00a5d3678a602b2bbb8a33b5228b6a85059e2020496d25d05d6ad
                                                 </div>
                                                 <div class=\"modal-footer\">
                                                     <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Annuler</button>
-                                                    <a href=\"{{ path('admin_courrier_delete', { 'id': courrier.idcourrier }) }}\"
+                                                    <a href=\"{{ path('admin_courrier_delete', { 'id': courrier['id_courrier'] }) }}\"
                                                        class=\"btn btn-danger\">Confirmer</a>
                                                 </div>
                                             </div><!-- /.modal-content -->

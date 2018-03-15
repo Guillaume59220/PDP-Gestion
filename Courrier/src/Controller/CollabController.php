@@ -21,7 +21,7 @@ class CollabController{
             'clients' => $clients,
             ));
     }
-    public function courrierAction(Application $app){
+   /*public function courrierAction(Application $app){
         $courrier= $app['dao.courrier']->findAll();
         $type=$app['dao.type_courrier']->fechtAll();
         $client= $app['dao.client']->fechAll();
@@ -31,8 +31,7 @@ class CollabController{
             'clients'=> $client
         ));
 
-    }
-
+    }*/
     public function addCourrierAction(Request $request, Application $app) {
         $courrier = new Courrier();
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);

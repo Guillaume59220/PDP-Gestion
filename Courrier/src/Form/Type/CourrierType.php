@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Silex\Application;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 
 class CourrierType extends AbstractType
@@ -41,9 +42,7 @@ class CourrierType extends AbstractType
     {
         $app = $options['app'];
         $builder
-            ->add('date_entre', DateType::class, array(
-                'widget' => 'single_text'
-            ))
+            ->add('date_entre', TextType::class)
             ->add('scan', FileType::class, array(
                 'label'=> 'Fichier '
             ))
