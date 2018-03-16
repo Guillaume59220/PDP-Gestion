@@ -29,7 +29,7 @@
                                 <td>{{ courrier['annotation'] }}</td>
                                 <td>{{ courrier['libelle_courrier'] }}</td>
                                 <td> {{ courrier['scan'] }} </td>
-                                <td><a href="{{asset ('upload/Scans/'~courrier.scan) }}" class="btn btn-success btn-xs" title="Download" download>
+                                <td><a href="{{path ('download_scan',{'filename':courrier.scan}) }}" class="btn btn-success btn-xs" title="Download" download>
                                     <span class="glyphicon glyphicon-cloud-download"></span></a>
                                 </td>
                             </tr>

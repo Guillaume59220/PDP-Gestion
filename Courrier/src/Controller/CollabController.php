@@ -27,16 +27,17 @@ class CollabController{
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
-            if(!empty($courrierForm['scan']->getData())){
-            ($courrierForm['scan']);
-        dump($courrierForm['scan']->getData());
-            $file = $courrier->getScan();
+            if(!empty($courrierForm['scan2']->getData())){
+
+
+            $file = $courrier->getScan2();
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
             $file->move(
                 '../uploads/Scans',
                 $fileName
             );
-            $courrier->setScan($fileName);}
+            $courrier->setScan($fileName);
+            }
 
 
             //return $app->redirect($app["url_generator"]->generate('app_scan_list'));
@@ -67,14 +68,15 @@ class CollabController{
             if($scn) {
             dump($courrierForm['scan']->getData());
 
-            $file = $courrier->getScan();
+            $file = $courrier->getScan2();
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
             $file->move(
                 '../uploads/Scans',
                 $fileName);
 
-
+                $courrier->setScan($fileName);
             }
+
 
             //$courrier->getScan();
 

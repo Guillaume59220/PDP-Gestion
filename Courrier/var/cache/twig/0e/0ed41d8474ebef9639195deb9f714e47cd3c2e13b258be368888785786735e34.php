@@ -39,43 +39,75 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
     public function block_content($context, array $blocks = array())
     {
         // line 6
-        echo "    <td>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new Twig_Error_Runtime('Variable "user" does not exist.', 6, $this->source); })()), "username", array()), "html", null, true);
-        echo "</td>
-
-
+        echo "
     <div class=\"container\">
             <h1>Liste de courrier</h1>
             <hr />
-        <div class=\"table-responsive\">
-                <table class=\"table table-hover table-condensed\">
-                <thead>
-
+                   ";
+        // line 10
+        if ( !twig_test_empty((isset($context["courriers"]) || array_key_exists("courriers", $context) ? $context["courriers"] : (function () { throw new Twig_Error_Runtime('Variable "courriers" does not exist.', 10, $this->source); })()))) {
+            // line 11
+            echo "
+                <div class=\"table-responsive\">
+                    <table class=\"table table-hover table-condensed\">
+                        <thead>
                         <tr>
-                            <th>Numero courrier</th>
+                            <th>Client</th>
                             <th>Date</th>
-                            <th>Libelle</th>
-                            <th>Nom client</th>
                             <th>Annotation</th>
-                            <th>Scan</th>
+                            <th>Type courrier</th>
+                            <th>Fichier</th>
+                            <th>Scan</th>  <!-- Actions column -->
                         </tr>
                         </thead>
-
-
-
-                        <tr>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td><a href=\"images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg\"
-                                class=\"btn btn-success btn-xs\" title=\"Download\" download=\"Mota.jpeg\">
-                                <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
-                        </tr>
-                </table> 
-        </div>
-    </div>
+                        ";
+            // line 24
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["courriers"]) || array_key_exists("courriers", $context) ? $context["courriers"] : (function () { throw new Twig_Error_Runtime('Variable "courriers" does not exist.', 24, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["courrier"]) {
+                // line 25
+                echo "                           ";
+                // line 26
+                echo "                            <tr>
+                                <td>";
+                // line 27
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "nom_client", array(), "array"), "html", null, true);
+                echo "</td>
+                                <td>";
+                // line 28
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "date_entre", array(), "array"), "html", null, true);
+                echo "</td>
+                                <td>";
+                // line 29
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "annotation", array(), "array"), "html", null, true);
+                echo "</td>
+                                <td>";
+                // line 30
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "libelle_courrier", array(), "array"), "html", null, true);
+                echo "</td>
+                                <td> ";
+                // line 31
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["courrier"], "scan", array(), "array"), "html", null, true);
+                echo " </td>
+                                <td><a href=\"";
+                // line 32
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("download_scan", array("filename" => twig_get_attribute($this->env, $this->source, $context["courrier"], "scan", array()))), "html", null, true);
+                echo "\" class=\"btn btn-success btn-xs\" title=\"Download\" download>
+                                    <span class=\"glyphicon glyphicon-cloud-download\"></span></a>
+                                </td>
+                            </tr>
+                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['courrier'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 37
+            echo "                    </table>
+                </div>
+            ";
+        }
+        // line 40
+        echo "    </div>
 
 ";
     }
@@ -92,7 +124,7 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
 
     public function getDebugInfo()
     {
-        return array (  42 => 6,  39 => 5,  33 => 3,  15 => 1,);
+        return array (  110 => 40,  105 => 37,  94 => 32,  90 => 31,  86 => 30,  82 => 29,  78 => 28,  74 => 27,  71 => 26,  69 => 25,  65 => 24,  50 => 11,  48 => 10,  42 => 6,  39 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -102,40 +134,40 @@ class __TwigTemplate_78d78e1bbee667688d66e99cc321129e193ba7ad056235f61f84a146ff1
 {% block title %} Liste courrier {% endblock %}
 
 {% block content %}
-    <td>{{ user.username }}</td>
-
 
     <div class=\"container\">
             <h1>Liste de courrier</h1>
             <hr />
-        <div class=\"table-responsive\">
-                <table class=\"table table-hover table-condensed\">
-                <thead>
+                   {% if courriers is not empty %}
 
+                <div class=\"table-responsive\">
+                    <table class=\"table table-hover table-condensed\">
+                        <thead>
                         <tr>
-                            <th>Numero courrier</th>
+                            <th>Client</th>
                             <th>Date</th>
-                            <th>Libelle</th>
-                            <th>Nom client</th>
                             <th>Annotation</th>
-                            <th>Scan</th>
+                            <th>Type courrier</th>
+                            <th>Fichier</th>
+                            <th>Scan</th>  <!-- Actions column -->
                         </tr>
                         </thead>
-
-
-
-                        <tr>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td><a href=\"images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg\"
-                                class=\"btn btn-success btn-xs\" title=\"Download\" download=\"Mota.jpeg\">
-                                <span class=\"glyphicon glyphicon-cloud-download\"></span></a></td>
-                        </tr>
-                </table> 
-        </div>
+                        {% for courrier in courriers %}
+                           {#{{ dump(courriers) }}#}
+                            <tr>
+                                <td>{{ courrier['nom_client'] }}</td>
+                                <td>{{ courrier['date_entre'] }}</td>
+                                <td>{{ courrier['annotation'] }}</td>
+                                <td>{{ courrier['libelle_courrier'] }}</td>
+                                <td> {{ courrier['scan'] }} </td>
+                                <td><a href=\"{{path ('download_scan',{'filename':courrier.scan}) }}\" class=\"btn btn-success btn-xs\" title=\"Download\" download>
+                                    <span class=\"glyphicon glyphicon-cloud-download\"></span></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
     </div>
 
 {% endblock %}", "index.html.twig", "C:\\xampp\\htdocs\\PDP-Gestion\\Courrier\\views\\index.html.twig");

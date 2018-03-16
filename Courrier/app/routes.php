@@ -18,6 +18,8 @@ $app->get('/collaborateur', "Courrier\Controller\CollabController::indexAction")
 $app->get('/user', "Courrier\Controller\CollabController::indexAction")
     ->bind('user');
 
+$app->get('/download/{filename}',"Courrier\Controller\DownloadController::downloadAction")
+    ->bind('download_scan');
 
 
 
