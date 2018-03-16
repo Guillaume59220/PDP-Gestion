@@ -10,10 +10,12 @@ use Courrier\Form\Type\ClientType;
 class HomeController {
 
     public function indexAction(Application $app) {
-        /*$token = $app['security.token_storage']->getToken();*/
-        $courrier = $app['dao.courrier']->findAll();
-       /* $user = $token->getUser();*/
-        return $app['twig']->render('index.html.twig', array('courrier' => $courrier));
+
+        $token = $app['security.token_storage']->getToken();
+        $courriers = $app['dao.courrier']->findAll();
+        $user = $token->getUser();
+        return $app['twig']->render('index.html.twig', array('courriers' => $courriers,'user'=> $user));
+
     }
     
 

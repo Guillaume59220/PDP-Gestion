@@ -84,23 +84,27 @@
                             <th>Date</th>
                             <th>Annotation</th>
                             <th>Type courrier</th>
+                            <th>Fichier</th>
+                            <th>Date sortie</th>
                             <th></th>  <!-- Actions column -->
                         </tr>
                         </thead>
                         {% for courrier in courriers %}
-
+                           {#{{ dump(courriers) }}#}
                             <tr>
-                                <td>{{ courrier.idclient }}</td>
-                                <td>{{ courrier.dateentre }}</td>
-                                <td>{{ courrier.annotation }}</td>
-                                <td>{{ courrier.idtypecourrier }}</td>
+                                <td>{{ courrier['nom_client'] }}</td>
+                                <td>{{ courrier['date_entre'] }}</td>
+                                <td>{{ courrier['annotation'] }}</td>
+                                <td>{{ courrier['libelle_courrier'] }}</td>
+                                <td> {{ courrier['scan'] }} </td>
+                                <td>{{ courrier['date_sortie'] }}</td>
                                 <td>
-                                    <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier.idcourrier }) }}" class="btn btn-info btn-xs"
+                                    <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier['id_courrier'] }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
-                                            data-target="#courrierDialog{{ courrier.idcourrier }}"><span class="glyphicon glyphicon-trash"></span>
+                                            data-target="#courrierDialog{{ courrier['id_courrier'] }}"><span class="glyphicon glyphicon-trash"></span>
                                     </button>
-                                    <div class="modal fade" id="courrierDialog{{ courrier.idcourrier }}" tabindex="-1"
+                                    <div class="modal fade" id="courrierDialog{{ courrier['id_courrier'] }}" tabindex="-1"
                                          role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -113,7 +117,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                                    <a href="{{ path('admin_courrier_delete', { 'id': courrier.idcourrier }) }}"
+                                                    <a href="{{ path('admin_courrier_delete', { 'id': courrier['id_courrier'] }) }}"
                                                        class="btn btn-danger">Confirmer</a>
                                                 </div>
                                             </div><!-- /.modal-content -->

@@ -21,37 +21,33 @@ class CollabController{
             'clients' => $clients,
             ));
     }
-    public function courrierAction(Application $app){
-        $courrier= $app['dao.courrier']->findAll();
-        $type=$app['dao.type_courrier']->fechtAll();
-        $client= $app['dao.client']->fechAll();
-        return $app['twig']->render('admin.html.twig', array(
-            'courriers'=>$courrier,
-            'types'=> $type,
-            'clients'=> $client
-        ));
-
-    }
 
     public function addCourrierAction(Request $request, Application $app) {
         $courrier = new Courrier();
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
-        dump($courrierForm['scan']->getData());
-            $file = $courrier->getScan();
+            if(!empty($courrierForm['scan2']->getData())){
+
+
+            $file = $courrier->getScan2();
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
             $file->move(
                 '../uploads/Scans',
                 $fileName
             );
             $courrier->setScan($fileName);
+            }
+
+
             //return $app->redirect($app["url_generator"]->generate('app_scan_list'));
 
 
             $app['dao.courrier']->save($courrier);
+
             $app['session']->getFlashBag()->add('success', 'Le client a été ajouté.');
             return $app->redirect($app['url_generator']->generate('admin'));
+
         }
         return $app['twig']->render('courrier_form.html.twig', array(
             'title' => 'Ajouter courrier',
@@ -63,27 +59,30 @@ class CollabController{
         return md5(uniqid());
     }
 
-   /* public function new(Request $request, FileUploader $fileUploader)
-    {
-        // ...
-
-        if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
-            $file = $courrier->getScan();
-            $fileName = $fileUploader->upload($file);
-
-            $courrier->setScan($fileName);
-
-            // ...
-        }
-
-        // ...
-    }*/
 
     public function editCourrierAction($id, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id);
+        dump($courrier);
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
+            $scn = $courrierForm['scan2']->getData();
+            if($scn) {
+            dump($courrierForm['scan']->getData());
+
+            $file = $courrier->getScan2();
+            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            $file->move(
+                '../uploads/Scans',
+                $fileName);
+
+                $courrier->setScan($fileName);
+            }
+
+
+            //$courrier->getScan();
+
+
             $app['dao.courrier']->save($courrier);
             $app['session']->getFlashBag()->add('success', 'Le courrier a été modifié.');
             return $app->redirect($app['url_generator']->generate('admin'));

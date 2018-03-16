@@ -4,33 +4,42 @@
 
 {% block content %}
 
+    <div class="container">
+            <h1>Liste de courrier</h1>
+            <hr />
+                   {% if courriers is not empty %}
 
-
-        <div class="container">
-        <h1>Liste de courrier</h1>
-        <hr />
-
-        <table>
-            <tr>
-                <th>Numero courrier</th>
-                <th>Date</th>
-                <th>Libelle</th>
-                <th>Nom client</th>
-                <th>Annotation</th>
-                <th>Scan</th>
-            </tr>
-
-
-
-           <tr>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-                <td> 0 </td>
-             
-            </tr>
-        </table> 
+                <div class="table-responsive">
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Date</th>
+                            <th>Annotation</th>
+                            <th>Type courrier</th>
+                            <th>Fichier</th>
+                            <th>Scan</th>  <!-- Actions column -->
+                        </tr>
+                        </thead>
+                        {% for courrier in courriers %}
+                           {#{{ dump(courriers) }}#}
+                            <tr>
+                                <td>{{ courrier['nom_client'] }}</td>
+                                <td>{{ courrier['date_entre'] }}</td>
+                                <td>{{ courrier['annotation'] }}</td>
+                                <td>{{ courrier['libelle_courrier'] }}</td>
+                                <td> {{ courrier['scan'] }} </td>
+                                <td>
+                                    {% if courrier.scan is not empty %}
+                                    <a href="{{path ('download_scan',{'filename':courrier.scan}) }}" class="btn btn-success btn-xs" title="Download" download>
+                                    <span class="glyphicon glyphicon-cloud-download"></span></a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
     </div>
 
 {% endblock %}
