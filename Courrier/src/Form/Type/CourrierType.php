@@ -48,11 +48,17 @@ class CourrierType extends AbstractType
                 'input'=> 'string'
 
             ))
-            ->add('scan', FileType::class, array(
+            ->add('scan', TextType::class, array(
                 'label'=> 'Fichier ',
                 'data_class' => null,
                 'required' => false
             ))
+            ->add('scan2', FileType::class, array(
+                'label'=> 'Fichier ',
+                'data_class' => null,
+                'required' => false
+            ))
+
             ->add('fax', TextType::class, array(
                 'required' => false
             ))

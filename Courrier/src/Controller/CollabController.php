@@ -62,8 +62,8 @@ class CollabController{
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
-
-            if($courrierForm['scan']->getData()) {
+            $scn = $courrierForm['scan2']->getData();
+            if($scn) {
             dump($courrierForm['scan']->getData());
 
             $file = $courrier->getScan();

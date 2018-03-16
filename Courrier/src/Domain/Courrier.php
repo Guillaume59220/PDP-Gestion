@@ -9,10 +9,27 @@ class Courrier
             $date_entre,
             $date_sortie,
             $scan,
+            $scan2,
             $fax,
             $annotation,
             $id_client,
             $id_type_courrier;
+
+    /**
+     * @return mixed
+     */
+    public function getScan2()
+    {
+        return $this->scan2;
+    }
+
+    /**
+     * @param mixed $scan2
+     */
+    public function setScan2($scan2)
+    {
+        $this->scan2 = $scan2;
+    }
 
 
     /**
