@@ -12,7 +12,7 @@ class CourrierDAO extends DAO
         INNER JOIN client c2 ON courrier.id_client = c2.id_client
         order by date_entre desc";
         $result = $this->getDb()->fetchAll($sql);
-            dump($result);
+
         $courrier = array();
         foreach ($result as $row) {
             $courrierId = $row['id_courrier'];

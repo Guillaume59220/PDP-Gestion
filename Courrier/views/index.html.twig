@@ -3,40 +3,40 @@
 {% block title %} Liste courrier {% endblock %}
 
 {% block content %}
-    <td>{{ user.username }}</td>
-
 
     <div class="container">
             <h1>Liste de courrier</h1>
             <hr />
-        <div class="table-responsive">
-                <table class="table table-hover table-condensed">
-                <thead>
+                   {% if courriers is not empty %}
 
+                <div class="table-responsive">
+                    <table class="table table-hover table-condensed">
+                        <thead>
                         <tr>
-                            <th>Numero courrier</th>
+                            <th>Client</th>
                             <th>Date</th>
-                            <th>Libelle</th>
-                            <th>Nom client</th>
                             <th>Annotation</th>
-                            <th>Scan</th>
+                            <th>Type courrier</th>
+                            <th>Fichier</th>
+                            <th>Scan</th>  <!-- Actions column -->
                         </tr>
                         </thead>
-
-
-
-                        <tr>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td> 0 </td>
-                            <td><a href="images/4ebbcc3b61e13037b584539287af22cf_400x400.jpeg"
-                                class="btn btn-success btn-xs" title="Download" download="Mota.jpeg">
-                                <span class="glyphicon glyphicon-cloud-download"></span></a></td>
-                        </tr>
-                </table> 
-        </div>
+                        {% for courrier in courriers %}
+                           {#{{ dump(courriers) }}#}
+                            <tr>
+                                <td>{{ courrier['nom_client'] }}</td>
+                                <td>{{ courrier['date_entre'] }}</td>
+                                <td>{{ courrier['annotation'] }}</td>
+                                <td>{{ courrier['libelle_courrier'] }}</td>
+                                <td> {{ courrier['scan'] }} </td>
+                                <td><a href="{{path ('download_scan',{'filename':courrier.scan}) }}" class="btn btn-success btn-xs" title="Download" download>
+                                    <span class="glyphicon glyphicon-cloud-download"></span></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            {% endif %}
     </div>
 
 {% endblock %}
