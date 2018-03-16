@@ -50,7 +50,8 @@ class CollabController{
 
 
             $app['dao.courrier']->save($courrier);
-            $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
+            $app['session']->getFlashBag()->add('success', 'Le client a été ajouté.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('courrier_form.html.twig', array(
             'title' => 'Ajouter courrier',
@@ -84,7 +85,8 @@ class CollabController{
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
             $app['dao.courrier']->save($courrier);
-            $app['session']->getFlashBag()->add('success', 'Liste des courriers a ete bien modifie.');
+            $app['session']->getFlashBag()->add('success', 'Le courrier a été modifié.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('courrier_form.html.twig', array(
             'title' => 'Modification courrier',
@@ -109,7 +111,8 @@ class CollabController{
             $password = $encoder->encodePassword($plainPassword, $client->getSalt());
             $client->setPassword($password);
             $app['dao.client']->save($client);
-            $app['session']->getFlashBag()->add('success', 'Le client a ete bien ajoute.');
+            $app['session']->getFlashBag()->add('success', 'Le client a été ajouté.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Ajouter client',
@@ -124,7 +127,8 @@ class CollabController{
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
             $app['dao.client']->save($client);
-            $app['session']->getFlashBag()->add('success', '.');
+            $app['session']->getFlashBag()->add('success', 'Le client a été modifié.');
+            return $app->redirect($app['url_generator']->generate('admin'));
         }
         return $app['twig']->render('client_form.html.twig', array(
             'title' => 'Edit client',

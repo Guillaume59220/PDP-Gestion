@@ -16,7 +16,7 @@ class AdminController {
 
     public function indexAction(Application $app) {
         $courriers = $app['dao.courrier']->findAll();
-        $clients = $app['dao.client']->findAll();
+        $clients = $app['dao.clients']->findAll();
         $users = $app['dao.user']->findAll();
         return $app['twig']->render('admin.html.twig', array(
             'courriers' => $courriers,
@@ -24,6 +24,7 @@ class AdminController {
             'users' => $users));
     }
 
+<<<<<<< HEAD
     public function loginAction(Request $request, Application $app) {
        
 
@@ -33,7 +34,21 @@ class AdminController {
             'error'            => $app['security.last_error']($request),
             'last_username' => $app['session']->get('_security.last_username'),
         ));
+=======
+    public function addCourrierAction(Request $request, Application $app) {
+        $courrier = new Courrier();
+        $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier);
+        $courrierForm->handleRequest($request);
+        if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {
+            $app['dao.courrier']->save($courrier);
+            $app['session']->getFlashBag()->add('success', 'Le courrier a ete bien ajoute.');
+        }
+        return $app['twig']->render('courrier_form.html.twig', array(
+            'title' => 'Ajouter courrier',
+            'courrierForm' => $courrierForm->createView()));
+>>>>>>> 035db69e4fc27a1464ad5009d8f8893da9bac4b6
     }
+
 
 
     public function deleteCourrierAction($id, Application $app) {
@@ -41,7 +56,6 @@ class AdminController {
         $app['session']->getFlashBag()->add('success', 'Le courrier a ete supprime.');
         return $app->redirect($app['url_generator']->generate('admin'));
     }
-
 
     public function deleteClientAction($id, Application $app) {
         $app['dao.client']->delete($id);
@@ -67,6 +81,7 @@ class AdminController {
             if (is_array($user->getRoles()[0])) {
                 $user->setRoles($user->getRoles()[0][0], true);
             }
+            dump($user);
             $app['dao.user']->save($user);
             $app['session']->getFlashBag()->add('success', 'utilisateur a ete cree.');
             return $app->redirect($app['url_generator']->generate('admin'));
@@ -76,6 +91,35 @@ class AdminController {
             'userForm' => $userForm->createView()));
 
     }
+
+    public function addClientAction( Request $request,Application $app){
+        $client= new Client;
+        $clientForm= $app['form.factory']->create(ClientType::class, $client);
+        $clientForm->handleRequest($request);
+        if ($clientForm->isSubmitted() && $clientForm->isValid()) {
+            $app['dao.clients']->save($client);
+            $app['session']->getFlashBag()->add('success', 'Le client a ete bien ajoute.');
+        }
+        return $app['twig']->render('client_form.html.twig', array(
+            'title' => 'Ajouter client',
+            'clientForm' => $clientForm->createView()));
+
+    }
+    public function editClientAction($id,Request $request, Application $app){
+
+        $client=$app['dao.clients']->find($id);
+        $clientForm=$app['form.factory']->create(ClientType::class, $client);
+        $clientForm->handleRequest($request);
+        if ($clientForm->isSubmitted() && $clientForm->isValid()) {
+            $app['dao.clients']->save($client);
+            $app['session']->getFlashBag()->add('success', 'Le client a ete bien change.');
+        }
+        return $app['twig']->render('client_form.html.twig', array(
+            'title' => 'Edit client',
+            'clientForm' => $clientForm->createView()));
+
+    }
+
 
     public function editUserAction($id, Request $request, Application $app) {
         $user = $app['dao.user']->find($id);
@@ -96,6 +140,7 @@ class AdminController {
             'title' => 'Edit user',
             'userForm' => $userForm->createView()));
     }
+
 
     public function deleteUserAction($id, Application $app) {
 
