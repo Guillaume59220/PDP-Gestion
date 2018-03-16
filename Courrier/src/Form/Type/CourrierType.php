@@ -42,31 +42,44 @@ class CourrierType extends AbstractType
     {
         $app = $options['app'];
         $builder
+            #  la date d'ajout de courrier
             ->add('date_entre', DateType::class, array(
                 #'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy',
                 'input'=> 'string',
-                'html5' => false,
-                'attr' => ['class' => 'js-datepicker']
+
+
             ))
+            #ajouter le scan
+
             ->add('scan', FileType::class, array(
                 'label'=> 'Fichier ',
                 'data_class' => null,
                 'required' => false
             ))
+            # ajouter fax
+
             ->add('fax', TextType::class, array(
                 'required' => false
             ))
-            ->add('annotation', TextareaType::class)
-            ->add('date_sortie', TextType::class , array(
-                'required' => false,
+            # ajouter commentaire
 
+            ->add('annotation', TextareaType::class)
+
+            # ajouter date de sortie de courrier
+
+            ->add('date_sortie', DateType::class , array(
+                'required' => false,
+                'format' => 'dd/MM/yyyy',
+                'input'=> 'string'
             ))
+            # choix client
             ->add('id_client',ChoiceType::class, array(
                 'choices' =>$this->choiceClient($app),
                 'multiple' => false,
                 'label'=> 'Client'
                 ))
+            #choix du type de courrier
             ->add('id_type_courrier', ChoiceType::class, array(
                 'choices' =>  $this->choiceCourrier($app),
                 'multiple' => false,

@@ -119,14 +119,6 @@ class __TwigTemplate_2528f329430790a5ca2d1d967578a222f96a4103e54a96b95082bde96fe
         // line 48
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("lib/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
-<script>
-    \$(document).ready(function() {
-        // you may need to change this code if you are not using Bootstrap Datepicker
-        \$('.js-datepicker').datepicker({
-            format: 'dd-mm-yyyy'
-        });
-    });
-</script>
 </body>
 </html>
 ";
@@ -154,7 +146,7 @@ class __TwigTemplate_2528f329430790a5ca2d1d967578a222f96a4103e54a96b95082bde96fe
 
     public function getDebugInfo()
     {
-        return array (  141 => 39,  136 => 10,  120 => 48,  115 => 46,  105 => 39,  99 => 35,  92 => 31,  87 => 29,  83 => 27,  80 => 26,  77 => 25,  74 => 24,  64 => 22,  62 => 21,  56 => 18,  45 => 10,  41 => 9,  37 => 8,  33 => 7,  25 => 1,);
+        return array (  133 => 39,  128 => 10,  120 => 48,  115 => 46,  105 => 39,  99 => 35,  92 => 31,  87 => 29,  83 => 27,  80 => 26,  77 => 25,  74 => 24,  64 => 22,  62 => 21,  56 => 18,  45 => 10,  41 => 9,  37 => 8,  33 => 7,  25 => 1,);
     }
 
     public function getSourceContext()
@@ -207,14 +199,6 @@ class __TwigTemplate_2528f329430790a5ca2d1d967578a222f96a4103e54a96b95082bde96fe
 <script src=\"{{ asset('lib/jquery/jquery.min.js') }}\"></script>
 <!-- JavaScript Boostrap plugin -->
 <script src=\"{{ asset('lib/bootstrap/js/bootstrap.min.js') }}\"></script>
-<script>
-    \$(document).ready(function() {
-        // you may need to change this code if you are not using Bootstrap Datepicker
-        \$('.js-datepicker').datepicker({
-            format: 'dd-mm-yyyy'
-        });
-    });
-</script>
 </body>
 </html>
 ", "layout.html.twig", "C:\\xampp\\htdocs\\PDP-Gestion\\Courrier\\views\\layout.html.twig");

@@ -253,7 +253,7 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
             }}) }}
             <div class=\"col-sm-6\">
                 {{ form_errors(courrierForm.date_entre) }}
-                {{ form_widget(courrierForm.date_entre, { 'attr':  {
+                {{ form_widget(courrierForm.date_entre , { 'attr':  {
                     'class': 'form-control'
                 }}) }}
             </div>
