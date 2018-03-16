@@ -43,10 +43,11 @@ class CourrierType extends AbstractType
         $app = $options['app'];
         $builder
             ->add('date_entre', DateType::class, array(
-                'widget' => 'single_text',
+                #'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy',
-                'input'=> 'string'
-
+                'input'=> 'string',
+                'html5' => false,
+                'attr' => ['class' => 'js-datepicker']
             ))
             ->add('scan', TextType::class, array(
                 'label'=> 'Fichier ',
