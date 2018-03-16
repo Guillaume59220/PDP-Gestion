@@ -61,11 +61,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
+      <file leaf-file-name="liste_courrier.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/liste_courrier.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+<<<<<<< HEAD
+            <state relative-caret-position="153">
               <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+=======
+            <state relative-caret-position="540">
+              <caret line="27" column="148" lean-forward="false" selection-start-line="27" selection-start-column="148" selection-end-line="27" selection-end-column="148" />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
               <folding />
             </state>
           </provider>
@@ -74,14 +79,9 @@
       <file leaf-file-name="CourrierDAO.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DAO/CourrierDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1300">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <marker date="1521191883192" expanded="true" signature="143:351" ph="select * fro... courrier" />
-                <marker date="1521191883192" expanded="true" signature="710:753" ph="select * fro... courrier" />
-                <marker date="1521191883192" expanded="true" signature="1061:1088" ph="SELECT * FRO... type_courrier" />
-                <marker date="1521191883192" expanded="true" signature="1362:1402" ph="SELECT id_cl... client" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,9 +89,15 @@
       <file leaf-file-name="ClientType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/Type/ClientType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="34" column="11" lean-forward="true" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-              <folding />
+            <state relative-caret-position="459">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <marker date="1521198423607" expanded="true" signature="898:909" ph="..." />
+                <marker date="1521198423607" expanded="true" signature="898:918" ph="{...}" />
+                <marker date="1521198423607" expanded="true" signature="898:1159" ph="{...}" />
+                <marker date="1521198423607" expanded="true" signature="983:1088" ph="{...}" />
+                <marker date="1521198423607" expanded="true" signature="1120:1157" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,12 +112,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourrierType.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CourrierType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/Type/CourrierType.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="420">
-              <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+              <caret line="78" column="19" lean-forward="false" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
+              <folding>
+                <marker date="1521205020114" expanded="true" signature="1218:1232" ph="..." />
+              </folding>
+=======
+            <state relative-caret-position="360">
+              <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
               <folding />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
             </state>
           </provider>
         </entry>
@@ -119,21 +133,27 @@
       <file leaf-file-name="Courrier.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Domain/Courrier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1140">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="575">
+              <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CollabController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CollabController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/CollabController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+<<<<<<< HEAD
+            <state relative-caret-position="668">
+              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
+=======
+            <state relative-caret-position="520">
+              <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
               <folding>
-                <element signature="e#2915#3527#0#PHP" expanded="false" />
+                <element signature="e#2974#3586#0#PHP" expanded="false" />
               </folding>
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
             </state>
           </provider>
         </entry>
@@ -141,8 +161,13 @@
       <file leaf-file-name="courrier_form.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/courrier_form.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+<<<<<<< HEAD
+            <state relative-caret-position="272">
+              <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+=======
+            <state relative-caret-position="400">
+              <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
               <folding />
             </state>
           </provider>
@@ -151,9 +176,18 @@
       <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
+<<<<<<< HEAD
+            <state relative-caret-position="1445">
               <caret line="85" column="50" lean-forward="false" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+              <folding>
+                <marker date="1521196201189" expanded="true" signature="7613:7954" ph="..." />
+                <marker date="1521196201189" expanded="true" signature="7620:7711" ph="..." />
+              </folding>
+=======
+            <state relative-caret-position="360">
+              <caret line="96" column="69" lean-forward="true" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="69" />
               <folding />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
             </state>
           </provider>
         </entry>
@@ -166,17 +200,22 @@
         <option value="$PROJECT_DIR$/views/collaborateur.html.twig" />
         <option value="$PROJECT_DIR$/db/domiciliation.sql" />
         <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
-        <option value="$PROJECT_DIR$/src/Domain/Courrier.php" />
         <option value="$PROJECT_DIR$/views/index.html.twig" />
         <option value="$PROJECT_DIR$/src/DAO/ClientDAO.php" />
         <option value="$PROJECT_DIR$/app/app.php" />
         <option value="$PROJECT_DIR$/src/Controller/AdminController.php" />
-        <option value="$PROJECT_DIR$/views/admin.html.twig" />
         <option value="$PROJECT_DIR$/src/DAO/CourrierDAO.php" />
-        <option value="$PROJECT_DIR$/src/Controller/CollabController.php" />
-        <option value="$PROJECT_DIR$/views/courrier_form.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/Type/ClientType.php" />
+        <option value="$PROJECT_DIR$/views/courrier_form.html.twig" />
+        <option value="$PROJECT_DIR$/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/Type/CourrierType.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/Domain/Courrier.php" />
+=======
+        <option value="$PROJECT_DIR$/src/Controller/CollabController.php" />
+        <option value="$PROJECT_DIR$/views/admin.html.twig" />
+        <option value="$PROJECT_DIR$/views/liste_courrier.html.twig" />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
       </list>
     </option>
   </component>
@@ -230,37 +269,6 @@
             <path>
               <item name="Courrier" type="b2602c69:ProjectViewProjectNode" />
               <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Courrier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="DAO" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Courrier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Domain" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Courrier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Courrier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Type" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Courrier" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Courrier" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="uploads" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -310,18 +318,27 @@
       <workItem from="1521016997616" duration="7966000" />
       <workItem from="1521028187522" duration="471000" />
       <workItem from="1521103359770" duration="7285000" />
+<<<<<<< HEAD
       <workItem from="1521189648924" duration="8974000" />
+      <workItem from="1521205490747" duration="215000" />
+=======
+      <workItem from="1521189648924" duration="12658000" />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38573000" />
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="38788000" />
+=======
+    <option name="totallyTimeSpent" value="42257000" />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11608094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11727079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31344903" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -366,7 +383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -374,7 +390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -382,9 +397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1460">
           <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <marker date="1521105211992" expanded="true" signature="2658:2685" ph="SELECT * FRO... type_courrier" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -392,7 +404,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1521205020114" expanded="true" signature="1218:1232" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -408,9 +422,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+<<<<<<< HEAD
+          <folding />
+=======
           <folding>
-            <element signature="e#2915#3527#0#PHP" expanded="false" />
+            <element signature="e#2974#3586#0#PHP" expanded="false" />
           </folding>
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
         </state>
       </provider>
     </entry>
@@ -418,7 +436,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
           <caret line="85" column="50" lean-forward="false" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-          <folding />
+          <folding>
+            <marker date="1521196201189" expanded="true" signature="7613:7954" ph="..." />
+            <marker date="1521196201189" expanded="true" signature="7620:7711" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -426,12 +447,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <marker date="1521191883192" expanded="true" signature="143:351" ph="select * fro... courrier" />
-            <marker date="1521191883192" expanded="true" signature="710:753" ph="select * fro... courrier" />
-            <marker date="1521191883192" expanded="true" signature="1061:1088" ph="SELECT * FRO... type_courrier" />
-            <marker date="1521191883192" expanded="true" signature="1362:1402" ph="SELECT id_cl... client" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -449,17 +465,10 @@
     <entry file="file://$PROJECT_DIR$/src/DAO/CourrierDAO.php" />
     <entry file="file://$PROJECT_DIR$/views/layout.html.twig" />
     <entry file="file://$PROJECT_DIR$/views/admin.html.twig" />
-    <entry file="file://$PROJECT_DIR$/views/layout.html.twig" />
     <entry file="file://$PROJECT_DIR$/uploads/Scans/6b7c4bcec7baafcafeaabb94cfba4dfd.jpeg" />
     <entry file="file://$PROJECT_DIR$/db/domiciliation.sql" />
     <entry file="file://$PROJECT_DIR$/views/collaborateur.html.twig" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/397c6713-547a-49c9-b08c-f327a342e5ea/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/397c6713-547a-49c9-b08c-f327a342e5ea/console.sql" />
     <entry file="file://$PROJECT_DIR$/views/user_form.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php" />
     <entry file="file://$PROJECT_DIR$/uploads/Scans/ea0e269c4767ff057cbb8de95cef5b2a.jpeg" />
@@ -477,11 +486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <marker date="1521028118867" expanded="true" signature="145:189" ph="select * fro... client" />
-            <marker date="1521028118867" expanded="true" signature="598:655" ph="select * fro... client" />
-            <marker date="1521028118867" expanded="true" signature="819:857" ph="select * fro... client" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -490,7 +494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -498,7 +501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -506,41 +508,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1280">
           <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <marker date="1521105211992" expanded="true" signature="2658:2685" ph="SELECT * FRO... type_courrier" />
-          </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/views/liste_courrier.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
+        <state relative-caret-position="1445">
           <caret line="85" column="50" lean-forward="false" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-          <folding />
+          <folding>
+            <marker date="1521196201189" expanded="true" signature="7613:7954" ph="..." />
+            <marker date="1521196201189" expanded="true" signature="7620:7711" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
     <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="153">
           <caret line="17" column="52" lean-forward="false" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uploads/Scans/0ce6bab0da9f3f7999e07f592d25f6b8.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/uploads/Scans/0ce6bab0da9f3f7999e07f592d25f6b8.jpeg" />
     <entry file="file://$PROJECT_DIR$/src/Form/Type/UserType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -549,6 +549,51 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Form/Type/ClientType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <marker date="1521198423607" expanded="true" signature="898:909" ph="..." />
+            <marker date="1521198423607" expanded="true" signature="898:918" ph="{...}" />
+            <marker date="1521198423607" expanded="true" signature="898:1159" ph="{...}" />
+            <marker date="1521198423607" expanded="true" signature="983:1088" ph="{...}" />
+            <marker date="1521198423607" expanded="true" signature="1120:1157" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/courrier_form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Domain/Courrier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1140">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/CourrierDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Form/Type/CourrierType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="78" column="19" lean-forward="false" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
+          <folding>
+            <marker date="1521205020114" expanded="true" signature="1218:1232" ph="..." />
+=======
     <entry file="file://$PROJECT_DIR$/src/Form/Type/ClientType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
@@ -557,49 +602,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/courrier_form.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Controller/CollabController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+        <state relative-caret-position="520">
+          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding>
+            <element signature="e#2974#3586#0#PHP" expanded="false" />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="575">
+          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+=======
+        <state relative-caret-position="360">
+          <caret line="96" column="69" lean-forward="true" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/CourrierDAO.php">
+    <entry file="file://$PROJECT_DIR$/views/liste_courrier.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1300">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1521191883192" expanded="true" signature="143:351" ph="select * fro... courrier" />
-            <marker date="1521191883192" expanded="true" signature="710:753" ph="select * fro... courrier" />
-            <marker date="1521191883192" expanded="true" signature="1061:1088" ph="SELECT * FRO... type_courrier" />
-            <marker date="1521191883192" expanded="true" signature="1362:1402" ph="SELECT id_cl... client" />
-          </folding>
+        <state relative-caret-position="540">
+          <caret line="27" column="148" lean-forward="false" selection-start-line="27" selection-start-column="148" selection-end-line="27" selection-end-column="148" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/courrier_form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CollabController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-          <folding>
-            <element signature="e#2915#3527#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Courrier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1140">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Type/CourrierType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+<<<<<<< HEAD
+        <state relative-caret-position="668">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+=======
+        <state relative-caret-position="360">
+          <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+>>>>>>> 24126b40f3b59b0c65a42d4f34b54114029673b1
           <folding />
         </state>
       </provider>
