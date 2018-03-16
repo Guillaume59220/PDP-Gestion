@@ -4,6 +4,7 @@ namespace Courrier\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -11,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Silex\Application;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 
 class CourrierType extends AbstractType
@@ -52,7 +52,15 @@ class CourrierType extends AbstractType
             ))
             #ajouter le scan
 
-            ->add('scan', FileType::class, array(
+            ->add('scan', TextType::class, array(
+                'label'=> 'Fichier ',
+                'data_class' => null,
+                'required' => false,
+
+            ))
+
+            #scan2
+            ->add('scan2', FileType::class, array(
                 'label'=> 'Fichier ',
                 'data_class' => null,
                 'required' => false
