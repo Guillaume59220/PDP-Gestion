@@ -9,7 +9,7 @@ $app->get('/login', "Courrier\Controller\HomeController::loginAction")
 $app->match('/courrier/{id_courrier}', "Courrier\Controller\HomeController::CourrierAction")
     ->bind('courrier');
 
-$app->get('/admin', "Courrier\Controller\AdminController::indexAction")
+$app->get('/admin/', "Courrier\Controller\AdminController::indexAction")
     ->bind('admin');
 
 $app->get('/collaborateur', "Courrier\Controller\CollabController::indexAction")
