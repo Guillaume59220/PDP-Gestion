@@ -248,7 +248,7 @@ class __TwigTemplate_42095493dbfd4340f939dccf1a48afcc69bf300b11a08f8843e8f2a39ef
     <div class=\"well\">
         {{ form_start(courrierForm, { 'attr': {'class': 'form-horizontal'} }) }}
         <div class=\"form-group\">
-            {{ form_label(courrierForm.date_entre, null, { 'label_attr':  {
+            {{ form_label(courrierForm.date_entre , null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}
             <div class=\"col-sm-6\">

@@ -45,7 +45,7 @@ class CourrierType extends AbstractType
             ->add('date_entre', DateType::class, array(
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy',
-                'input'=> 'string',
+                'input'=> 'string'
 
             ))
             ->add('scan', FileType::class, array(
@@ -57,11 +57,9 @@ class CourrierType extends AbstractType
                 'required' => false
             ))
             ->add('annotation', TextareaType::class)
-            ->add('date_sortie', DateType::class , array(
+            ->add('date_sortie', TextType::class , array(
                 'required' => false,
-                'widget' => 'single_text',
-                'format' => 'dd/MM/yyyy',
-                'input'=> 'string'
+
             ))
             ->add('id_client',ChoiceType::class, array(
                 'choices' =>$this->choiceClient($app),
