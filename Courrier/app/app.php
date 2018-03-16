@@ -53,23 +53,6 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
             'logout' => array(
                 'logout_path' => '/admin/logout',
         ),
-<<<<<<< HEAD
-=======
-
-
-        'admin' => array(
-            'pattern' => '^/admin/',
-
-            'form' => array(
-                'login_path' => '/login/admin',
-                'check_path' => '/admin/login_check',
-                'logout' => array('logout_path' => '/admin/logout',
-                    'invalidate_session' => true
-                ),
-
-            ),
-
->>>>>>> 035db69e4fc27a1464ad5009d8f8893da9bac4b6
             'users' => function () use ($app) {
                 return new UserDAO($app['db']);
             },
