@@ -3,7 +3,7 @@
 $app->get('/', "Courrier\Controller\HomeController::indexAction")
     ->bind('home');
 
-$app->get('/login', "Courrier\Controller\HomeController::loginAction")
+$app->match('/login', "Courrier\Controller\HomeController::loginAction")
     ->bind('login');
 
 $app->match('/courrier/{id_courrier}', "Courrier\Controller\HomeController::courrierAction")
@@ -11,12 +11,6 @@ $app->match('/courrier/{id_courrier}', "Courrier\Controller\HomeController::cour
 
 $app->get('/admin/', "Courrier\Controller\AdminController::indexAction")
     ->bind('admin');
-
-$app->get('/login/admin', "Courrier\Controller\AdminController::loginAction")
-    ->bind('admin_login');
-
-$app->get('/login/admin', "Courrier\Controller\AdminController::logoutAction")
-    ->bind('admin_logout');
 
 $app->get('/collaborateur', "Courrier\Controller\CollabController::indexAction")
     ->bind('collaborateur');

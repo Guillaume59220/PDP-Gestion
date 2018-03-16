@@ -82,8 +82,17 @@ class UserDAO extends DAO implements UserProviderInterface
             #dump($this->buildDomainObject($row));
             return $this->buildDomainObject($row);
         } else {
-            throw new UsernameNotFoundException(sprintf('User "%s" not found.', $username));
+            $sql = "select * from client where code_client=?";
+            $row = $this->getDb()->fetchAssoc($sql, array($username));
+
+            if ($row) {
+                #dump($this->buildDomainObject($row));
+                return $this->buildDomainObject($row);
+            } else {
+                throw new UsernameNotFoundException(sprintf('User "%s" not found.', $username));
+            }
         }
+
     }
 
 
@@ -110,13 +119,27 @@ class UserDAO extends DAO implements UserProviderInterface
 
 
     protected function buildDomainObject(array $row) {
-        $user = new User();
-        $user->setId($row['id_user']);
-        $user->setUsername($row['username']);
-        $user->setPassword($row['password']);
-        $user->setSalt($row['salt']);
-        $user->setRoles($row['role_user']);
-        return $user;
+
+
+        if (array_key_exists('id_client', $row)){
+            $user = new User();
+            $user->setId($row['id_client']);
+            $user->setUsername($row['code_client']);
+            $user->setPassword($row['password']);
+            $user->setSalt($row['salt']);
+            $user->setRoles($row['role_user']);
+            return $user;
+        }
+        else {
+            $user = new User();
+            $user->setId($row['id_user']);
+            $user->setUsername($row['username']);
+            $user->setPassword($row['password']);
+            $user->setSalt($row['salt']);
+            $user->setRoles($row['role_user']);
+            return $user;
+        }
+
     }
 }
 

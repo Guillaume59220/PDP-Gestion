@@ -36,74 +36,38 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\SecurityServiceProvider(), array(
 
-    /*'security.user_providers' => array(
-        'db_client' => array(
-            'entity' => array(
-                'class' => Client::class,
-                'property' => 'code_client',
-            ),
-        ),
-        'db_user' => array(
-            'entity' => array(
-                'class' => User::class,
-                'property' => 'username',
-            ),
-        ),
-    ),*/
+
 
     'security.firewalls' => array(
 
-        'client' => array(
-            'pattern' => '^/client/',
+        'login' => array(
+            'pattern' => '^/login$',
+        ),
 
+        'secured' => array(
+            'pattern' => '^.*$',
             'form' => array(
                 'login_path' => '/login',
                 'check_path' => '/login_check',
-                'logout' => array('logout_path' => '/logout',
-                    'invalidate_session' => true
-                ),
-
             ),
-
-            'users' => function () use ($app) {
-                return new ClientDAO($app['db']);
-            },
-
+            'logout' => array(
+                'logout_path' => '/admin/logout',
         ),
-
-
-        'admin' => array(
-            'pattern' => '^/admin/',
-
-            'form' => array(
-                'login_path' => '/admin/login',
-                'check_path' => '/admin/login_check',
-                'logout' => array('logout_path' => '/admin/logout',
-                    'invalidate_session' => true
-                ),
-
-            ),
-
             'users' => function () use ($app) {
                 return new UserDAO($app['db']);
             },
+            'anonymous' => true,
         ),
-
-
-
-
 
     ),
     'security.role_hierarchy' => array(
         'ROLE_ADMIN' => array('ROLE_EVENT_CREATE', 'ROLE_CUSTOMER'),
         'ROLE_CREATE_EVENT' => array('ROLE_USER'),
         'ROLE_CUSTOMER' => array('ROLE_USER')
-
     ),
     'security.access_rules' => array(
         array('^/admin', 'ROLE_ADMIN'),
-        array('^admin/login', 'IS_AUTHENTICATED_ANONYMOUSLY'),
-        array('^/login$', 'IS_AUTHENTICATED_ANONYMOUSLY'),
+        array('^/login', 'IS_AUTHENTICATED_ANONYMOUSLY'),
         array('^/', 'ROLE_USER'),
         array('^/collaborateur', 'ROLE_EVENT_CREATE'),
     ),
@@ -131,3 +95,20 @@ $app->before(function (Request $request) {
         $request->request->replace(is_array($data) ? $data : array());
     }
 });
+
+
+
+    /*'security.user_providers' => array(
+        'db_client' => array(
+            'entity' => array(
+                'class' => Client::class,
+                'property' => 'code_client',
+            ),
+        ),
+        'db_user' => array(
+            'entity' => array(
+                'class' => User::class,
+                'property' => 'username',
+            ),
+        ),
+    ),*/
