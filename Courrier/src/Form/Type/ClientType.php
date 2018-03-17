@@ -18,7 +18,12 @@ class ClientType extends AbstractType
             ->add('nom_client', TextType::class)
             ->add('code_client', TextType::class)
             ->add('siren', TextType::class)
-            ->add('date_contract', TextType::class)
+            ->add('date_contract', DateType::class, array(
+                'widget' => 'single_text',
+                'format' => 'dd/MM/yyyy',
+                'input'=> 'string',
+
+            ))
             ->add('capital',NumberType::class);
 
     }

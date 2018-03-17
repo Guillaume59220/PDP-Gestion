@@ -9,7 +9,7 @@ $app->get('/login', "Courrier\Controller\HomeController::loginAction")
 $app->match('/courrier/{id_courrier}', "Courrier\Controller\HomeController::CourrierAction")
     ->bind('courrier');
 
-$app->get('/admin', "Courrier\Controller\AdminController::indexAction")
+$app->get('/admin/', "Courrier\Controller\AdminController::indexAction")
     ->bind('admin');
 
 $app->get('/collaborateur', "Courrier\Controller\CollabController::indexAction")
@@ -18,6 +18,8 @@ $app->get('/collaborateur', "Courrier\Controller\CollabController::indexAction")
 $app->get('/user', "Courrier\Controller\CollabController::indexAction")
     ->bind('user');
 
+$app->get('/download/{filename}',"Courrier\Controller\DownloadController::downloadAction")
+    ->bind('download_scan');
 
 
 
