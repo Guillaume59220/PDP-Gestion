@@ -4,7 +4,6 @@ namespace Courrier\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -44,8 +43,9 @@ class CourrierType extends AbstractType
         $builder
             #  la date d'ajout de courrier
             ->add('date_entre', DateType::class, array(
-                #'widget' => 'single_text',
+                'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy',
+                'attr' => ['class' => 'date'],
                 'input'=> 'string',
 
 
@@ -78,8 +78,14 @@ class CourrierType extends AbstractType
 
             ->add('date_sortie', DateType::class , array(
                 'required' => false,
+                'widget' => 'single_text',
+                'html5' => true,
                 'format' => 'dd/MM/yyyy',
-                'input'=> 'string'
+                'attr' => ['class' => 'date'],
+                'input'=> 'string',
+
+
+
             ))
             # choix client
             ->add('id_client',ChoiceType::class, array(

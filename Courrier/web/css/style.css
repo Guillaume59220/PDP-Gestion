@@ -1,6 +1,10 @@
 body {
     padding-top: 50px;
 }
+
+.displaynone {
+    display: none;
+}
 .footer {
     border-top: 1px solid #ccc;
     padding-top: 10px;

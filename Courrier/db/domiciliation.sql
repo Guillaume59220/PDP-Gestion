@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 07 mars 2018 à 16:58
+-- Généré le :  lun. 19 mars 2018 à 16:11
 -- Version du serveur :  10.1.22-MariaDB
 -- Version de PHP :  7.1.4
 
@@ -48,10 +48,11 @@ CREATE TABLE `client` (
   `domination_sociale` varchar(145) NOT NULL,
   `capital` int(11) NOT NULL,
   `password` varchar(150) NOT NULL,
-  `role_user` varchar(150) NOT NULL,
-  `salt` varchar(150) NOT NULL
+  `salt` varchar(150) NOT NULL,
+  `role_user` varchar(150) NOT NULL DEFAULT 'ROLE_USER'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
 -- --------------------------------------------------------
 
 --
@@ -77,17 +78,19 @@ CREATE TABLE `contract` (
 
 CREATE TABLE `courrier` (
   `id_courrier` int(11) NOT NULL,
-  `numero_courrier` int(11) NOT NULL,
   `date_entre` date DEFAULT NULL,
   `date_sortie` date DEFAULT NULL,
-  `scan` varchar(45) NOT NULL,
-  `fax` varchar(45) NOT NULL,
+  `scan` varchar(45) DEFAULT NULL,
+  `fax` varchar(45) DEFAULT NULL,
   `annotation` longtext,
   `id_client` int(11) NOT NULL,
   `id_type_courrier` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+--
+-------------------------------------------------------------
+--
+
 
 --
 -- Structure de la table `departement`
@@ -246,6 +249,15 @@ CREATE TABLE `type_courrier` (
   `libelle_courrier` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `type_courrier`
+--
+
+INSERT INTO `type_courrier` (`id_type_courrier`, `libelle_courrier`) VALUES
+(1, 'Lettre'),
+(2, 'Colis')
+(3, 'Lettre recommandée');
+
 -- --------------------------------------------------------
 
 --
@@ -259,6 +271,10 @@ CREATE TABLE `user` (
   `role_user` varchar(150) NOT NULL,
   `salt` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+--
+
 
 -- --------------------------------------------------------
 
@@ -317,7 +333,7 @@ ALTER TABLE `civilite`
   ADD PRIMARY KEY (`id_civilite`);
 
 --
--- Index pour la table `clients`
+-- Index pour la table `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`id_client`);
@@ -336,7 +352,7 @@ ALTER TABLE `contract`
 --
 ALTER TABLE `courrier`
   ADD PRIMARY KEY (`id_courrier`,`id_client`,`id_type_courrier`),
-  ADD KEY `fk_courrier_client1_idx` (`id_client`),
+  ADD KEY `fk_courrier_clients1_idx` (`id_client`),
   ADD KEY `fk_courrier_type_courrier1_idx` (`id_type_courrier`);
 
 --
@@ -363,7 +379,7 @@ ALTER TABLE `forme_juridique`
 --
 ALTER TABLE `incident`
   ADD PRIMARY KEY (`id_incident`,`id_client`),
-  ADD KEY `fk_incident_client1_idx` (`id_client`);
+  ADD KEY `fk_incident_clients1_idx` (`id_client`);
 
 --
 -- Index pour la table `justificatif`
@@ -407,7 +423,7 @@ ALTER TABLE `responsable_legale`
   ADD KEY `fk_responsable_legale_pays1_idx` (`id_pays`),
   ADD KEY `fk_responsable_legale_fonction1_idx` (`id_fonction`),
   ADD KEY `fk_responsable_legale_civilite1_idx` (`id_civilite`),
-  ADD KEY `fk_responsable_legale_client1_idx` (`id_client`);
+  ADD KEY `fk_responsable_legale_clients1_idx` (`id_client`);
 
 --
 -- Index pour la table `tarif`
@@ -439,10 +455,15 @@ ALTER TABLE `voie_reexpedition`
 --
 
 --
--- AUTO_INCREMENT pour la table `clients`
+-- AUTO_INCREMENT pour la table `civilite`
+--
+ALTER TABLE `civilite`
+  MODIFY `id_civilite` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pour la table `contract`
 --
@@ -452,7 +473,7 @@ ALTER TABLE `contract`
 -- AUTO_INCREMENT pour la table `courrier`
 --
 ALTER TABLE `courrier`
-  MODIFY `id_courrier` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_courrier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT pour la table `departement`
 --
@@ -512,12 +533,12 @@ ALTER TABLE `tarif`
 -- AUTO_INCREMENT pour la table `type_courrier`
 --
 ALTER TABLE `type_courrier`
-  MODIFY `id_type_courrier` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_type_courrier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `voie_reexpedition`
 --

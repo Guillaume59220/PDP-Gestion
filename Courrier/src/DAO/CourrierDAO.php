@@ -4,6 +4,7 @@ namespace Courrier\DAO;
 
 use Courrier\Domain\Courrier;
 
+
 class CourrierDAO extends DAO
 {
     public function findAll() {
@@ -49,6 +50,17 @@ class CourrierDAO extends DAO
 
     }
 
+    public function findByUser()
+    {
+        $sql = "SELECT * FROM courrier 
+                INNER JOIN client ON courrier.id_client = client.id_client
+                INNER JOIN type_courrier tc ON courrier.id_type_courrier = tc.id_type_courrier";
+        $result= $this->getDb()->fetchAll($sql);
+
+        return $result;
+
+    }
+
     public function findClient(){
 
         $sql="SELECT id_client, nom_client FROM client";
@@ -64,7 +76,6 @@ class CourrierDAO extends DAO
     }
 
     public function save($courrier) {
-            dump($courrier);
         $courrierData = array(
             'date_entre'=> $courrier->getDateEntre(),
             'date_sortie'=> $courrier->getDateSortie(),
@@ -77,6 +88,10 @@ class CourrierDAO extends DAO
             ); 
 
         if ($courrier->getIdCourrier()) {
+            if(empty($courrier->getDateSortie()))
+                $courrier['date_sortie'] == null;
+            else
+                $courrier->getDateSortie();
 
             $this->getDb()->update('courrier', $courrierData, array('id_courrier' => $courrier->getIdCourrier()));
         } else {
