@@ -21,6 +21,8 @@
             {{ form_label(clientForm.code_client, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}
+
+            {# code client#}
             <div class="col-sm-6">
                 {{ form_errors(clientForm.code_client) }}
                 {{ form_widget(clientForm.code_client, { 'attr':  {
@@ -32,6 +34,7 @@
             {{ form_label(clientForm.nom_client, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}
+            {# nom client#}
             <div class="col-sm-6">
                 {{ form_errors(clientForm.nom_client) }}
                 {{ form_widget(clientForm.nom_client, { 'attr':  {
@@ -43,8 +46,9 @@
 
         <div class="form-group">
             {{ form_label(clientForm.password, null, { 'label_attr':  {
-                'class': 'col-sm-5 control-label'
+                'class': 'col-sm-4 control-label'
             }}) }}
+            {# mot de passe#}
             <div class="col-sm-4">
                 {{ form_widget(clientForm.password, { 'attr':  {
                     'class': 'form-control'
@@ -56,6 +60,7 @@
             {{ form_label(clientForm.date_contract, null , {'label_attr':   {
                 'class': 'col-sm-4 control-label'
             }} ) }}
+            {# date de contract#}
             <div class = "col-sm-6">
                 {{ form_errors(clientForm.date_contract) }}
                 {{ form_widget(clientForm.date_contract, { 'attr':  {
@@ -68,6 +73,7 @@
             {{ form_label(clientForm.siren, null , {'label_attr':   {
                 'class': 'col-sm-4 control-label'
             }} ) }}
+            {# siren#}
             <div class = "col-sm-6">
                 {{ form_errors(clientForm.siren) }}
                 {{ form_widget(clientForm.siren, { 'attr':  {
@@ -80,6 +86,7 @@
             {{ form_label(clientForm.capital, null , {'label_attr':   {
                 'class': 'col-sm-4 control-label'
             }} ) }}
+            {#capital#}
             <div class = "col-sm-6">
                 {{ form_errors(clientForm.capital) }}
                 {{ form_widget(clientForm.capital, { 'attr':  {
@@ -90,6 +97,7 @@
 
 
         </div>
+        {# bouton submit#}
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-3">
                 <input type="submit" class="btn btn-primary" value="Save" />

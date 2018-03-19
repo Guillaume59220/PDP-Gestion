@@ -16,18 +16,26 @@ class ClientType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            #nom client
             ->add('nom_client', TextType::class)
+
+            #code client
             ->add('code_client', TextType::class)
+
+            #siren
             ->add('siren', TextType::class)
 
+            #mot de passe
             ->add('password', PasswordType::class)
 
+            #dtae de contract
             ->add('date_contract', DateType::class, array(
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy',
                 'input'=> 'string',
-
             ))
+
+            #capital
             ->add('capital',NumberType::class);
 
 

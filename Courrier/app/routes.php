@@ -23,15 +23,6 @@ $app->get('/download/{filename}',"Courrier\Controller\DownloadController::downlo
 
 
 
-$app->get('/api/courrier', "Courrier\Controller\ApiController::getCourrierAction")
-    ->bind('api_courrier');
-
-$app->post('/api/courrier', "Courrier\Controller\ApiController::addCourrierAction")
-    ->bind('api_courrier_add');
-
-$app->get('/api/courrier/{id}', "Courrier\Controller\ApiController::getCourrierAction")
-    ->bind('api_courrier');
-
 $app->get('/admin/courrier/{id}/delete', "Courrier\Controller\AdminController::deleteCourrierAction")
     ->bind('admin_courrier_delete');
 
@@ -44,8 +35,6 @@ $app->match('/collaborateur/courrier/add', "Courrier\Controller\CollabController
 $app->match('/collaborateur/courrier/{id}/edit', "Courrier\Controller\CollabController::editCourrierAction")
     ->bind('collaborateur_courrier_edit');
 
-$app->delete('/api/courrier/{id}', "Courrier\Controller\ApiController::deleteCourrierAction")
-    ->bind('api_courrier_delete');
 
 /// CLIENT
 
