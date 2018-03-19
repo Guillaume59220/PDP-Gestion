@@ -23,14 +23,14 @@
                         </thead>
                         
                         {% for courrier in courriers %}
-<<<<<<< HEAD
+
                             <tr>
                                 <td>{{ courrier.nom_client }}</td>
                                 <td>{{ courrier.date_entre }}</td>
                                 <td>{{ courrier.annotation }}</td>
                                 <td>{{ courrier.libelle_courrier }}</td>
                                 <td> {{ courrier.scan }} </td>
-=======
+
                           
                             <tr>
                                 <td>{{ courrier['nom_client'] }}</td>
@@ -40,7 +40,7 @@
                                 <td> {{ courrier['scan'] }} </td>
                                 <td>{{ courrier['date_sortie'] }} </td>
                                 {# Bouton Download #}
->>>>>>> fde25ef3111c89fc5ac27d9165412f2a66044b4d
+
                                 <td>
                                     {% if courrier.scan is not empty %}
                                     <a href="{{path ('download_scan',{'filename':courrier.scan}) }}" class="btn btn-success btn-xs" title="Download" download>
