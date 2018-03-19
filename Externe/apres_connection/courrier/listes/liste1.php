@@ -23,7 +23,7 @@
 
 <?php
 
-/*resource mysql_connect (
+resource mysql_connect (
     [ string $server = ini_get("mysql.default_host") 
         [, string $username = ini_get("mysql.default_user") 
             [, string $password = ini_get("mysql.default_password") 
@@ -33,7 +33,7 @@
             ]
         ]
     ]
-)*/
+)
 
 
 
