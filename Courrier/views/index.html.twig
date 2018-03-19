@@ -18,17 +18,20 @@
                             <th>Annotation</th>
                             <th>Type courrier</th>
                             <th>Fichier</th>
-                            <th>Scan</th>  <!-- Actions column -->
+                            <th>Date de sortie</th> <!-- Actions column -->
                         </tr>
                         </thead>
+                        
                         {% for courrier in courriers %}
-                           {#{{ dump(courriers) }}#}
+                          
                             <tr>
                                 <td>{{ courrier['nom_client'] }}</td>
                                 <td>{{ courrier['date_entre'] }}</td>
                                 <td>{{ courrier['annotation'] }}</td>
                                 <td>{{ courrier['libelle_courrier'] }}</td>
                                 <td> {{ courrier['scan'] }} </td>
+                                <td>{{ courrier['date_sortie'] }} </td>
+                                {# Bouton Download #}
                                 <td>
                                     {% if courrier.scan is not empty %}
                                     <a href="{{path ('download_scan',{'filename':courrier.scan}) }}" class="btn btn-success btn-xs" title="Download" download>
