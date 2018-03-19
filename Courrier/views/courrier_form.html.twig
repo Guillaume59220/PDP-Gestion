@@ -62,6 +62,20 @@
         </div>
 
         <div class="form-group">
+            {{ form_label(courrierForm.scan2, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(courrierForm.scan2) }}
+                {{ form_widget(courrierForm.scan2, { 'attr':  {
+                    'class': ''
+
+                }}) }}
+            </div>
+        </div>
+
+
+        <div class="form-group displaynone">
             {{ form_label(courrierForm.scan, null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}

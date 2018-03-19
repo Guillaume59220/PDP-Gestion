@@ -3,7 +3,7 @@
 {% block title %} Liste courrier {% endblock %}
 
 {% block content %}
-
+{% if userSession %}
     <div class="container">
             <h1>Liste de courrier</h1>
             <hr />
@@ -22,13 +22,12 @@
                         </tr>
                         </thead>
                         {% for courrier in courriers %}
-                           {#{{ dump(courriers) }}#}
                             <tr>
-                                <td>{{ courrier['nom_client'] }}</td>
-                                <td>{{ courrier['date_entre'] }}</td>
-                                <td>{{ courrier['annotation'] }}</td>
-                                <td>{{ courrier['libelle_courrier'] }}</td>
-                                <td> {{ courrier['scan'] }} </td>
+                                <td>{{ courrier.nom_client }}</td>
+                                <td>{{ courrier.date_entre }}</td>
+                                <td>{{ courrier.annotation }}</td>
+                                <td>{{ courrier.libelle_courrier }}</td>
+                                <td> {{ courrier.scan }} </td>
                                 <td>
                                     {% if courrier.scan is not empty %}
                                     <a href="{{path ('download_scan',{'filename':courrier.scan}) }}" class="btn btn-success btn-xs" title="Download" download>
@@ -41,5 +40,5 @@
                 </div>
             {% endif %}
     </div>
-
+{% endif %}
 {% endblock %}

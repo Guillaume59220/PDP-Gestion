@@ -6,6 +6,7 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Courrier\Domain\Client;
 use Courrier\Form\Type\ClientType;
+use Courrier\DAO\CourrierDAO;
 
 class HomeController {
 
@@ -14,8 +15,9 @@ class HomeController {
         $token = $app['security.token_storage']->getToken();
         $courriers = $app['dao.courrier']->findAll();
         $user = $token->getUser();
-        return $app['twig']->render('index.html.twig', array('courriers' => $courriers,'user'=> $user));
-
+        return $app['twig']->render('index.html.twig', array(
+            'courriers'=>$courriers,
+            'userSession' => $user));
     }
     
 
