@@ -4,6 +4,7 @@ namespace Courrier\DAO;
 
 use Courrier\Domain\Courrier;
 
+
 class CourrierDAO extends DAO
 {
     public function findAll() {
@@ -46,6 +47,17 @@ class CourrierDAO extends DAO
 
        return $types;
 
+
+    }
+
+    public function findByUser()
+    {
+        $sql = "SELECT * FROM courrier 
+                INNER JOIN client ON courrier.id_client = client.id_client
+                INNER JOIN type_courrier tc ON courrier.id_type_courrier = tc.id_type_courrier";
+        $result= $this->getDb()->fetchAll($sql);
+
+        return $result;
 
     }
 

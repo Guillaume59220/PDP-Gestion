@@ -125,6 +125,14 @@ class CollabController{
         $clientForm=$app['form.factory']->create(ClientType::class, $client);
         $clientForm->handleRequest($request);
         if ($clientForm->isSubmitted() && $clientForm->isValid()) {
+
+            $plainPassword = $client->getPassword();
+            // find the encoder for the user
+            $encoder = $app['security.encoder_factory']->getEncoder($client);
+            // compute the encoded password
+            $password = $encoder->encodePassword($plainPassword, $client->getSalt());
+            $client->setPassword($password);
+
             $app['dao.client']->save($client);
             $app['session']->getFlashBag()->add('success', 'Le client a été modifié.');
             return $app->redirect($app['url_generator']->generate('admin'));
