@@ -50,6 +50,7 @@
             }}) }}
             {# mot de passe#}
             <div class="col-sm-4">
+                {{ form_errors(clientForm.password) }}
                 {{ form_widget(clientForm.password, { 'attr':  {
                     'class': 'form-control'
                 }}) }}

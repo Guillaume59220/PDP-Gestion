@@ -64,7 +64,6 @@ class CourrierDAO extends DAO
     }
 
     public function save($courrier) {
-            dump($courrier);
         $courrierData = array(
             'date_entre'=> $courrier->getDateEntre(),
             'date_sortie'=> $courrier->getDateSortie(),
@@ -77,6 +76,10 @@ class CourrierDAO extends DAO
             ); 
 
         if ($courrier->getIdCourrier()) {
+            if(empty($courrier->getDateSortie()))
+                $courrier['date_sortie'] == null;
+            else
+                $courrier->getDateSortie();
 
             $this->getDb()->update('courrier', $courrierData, array('id_courrier' => $courrier->getIdCourrier()));
         } else {

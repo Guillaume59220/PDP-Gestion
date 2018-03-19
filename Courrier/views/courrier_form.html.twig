@@ -17,7 +17,7 @@
             {{ form_label(courrierForm.date_entre , null, { 'label_attr':  {
                 'class': 'col-sm-4 control-label'
             }}) }}
-            <div class="col-sm-6">
+            <div class="col-sm-6" >
                 {{ form_errors(courrierForm.date_entre) }}
                 {{ form_widget(courrierForm.date_entre , { 'attr':  {
                     'class': 'form-control'
@@ -96,7 +96,6 @@
                 {{ form_errors(courrierForm.date_sortie) }}
                 {{ form_widget(courrierForm.date_sortie, { 'attr':  {
                     'class': 'form-control'
-
                 }}) }}
             </div>
         </div>
@@ -109,3 +108,4 @@
         {{ form_end(courrierForm) }}
     </div>
 {% endblock %}
+
