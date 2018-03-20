@@ -79,14 +79,14 @@ class UserDAO extends DAO implements UserProviderInterface
         $row = $this->getDb()->fetchAssoc($sql, array($username));
 
         if ($row) {
-            #dump($this->buildDomainObject($row));
+
             return $this->buildDomainObject($row);
         } else {
             $sql = "select * from client where code_client=?";
             $row = $this->getDb()->fetchAssoc($sql, array($username));
 
             if ($row) {
-                #dump($this->buildDomainObject($row));
+
                 return $this->buildDomainObject($row);
             } else {
                 throw new UsernameNotFoundException(sprintf('User "%s" not found.', $username));
