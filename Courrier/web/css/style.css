@@ -143,15 +143,14 @@ body {
     color:#fff
 }
 
-<<<<<<< HEAD
+
 select {
     border: none;
 }
 
-@media only screen and (min-width: 1200px) {
-=======
+
 @media only screen and (min-width: 1024px) {
->>>>>>> 43fc2d44fb2118b409fdda4622c740415301757c
+
    
     .well {
         background-image: url("../images/mascotte.png");
