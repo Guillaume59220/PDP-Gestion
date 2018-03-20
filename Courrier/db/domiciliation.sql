@@ -79,8 +79,8 @@ CREATE TABLE `contract` (
 CREATE TABLE `courrier` (
   `id_courrier` int(11) NOT NULL,
   `date_entre` date DEFAULT NULL,
-  `date_sortie` date DEFAULT NULL,
-  `scan` varchar(45) DEFAULT NULL,
+  `date_sortie` varchar(150) DEFAULT NULL,
+   `scan` varchar(45) DEFAULT NULL,
   `fax` varchar(45) DEFAULT NULL,
   `annotation` longtext,
   `id_client` int(11) NOT NULL,
