@@ -14,22 +14,28 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
          <div class="navbar-header">
-         
-         <a href="/PDP-Gestion/Courrier/web/admin/logout">
+
+           <a href="http://www.pdpgestion.com/" target="_blank">
+               <img class="logo" src="{{asset('images/logo-pdp-nord-59.png')}}" alt="logo PDP"/>
+           </a>    
+
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+         <a href="{{ path('admin_logout') }}">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="logout-navbar-collapse" aria-expanded="false">
             <span class="colorwhite glyphicon glyphicon-off"></span>
       </button></a>
-      
-      <a href="/PDP-Gestion/Courrier/web/admin">
+      {% endif %}
+      {% if is_granted('ROLE_ADMIN') %}
+      <a href="{{ path('admin') }}">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="admin-navbar-collapse" aria-expanded="false">
             <span class="colorwhite glyphicon glyphicon-cog"></span>
       </button></a>
+      {% endif %}
          </div>
+
         <div class="container ">
             <div class="collapse navbar-collapse" id="navbar-collapse-target">
-                <ul class="nav navbar-nav navbar-left">
-                    <a href="http://www.pdpgestion.com/" target="_blank"><img class= "img-responsive pull-left" src= "{{asset('images/logo-pdp-nord-59.png')}}" alt="logo PDP"/></a>
-                    </ul>
+
                 <ul class="nav navbar-nav navbar-right">
                     {% if is_granted('ROLE_USER') %}
                     <li class="dropdown">

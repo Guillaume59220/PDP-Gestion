@@ -130,12 +130,27 @@ body {
     background-color: #777;
     color: #fff;
 }
+.navbar-brand {
+    padding: 0px;
+}
+
+.logo {
+    height: 50px;
+    padding: 5px;
+}
 
 .colorwhite{
     color:#fff
 }
 
-@media only screen and (min-width: 1200px) {
+
+select {
+    border: none;
+}
+
+
+@media only screen and (min-width: 1024px) {
+
    
     .well {
         background-image: url("../images/mascotte.png");
@@ -144,8 +159,3 @@ body {
     }
 }
 
-@media only screen and (min-width: 425px) {
-    .img-responsive {
-        max-width: 15%;
-    }
-}

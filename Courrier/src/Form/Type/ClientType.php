@@ -30,9 +30,9 @@ class ClientType extends AbstractType
 
             #dtae de contract
             ->add('date_contract', DateType::class, array(
-                'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy',
                 'input'=> 'string',
+                'data' => (new \DateTime())->format('Y-m-d')
             ))
 
             #capital

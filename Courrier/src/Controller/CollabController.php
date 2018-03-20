@@ -62,7 +62,7 @@ class CollabController{
 
     public function editCourrierAction($id, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id);
-        dump($courrier);
+
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
         $courrierForm->handleRequest($request);
         if ($courrierForm->isSubmitted() && $courrierForm->isValid()) {

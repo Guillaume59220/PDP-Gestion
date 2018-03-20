@@ -43,11 +43,10 @@ class CourrierType extends AbstractType
         $builder
             #  la date d'ajout de courrier
             ->add('date_entre', DateType::class, array(
-                'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy',
                 'attr' => ['class' => 'date'],
                 'input'=> 'string',
-
+                'data' => (new \DateTime())->format('Y-m-d')
 
             ))
             #ajouter le scan
@@ -78,7 +77,6 @@ class CourrierType extends AbstractType
 
             ->add('date_sortie', DateType::class , array(
                 'required' => false,
-                'widget' => 'single_text',
                 'html5' => true,
                 'format' => 'dd/MM/yyyy',
                 'attr' => ['class' => 'date'],
