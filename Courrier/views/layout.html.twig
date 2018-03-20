@@ -14,12 +14,6 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
          <div class="navbar-header">
-<<<<<<< HEAD
-             <a class="navbar-brand" href="http://www.pdpgestion.com/" target="_blank"><img class= "img-responsive pull-left" src= "{{asset('images/logo-pdp-nord-59.png')}}" alt="logo PDP"/></a>
-
-
-         <a href="/PDP-Gestion/Courrier/web/admin/logout">
-=======
 
            <a href="http://www.pdpgestion.com/" target="_blank">
                <img class="logo" src="{{asset('images/logo-pdp-nord-59.png')}}" alt="logo PDP"/>
@@ -27,7 +21,6 @@
 
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
          <a href="{{ path('admin_logout') }}">
->>>>>>> 43fc2d44fb2118b409fdda4622c740415301757c
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="logout-navbar-collapse" aria-expanded="false">
             <span class="colorwhite glyphicon glyphicon-off"></span>
       </button></a>
@@ -43,11 +36,6 @@
         <div class="container ">
             <div class="collapse navbar-collapse" id="navbar-collapse-target">
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 43fc2d44fb2118b409fdda4622c740415301757c
                 <ul class="nav navbar-nav navbar-right">
                     {% if is_granted('ROLE_USER') %}
                     <li class="dropdown">
