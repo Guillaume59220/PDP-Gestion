@@ -26,13 +26,16 @@ class ClientType extends AbstractType
             ->add('siren', TextType::class)
 
             #mot de passe
-            ->add('password', PasswordType::class)
+            ->add('password', PasswordType::class, array (
+                'label'=>'Mot de passe'
+            ))
 
             #dtae de contract
             ->add('date_contract', DateType::class, array(
                 'format' => 'dd/MM/yyyy',
                 'input'=> 'string',
-                'data' => (new \DateTime())->format('Y-m-d')
+                'data' => (new \DateTime())->format('Y-m-d'),
+                'label'=>'Date de contrat'
             ))
 
             #capital

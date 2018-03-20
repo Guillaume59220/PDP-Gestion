@@ -46,7 +46,8 @@ class CourrierType extends AbstractType
                 'format' => 'dd/MM/yyyy',
                 'attr' => ['class' => 'date'],
                 'input'=> 'string',
-                'data' => (new \DateTime())->format('Y-m-d')
+                'data' => (new \DateTime())->format('Y-m-d'),
+                'label'=>'Date d\'entrée'
 
             ))
             #ajouter le scan
@@ -81,6 +82,7 @@ class CourrierType extends AbstractType
                 'format' => 'dd/MM/yyyy',
                 'attr' => ['class' => 'date'],
                 'input'=> 'string',
+                'label'=> 'Date de sortie'
 
 
 
@@ -95,7 +97,7 @@ class CourrierType extends AbstractType
             ->add('id_type_courrier', ChoiceType::class, array(
                 'choices' =>  $this->choiceCourrier($app),
                 'multiple' => false,
-                'label'=> 'Type courrier'
+                'label'=> 'Type de courrier'
                 ));
     }
 
