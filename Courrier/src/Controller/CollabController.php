@@ -21,7 +21,7 @@ class CollabController{
             'clients' => $clients,
             ));
     }
-
+    //ajout courrier a la bd
     public function addCourrierAction(Request $request, Application $app) {
         $courrier = new Courrier();
         $courrierForm = $app['form.factory']->create(CourrierType::class, $courrier, ['app' => $app]);
@@ -54,12 +54,13 @@ class CollabController{
             'courrierForm' => $courrierForm->createView()));
     }
 
+    // creation nom de fichier scan
     private function generateUniqueFileName()
     {
         return md5(uniqid());
     }
 
-
+    //edition de courrier
     public function editCourrierAction($id, Request $request, Application $app) {
         $courrier = $app['dao.courrier']->find($id);
 
@@ -94,7 +95,7 @@ class CollabController{
 
 
 
-
+    //ajout client a la bd
     public function addClientAction( Request $request,Application $app){
         $client= new Client;
         $clientForm= $app['form.factory']->create(ClientType::class, $client);
@@ -119,6 +120,7 @@ class CollabController{
 
     }
 
+    //edition de donnees de client
     public function editClientAction($id,Request $request, Application $app){
 
         $client=$app['dao.client']->find($id);

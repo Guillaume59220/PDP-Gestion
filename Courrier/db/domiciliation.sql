@@ -463,7 +463,7 @@ ALTER TABLE `civilite`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `contract`
 --
@@ -473,7 +473,7 @@ ALTER TABLE `contract`
 -- AUTO_INCREMENT pour la table `courrier`
 --
 ALTER TABLE `courrier`
-  MODIFY `id_courrier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_courrier` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `departement`
 --
@@ -533,17 +533,19 @@ ALTER TABLE `tarif`
 -- AUTO_INCREMENT pour la table `type_courrier`
 --
 ALTER TABLE `type_courrier`
-  MODIFY `id_type_courrier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_type_courrier` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `voie_reexpedition`
 --
 ALTER TABLE `voie_reexpedition`
-  MODIFY `id_reexpedition` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `id_reexpedition` int(11) NOT NULL AUTO_INCREMENT;
+
+  COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -11,6 +11,7 @@
         </div>
     {% endfor %}
     <div class="row">
+        {#menu#}
         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
             <ul class="nav nav-tabs nav-justified">
                 <li class="active"><a href="#clients" data-toggle="tab">Clients</a></li>
@@ -20,6 +21,7 @@
         </div>
     </div>
     <div class="tab-content">
+        {#partie client#}
         <div class="tab-pane fade in active adminTable" id="clients">
             {% if clients %}
                 <div class="table-responsive">
@@ -37,6 +39,7 @@
                                 <td>{{ client.nomclient }}</td>
                                 <td>{{ client.username }}</td>
                                 <td>
+                                    {#bouton d'edirion et suppresion#}
                                     <a href="{{ path('collaborateur_client_edit', { 'id': client.idclient }) }}"
                                        class="btn btn-info btn-xs" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
@@ -72,7 +75,7 @@
 
         </div>
         <div class="tab-pane fade adminTable" id="courriers">
-            <!-- Insérer ici le code de gestion des courrier-->
+            {#partie courrier#}
             {% if courriers is not empty %}
 
                 <div class="table-responsive">
@@ -99,6 +102,7 @@
                                 <td> {{ courrier['scan'] }} </td>
                                 <td>{{ courrier['date_sortie'] }}</td>
                                 <td>
+                                    {#bouton d'edition et suppresion#}
                                     <a href="{{ path('collaborateur_courrier_edit', { 'id': courrier['id_courrier'] }) }}" class="btn btn-info btn-xs"
                                        title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
@@ -134,6 +138,7 @@
             {% endif %}
         </div>
         <div class="tab-pane fade adminTable" id="users">
+            {#partie utilisateur#}
             {% if users %}
                 <div class="table-responsive">
                     <table class="table table-hover table-condensed">
@@ -154,6 +159,7 @@
 
                                 </td>
                                 <td>
+                                    {#boutons d'edition et suppresion#}
                                     <a href="{{ path('admin_user_edit', { 'id': user.id }) }}" class="btn btn-info btn-xs" title="Edit">
                                         <span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"

@@ -13,7 +13,7 @@ use Courrier\Form\Type\CourrierType;
 use Courrier\Form\Type\UserType;
 
 class AdminController {
-
+    // vue page admin
     public function indexAction(Application $app) {
         $courriers = $app['dao.courrier']->findAll();
         $clients = $app['dao.client']->findAll();
@@ -23,31 +23,17 @@ class AdminController {
             'clients' => $clients,
             'users' => $users));
     }
-
+    // connexion
     public function loginAction(Request $request, Application $app) {
        
 
-        return $app['twig']->render('admin_login.html.twig', array(
+        return $app['twig']->render('login.html.twig', array(
             'error'            => $app['security.last_error']($request),
             'last_username' => $app['session']->get('_security.last_username'),
         ));
     }
 
-
-
-    public function deleteCourrierAction($id, Application $app) {
-        $app['dao.courrier']->delete($id);
-        $app['session']->getFlashBag()->add('success', 'Le courrier a ete supprime.');
-        return $app->redirect($app['url_generator']->generate('admin'));
-    }
-
-    public function deleteClientAction($id, Application $app) {
-        $app['dao.client']->delete($id);
-        $app['session']->getFlashBag()->add('success', 'Le client a ete supprime.');
-        // Redirect to admin home page
-        return $app->redirect($app['url_generator']->generate('admin'));
-    }
-
+    // ajout utolisateur
     public function addUserAction(Request $request, Application $app) {
         $user = new User();
         $userForm = $app['form.factory']->create(UserType::class, $user);
@@ -75,21 +61,7 @@ class AdminController {
 
     }
 
-    public function addClientAction( Request $request,Application $app){
-        $client= new Client;
-        $clientForm= $app['form.factory']->create(ClientType::class, $client);
-        $clientForm->handleRequest($request);
-        if ($clientForm->isSubmitted() && $clientForm->isValid()) {
-            $app['']->save($client);
-            $app['session']->getFlashBag()->add('success', 'Le client a ete bien ajoute.');
-        }
-        return $app['twig']->render('client_form.html.twig', array(
-            'title' => 'Ajouter client',
-            'clientForm' => $clientForm->createView()));
-
-    }
-
-
+    //edition utilisateur
     public function editUserAction($id, Request $request, Application $app) {
         $user = $app['dao.user']->find($id);
         $userForm = $app['form.factory']->create(UserType::class, $user);
@@ -100,7 +72,7 @@ class AdminController {
             $encoder = $app['security.encoder_factory']->getEncoder($user);
             // compute the encoded password
             $password = $encoder->encodePassword($plainPassword, $user->getSalt());
-            $user->setPassword($password); 
+            $user->setPassword($password);
             $app['dao.user']->save($user);
             $app['session']->getFlashBag()->add('success', 'The user was successfully updated.');
             return $app->redirect($app['url_generator']->generate('admin'));
@@ -110,13 +82,32 @@ class AdminController {
             'userForm' => $userForm->createView()));
     }
 
-
+    // suppresion utilisateur
     public function deleteUserAction($id, Application $app) {
 
-        // Delete the user
         $app['dao.user']->delete($id);
         $app['session']->getFlashBag()->add('success', 'The user was successfully removed.');
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));
     }
+
+
+    //suppresion courrier de bd
+    public function deleteCourrierAction($id, Application $app) {
+        $app['dao.courrier']->delete($id);
+        $app['session']->getFlashBag()->add('success', 'Le courrier a ete supprime.');
+        return $app->redirect($app['url_generator']->generate('admin'));
+    }
+
+    //suppresion client de bd
+    public function deleteClientAction($id, Application $app) {
+        $app['dao.client']->delete($id);
+        $app['session']->getFlashBag()->add('success', 'Le client a ete supprime.');
+        // Redirect to admin home page
+        return $app->redirect($app['url_generator']->generate('admin'));
+    }
+
+
+
+
 }
