@@ -10,39 +10,18 @@ use Courrier\DAO\CourrierDAO;
 
 class HomeController {
 
+    // Affichage courrier par client conecte
     public function indexAction(Application $app) {
 
         $token = $app['security.token_storage']->getToken();
-        $courriers = $app['dao.courrier']->findAll();
         $user = $token->getUser();
+        $courriers = $app['dao.courrier']->findByUser($user->getId());
         return $app['twig']->render('index.html.twig', array(
             'courriers'=>$courriers,
-            'userSession' => $user));
+            'user' => $user));
     }
-    
 
-    public function courrierAction($id, Request $request, Application $app) {
-            $courrier = $app['dao.courrier']->find($id);
-            /*if ($app['security.authorization_checker']->isGranted('IS_AUTHENTICATED_FULLY')) {
-                $client = new Client();
-                $client->setCourrier($courrier);
-                $user = $app['user'];
-                $client->setClient($client);
-                $clientForm = $app['form.factory']->create(ClientType::class, $client);
-                $clientForm->handleRequest($request);
-                if ($clientForm->isSubmitted() && $clientForm->isValid()) {
-                    $app['dao.client']->save($client);
-                    $app['session']->getFlashBag()->add('success');
-                }
-                $clientForm->createView();
-            }*/
-
-        return $app['twig']->render('index.html.twig', array(
-            'courrier' => $courrier,
-            ));
-    }
-    
-
+    //Connexion client
     public function loginAction(Request $request, Application $app) {
 
         return $app['twig']->render('login.html.twig', array(

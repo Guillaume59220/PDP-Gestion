@@ -50,11 +50,11 @@ class CourrierDAO extends DAO
 
     }
 
-    public function findByUser()
+    public function findByUser($user_id)
     {
         $sql = "SELECT * FROM courrier 
                 INNER JOIN client ON courrier.id_client = client.id_client
-                INNER JOIN type_courrier tc ON courrier.id_type_courrier = tc.id_type_courrier";
+                INNER JOIN type_courrier tc ON courrier.id_type_courrier = tc.id_type_courrier WHERE client.id_client = $user_id";
         $result= $this->getDb()->fetchAll($sql);
 
         return $result;
@@ -88,10 +88,6 @@ class CourrierDAO extends DAO
             ); 
 
         if ($courrier->getIdCourrier()) {
-            if(empty($courrier->getDateSortie()))
-                $courrier['date_sortie'] == null;
-            else
-                $courrier->getDateSortie();
 
             $this->getDb()->update('courrier', $courrierData, array('id_courrier' => $courrier->getIdCourrier()));
         } else {

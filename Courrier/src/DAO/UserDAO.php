@@ -10,11 +10,9 @@ use Courrier\Domain\User;
 
 class UserDAO extends DAO implements UserProviderInterface
 {
-    /**
-     * Returns a list of all users, sorted by role and name.
-     *
-     * @return array A list of all users.
-     */
+
+     // Returns a list of all users, sorted by role and name.
+
     public function findAll() {
         $sql = "select * from user order by role_user, username";
         $result = $this->getDb()->fetchAll($sql);
@@ -28,6 +26,7 @@ class UserDAO extends DAO implements UserProviderInterface
         return $entities;
     }
 
+    // Returns user.
 
     public function find($id_user) {
         $sql = "select * from user where id_user=?";
@@ -94,8 +93,6 @@ class UserDAO extends DAO implements UserProviderInterface
         }
 
     }
-
-
 
     /**
      * {@inheritDoc}

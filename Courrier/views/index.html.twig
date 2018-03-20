@@ -3,7 +3,10 @@
 {% block title %} Liste courrier {% endblock %}
 
 {% block content %}
-{% if userSession %}
+    {% if is_granted("ROLE_USER") %}
+
+
+
     <div class="container">
             <h1>Liste de courrier</h1>
             <hr />
@@ -46,5 +49,5 @@
                 </div>
             {% endif %}
     </div>
-{% endif %}
+    {% endif %}
 {% endblock %}

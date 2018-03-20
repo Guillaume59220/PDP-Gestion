@@ -14,11 +14,13 @@ use Courrier\DAO\UserDAO;
 use Courrier\DAO\ClientDAO;
 
 // Register global error and exception handlers
+
 ErrorHandler::register();
 ExceptionHandler::register();
 $app['debug'] = true;
 
 // Register service providers
+
 $app->register(new Silex\Provider\DoctrineServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
@@ -33,6 +35,9 @@ $app['twig'] = $app->extend('twig', function(Twig_Environment $twig, $app) {
 $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.version' => 'v1'
 ));
+
+//Register service security
+
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\SecurityServiceProvider(), array(
 
@@ -72,10 +77,14 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
         array('^/collaborateur', 'ROLE_EVENT_CREATE'),
     ),
 ));
+
+//Register service form
 $app->register(new Silex\Provider\FormServiceProvider());
 $app->register(new Silex\Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider());
 $app->register(new Silex\Provider\ValidatorServiceProvider());
+
+//Configure DB
 
 $app['dao.client'] = function ($app) {
     return new Courrier\DAO\ClientDAO($app['db']);
@@ -98,19 +107,3 @@ $app->before(function (Request $request) {
     }
 });
 
-
-
-    /*'security.user_providers' => array(
-        'db_client' => array(
-            'entity' => array(
-                'class' => Client::class,
-                'property' => 'code_client',
-            ),
-        ),
-        'db_user' => array(
-            'entity' => array(
-                'class' => User::class,
-                'property' => 'username',
-            ),
-        ),
-    ),*/
